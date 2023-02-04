@@ -33,10 +33,13 @@ Public Class LoginRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
+            'set token
+            Token = _jObject("token")
+            'call main menu
         End If
 
         If Not _response.IsSuccessStatusCode Then
-
+            ResponseException(_response)
         End If
 
     End Sub

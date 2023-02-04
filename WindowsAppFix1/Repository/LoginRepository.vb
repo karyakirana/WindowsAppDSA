@@ -14,8 +14,9 @@ Public Class LoginRepository
     Private _password As String
 
     Public Sub New()
-        _client = New HttpClient()
-        _client.BaseAddress = New Uri(BaseURl)
+        _client = New HttpClient With {
+            .BaseAddress = New Uri(BaseURl)
+        }
         _client.DefaultRequestHeaders.Accept.Add(
             New Headers.MediaTypeHeaderValue("application/json")
         )

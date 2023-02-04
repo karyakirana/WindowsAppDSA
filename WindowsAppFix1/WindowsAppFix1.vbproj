@@ -52,9 +52,14 @@
     <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -102,6 +107,31 @@
     <Compile Include="Form\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Master\FormJabatanList.Designer.vb">
+      <DependentUpon>FormJabatanList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormJabatanList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormLokasi.Designer.vb">
+      <DependentUpon>FormLokasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormLokasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormPegawaiList.Designer.vb">
+      <DependentUpon>FormPegawaiList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormPegawaiList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormUsersList.Designer.vb">
+      <DependentUpon>FormUsersList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormUsersList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\LoginClass.vb" />
     <Compile Include="Model\Master\Customer.vb" />
     <Compile Include="Model\Master\Kota.vb" />
     <Compile Include="Model\Master\Lokasi.vb" />
@@ -133,6 +163,22 @@
     <Compile Include="Repository\LoginRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormJabatanList.resx">
+      <DependentUpon>FormJabatanList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormLokasi.resx">
+      <DependentUpon>FormLokasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormPegawaiList.resx">
+      <DependentUpon>FormPegawaiList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormUsersList.resx">
+      <DependentUpon>FormUsersList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -145,6 +191,10 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Jabatan.datasource" />
+    <None Include="My Project\DataSources\Lokasi.datasource" />
+    <None Include="My Project\DataSources\Pegawai.datasource" />
+    <None Include="My Project\DataSources\Users.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -154,7 +204,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\Master\" />
     <Folder Include="Model\Pembelian\" />
     <Folder Include="Model\Penjualan\" />
   </ItemGroup>

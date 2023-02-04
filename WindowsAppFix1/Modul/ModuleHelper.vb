@@ -1,5 +1,6 @@
 ﻿Imports System.Net
 Imports System.Net.Http
+Imports DevExpress.XtraBars.Ribbon
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
@@ -10,10 +11,8 @@ Module ModuleHelper
     Public Sub ResponseException(response As HttpResponseMessage)
         Dim StatusCode As HttpStatusCode = response.StatusCode
         Dim resultObject = JsonConvert.DeserializeObject(Of JObject)(response.Content.ToString)
-        If StatusCode = 422 Then
-            'exception failed
-
-        End If
+        Dim validationMessage As String = resultObject("message").ToString
+        MsgBox(validationMessage, "Status Code " + StatusCode)
     End Sub
 
 #End Region

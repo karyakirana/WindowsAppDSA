@@ -143,6 +143,7 @@
     <Compile Include="Model\Penjualan\Penjualan.vb" />
     <Compile Include="Model\Stock\Persediaan.vb" />
     <Compile Include="Model\Stock\PersediaanAwal.vb" />
+    <Compile Include="Model\Stock\StockKeluar.vb" />
     <Compile Include="Model\Stock\StockMasuk.vb" />
     <Compile Include="Modul\MainModule.vb" />
     <Compile Include="Modul\ModuleHelper.vb" />
@@ -169,7 +170,14 @@
     <Compile Include="Repository\MasterRepo\PegawaiRepository.vb" />
     <Compile Include="Repository\MasterRepo\ProdukRepository.vb" />
     <Compile Include="Repository\MasterRepo\SupplierRepository.vb" />
+    <Compile Include="Repository\PembelianRepo\PembelianRepository.vb" />
+    <Compile Include="Repository\PenjualanRepo\PenjualanRepository.vb" />
     <Compile Include="Repository\StockRepo\PersediaanAwalRepo.vb" />
+    <Compile Include="Repository\StockRepo\PersediaanRepo.vb" />
+    <Compile Include="Repository\StockRepo\StockKeluarPenjualanRepo.vb" />
+    <Compile Include="Repository\StockRepo\StockKeluarRepository.vb" />
+    <Compile Include="Repository\StockRepo\StockMasukPembelianRepo.vb" />
+    <Compile Include="Repository\StockRepo\StockMasukRepository.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form\LoginForm.resx">

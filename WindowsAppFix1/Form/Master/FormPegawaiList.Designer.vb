@@ -32,47 +32,47 @@ Partial Class FormPegawaiList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.PegawaiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnama = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coljabatan = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colgender = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltelepon = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colemail = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnpwp = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coljabatan_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colalamat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colkota = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkota_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldeleted_at = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.coljabatan = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colkota = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PegawaiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.SearchEditItem, Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 150)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1421, 150)
         '
         'BarButtonItem1
         '
@@ -128,18 +128,9 @@ Partial Class FormPegawaiList
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 150)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 300)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1421, 396)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 300)
-        Me.Root.TextVisible = False
         '
         'GridControl1
         '
@@ -148,59 +139,61 @@ Partial Class FormPegawaiList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 276)
+        Me.GridControl1.Size = New System.Drawing.Size(1397, 372)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colkode, Me.colstatus, Me.colnama, Me.colgender, Me.coltelepon, Me.colemail, Me.colnpwp, Me.coljabatan_id, Me.colalamat, Me.colkota_id, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.coljabatan, Me.colkota})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 280)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'PegawaiBindingSource
         '
         Me.PegawaiBindingSource.DataSource = GetType(WindowsAppFix1.Pegawai)
         '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colkode, Me.colstatus, Me.colnama, Me.coljabatan, Me.colgender, Me.coltelepon, Me.colemail, Me.colnpwp, Me.coljabatan_id, Me.colalamat, Me.colkota, Me.colkota_id, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at})
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
         'colid
         '
+        Me.colid.Caption = "Id"
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colkode
         '
+        Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 1
+        Me.colkode.VisibleIndex = 0
         '
         'colstatus
         '
+        Me.colstatus.Caption = "Status"
         Me.colstatus.FieldName = "status"
         Me.colstatus.Name = "colstatus"
         Me.colstatus.Visible = True
-        Me.colstatus.VisibleIndex = 2
+        Me.colstatus.VisibleIndex = 1
         '
         'colnama
         '
+        Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
-        Me.colnama.VisibleIndex = 3
+        Me.colnama.VisibleIndex = 2
+        '
+        'coljabatan
+        '
+        Me.coljabatan.Caption = "Jabatan"
+        Me.coljabatan.FieldName = "jabatan.nama"
+        Me.coljabatan.Name = "coljabatan"
+        Me.coljabatan.Visible = True
+        Me.coljabatan.VisibleIndex = 3
         '
         'colgender
         '
+        Me.colgender.Caption = "Gender"
         Me.colgender.FieldName = "gender"
         Me.colgender.Name = "colgender"
         Me.colgender.Visible = True
@@ -208,6 +201,7 @@ Partial Class FormPegawaiList
         '
         'coltelepon
         '
+        Me.coltelepon.Caption = "Telepon"
         Me.coltelepon.FieldName = "telepon"
         Me.coltelepon.Name = "coltelepon"
         Me.coltelepon.Visible = True
@@ -215,6 +209,7 @@ Partial Class FormPegawaiList
         '
         'colemail
         '
+        Me.colemail.Caption = "Email"
         Me.colemail.FieldName = "email"
         Me.colemail.Name = "colemail"
         Me.colemail.Visible = True
@@ -222,6 +217,7 @@ Partial Class FormPegawaiList
         '
         'colnpwp
         '
+        Me.colnpwp.Caption = "NPWP"
         Me.colnpwp.FieldName = "npwp"
         Me.colnpwp.Name = "colnpwp"
         Me.colnpwp.Visible = True
@@ -231,70 +227,74 @@ Partial Class FormPegawaiList
         '
         Me.coljabatan_id.FieldName = "jabatan_id"
         Me.coljabatan_id.Name = "coljabatan_id"
-        Me.coljabatan_id.Visible = True
-        Me.coljabatan_id.VisibleIndex = 8
         '
         'colalamat
         '
+        Me.colalamat.Caption = "Alamat"
         Me.colalamat.FieldName = "alamat"
         Me.colalamat.Name = "colalamat"
         Me.colalamat.Visible = True
-        Me.colalamat.VisibleIndex = 9
+        Me.colalamat.VisibleIndex = 8
+        '
+        'colkota
+        '
+        Me.colkota.Caption = "Kota"
+        Me.colkota.FieldName = "kota.name"
+        Me.colkota.Name = "colkota"
+        Me.colkota.Visible = True
+        Me.colkota.VisibleIndex = 9
         '
         'colkota_id
         '
         Me.colkota_id.FieldName = "kota_id"
         Me.colkota_id.Name = "colkota_id"
-        Me.colkota_id.Visible = True
-        Me.colkota_id.VisibleIndex = 10
         '
         'colketerangan
         '
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 11
+        Me.colketerangan.VisibleIndex = 10
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 12
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 13
         '
         'coldeleted_at
         '
         Me.coldeleted_at.FieldName = "deleted_at"
         Me.coldeleted_at.Name = "coldeleted_at"
-        Me.coldeleted_at.Visible = True
-        Me.coldeleted_at.VisibleIndex = 14
         '
-        'coljabatan
+        'Root
         '
-        Me.coljabatan.FieldName = "jabatan"
-        Me.coljabatan.Name = "coljabatan"
-        Me.coljabatan.Visible = True
-        Me.coljabatan.VisibleIndex = 15
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(1421, 396)
+        Me.Root.TextVisible = False
         '
-        'colkota
+        'LayoutControlItem1
         '
-        Me.colkota.FieldName = "kota"
-        Me.colkota.Name = "colkota"
-        Me.colkota.Visible = True
-        Me.colkota.VisibleIndex = 16
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1401, 376)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'FormPegawaiList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1421, 546)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "FormPegawaiList"
@@ -302,11 +302,11 @@ Partial Class FormPegawaiList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PegawaiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

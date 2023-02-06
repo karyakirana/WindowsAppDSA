@@ -21,7 +21,7 @@
 	Public Property deleted_at As String
 
 	Public Property lokasi As Lokasi
-	Public Property supplier As Supplier
+	Public Property supplier As SupplierRepository
 	Public Property customer As Customer
 	Public Property users As Users
 	Public Property stock_masuk_detail As List(Of StockMasukDetail)

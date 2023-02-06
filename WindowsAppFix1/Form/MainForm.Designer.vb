@@ -36,8 +36,8 @@ Partial Class MainForm
         Me.NavBarControl1 = New DevExpress.XtraNavBar.NavBarControl()
         Me.BarGroupMaster = New DevExpress.XtraNavBar.NavBarGroup()
         Me.BarItemJabatan = New DevExpress.XtraNavBar.NavBarItem()
-        Me.BarItemLokasi = New DevExpress.XtraNavBar.NavBarItem()
         Me.BarItemPegawai = New DevExpress.XtraNavBar.NavBarItem()
+        Me.BarItemLokasi = New DevExpress.XtraNavBar.NavBarItem()
         Me.BarItemProduk = New DevExpress.XtraNavBar.NavBarItem()
         Me.BarItemCustomer = New DevExpress.XtraNavBar.NavBarItem()
         Me.BarItemSupplier = New DevExpress.XtraNavBar.NavBarItem()
@@ -94,31 +94,31 @@ Partial Class MainForm
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Manager = Me.BarManager1
-        Me.barDockControlTop.Size = New System.Drawing.Size(800, 20)
+        Me.barDockControlTop.Size = New System.Drawing.Size(800, 25)
         '
         'barDockControlBottom
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 430)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 429)
         Me.barDockControlBottom.Manager = Me.BarManager1
-        Me.barDockControlBottom.Size = New System.Drawing.Size(800, 20)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(800, 21)
         '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 20)
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 25)
         Me.barDockControlLeft.Manager = Me.BarManager1
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 410)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 404)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(800, 20)
+        Me.barDockControlRight.Location = New System.Drawing.Point(800, 25)
         Me.barDockControlRight.Manager = Me.BarManager1
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 410)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 404)
         '
         'DockManager1
         '
@@ -132,10 +132,10 @@ Partial Class MainForm
         Me.DockPanel1.Controls.Add(Me.DockPanel1_Container)
         Me.DockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left
         Me.DockPanel1.ID = New System.Guid("c0942328-e6c1-4aae-a624-0ba898163b41")
-        Me.DockPanel1.Location = New System.Drawing.Point(0, 20)
+        Me.DockPanel1.Location = New System.Drawing.Point(0, 25)
         Me.DockPanel1.Name = "DockPanel1"
         Me.DockPanel1.OriginalSize = New System.Drawing.Size(200, 200)
-        Me.DockPanel1.Size = New System.Drawing.Size(200, 410)
+        Me.DockPanel1.Size = New System.Drawing.Size(200, 404)
         Me.DockPanel1.Text = "Main Menu"
         '
         'DockPanel1_Container
@@ -143,7 +143,7 @@ Partial Class MainForm
         Me.DockPanel1_Container.Controls.Add(Me.NavBarControl1)
         Me.DockPanel1_Container.Location = New System.Drawing.Point(3, 26)
         Me.DockPanel1_Container.Name = "DockPanel1_Container"
-        Me.DockPanel1_Container.Size = New System.Drawing.Size(193, 381)
+        Me.DockPanel1_Container.Size = New System.Drawing.Size(193, 375)
         Me.DockPanel1_Container.TabIndex = 0
         '
         'NavBarControl1
@@ -154,8 +154,9 @@ Partial Class MainForm
         Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.BarItemJabatan, Me.BarItemLokasi, Me.BarItemPegawai, Me.BarItemProduk, Me.BarItemCustomer, Me.BarItemSupplier})
         Me.NavBarControl1.Location = New System.Drawing.Point(0, 0)
         Me.NavBarControl1.Name = "NavBarControl1"
+        Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 193
         Me.NavBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane
-        Me.NavBarControl1.Size = New System.Drawing.Size(193, 381)
+        Me.NavBarControl1.Size = New System.Drawing.Size(193, 375)
         Me.NavBarControl1.TabIndex = 0
         Me.NavBarControl1.Text = "NavBarControl1"
         '
@@ -171,15 +172,15 @@ Partial Class MainForm
         Me.BarItemJabatan.Caption = "Jabatan"
         Me.BarItemJabatan.Name = "BarItemJabatan"
         '
-        'BarItemLokasi
-        '
-        Me.BarItemLokasi.Caption = "Lokasi"
-        Me.BarItemLokasi.Name = "BarItemLokasi"
-        '
         'BarItemPegawai
         '
         Me.BarItemPegawai.Caption = "Pegawai"
         Me.BarItemPegawai.Name = "BarItemPegawai"
+        '
+        'BarItemLokasi
+        '
+        Me.BarItemLokasi.Caption = "Lokasi"
+        Me.BarItemLokasi.Name = "BarItemLokasi"
         '
         'BarItemProduk
         '
@@ -203,7 +204,8 @@ Partial Class MainForm
         '
         'DocumentManager1
         '
-        Me.DocumentManager1.ContainerControl = Me
+        Me.DocumentManager1.MdiParent = Me
+        Me.DocumentManager1.MenuManager = Me.BarManager1
         Me.DocumentManager1.View = Me.TabbedView1
         Me.DocumentManager1.ViewCollection.AddRange(New DevExpress.XtraBars.Docking2010.Views.BaseView() {Me.TabbedView1})
         '
@@ -217,6 +219,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.IsMdiContainer = True
         Me.Name = "MainForm"
         Me.Text = "MainForm"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()

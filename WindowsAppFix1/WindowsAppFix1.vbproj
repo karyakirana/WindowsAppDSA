@@ -113,10 +113,10 @@
     <Compile Include="Form\Master\FormJabatanList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Master\FormLokasi.Designer.vb">
-      <DependentUpon>FormLokasi.vb</DependentUpon>
+    <Compile Include="Form\Master\FormLokasiList.Designer.vb">
+      <DependentUpon>FormLokasiList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form\Master\FormLokasi.vb">
+    <Compile Include="Form\Master\FormLokasiList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Master\FormPegawaiList.Designer.vb">
@@ -139,6 +139,8 @@
     <Compile Include="Model\Master\Produk.vb" />
     <Compile Include="Model\Master\Supplier.vb" />
     <Compile Include="Model\Master\Users.vb" />
+    <Compile Include="Model\Pembelian\Pembelian.vb" />
+    <Compile Include="Model\Penjualan\Penjualan.vb" />
     <Compile Include="Model\Stock\Persediaan.vb" />
     <Compile Include="Model\Stock\PersediaanAwal.vb" />
     <Compile Include="Model\Stock\StockMasuk.vb" />
@@ -161,16 +163,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Repository\LoginRepository.vb" />
+    <Compile Include="Repository\MasterRepo\CustomerRepository.vb" />
+    <Compile Include="Repository\MasterRepo\JabatanRepository.vb" />
+    <Compile Include="Repository\MasterRepo\LokasiRepository.vb" />
+    <Compile Include="Repository\MasterRepo\PegawaiRepository.vb" />
+    <Compile Include="Repository\MasterRepo\ProdukRepository.vb" />
+    <Compile Include="Repository\MasterRepo\SupplierRepository.vb" />
+    <Compile Include="Repository\StockRepo\PersediaanAwalRepo.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatanList.resx">
       <DependentUpon>FormJabatanList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Master\FormLokasi.resx">
-      <DependentUpon>FormLokasi.vb</DependentUpon>
+    <EmbeddedResource Include="Form\Master\FormLokasiList.resx">
+      <DependentUpon>FormLokasiList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormPegawaiList.resx">
       <DependentUpon>FormPegawaiList.vb</DependentUpon>
@@ -192,6 +204,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\DataSources\Jabatan.datasource" />
+    <None Include="My Project\DataSources\LoginClass.datasource" />
     <None Include="My Project\DataSources\Lokasi.datasource" />
     <None Include="My Project\DataSources\Pegawai.datasource" />
     <None Include="My Project\DataSources\Users.datasource" />
@@ -203,9 +216,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Pembelian\" />
-    <Folder Include="Model\Penjualan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

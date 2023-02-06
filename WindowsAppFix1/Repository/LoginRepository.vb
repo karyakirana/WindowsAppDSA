@@ -17,17 +17,12 @@ Public Class LoginRepository
         _client = New HttpClient With {
             .BaseAddress = New Uri(BaseURl)
         }
-        _client.DefaultRequestHeaders.Accept.Add(
-            New Headers.MediaTypeHeaderValue("application/json")
-        )
+        _client.DefaultRequestHeaders.Add("Accept", "application/json")
     End Sub
 
-    Public Async Sub Login(email As String, password As String)
-        Dim objectLogin As Object = New ExpandoObject()
-        objectLogin.username = email
-        objectLogin.password = password
+    Public Async Function Login(loginClass As LoginClass) As Task(Of Boolean)
         'serialize
-        Dim json As String = JsonConvert.SerializeObject(objectLogin)
+        Dim json As String = JsonConvert.SerializeObject(loginClass)
         Dim content As New StringContent(json, Encoding.UTF8, "application/json")
         _response = Await _client.PostAsync("login", content)
 
@@ -36,13 +31,15 @@ Public Class LoginRepository
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
             'set token
             Token = _jObject("token")
-            'call main menu
+            Return True
         End If
 
         If Not _response.IsSuccessStatusCode Then
-            ResponseException(_response)
+            ResponseException(_response.StatusCode, Await _response.Content.ReadAsStringAsync)
+            Return False
         End If
 
-    End Sub
+        Return False
+    End Function
 
 End Class

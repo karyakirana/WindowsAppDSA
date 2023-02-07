@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormJabatanList
+Partial Class FormCustomerList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,7 @@ Partial Class FormJabatanList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormJabatanList))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCustomerList))
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
@@ -32,36 +31,28 @@ Partial Class FormJabatanList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.JabatanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colnama = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colketerangan = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.SearchEditItem, Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1023, 150)
+        Me.RibbonControl1.Size = New System.Drawing.Size(800, 150)
         '
         'BarButtonItem1
         '
@@ -117,72 +108,9 @@ Partial Class FormJabatanList
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 150)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1023, 467)
-        Me.LayoutControl1.TabIndex = 1
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 300)
+        Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'GridControl1
-        '
-        Me.GridControl1.DataSource = Me.JabatanBindingSource
-        Me.GridControl1.Location = New System.Drawing.Point(12, 12)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.MenuManager = Me.RibbonControl1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(999, 443)
-        Me.GridControl1.TabIndex = 4
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'JabatanBindingSource
-        '
-        Me.JabatanBindingSource.DataSource = GetType(WindowsAppFix1.Jabatan)
-        '
-        'GridView1
-        '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colkode, Me.colnama, Me.colketerangan, Me.colcreated_at, Me.colupdated_at})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        '
-        'colid
-        '
-        Me.colid.FieldName = "id"
-        Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
-        '
-        'colkode
-        '
-        Me.colkode.FieldName = "kode"
-        Me.colkode.Name = "colkode"
-        Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 1
-        '
-        'colnama
-        '
-        Me.colnama.FieldName = "nama"
-        Me.colnama.Name = "colnama"
-        Me.colnama.Visible = True
-        Me.colnama.VisibleIndex = 2
-        '
-        'colketerangan
-        '
-        Me.colketerangan.FieldName = "keterangan"
-        Me.colketerangan.Name = "colketerangan"
-        Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 3
-        '
-        'colcreated_at
-        '
-        Me.colcreated_at.FieldName = "created_at"
-        Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 4
-        '
-        'colupdated_at
-        '
-        Me.colupdated_at.FieldName = "updated_at"
-        Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 5
         '
         'Root
         '
@@ -190,34 +118,48 @@ Partial Class FormJabatanList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1023, 467)
+        Me.Root.Size = New System.Drawing.Size(800, 300)
         Me.Root.TextVisible = False
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.MenuManager = Me.RibbonControl1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(776, 276)
+        Me.GridControl1.TabIndex = 4
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1003, 447)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 280)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
-        'FormJabatanList
+        'FormCustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1023, 617)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
-        Me.Name = "FormJabatanList"
-        Me.Text = "FormJabatanList"
+        Me.Name = "FormCustomerList"
+        Me.Text = "FormCustomerList"
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -225,6 +167,10 @@ Partial Class FormJabatanList
     End Sub
 
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
@@ -232,15 +178,4 @@ Partial Class FormJabatanList
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents JabatanBindingSource As BindingSource
-    Friend WithEvents colid As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colkode As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colnama As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colketerangan As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colcreated_at As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colupdated_at As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
 End Class

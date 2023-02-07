@@ -1,5 +1,6 @@
 ﻿Public Class Penjualan
 	Public Property id As Long
+	Public Property penjualan_id As Long?
 	Public Property active_cash As String
 	Public Property kode As String
 	Public Property penjualan_penawaran_id As Long
@@ -23,6 +24,7 @@
 
 	Public Property customer As Customer
 	Public Property sales As Pegawai
+	Public Property penjualan_detail As List(Of PenjualanDetail)
 
 End Class
 

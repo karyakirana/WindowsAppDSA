@@ -44,6 +44,7 @@ Partial Class MainForm
         Me.BarGroupPersediaan = New DevExpress.XtraNavBar.NavBarGroup()
         Me.DocumentManager1 = New DevExpress.XtraBars.Docking2010.DocumentManager(Me.components)
         Me.TabbedView1 = New DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(Me.components)
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DockPanel1.SuspendLayout()
@@ -62,7 +63,9 @@ Partial Class MainForm
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.DockManager = Me.DockManager1
         Me.BarManager1.Form = Me
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem1})
         Me.BarManager1.MainMenu = Me.Bar2
+        Me.BarManager1.MaxItemId = 1
         Me.BarManager1.StatusBar = Me.Bar3
         '
         'Bar2
@@ -209,6 +212,12 @@ Partial Class MainForm
         Me.DocumentManager1.View = Me.TabbedView1
         Me.DocumentManager1.ViewCollection.AddRange(New DevExpress.XtraBars.Docking2010.Views.BaseView() {Me.TabbedView1})
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "BarButtonItem1"
+        Me.BarButtonItem1.Id = 0
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,6 +231,7 @@ Partial Class MainForm
         Me.IsMdiContainer = True
         Me.Name = "MainForm"
         Me.Text = "MainForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DockPanel1.ResumeLayout(False)
@@ -255,4 +265,5 @@ Partial Class MainForm
     Friend WithEvents BarGroupPersediaan As DevExpress.XtraNavBar.NavBarGroup
     Friend WithEvents DocumentManager1 As DevExpress.XtraBars.Docking2010.DocumentManager
     Friend WithEvents TabbedView1 As DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

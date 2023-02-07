@@ -4,17 +4,9 @@ Imports System.Net.Http
 Imports System.Text
 
 Public Class CustomerRepository
-    Public _client As HttpClient
-    Public _response As HttpResponseMessage
-    Public _jObject As JObject
 
     Public Sub New()
-        _client = New HttpClient With {
-            .BaseAddress = New Uri(BaseURl)
-        }
-        _client.DefaultRequestHeaders.Add("Accept", "application/json")
-        TokenCheck()
-        _client.DefaultRequestHeaders.Authorization = New Headers.AuthenticationHeaderValue("Bearer", Token)
+        initialNew()
     End Sub
 
     Public Async Function GetList() As Task(Of List(Of Customer))

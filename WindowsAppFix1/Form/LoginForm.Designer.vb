@@ -24,13 +24,14 @@ Partial Class LoginForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
+        Me.CancelButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.LoginButton = New DevExpress.XtraEditors.SimpleButton()
+        Me.emailTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.passwordTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.emailTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ItemForemail = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.passwordTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ItemForpassword = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LoginButton = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -41,17 +42,16 @@ Partial Class LoginForm
         Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.CancelButton = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem10 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LoginClassBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DataLayoutControl1.SuspendLayout()
+        CType(Me.emailTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.passwordTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.emailTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForemail, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.passwordTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForpassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +85,45 @@ Partial Class LoginForm
         Me.DataLayoutControl1.TabIndex = 0
         Me.DataLayoutControl1.Text = "DataLayoutControl1"
         '
+        'CancelButton
+        '
+        Me.CancelButton.Location = New System.Drawing.Point(523, 151)
+        Me.CancelButton.Name = "CancelButton"
+        Me.CancelButton.Size = New System.Drawing.Size(100, 22)
+        Me.CancelButton.StyleController = Me.DataLayoutControl1
+        Me.CancelButton.TabIndex = 7
+        Me.CancelButton.Text = "Cancel"
+        '
+        'LoginButton
+        '
+        Me.LoginButton.Location = New System.Drawing.Point(372, 151)
+        Me.LoginButton.Name = "LoginButton"
+        Me.LoginButton.Size = New System.Drawing.Size(113, 22)
+        Me.LoginButton.StyleController = Me.DataLayoutControl1
+        Me.LoginButton.TabIndex = 6
+        Me.LoginButton.Text = "Login"
+        '
+        'emailTextEdit
+        '
+        Me.emailTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LoginClassBindingSource, "email", True))
+        Me.emailTextEdit.EditValue = "admin@admin.com"
+        Me.emailTextEdit.Location = New System.Drawing.Point(250, 73)
+        Me.emailTextEdit.Name = "emailTextEdit"
+        Me.emailTextEdit.Size = New System.Drawing.Size(255, 20)
+        Me.emailTextEdit.StyleController = Me.DataLayoutControl1
+        Me.emailTextEdit.TabIndex = 4
+        '
+        'passwordTextEdit
+        '
+        Me.passwordTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LoginClassBindingSource, "password", True))
+        Me.passwordTextEdit.EditValue = "asdasdasd"
+        Me.passwordTextEdit.Location = New System.Drawing.Point(250, 97)
+        Me.passwordTextEdit.Name = "passwordTextEdit"
+        Me.passwordTextEdit.Properties.UseSystemPasswordChar = True
+        Me.passwordTextEdit.Size = New System.Drawing.Size(255, 20)
+        Me.passwordTextEdit.StyleController = Me.DataLayoutControl1
+        Me.passwordTextEdit.TabIndex = 5
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -103,16 +142,6 @@ Partial Class LoginForm
         Me.LayoutControlGroup1.Name = "autoGeneratedGroup0"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(720, 292)
         '
-        'emailTextEdit
-        '
-        Me.emailTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LoginClassBindingSource, "email", True))
-        Me.emailTextEdit.EditValue = "admin@admin.com"
-        Me.emailTextEdit.Location = New System.Drawing.Point(250, 73)
-        Me.emailTextEdit.Name = "emailTextEdit"
-        Me.emailTextEdit.Size = New System.Drawing.Size(255, 20)
-        Me.emailTextEdit.StyleController = Me.DataLayoutControl1
-        Me.emailTextEdit.TabIndex = 4
-        '
         'ItemForemail
         '
         Me.ItemForemail.Control = Me.emailTextEdit
@@ -122,17 +151,6 @@ Partial Class LoginForm
         Me.ItemForemail.Text = "email"
         Me.ItemForemail.TextSize = New System.Drawing.Size(46, 13)
         '
-        'passwordTextEdit
-        '
-        Me.passwordTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LoginClassBindingSource, "password", True))
-        Me.passwordTextEdit.EditValue = "asdasdasd"
-        Me.passwordTextEdit.Location = New System.Drawing.Point(250, 97)
-        Me.passwordTextEdit.Name = "passwordTextEdit"
-        Me.passwordTextEdit.Properties.UseSystemPasswordChar = True
-        Me.passwordTextEdit.Size = New System.Drawing.Size(255, 20)
-        Me.passwordTextEdit.StyleController = Me.DataLayoutControl1
-        Me.passwordTextEdit.TabIndex = 5
-        '
         'ItemForpassword
         '
         Me.ItemForpassword.Control = Me.passwordTextEdit
@@ -141,15 +159,6 @@ Partial Class LoginForm
         Me.ItemForpassword.Size = New System.Drawing.Size(317, 24)
         Me.ItemForpassword.Text = "password"
         Me.ItemForpassword.TextSize = New System.Drawing.Size(46, 13)
-        '
-        'LoginButton
-        '
-        Me.LoginButton.Location = New System.Drawing.Point(372, 151)
-        Me.LoginButton.Name = "LoginButton"
-        Me.LoginButton.Size = New System.Drawing.Size(113, 22)
-        Me.LoginButton.StyleController = Me.DataLayoutControl1
-        Me.LoginButton.TabIndex = 6
-        Me.LoginButton.Text = "Login"
         '
         'LayoutControlItem1
         '
@@ -232,15 +241,6 @@ Partial Class LoginForm
         Me.EmptySpaceItem9.Size = New System.Drawing.Size(105, 26)
         Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
         '
-        'CancelButton
-        '
-        Me.CancelButton.Location = New System.Drawing.Point(523, 151)
-        Me.CancelButton.Name = "CancelButton"
-        Me.CancelButton.Size = New System.Drawing.Size(100, 22)
-        Me.CancelButton.StyleController = Me.DataLayoutControl1
-        Me.CancelButton.TabIndex = 7
-        Me.CancelButton.Text = "Cancel"
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.CancelButton
@@ -272,11 +272,11 @@ Partial Class LoginForm
         Me.Text = "Login"
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DataLayoutControl1.ResumeLayout(False)
+        CType(Me.emailTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.passwordTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.emailTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForemail, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.passwordTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForpassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()

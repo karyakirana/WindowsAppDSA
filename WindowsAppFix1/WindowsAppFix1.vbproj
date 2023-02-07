@@ -107,16 +107,46 @@
     <Compile Include="Form\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Master\FormCustomerList.Designer.vb">
+      <DependentUpon>FormCustomerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormCustomerList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormJabatan.Designer.vb">
+      <DependentUpon>FormJabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormJabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormCustomer.Designer.vb">
+      <DependentUpon>FormCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Master\FormJabatanList.Designer.vb">
       <DependentUpon>FormJabatanList.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Master\FormJabatanList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Master\FormLokasi.Designer.vb">
+      <DependentUpon>FormLokasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormLokasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Master\FormLokasiList.Designer.vb">
       <DependentUpon>FormLokasiList.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Master\FormLokasiList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormPegawai.Designer.vb">
+      <DependentUpon>FormPegawai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormPegawai.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Master\FormPegawaiList.Designer.vb">
@@ -186,11 +216,26 @@
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormCustomerList.resx">
+      <DependentUpon>FormCustomerList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormJabatan.resx">
+      <DependentUpon>FormJabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormCustomer.resx">
+      <DependentUpon>FormCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatanList.resx">
       <DependentUpon>FormJabatanList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormLokasi.resx">
+      <DependentUpon>FormLokasi.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormLokasiList.resx">
       <DependentUpon>FormLokasiList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormPegawai.resx">
+      <DependentUpon>FormPegawai.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormPegawaiList.resx">
       <DependentUpon>FormPegawaiList.vb</DependentUpon>
@@ -215,6 +260,8 @@
     <None Include="My Project\DataSources\LoginClass.datasource" />
     <None Include="My Project\DataSources\Lokasi.datasource" />
     <None Include="My Project\DataSources\Pegawai.datasource" />
+    <None Include="My Project\DataSources\Penjualan.datasource" />
+    <None Include="My Project\DataSources\PenjualanDetail.datasource" />
     <None Include="My Project\DataSources\Users.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

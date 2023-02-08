@@ -16,9 +16,9 @@
 	Public Property updated_at As String
 	Public Property deleted_at As String
 
-	Public Property produk_image As ProdukImage
+	Public Property produk_image As List(Of ProdukImage)
 	Public Property produk_kategori As ProdukKategori
-	Public Property produk_kemasan_beli As ProdukKemasanBeli
+	Public Property produk_kemasan_beli As List(Of ProdukKemasanBeli)
 End Class
 
 Public Class ProdukKategori

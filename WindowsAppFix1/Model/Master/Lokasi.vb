@@ -1,5 +1,6 @@
 ﻿Public Class Lokasi
 	Public Property id As Long
+	Public Property lokasi_id As Long
 	Public Property kode As String
 	Public Property nama As String
 	Public Property keterangan As String

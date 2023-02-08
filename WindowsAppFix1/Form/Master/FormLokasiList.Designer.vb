@@ -146,43 +146,37 @@ Partial Class FormLokasiList
         '
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colkode
         '
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 1
+        Me.colkode.VisibleIndex = 0
         '
         'colnama
         '
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
-        Me.colnama.VisibleIndex = 2
+        Me.colnama.VisibleIndex = 1
         '
         'colketerangan
         '
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 3
+        Me.colketerangan.VisibleIndex = 2
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 4
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 5
         '
         'Root
         '

@@ -6,32 +6,35 @@
         frm.Show()
     End Sub
 
-    Private Async Sub LoadData()
+    Public Async Sub LoadData()
         'dataObject
         Dim listView = Await _repositoryLokasi.GetList()
         GridControl1.DataSource = listView
     End Sub
 
+    Public Async Sub destroy(ByVal id As Long)
+        Dim hasil = Await _repositoryLokasi.delete(id)
+        If hasil Then
+            LoadData()
+        End If
+    End Sub
+
     Private Sub FormLokasiList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
+    End Sub
 
-        GridControl1.DataSource = _repositoryLokasi
-        GridView1.Columns.ColumnByFieldName("nama").VisibleIndex = 0
-        GridView1.Columns.ColumnByFieldName("nama").Caption = "Gudang"
-        GridView1.Columns.ColumnByFieldName("nama").Width = 75
-        GridView1.Columns.ColumnByFieldName("nama").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("nama").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
+        Dim form As New FormLokasi
+        form.edit(id)
+        form.Show()
+    End Sub
 
-        GridView1.Columns.ColumnByFieldName("keterangan").VisibleIndex = 1
-        GridView1.Columns.ColumnByFieldName("keterangan").Caption = "Keterangan"
-        GridView1.Columns.ColumnByFieldName("keterangan").Width = 100
-        GridView1.Columns.ColumnByFieldName("keterangan").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("keterangan").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
-
-        GridView1.Columns.ColumnByFieldName("id").VisibleIndex = -1
-        GridView1.Columns.ColumnByFieldName("kode").VisibleIndex = -1
-        GridView1.Columns.ColumnByFieldName("created_at").VisibleIndex = -1
-        GridView1.Columns.ColumnByFieldName("updated_at").VisibleIndex = -1
-        GridView1.BestFitColumns()
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to proceed?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            ' Code to execute if OK is clicked
+            destroy(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+        End If
     End Sub
 End Class

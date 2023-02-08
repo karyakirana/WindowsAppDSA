@@ -24,28 +24,29 @@ Partial Class FormLokasi
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
+        Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
+        Me.namaTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.LokasiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.keteranganTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.namaTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ItemFornama = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.keteranganTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.ItemForketerangan = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.LokasiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DataLayoutControl1.SuspendLayout()
+        CType(Me.namaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.namaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemFornama, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForketerangan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +54,6 @@ Partial Class FormLokasi
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataLayoutControl1
@@ -73,6 +73,46 @@ Partial Class FormLokasi
         Me.DataLayoutControl1.TabIndex = 0
         Me.DataLayoutControl1.Text = "DataLayoutControl1"
         '
+        'btnBatal
+        '
+        Me.btnBatal.Location = New System.Drawing.Point(713, 70)
+        Me.btnBatal.Name = "btnBatal"
+        Me.btnBatal.Size = New System.Drawing.Size(75, 22)
+        Me.btnBatal.StyleController = Me.DataLayoutControl1
+        Me.btnBatal.TabIndex = 7
+        Me.btnBatal.Text = "Batal"
+        '
+        'btnSimpan
+        '
+        Me.btnSimpan.Location = New System.Drawing.Point(624, 70)
+        Me.btnSimpan.Name = "btnSimpan"
+        Me.btnSimpan.Size = New System.Drawing.Size(75, 22)
+        Me.btnSimpan.StyleController = Me.DataLayoutControl1
+        Me.btnSimpan.TabIndex = 6
+        Me.btnSimpan.Text = "Simpan"
+        '
+        'namaTextEdit
+        '
+        Me.namaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LokasiBindingSource, "nama", True))
+        Me.namaTextEdit.Location = New System.Drawing.Point(71, 12)
+        Me.namaTextEdit.Name = "namaTextEdit"
+        Me.namaTextEdit.Size = New System.Drawing.Size(717, 20)
+        Me.namaTextEdit.StyleController = Me.DataLayoutControl1
+        Me.namaTextEdit.TabIndex = 4
+        '
+        'LokasiBindingSource
+        '
+        Me.LokasiBindingSource.DataSource = GetType(WindowsAppFix1.Lokasi)
+        '
+        'keteranganTextEdit
+        '
+        Me.keteranganTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LokasiBindingSource, "keterangan", True))
+        Me.keteranganTextEdit.Location = New System.Drawing.Point(71, 36)
+        Me.keteranganTextEdit.Name = "keteranganTextEdit"
+        Me.keteranganTextEdit.Size = New System.Drawing.Size(717, 20)
+        Me.keteranganTextEdit.StyleController = Me.DataLayoutControl1
+        Me.keteranganTextEdit.TabIndex = 5
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -91,15 +131,6 @@ Partial Class FormLokasi
         Me.LayoutControlGroup1.Name = "autoGeneratedGroup0"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(780, 430)
         '
-        'namaTextEdit
-        '
-        Me.namaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LokasiBindingSource, "nama", True))
-        Me.namaTextEdit.Location = New System.Drawing.Point(79, 12)
-        Me.namaTextEdit.Name = "namaTextEdit"
-        Me.namaTextEdit.Size = New System.Drawing.Size(709, 20)
-        Me.namaTextEdit.StyleController = Me.DataLayoutControl1
-        Me.namaTextEdit.TabIndex = 4
-        '
         'ItemFornama
         '
         Me.ItemFornama.Control = Me.namaTextEdit
@@ -108,15 +139,6 @@ Partial Class FormLokasi
         Me.ItemFornama.Size = New System.Drawing.Size(780, 24)
         Me.ItemFornama.Text = "nama"
         Me.ItemFornama.TextSize = New System.Drawing.Size(55, 13)
-        '
-        'keteranganTextEdit
-        '
-        Me.keteranganTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LokasiBindingSource, "keterangan", True))
-        Me.keteranganTextEdit.Location = New System.Drawing.Point(79, 36)
-        Me.keteranganTextEdit.Name = "keteranganTextEdit"
-        Me.keteranganTextEdit.Size = New System.Drawing.Size(709, 20)
-        Me.keteranganTextEdit.StyleController = Me.DataLayoutControl1
-        Me.keteranganTextEdit.TabIndex = 5
         '
         'ItemForketerangan
         '
@@ -127,15 +149,6 @@ Partial Class FormLokasi
         Me.ItemForketerangan.Text = "keterangan"
         Me.ItemForketerangan.TextSize = New System.Drawing.Size(55, 13)
         '
-        'btnSimpan
-        '
-        Me.btnSimpan.Location = New System.Drawing.Point(624, 70)
-        Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(75, 22)
-        Me.btnSimpan.StyleController = Me.DataLayoutControl1
-        Me.btnSimpan.TabIndex = 6
-        Me.btnSimpan.Text = "Simpan"
-        '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.btnSimpan
@@ -144,15 +157,6 @@ Partial Class FormLokasi
         Me.LayoutControlItem1.Size = New System.Drawing.Size(79, 26)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
-        '
-        'btnBatal
-        '
-        Me.btnBatal.Location = New System.Drawing.Point(713, 70)
-        Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(75, 22)
-        Me.btnBatal.StyleController = Me.DataLayoutControl1
-        Me.btnBatal.TabIndex = 7
-        Me.btnBatal.Text = "Batal"
         '
         'LayoutControlItem2
         '
@@ -195,10 +199,6 @@ Partial Class FormLokasi
         Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 26)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
-        'LokasiBindingSource
-        '
-        Me.LokasiBindingSource.DataSource = GetType(WindowsAppFix1.Lokasi)
-        '
         'FormLokasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,11 +209,12 @@ Partial Class FormLokasi
         Me.Text = "FormLokasi"
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DataLayoutControl1.ResumeLayout(False)
+        CType(Me.namaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.namaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemFornama, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForketerangan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -221,7 +222,6 @@ Partial Class FormLokasi
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

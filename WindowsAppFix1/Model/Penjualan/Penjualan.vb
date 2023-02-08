@@ -24,6 +24,7 @@
 
 	Public Property customer As Customer
 	Public Property sales As Pegawai
+	Public Property users As Users
 	Public Property penjualan_detail As List(Of PenjualanDetail)
 
 End Class

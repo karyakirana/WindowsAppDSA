@@ -23,6 +23,7 @@ End Class
 
 Public Class Jabatan
 	Public Property id As Long
+	Public Property jabatan_id As Long
 	Public Property kode As String
 	Public Property nama As String
 	Public Property keterangan As String

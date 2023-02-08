@@ -31,14 +31,17 @@ Public Class LoginRepository
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
             'set token
             Token = _jObject("token")
+            _client.Dispose()
             Return True
         End If
 
         If Not _response.IsSuccessStatusCode Then
             ResponseException(_response.StatusCode, Await _response.Content.ReadAsStringAsync)
             Return False
+            _client.Dispose()
         End If
 
+        _client.Dispose()
         Return False
     End Function
 

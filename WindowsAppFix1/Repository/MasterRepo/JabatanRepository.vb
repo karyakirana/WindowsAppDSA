@@ -44,8 +44,6 @@ Public Class JabatanRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
             Return True
         End If
 
@@ -58,14 +56,14 @@ Public Class JabatanRepository
 
     End Function
 
-    Public Async Function Edit(ByVal id As Long) As Task(Of Pegawai)
+    Public Async Function Edit(ByVal id As Long) As Task(Of Jabatan)
 
-        _response = Await _client.GetAsync("master/pegawai/" & id)
+        _response = Await _client.GetAsync("master/jabatan/" & id)
 
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            Return _jObject("data").ToObject(Of Pegawai)
+            Return _jObject("data").ToObject(Of Jabatan)
         End If
 
         If Not _response.IsSuccessStatusCode Then
@@ -86,8 +84,6 @@ Public Class JabatanRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
             Return True
         End If
 

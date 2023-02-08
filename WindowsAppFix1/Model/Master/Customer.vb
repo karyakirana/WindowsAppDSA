@@ -1,5 +1,6 @@
 ﻿Public Class Customer
 	Public Property id As Long
+	Public Property customer_id As Long?
 	Public Property kode As String
 	Public Property jenis_instansi As String
 	Public Property nama As String

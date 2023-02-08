@@ -49,6 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -60,6 +61,7 @@
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -155,10 +157,124 @@
     <Compile Include="Form\Master\FormPegawaiList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Master\FormProdukList.Designer.vb">
+      <DependentUpon>FormProdukList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormProdukList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\FormSupplierList.Designer.vb">
+      <DependentUpon>FormSupplierList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\FormSupplierList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Master\FormUsersList.Designer.vb">
       <DependentUpon>FormUsersList.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Master\FormUsersList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddCustomer.designer.vb">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddJabatan.designer.vb">
+      <DependentUpon>frmAddJabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddJabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddLokasi.designer.vb">
+      <DependentUpon>frmAddLokasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddLokasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddPegawai.designer.vb">
+      <DependentUpon>frmAddPegawai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddPegawai.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddProduk.designer.vb">
+      <DependentUpon>frmAddProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmAddSupplier.designer.vb">
+      <DependentUpon>frmAddSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmAddSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Pembelian\FormPembelianList.Designer.vb">
+      <DependentUpon>FormPembelianList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pembelian\FormPembelianList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Pembelian\FormPOPembelianList.Designer.vb">
+      <DependentUpon>FormPOPembelianList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pembelian\FormPOPembelianList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Pembelian\frmAddPembelian.designer.vb">
+      <DependentUpon>frmAddPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pembelian\frmAddPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Pembelian\frmAddPOPembelian.designer.vb">
+      <DependentUpon>frmAddPOPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pembelian\frmAddPOPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Penjualan\FormPenjualanList.Designer.vb">
+      <DependentUpon>FormPenjualanList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Penjualan\FormPenjualanList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Penjualan\FormPOPenjualanList.Designer.vb">
+      <DependentUpon>FormPOPenjualanList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Penjualan\FormPOPenjualanList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Penjualan\frmAddPenjualan.designer.vb">
+      <DependentUpon>frmAddPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Penjualan\frmAddPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Penjualan\frmAddPoPenjualan.designer.vb">
+      <DependentUpon>frmAddPoPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Penjualan\frmAddPoPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Persediaan\FormPersediaanAwalList.Designer.vb">
+      <DependentUpon>FormPersediaanAwalList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Persediaan\FormPersediaanAwalList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Persediaan\FormPersediaanList.Designer.vb">
+      <DependentUpon>FormPersediaanList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Persediaan\FormPersediaanList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Persediaan\frmAddPersediaanAwal.designer.vb">
+      <DependentUpon>frmAddPersediaanAwal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Persediaan\frmAddPersediaanAwal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\LoginClass.vb" />
@@ -193,9 +309,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Repository\ConnectionApiHelper.vb" />
     <Compile Include="Repository\LoginRepository.vb" />
     <Compile Include="Repository\MasterRepo\CustomerRepository.vb" />
     <Compile Include="Repository\MasterRepo\JabatanRepository.vb" />
+    <Compile Include="Repository\MasterRepo\KotaRepository.vb" />
     <Compile Include="Repository\MasterRepo\LokasiRepository.vb" />
     <Compile Include="Repository\MasterRepo\PegawaiRepository.vb" />
     <Compile Include="Repository\MasterRepo\ProdukRepository.vb" />
@@ -240,15 +358,69 @@
     <EmbeddedResource Include="Form\Master\FormPegawaiList.resx">
       <DependentUpon>FormPegawaiList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormProdukList.resx">
+      <DependentUpon>FormProdukList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\FormSupplierList.resx">
+      <DependentUpon>FormSupplierList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormUsersList.resx">
       <DependentUpon>FormUsersList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddJabatan.resx">
+      <DependentUpon>frmAddJabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddLokasi.resx">
+      <DependentUpon>frmAddLokasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddPegawai.resx">
+      <DependentUpon>frmAddPegawai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddProduk.resx">
+      <DependentUpon>frmAddProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Pembelian\FormPembelianList.resx">
+      <DependentUpon>FormPembelianList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Pembelian\FormPOPembelianList.resx">
+      <DependentUpon>FormPOPembelianList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Pembelian\frmAddPembelian.resx">
+      <DependentUpon>frmAddPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Penjualan\FormPenjualanList.resx">
+      <DependentUpon>FormPenjualanList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Penjualan\FormPOPenjualanList.resx">
+      <DependentUpon>FormPOPenjualanList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Penjualan\frmAddPenjualan.resx">
+      <DependentUpon>frmAddPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Penjualan\frmAddPoPenjualan.resx">
+      <DependentUpon>frmAddPoPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Persediaan\FormPersediaanAwalList.resx">
+      <DependentUpon>FormPersediaanAwalList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Persediaan\FormPersediaanList.resx">
+      <DependentUpon>FormPersediaanList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Persediaan\frmAddPersediaanAwal.resx">
+      <DependentUpon>frmAddPersediaanAwal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -256,12 +428,17 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Customer.datasource" />
     <None Include="My Project\DataSources\Jabatan.datasource" />
+    <None Include="My Project\DataSources\Kota.datasource" />
     <None Include="My Project\DataSources\LoginClass.datasource" />
     <None Include="My Project\DataSources\Lokasi.datasource" />
     <None Include="My Project\DataSources\Pegawai.datasource" />
+    <None Include="My Project\DataSources\Pembelian.datasource" />
     <None Include="My Project\DataSources\Penjualan.datasource" />
     <None Include="My Project\DataSources\PenjualanDetail.datasource" />
+    <None Include="My Project\DataSources\Persediaan.datasource" />
+    <None Include="My Project\DataSources\PersediaanAwal.datasource" />
     <None Include="My Project\DataSources\Users.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -271,6 +448,23 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-employer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-map-marker-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-package-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supplier-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-login-icon-29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -10,7 +10,7 @@ Public Class CustomerRepository
     End Sub
 
     Public Async Function GetList() As Task(Of List(Of Customer))
-        _response = Await _client.GetAsync("master/jabatan")
+        _response = Await _client.GetAsync("master/customer")
 
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
@@ -36,8 +36,6 @@ Public Class CustomerRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
             Return True
         End If
 
@@ -78,8 +76,6 @@ Public Class CustomerRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
             Return True
         End If
 

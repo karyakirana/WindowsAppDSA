@@ -61,7 +61,7 @@ Partial Class FormJabatanList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1023, 150)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1023, 142)
         '
         'BarButtonItem1
         '
@@ -108,16 +108,16 @@ Partial Class FormJabatanList
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Aksi"
         '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 150)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1023, 467)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1023, 475)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -128,7 +128,7 @@ Partial Class FormJabatanList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(999, 443)
+        Me.GridControl1.Size = New System.Drawing.Size(999, 451)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -146,43 +146,39 @@ Partial Class FormJabatanList
         '
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colkode
         '
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
-        Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 1
         '
         'colnama
         '
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
-        Me.colnama.VisibleIndex = 2
+        Me.colnama.VisibleIndex = 0
         '
         'colketerangan
         '
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 3
+        Me.colketerangan.VisibleIndex = 1
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
         Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 4
+        Me.colcreated_at.VisibleIndex = 2
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
         Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 5
+        Me.colupdated_at.VisibleIndex = 3
         '
         'Root
         '
@@ -190,7 +186,7 @@ Partial Class FormJabatanList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1023, 467)
+        Me.Root.Size = New System.Drawing.Size(1023, 475)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -198,7 +194,7 @@ Partial Class FormJabatanList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1003, 447)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1003, 455)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

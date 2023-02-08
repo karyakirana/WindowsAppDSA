@@ -85,7 +85,7 @@ Partial Class frmAddJabatan
         '
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(445, 127)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(445, 130)
         Me.XtraTabPage2.Text = "Form Add Jabatan"
         '
         'LayoutControl2
@@ -98,41 +98,41 @@ Partial Class frmAddJabatan
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
         Me.LayoutControl2.Root = Me.LayoutControlGroup1
-        Me.LayoutControl2.Size = New System.Drawing.Size(445, 127)
+        Me.LayoutControl2.Size = New System.Drawing.Size(445, 130)
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(338, 64)
+        Me.btnBatal.Location = New System.Drawing.Point(338, 60)
         Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(95, 23)
+        Me.btnBatal.Size = New System.Drawing.Size(95, 22)
         Me.btnBatal.StyleController = Me.LayoutControl2
         Me.btnBatal.TabIndex = 7
         Me.btnBatal.Text = "Batal"
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(229, 64)
+        Me.btnSimpan.Location = New System.Drawing.Point(229, 60)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(95, 23)
+        Me.btnSimpan.Size = New System.Drawing.Size(95, 22)
         Me.btnSimpan.StyleController = Me.LayoutControl2
         Me.btnSimpan.TabIndex = 6
         Me.btnSimpan.Text = "Simpan"
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(81, 38)
+        Me.txtKeterangan.Location = New System.Drawing.Point(72, 36)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(352, 22)
+        Me.txtKeterangan.Size = New System.Drawing.Size(361, 20)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
         Me.txtKeterangan.TabIndex = 5
         '
         'txtNama
         '
-        Me.txtNama.Location = New System.Drawing.Point(81, 12)
+        Me.txtNama.Location = New System.Drawing.Point(72, 12)
         Me.txtNama.Name = "txtNama"
-        Me.txtNama.Size = New System.Drawing.Size(352, 22)
+        Me.txtNama.Size = New System.Drawing.Size(361, 20)
         Me.txtNama.StyleController = Me.LayoutControl2
         Me.txtNama.TabIndex = 4
         '
@@ -142,7 +142,7 @@ Partial Class frmAddJabatan
         Me.LayoutControlGroup1.GroupBordersVisible = False
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.EmptySpaceItem2, Me.EmptySpaceItem3})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(445, 127)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(445, 130)
         Me.LayoutControlGroup1.TextVisible = False
         '
         'LayoutControlItem2
@@ -150,59 +150,59 @@ Partial Class frmAddJabatan
         Me.LayoutControlItem2.Control = Me.txtNama
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(425, 26)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(425, 24)
         Me.LayoutControlItem2.Text = "Jabatan"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(65, 16)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(56, 13)
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 79)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 74)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(425, 28)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(425, 36)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.txtKeterangan
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 26)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(425, 26)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(425, 24)
         Me.LayoutControlItem3.Text = "Keterangan"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(65, 16)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(56, 13)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.btnSimpan
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(217, 52)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(217, 48)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(99, 27)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(99, 26)
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextVisible = False
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.btnBatal
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(326, 52)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(326, 48)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(99, 27)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(99, 26)
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 52)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 48)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(217, 27)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(217, 26)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(316, 52)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(316, 48)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(10, 27)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(10, 26)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'Root

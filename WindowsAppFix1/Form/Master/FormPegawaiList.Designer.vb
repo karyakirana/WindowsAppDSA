@@ -72,7 +72,7 @@ Partial Class FormPegawaiList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1421, 150)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1421, 142)
         '
         'BarButtonItem1
         '
@@ -119,16 +119,16 @@ Partial Class FormPegawaiList
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Aksi"
         '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 150)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1421, 396)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1421, 404)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -139,7 +139,7 @@ Partial Class FormPegawaiList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1397, 372)
+        Me.GridControl1.Size = New System.Drawing.Size(1397, 380)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -177,6 +177,12 @@ Partial Class FormPegawaiList
         '
         'colnama
         '
+        Me.colnama.AppearanceCell.Options.UseTextOptions = True
+        Me.colnama.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colnama.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.colnama.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colnama.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
         Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
@@ -278,7 +284,7 @@ Partial Class FormPegawaiList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1421, 396)
+        Me.Root.Size = New System.Drawing.Size(1421, 404)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -286,7 +292,7 @@ Partial Class FormPegawaiList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1401, 376)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1401, 384)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

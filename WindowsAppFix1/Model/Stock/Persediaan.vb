@@ -5,6 +5,7 @@
 	Public Property lokasi_id As Long
 	Public Property kondisi As String
 	Public Property batch As String
+	Public Property serial_number As String
 	Public Property expired As String
 	Public Property harga_beli As Integer
 	Public Property stock_awal As Integer?

@@ -18,7 +18,7 @@ Module MainModule
 
     Public Sub TokenCheck()
         If Token Is Nothing Then
-            MainForm.Show()
+            LoginForm.Show()
         End If
     End Sub
 
@@ -35,7 +35,7 @@ Module MainModule
     Public Sub easyAccess(parent As MainForm, ctcode As String)
 
         Select Case ctcode
-
+            'MASTER
             Case "P001"
                 addDocumentManager()
                 Dim form As New FormJabatanList
@@ -59,6 +59,127 @@ Module MainModule
                     .Text = "Form Master Data Pegawai"
                     .Show()
                 End With
+
+            Case "P003"
+                addDocumentManager()
+                Dim form As New FormLokasiList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Master Data Lokasi"
+                    .Show()
+                End With
+
+            Case "P004"
+                addDocumentManager()
+                Dim form As New FormProdukList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Master Data Produk"
+                    .Show()
+                End With
+
+            Case "P005"
+                addDocumentManager()
+                Dim form As New FormCustomerList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Master Data Customer"
+                    .Show()
+                End With
+
+            Case "P006"
+                addDocumentManager()
+                Dim form As New FormSupplierList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Master Data Supplier"
+                    .Show()
+                End With
+
+                'PERSEDIAAN
+            Case "P007"
+                addDocumentManager()
+                Dim form As New FormPersediaanList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Data Persediaan"
+                    .Show()
+                End With
+            Case "P008"
+                addDocumentManager()
+                Dim form As New FormPersediaanAwalList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Data Persediaan Awal"
+                    .Show()
+                End With
+
+                'PENJUALAN
+            Case "P009"
+                addDocumentManager()
+                Dim form As New FormPOPenjualanList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form PO Penjualan"
+                    .Show()
+                End With
+            Case "P010"
+                addDocumentManager()
+                Dim form As New FormPenjualanList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Penjualan"
+                    .Show()
+                End With
+
+                'PEMBELIAN
+            Case "P011"
+                addDocumentManager()
+                Dim form As New FormPOPembelianList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form PO Pembelian"
+                    .Show()
+                End With
+            Case "P012"
+                addDocumentManager()
+                Dim form As New FormPembelianList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Pembelian"
+                    .Show()
+                End With
+
 
         End Select
 

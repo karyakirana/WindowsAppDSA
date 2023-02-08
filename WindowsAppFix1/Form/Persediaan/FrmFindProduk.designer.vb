@@ -25,10 +25,8 @@ Partial Class FrmFindProduk
         Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.ProdukBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_kategori_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,13 +46,15 @@ Partial Class FrmFindProduk
         Me.colproduk_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_image = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_kemasan_beli = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -78,34 +78,16 @@ Partial Class FrmFindProduk
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'ProdukBindingSource
+        '
+        Me.ProdukBindingSource.DataSource = GetType(WindowsAppFix1.Produk)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colproduk_kategori_id, Me.colkode, Me.colstatus, Me.colnama, Me.coltipe, Me.colmerk, Me.colsatuan_jual, Me.colharga, Me.colmax_diskon, Me.colbuffer_stock, Me.colminimum_stock, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colproduk_kategori, Me.colproduk_image, Me.colproduk_kemasan_beli})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 450)
-        Me.Root.TextVisible = False
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'ProdukBindingSource
-        '
-        Me.ProdukBindingSource.DataSource = GetType(WindowsAppFix1.Produk)
         '
         'colid
         '
@@ -223,6 +205,24 @@ Partial Class FrmFindProduk
         Me.colproduk_kemasan_beli.FieldName = "produk_kemasan_beli"
         Me.colproduk_kemasan_beli.Name = "colproduk_kemasan_beli"
         '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(800, 450)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
         'FrmFindProduk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -231,14 +231,14 @@ Partial Class FrmFindProduk
         Me.Controls.Add(Me.LayoutControl1)
         Me.Name = "FrmFindProduk"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmFindProduk"
+        Me.Text = "Form Produk"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

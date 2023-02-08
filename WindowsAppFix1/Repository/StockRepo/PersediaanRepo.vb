@@ -34,4 +34,21 @@ Public Class PersediaanRepo
         Return Nothing
 
     End Function
+
+    Public Async Function edit(id As Long) As Task(Of Persediaan)
+        _response = Await _client.GetAsync("persediaan/" & id)
+
+        If _response.IsSuccessStatusCode Then
+            Dim jsonString As String = Await _response.Content.ReadAsStringAsync
+            _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
+            Return _jObject("data").ToObject(Of Persediaan)
+        End If
+
+        If Not _response.IsSuccessStatusCode Then
+            ResponseException(_response.StatusCode, Await _response.Content.ReadAsStringAsync)
+            Return Nothing
+        End If
+
+        Return Nothing
+    End Function
 End Class

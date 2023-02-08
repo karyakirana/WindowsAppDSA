@@ -133,7 +133,7 @@ Partial Class frmAddCustomer
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1273, 347)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1287, 375)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -142,7 +142,7 @@ Partial Class frmAddCustomer
         Me.XtraTabControl1.Location = New System.Drawing.Point(12, 12)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(1249, 323)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(1263, 351)
         Me.XtraTabControl1.TabIndex = 17
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1})
         '
@@ -150,7 +150,7 @@ Partial Class frmAddCustomer
         '
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl3)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(1244, 297)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(1258, 320)
         Me.XtraTabPage1.Text = "Form Tambah Data Customer"
         '
         'LayoutControl3
@@ -171,68 +171,67 @@ Partial Class frmAddCustomer
         Me.LayoutControl3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(1244, 297)
+        Me.LayoutControl3.Size = New System.Drawing.Size(1258, 320)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
         '
         'txtNama
         '
-        Me.txtNama.Location = New System.Drawing.Point(81, 12)
+        Me.txtNama.Location = New System.Drawing.Point(103, 12)
         Me.txtNama.Name = "txtNama"
-        Me.txtNama.Size = New System.Drawing.Size(538, 20)
+        Me.txtNama.Size = New System.Drawing.Size(523, 24)
         Me.txtNama.StyleController = Me.LayoutControl3
         Me.txtNama.TabIndex = 4
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(1087, 263)
+        Me.btnBatal.Location = New System.Drawing.Point(1099, 283)
         Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(104, 22)
+        Me.btnBatal.Size = New System.Drawing.Size(106, 25)
         Me.btnBatal.StyleController = Me.LayoutControl3
         Me.btnBatal.TabIndex = 15
         Me.btnBatal.Text = "Batal"
         '
         'cbJenisInstansi
         '
-        Me.cbJenisInstansi.Location = New System.Drawing.Point(782, 12)
+        Me.cbJenisInstansi.Location = New System.Drawing.Point(812, 12)
         Me.cbJenisInstansi.Name = "cbJenisInstansi"
         Me.cbJenisInstansi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbJenisInstansi.Properties.Items.AddRange(New Object() {"Pemerintah", "Non Pemerintah"})
-        Me.cbJenisInstansi.Size = New System.Drawing.Size(409, 20)
+        Me.cbJenisInstansi.Size = New System.Drawing.Size(393, 24)
         Me.cbJenisInstansi.StyleController = Me.LayoutControl3
         Me.cbJenisInstansi.TabIndex = 6
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(967, 263)
+        Me.btnSimpan.Location = New System.Drawing.Point(978, 283)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(106, 22)
+        Me.btnSimpan.Size = New System.Drawing.Size(107, 25)
         Me.btnSimpan.StyleController = Me.LayoutControl3
         Me.btnSimpan.TabIndex = 14
         Me.btnSimpan.Text = "Simpan"
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(81, 204)
+        Me.txtKeterangan.Location = New System.Drawing.Point(103, 236)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(1110, 20)
+        Me.txtKeterangan.Size = New System.Drawing.Size(1102, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl3
         Me.txtKeterangan.TabIndex = 16
         '
         'txtSales
         '
-        Me.txtSales.Location = New System.Drawing.Point(81, 36)
+        Me.txtSales.Location = New System.Drawing.Point(103, 40)
         Me.txtSales.Name = "txtSales"
         Me.txtSales.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtSales.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 35, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.txtSales.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "Nama", 35, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.txtSales.Properties.DataSource = Me.PegawaiBindingSource
         Me.txtSales.Properties.DisplayMember = "nama"
         Me.txtSales.Properties.NullText = ""
         Me.txtSales.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
         Me.txtSales.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
-        Me.txtSales.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
         Me.txtSales.Properties.ValueMember = "id"
-        Me.txtSales.Size = New System.Drawing.Size(369, 20)
+        Me.txtSales.Size = New System.Drawing.Size(352, 24)
         Me.txtSales.StyleController = Me.LayoutControl3
         Me.txtSales.TabIndex = 5
         '
@@ -242,47 +241,47 @@ Partial Class frmAddCustomer
         '
         'txtAlamat
         '
-        Me.txtAlamat.Location = New System.Drawing.Point(81, 60)
+        Me.txtAlamat.Location = New System.Drawing.Point(103, 68)
         Me.txtAlamat.Name = "txtAlamat"
-        Me.txtAlamat.Size = New System.Drawing.Size(1110, 20)
+        Me.txtAlamat.Size = New System.Drawing.Size(1102, 24)
         Me.txtAlamat.StyleController = Me.LayoutControl3
         Me.txtAlamat.TabIndex = 7
         '
         'txtDiskon
         '
-        Me.txtDiskon.Location = New System.Drawing.Point(81, 180)
+        Me.txtDiskon.Location = New System.Drawing.Point(103, 208)
         Me.txtDiskon.Name = "txtDiskon"
-        Me.txtDiskon.Size = New System.Drawing.Size(179, 20)
+        Me.txtDiskon.Size = New System.Drawing.Size(159, 24)
         Me.txtDiskon.StyleController = Me.LayoutControl3
         Me.txtDiskon.TabIndex = 12
         '
         'txtNPWP
         '
-        Me.txtNPWP.Location = New System.Drawing.Point(81, 156)
+        Me.txtNPWP.Location = New System.Drawing.Point(103, 180)
         Me.txtNPWP.Name = "txtNPWP"
-        Me.txtNPWP.Size = New System.Drawing.Size(369, 20)
+        Me.txtNPWP.Size = New System.Drawing.Size(352, 24)
         Me.txtNPWP.StyleController = Me.LayoutControl3
         Me.txtNPWP.TabIndex = 11
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(81, 108)
+        Me.txtEmail.Location = New System.Drawing.Point(103, 124)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(369, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(352, 24)
         Me.txtEmail.StyleController = Me.LayoutControl3
         Me.txtEmail.TabIndex = 9
         '
         'txtTelepon
         '
-        Me.txtTelepon.Location = New System.Drawing.Point(81, 132)
+        Me.txtTelepon.Location = New System.Drawing.Point(103, 152)
         Me.txtTelepon.Name = "txtTelepon"
-        Me.txtTelepon.Size = New System.Drawing.Size(369, 20)
+        Me.txtTelepon.Size = New System.Drawing.Size(352, 24)
         Me.txtTelepon.StyleController = Me.LayoutControl3
         Me.txtTelepon.TabIndex = 10
         '
         'txtKota
         '
-        Me.txtKota.Location = New System.Drawing.Point(81, 84)
+        Me.txtKota.Location = New System.Drawing.Point(103, 96)
         Me.txtKota.Name = "txtKota"
         Me.txtKota.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtKota.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 35, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
@@ -292,7 +291,7 @@ Partial Class frmAddCustomer
         Me.txtKota.Properties.PopupSizeable = False
         Me.txtKota.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
         Me.txtKota.Properties.ValueMember = "id"
-        Me.txtKota.Size = New System.Drawing.Size(369, 20)
+        Me.txtKota.Size = New System.Drawing.Size(352, 24)
         Me.txtKota.StyleController = Me.LayoutControl3
         Me.txtKota.TabIndex = 8
         '
@@ -306,7 +305,7 @@ Partial Class frmAddCustomer
         Me.LayoutControlGroup2.GroupBordersVisible = False
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.EmptySpaceItem10, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14})
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1244, 297)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1258, 320)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem1
@@ -314,135 +313,135 @@ Partial Class frmAddCustomer
         Me.LayoutControlItem1.Control = Me.txtNama
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(611, 24)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(618, 28)
         Me.LayoutControlItem1.Text = "Nama"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.cbJenisInstansi
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(701, 0)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(709, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(482, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(488, 28)
         Me.LayoutControlItem3.Text = "Jenis Instansi"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.txtSales
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(442, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(447, 28)
         Me.LayoutControlItem2.Text = "Sales"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.txtAlamat
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 56)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(1183, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(1197, 28)
         Me.LayoutControlItem4.Text = "Alamat"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.txtKota
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(442, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(447, 28)
         Me.LayoutControlItem5.Text = "Kota"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.txtEmail
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 112)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(442, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(447, 28)
         Me.LayoutControlItem6.Text = "Email"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.txtTelepon
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 140)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(442, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(447, 28)
         Me.LayoutControlItem7.Text = "No. Telepon"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.txtNPWP
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 144)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 168)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(442, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(447, 28)
         Me.LayoutControlItem8.Text = "NPWP"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.txtDiskon
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 168)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 196)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(252, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(254, 28)
         Me.LayoutControlItem9.Text = "Diskon"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.txtKeterangan
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 192)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 224)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(1183, 24)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(1197, 28)
         Me.LayoutControlItem10.Text = "Keterangan"
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(65, 13)
+        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(87, 18)
         '
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.btnSimpan
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(955, 251)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(966, 271)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(110, 26)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(111, 29)
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextVisible = False
         '
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.btnBatal
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(1075, 251)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(1087, 271)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(108, 26)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(110, 29)
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextVisible = False
         '
         'EmptySpaceItem10
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 216)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 252)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Size = New System.Drawing.Size(1224, 35)
+        Me.EmptySpaceItem10.Size = New System.Drawing.Size(1238, 19)
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 251)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 271)
         Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(104, 24)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(955, 26)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(966, 29)
         Me.EmptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(1065, 251)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(1077, 271)
         Me.EmptySpaceItem2.MaxSize = New System.Drawing.Size(10, 26)
         Me.EmptySpaceItem2.MinSize = New System.Drawing.Size(10, 26)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(10, 26)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(10, 29)
         Me.EmptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -451,11 +450,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem3.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(611, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(618, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(90, 24)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(91, 28)
         Me.EmptySpaceItem3.Text = "*"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem3.TextVisible = True
         '
         'EmptySpaceItem4
@@ -463,11 +462,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem4.AllowHotTrack = False
         Me.EmptySpaceItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem4.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(442, 24)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(447, 28)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(782, 24)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(791, 28)
         Me.EmptySpaceItem4.Text = "*"
-        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem4.TextVisible = True
         '
         'EmptySpaceItem5
@@ -475,19 +474,19 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem5.AllowHotTrack = False
         Me.EmptySpaceItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem5.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(442, 72)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(447, 84)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(782, 24)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(791, 28)
         Me.EmptySpaceItem5.Text = "*"
-        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem5.TextVisible = True
         '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(442, 96)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(447, 112)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(782, 24)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(791, 28)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem7
@@ -495,11 +494,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem7.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(442, 120)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(447, 140)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(782, 24)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(791, 28)
         Me.EmptySpaceItem7.Text = "*"
-        Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem7.TextVisible = True
         '
         'EmptySpaceItem8
@@ -507,11 +506,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem8.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(442, 144)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(447, 168)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(782, 24)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(791, 28)
         Me.EmptySpaceItem8.Text = "*"
-        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem8.TextVisible = True
         '
         'EmptySpaceItem9
@@ -519,11 +518,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem9.AllowHotTrack = False
         Me.EmptySpaceItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.Blue
         Me.EmptySpaceItem9.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(252, 168)
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(254, 196)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
-        Me.EmptySpaceItem9.Size = New System.Drawing.Size(972, 24)
+        Me.EmptySpaceItem9.Size = New System.Drawing.Size(984, 28)
         Me.EmptySpaceItem9.Text = "%"
-        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem9.TextVisible = True
         '
         'EmptySpaceItem11
@@ -531,11 +530,11 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem11.AllowHotTrack = False
         Me.EmptySpaceItem11.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem11.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(1183, 0)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(1197, 0)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Size = New System.Drawing.Size(41, 24)
+        Me.EmptySpaceItem11.Size = New System.Drawing.Size(41, 28)
         Me.EmptySpaceItem11.Text = "*"
-        Me.EmptySpaceItem11.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem11.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem11.TextVisible = True
         '
         'EmptySpaceItem12
@@ -543,27 +542,27 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem12.AllowHotTrack = False
         Me.EmptySpaceItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red
         Me.EmptySpaceItem12.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1183, 48)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1197, 56)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(41, 24)
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(41, 28)
         Me.EmptySpaceItem12.Text = "*"
-        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(65, 0)
+        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(87, 0)
         Me.EmptySpaceItem12.TextVisible = True
         '
         'EmptySpaceItem13
         '
         Me.EmptySpaceItem13.AllowHotTrack = False
-        Me.EmptySpaceItem13.Location = New System.Drawing.Point(1183, 192)
+        Me.EmptySpaceItem13.Location = New System.Drawing.Point(1197, 224)
         Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Size = New System.Drawing.Size(41, 24)
+        Me.EmptySpaceItem13.Size = New System.Drawing.Size(41, 28)
         Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem14
         '
         Me.EmptySpaceItem14.AllowHotTrack = False
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(1183, 251)
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(1197, 271)
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Size = New System.Drawing.Size(41, 26)
+        Me.EmptySpaceItem14.Size = New System.Drawing.Size(41, 29)
         Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
         '
         'Root
@@ -572,7 +571,7 @@ Partial Class frmAddCustomer
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem14})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1273, 347)
+        Me.Root.Size = New System.Drawing.Size(1287, 375)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem14
@@ -580,7 +579,7 @@ Partial Class frmAddCustomer
         Me.LayoutControlItem14.Control = Me.XtraTabControl1
         Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(1253, 327)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(1267, 355)
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem14.TextVisible = False
         '
@@ -605,7 +604,7 @@ Partial Class frmAddCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1273, 347)
+        Me.ClientSize = New System.Drawing.Size(1287, 375)
         Me.Controls.Add(Me.LayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True

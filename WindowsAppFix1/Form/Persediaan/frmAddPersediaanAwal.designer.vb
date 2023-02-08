@@ -58,10 +58,11 @@ Partial Class frmAddPersediaanAwal
         Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.dtTanggal = New DevExpress.XtraEditors.DateEdit()
-        Me.cbLokasi = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.cbKondisi = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.btnTambah = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.cbLokasi = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LokasiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -108,8 +109,9 @@ Partial Class frmAddPersediaanAwal
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtTanggal.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtTanggal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cbLokasi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbKondisi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbLokasi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,10 +174,10 @@ Partial Class frmAddPersediaanAwal
         Me.LayoutControl2.Controls.Add(Me.btnSimpan)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
         Me.LayoutControl2.Controls.Add(Me.dtTanggal)
-        Me.LayoutControl2.Controls.Add(Me.cbLokasi)
         Me.LayoutControl2.Controls.Add(Me.cbKondisi)
         Me.LayoutControl2.Controls.Add(Me.btnTambah)
         Me.LayoutControl2.Controls.Add(Me.btnHapus)
+        Me.LayoutControl2.Controls.Add(Me.cbLokasi)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
@@ -430,15 +432,6 @@ Partial Class frmAddPersediaanAwal
         Me.dtTanggal.StyleController = Me.LayoutControl2
         Me.dtTanggal.TabIndex = 6
         '
-        'cbLokasi
-        '
-        Me.cbLokasi.Location = New System.Drawing.Point(688, 12)
-        Me.cbLokasi.Name = "cbLokasi"
-        Me.cbLokasi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbLokasi.Size = New System.Drawing.Size(573, 24)
-        Me.cbLokasi.StyleController = Me.LayoutControl2
-        Me.cbLokasi.TabIndex = 5
-        '
         'cbKondisi
         '
         Me.cbKondisi.Location = New System.Drawing.Point(91, 12)
@@ -468,6 +461,27 @@ Partial Class frmAddPersediaanAwal
         Me.btnHapus.StyleController = Me.LayoutControl2
         Me.btnHapus.TabIndex = 16
         Me.btnHapus.Text = "Hapus Produk"
+        '
+        'cbLokasi
+        '
+        Me.cbLokasi.Location = New System.Drawing.Point(688, 12)
+        Me.cbLokasi.Name = "cbLokasi"
+        Me.cbLokasi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbLokasi.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "Lokasi", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.cbLokasi.Properties.DataSource = Me.LokasiBindingSource
+        Me.cbLokasi.Properties.DisplayMember = "nama"
+        Me.cbLokasi.Properties.NullText = ""
+        Me.cbLokasi.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.cbLokasi.Properties.PopupSizeable = False
+        Me.cbLokasi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.cbLokasi.Properties.ValueMember = "id"
+        Me.cbLokasi.Size = New System.Drawing.Size(573, 24)
+        Me.cbLokasi.StyleController = Me.LayoutControl2
+        Me.cbLokasi.TabIndex = 5
+        '
+        'LokasiBindingSource
+        '
+        Me.LokasiBindingSource.DataSource = GetType(WindowsAppFix1.Lokasi)
         '
         'LayoutControlGroup1
         '
@@ -739,8 +753,9 @@ Partial Class frmAddPersediaanAwal
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtTanggal.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtTanggal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cbLokasi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbKondisi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbLokasi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -777,7 +792,6 @@ Partial Class frmAddPersediaanAwal
     Friend WithEvents LayoutControl2 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents txtKeterangan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents dtTanggal As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents cbLokasi As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents cbKondisi As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
@@ -829,4 +843,6 @@ Partial Class frmAddPersediaanAwal
     Friend WithEvents colexpired As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colserial_number As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colpersediaan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents cbLokasi As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LokasiBindingSource As BindingSource
 End Class

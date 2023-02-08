@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.ComponentModel
+Imports System.Net
 Imports DevExpress.Data
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors.Repository
@@ -10,6 +11,15 @@ Imports DevExpress.XtraGrid.Views.Grid
 
 
 Public Class frmAddPersediaanAwal
+
+    Private _lokasiRepository As New LokasiRepository
+    Private _persediaanRepo As New PersediaanRepo
+
+    Private Async Sub LoadData()
+        Dim listLokasi = Await _lokasiRepository.GetList()
+        cbLokasi.Properties.DataSource = listLokasi
+    End Sub
+
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         Me.Close()
     End Sub
@@ -228,26 +238,46 @@ Public Class frmAddPersediaanAwal
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
         Dim frm As New FrmFindProduk
-        frm.Show()
-        'Dim i : i = frm.ShowDialog()
-        'If CType(i, DialogResult) = 2 Then
+        'frm.Show()
+        Dim i : i = frm.ShowDialog()
+        If CType(i, DialogResult) = 2 Then
 
-        'If id_produk <> 0 Then
-        '    Dim dr As DataRow
-        '    dr = dtPerhitunganPersedianAwal.NewRow
-        '    dr("id") = id_produk
-        '    dr("nama") = nama_produk
-        '    dr("harga") = harga_produk
-        '    dr("jumlah") = 0
-        '    dr("exp") = Format(Date.Now, "yyyy-MM-dd")
-        '    dr("batch") = ""
-        '    dr("sub_total") = 0
-        '    dtPerhitunganPersedianAwal.Rows.Add(dr)
+            'If id_produk <> 0 Then
+            '    Dim dr As DataRow
+            '    dr = dtPerhitunganPersedianAwal.NewRow
+            '    dr("id") = id_produk
+            '    dr("nama") = nama_produk
+            '    dr("harga") = harga_produk
+            '    dr("jumlah") = 0
+            '    dr("exp") = Format(Date.Now, "yyyy-MM-dd")
+            '    dr("batch") = ""
+            '    dr("sub_total") = 0
+            '    dtPerhitunganPersedianAwal.Rows.Add(dr)
 
-        '    GridControl1.DataSource = dtPerhitunganPersedianAwal
+            '    GridControl1.DataSource = dtPerhitunganPersedianAwal
+        End If
+
         'End If
+    End Sub
 
-        'End If
+    Public Async Sub setRow(ByVal id As Long)
+        'get data
+        Dim getData As Persediaan = Await _persediaanRepo.edit(id)
+        'set to row
+        If Not getData Is Nothing Then
+            Dim persediaan As Persediaan = getData
+
+            'add a new row
+            GridView1.AddNewRow()
+            'set a new row cell value. The static GridControl.NewItemRowHandle field allows you to retrieve the added row
+            GridView1.SetRowCellValue(GridControl.NewItemRowHandle, GridView1.Columns("colpersediaan_id"), persediaan.id)
+            GridView1.SetRowCellValue(GridControl.NewItemRowHandle, GridView1.Columns("colproduk_id"), persediaan.produk.nama)
+
+        End If
+    End Sub
+
+    Private Sub frmAddPersediaanAwal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadData()
     End Sub
 
     'Private Sub GridView1_FocusedColumnChanged(sender As Object, e As FocusedColumnChangedEventArgs) Handles GridView1.FocusedColumnChanged

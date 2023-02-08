@@ -7,7 +7,14 @@ Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Base
 Imports DevExpress.XtraGrid.Views.Grid
 
+
+
 Public Class frmAddPersediaanAwal
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        Me.Close()
+    End Sub
+
+
 
     'Dim sumJumlah As New GridColumnSummaryItem()
     'Dim sumSubTotal As New GridColumnSummaryItem()
@@ -218,37 +225,30 @@ Public Class frmAddPersediaanAwal
     '    End If
     'End Sub
 
-    'Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
-    '    Dim frm As New FrmFindProduk
-    '    Dim i : i = frm.ShowDialog()
-    '    If CType(i, DialogResult) = 2 Then
+        Dim frm As New FrmFindProduk
+        frm.Show()
+        'Dim i : i = frm.ShowDialog()
+        'If CType(i, DialogResult) = 2 Then
 
-    '        If id_produk <> 0 Then
-    '            Dim dr As DataRow
-    '            dr = dtPerhitunganPersedianAwal.NewRow
-    '            dr("id") = id_produk
-    '            dr("nama") = nama_produk
-    '            dr("harga") = harga_produk
-    '            dr("jumlah") = 0
-    '            dr("exp") = Format(Date.Now, "yyyy-MM-dd")
-    '            dr("batch") = ""
-    '            dr("sub_total") = 0
-    '            dtPerhitunganPersedianAwal.Rows.Add(dr)
+        'If id_produk <> 0 Then
+        '    Dim dr As DataRow
+        '    dr = dtPerhitunganPersedianAwal.NewRow
+        '    dr("id") = id_produk
+        '    dr("nama") = nama_produk
+        '    dr("harga") = harga_produk
+        '    dr("jumlah") = 0
+        '    dr("exp") = Format(Date.Now, "yyyy-MM-dd")
+        '    dr("batch") = ""
+        '    dr("sub_total") = 0
+        '    dtPerhitunganPersedianAwal.Rows.Add(dr)
 
-    '            GridControl1.DataSource = dtPerhitunganPersedianAwal
-    '        End If
+        '    GridControl1.DataSource = dtPerhitunganPersedianAwal
+        'End If
 
-    '    End If
-
-    '    For i = 0 To dtPerhitunganPersedianAwal.Rows.Count - 1
-    '        If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "id") = id_produk Then
-    '            dtPerhitunganPersedianAwal.Rows(i)("batch") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "batch").ToString
-    '            dtPerhitunganPersedianAwal.Rows(i)("jumlah") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "jumlah").ToString
-    '            dtPerhitunganPersedianAwal.Rows(i)("sub_total") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "sub_total").ToString
-    '        End If
-    '    Next
-    'End Sub
+        'End If
+    End Sub
 
     'Private Sub GridView1_FocusedColumnChanged(sender As Object, e As FocusedColumnChangedEventArgs) Handles GridView1.FocusedColumnChanged
     '    If GridView1.FocusedColumn.FieldName = "exp" Then

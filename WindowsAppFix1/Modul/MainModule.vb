@@ -9,9 +9,9 @@ Module MainModule
 
 #Region "Global Variable"
     ' Every process using global variable
-
+    '
     Public Token As String
-    Public BaseURl As String = "http://erpbsa.test/api/"
+    Public BaseURl As String = "http://192.168.18.65/erpbsa/public/api/"
     Public _client As HttpClient
     Public _response As HttpResponseMessage
     Public _jObject As JObject

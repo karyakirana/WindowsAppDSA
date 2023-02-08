@@ -25,6 +25,9 @@ Partial Class FormPegawai
         Me.components = New System.ComponentModel.Container()
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
         Me.cbJabatan = New System.Windows.Forms.ComboBox()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.JabatanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.statusComboBoxEdit = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -38,8 +41,6 @@ Partial Class FormPegawai
         Me.keteranganTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.jabatan_idTextEdit = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.PegawaiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.ItemForstatus = New DevExpress.XtraLayout.LayoutControlItem()
         Me.ItemFornama = New DevExpress.XtraLayout.LayoutControlItem()
         Me.ItemForgender = New DevExpress.XtraLayout.LayoutControlItem()
@@ -51,9 +52,11 @@ Partial Class FormPegawai
         Me.ItemForkota_id = New DevExpress.XtraLayout.LayoutControlItem()
         Me.ItemForketerangan = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DataLayoutControl1.SuspendLayout()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.statusComboBoxEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,8 +70,6 @@ Partial Class FormPegawai
         CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.jabatan_idTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PegawaiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForstatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemFornama, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForgender, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +81,6 @@ Partial Class FormPegawai
         CType(Me.ItemForkota_id, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForketerangan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataLayoutControl1
@@ -113,112 +113,11 @@ Partial Class FormPegawai
         Me.cbJabatan.DataSource = Me.JabatanBindingSource
         Me.cbJabatan.DisplayMember = "nama"
         Me.cbJabatan.FormattingEnabled = True
-        Me.cbJabatan.Location = New System.Drawing.Point(120, 276)
+        Me.cbJabatan.Location = New System.Drawing.Point(145, 320)
         Me.cbJabatan.Name = "cbJabatan"
-        Me.cbJabatan.Size = New System.Drawing.Size(668, 21)
+        Me.cbJabatan.Size = New System.Drawing.Size(643, 21)
         Me.cbJabatan.TabIndex = 15
         Me.cbJabatan.ValueMember = "id"
-        '
-        'JabatanBindingSource
-        '
-        Me.JabatanBindingSource.DataSource = GetType(WindowsAppFix1.Jabatan)
-        '
-        'ComboBoxEdit1
-        '
-        Me.ComboBoxEdit1.Location = New System.Drawing.Point(120, 252)
-        Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
-        Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Size = New System.Drawing.Size(668, 20)
-        Me.ComboBoxEdit1.StyleController = Me.DataLayoutControl1
-        Me.ComboBoxEdit1.TabIndex = 14
-        '
-        'statusComboBoxEdit
-        '
-        Me.statusComboBoxEdit.Location = New System.Drawing.Point(120, 12)
-        Me.statusComboBoxEdit.Name = "statusComboBoxEdit"
-        Me.statusComboBoxEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.statusComboBoxEdit.Size = New System.Drawing.Size(668, 20)
-        Me.statusComboBoxEdit.StyleController = Me.DataLayoutControl1
-        Me.statusComboBoxEdit.TabIndex = 4
-        '
-        'namaTextEdit
-        '
-        Me.namaTextEdit.Location = New System.Drawing.Point(120, 36)
-        Me.namaTextEdit.Name = "namaTextEdit"
-        Me.namaTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.namaTextEdit.StyleController = Me.DataLayoutControl1
-        Me.namaTextEdit.TabIndex = 5
-        '
-        'genderTextEdit
-        '
-        Me.genderTextEdit.Location = New System.Drawing.Point(120, 60)
-        Me.genderTextEdit.Name = "genderTextEdit"
-        Me.genderTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.genderTextEdit.StyleController = Me.DataLayoutControl1
-        Me.genderTextEdit.TabIndex = 6
-        '
-        'teleponTextEdit
-        '
-        Me.teleponTextEdit.Location = New System.Drawing.Point(120, 84)
-        Me.teleponTextEdit.Name = "teleponTextEdit"
-        Me.teleponTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.teleponTextEdit.StyleController = Me.DataLayoutControl1
-        Me.teleponTextEdit.TabIndex = 7
-        '
-        'emailTextEdit
-        '
-        Me.emailTextEdit.Location = New System.Drawing.Point(120, 108)
-        Me.emailTextEdit.Name = "emailTextEdit"
-        Me.emailTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.emailTextEdit.StyleController = Me.DataLayoutControl1
-        Me.emailTextEdit.TabIndex = 8
-        '
-        'npwpTextEdit
-        '
-        Me.npwpTextEdit.Location = New System.Drawing.Point(120, 132)
-        Me.npwpTextEdit.Name = "npwpTextEdit"
-        Me.npwpTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.npwpTextEdit.StyleController = Me.DataLayoutControl1
-        Me.npwpTextEdit.TabIndex = 9
-        '
-        'alamatTextEdit
-        '
-        Me.alamatTextEdit.Location = New System.Drawing.Point(120, 180)
-        Me.alamatTextEdit.Name = "alamatTextEdit"
-        Me.alamatTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.alamatTextEdit.StyleController = Me.DataLayoutControl1
-        Me.alamatTextEdit.TabIndex = 11
-        '
-        'kota_idTextEdit
-        '
-        Me.kota_idTextEdit.Location = New System.Drawing.Point(120, 204)
-        Me.kota_idTextEdit.Name = "kota_idTextEdit"
-        Me.kota_idTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.kota_idTextEdit.StyleController = Me.DataLayoutControl1
-        Me.kota_idTextEdit.TabIndex = 12
-        '
-        'keteranganTextEdit
-        '
-        Me.keteranganTextEdit.Location = New System.Drawing.Point(120, 228)
-        Me.keteranganTextEdit.Name = "keteranganTextEdit"
-        Me.keteranganTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.keteranganTextEdit.StyleController = Me.DataLayoutControl1
-        Me.keteranganTextEdit.TabIndex = 13
-        '
-        'jabatan_idTextEdit
-        '
-        Me.jabatan_idTextEdit.Location = New System.Drawing.Point(120, 156)
-        Me.jabatan_idTextEdit.Name = "jabatan_idTextEdit"
-        Me.jabatan_idTextEdit.Properties.Appearance.Options.UseTextOptions = True
-        Me.jabatan_idTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.jabatan_idTextEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.jabatan_idTextEdit.Size = New System.Drawing.Size(668, 20)
-        Me.jabatan_idTextEdit.StyleController = Me.DataLayoutControl1
-        Me.jabatan_idTextEdit.TabIndex = 10
-        '
-        'PegawaiBindingSource
-        '
-        Me.PegawaiBindingSource.DataSource = GetType(WindowsAppFix1.Pegawai)
         '
         'Root
         '
@@ -238,111 +137,212 @@ Partial Class FormPegawai
         Me.LayoutControlGroup1.Name = "autoGeneratedGroup0"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(780, 430)
         '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.cbJabatan
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 308)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(780, 122)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(129, 18)
+        '
+        'JabatanBindingSource
+        '
+        Me.JabatanBindingSource.DataSource = GetType(WindowsAppFix1.Jabatan)
+        '
+        'ComboBoxEdit1
+        '
+        Me.ComboBoxEdit1.Location = New System.Drawing.Point(145, 292)
+        Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
+        Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.ComboBoxEdit1.Size = New System.Drawing.Size(643, 24)
+        Me.ComboBoxEdit1.StyleController = Me.DataLayoutControl1
+        Me.ComboBoxEdit1.TabIndex = 14
+        '
+        'statusComboBoxEdit
+        '
+        Me.statusComboBoxEdit.Location = New System.Drawing.Point(145, 12)
+        Me.statusComboBoxEdit.Name = "statusComboBoxEdit"
+        Me.statusComboBoxEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.statusComboBoxEdit.Size = New System.Drawing.Size(643, 24)
+        Me.statusComboBoxEdit.StyleController = Me.DataLayoutControl1
+        Me.statusComboBoxEdit.TabIndex = 4
+        '
+        'namaTextEdit
+        '
+        Me.namaTextEdit.Location = New System.Drawing.Point(145, 40)
+        Me.namaTextEdit.Name = "namaTextEdit"
+        Me.namaTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.namaTextEdit.StyleController = Me.DataLayoutControl1
+        Me.namaTextEdit.TabIndex = 5
+        '
+        'genderTextEdit
+        '
+        Me.genderTextEdit.Location = New System.Drawing.Point(145, 68)
+        Me.genderTextEdit.Name = "genderTextEdit"
+        Me.genderTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.genderTextEdit.StyleController = Me.DataLayoutControl1
+        Me.genderTextEdit.TabIndex = 6
+        '
+        'teleponTextEdit
+        '
+        Me.teleponTextEdit.Location = New System.Drawing.Point(145, 96)
+        Me.teleponTextEdit.Name = "teleponTextEdit"
+        Me.teleponTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.teleponTextEdit.StyleController = Me.DataLayoutControl1
+        Me.teleponTextEdit.TabIndex = 7
+        '
+        'emailTextEdit
+        '
+        Me.emailTextEdit.Location = New System.Drawing.Point(145, 124)
+        Me.emailTextEdit.Name = "emailTextEdit"
+        Me.emailTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.emailTextEdit.StyleController = Me.DataLayoutControl1
+        Me.emailTextEdit.TabIndex = 8
+        '
+        'npwpTextEdit
+        '
+        Me.npwpTextEdit.Location = New System.Drawing.Point(145, 152)
+        Me.npwpTextEdit.Name = "npwpTextEdit"
+        Me.npwpTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.npwpTextEdit.StyleController = Me.DataLayoutControl1
+        Me.npwpTextEdit.TabIndex = 9
+        '
+        'alamatTextEdit
+        '
+        Me.alamatTextEdit.Location = New System.Drawing.Point(145, 208)
+        Me.alamatTextEdit.Name = "alamatTextEdit"
+        Me.alamatTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.alamatTextEdit.StyleController = Me.DataLayoutControl1
+        Me.alamatTextEdit.TabIndex = 11
+        '
+        'kota_idTextEdit
+        '
+        Me.kota_idTextEdit.Location = New System.Drawing.Point(145, 236)
+        Me.kota_idTextEdit.Name = "kota_idTextEdit"
+        Me.kota_idTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.kota_idTextEdit.StyleController = Me.DataLayoutControl1
+        Me.kota_idTextEdit.TabIndex = 12
+        '
+        'keteranganTextEdit
+        '
+        Me.keteranganTextEdit.Location = New System.Drawing.Point(145, 264)
+        Me.keteranganTextEdit.Name = "keteranganTextEdit"
+        Me.keteranganTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.keteranganTextEdit.StyleController = Me.DataLayoutControl1
+        Me.keteranganTextEdit.TabIndex = 13
+        '
+        'jabatan_idTextEdit
+        '
+        Me.jabatan_idTextEdit.Location = New System.Drawing.Point(145, 180)
+        Me.jabatan_idTextEdit.Name = "jabatan_idTextEdit"
+        Me.jabatan_idTextEdit.Properties.Appearance.Options.UseTextOptions = True
+        Me.jabatan_idTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.jabatan_idTextEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.jabatan_idTextEdit.Size = New System.Drawing.Size(643, 24)
+        Me.jabatan_idTextEdit.StyleController = Me.DataLayoutControl1
+        Me.jabatan_idTextEdit.TabIndex = 10
+        '
+        'PegawaiBindingSource
+        '
+        Me.PegawaiBindingSource.DataSource = GetType(WindowsAppFix1.Pegawai)
+        '
         'ItemForstatus
         '
         Me.ItemForstatus.Control = Me.statusComboBoxEdit
         Me.ItemForstatus.Location = New System.Drawing.Point(0, 0)
         Me.ItemForstatus.Name = "ItemForstatus"
-        Me.ItemForstatus.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForstatus.Size = New System.Drawing.Size(780, 28)
         Me.ItemForstatus.Text = "status"
-        Me.ItemForstatus.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForstatus.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemFornama
         '
         Me.ItemFornama.Control = Me.namaTextEdit
-        Me.ItemFornama.Location = New System.Drawing.Point(0, 24)
+        Me.ItemFornama.Location = New System.Drawing.Point(0, 28)
         Me.ItemFornama.Name = "ItemFornama"
-        Me.ItemFornama.Size = New System.Drawing.Size(780, 24)
+        Me.ItemFornama.Size = New System.Drawing.Size(780, 28)
         Me.ItemFornama.Text = "nama"
-        Me.ItemFornama.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemFornama.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForgender
         '
         Me.ItemForgender.Control = Me.genderTextEdit
-        Me.ItemForgender.Location = New System.Drawing.Point(0, 48)
+        Me.ItemForgender.Location = New System.Drawing.Point(0, 56)
         Me.ItemForgender.Name = "ItemForgender"
-        Me.ItemForgender.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForgender.Size = New System.Drawing.Size(780, 28)
         Me.ItemForgender.Text = "gender"
-        Me.ItemForgender.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForgender.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemFortelepon
         '
         Me.ItemFortelepon.Control = Me.teleponTextEdit
-        Me.ItemFortelepon.Location = New System.Drawing.Point(0, 72)
+        Me.ItemFortelepon.Location = New System.Drawing.Point(0, 84)
         Me.ItemFortelepon.Name = "ItemFortelepon"
-        Me.ItemFortelepon.Size = New System.Drawing.Size(780, 24)
+        Me.ItemFortelepon.Size = New System.Drawing.Size(780, 28)
         Me.ItemFortelepon.Text = "telepon"
-        Me.ItemFortelepon.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemFortelepon.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForemail
         '
         Me.ItemForemail.Control = Me.emailTextEdit
-        Me.ItemForemail.Location = New System.Drawing.Point(0, 96)
+        Me.ItemForemail.Location = New System.Drawing.Point(0, 112)
         Me.ItemForemail.Name = "ItemForemail"
-        Me.ItemForemail.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForemail.Size = New System.Drawing.Size(780, 28)
         Me.ItemForemail.Text = "email"
-        Me.ItemForemail.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForemail.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemFornpwp
         '
         Me.ItemFornpwp.Control = Me.npwpTextEdit
-        Me.ItemFornpwp.Location = New System.Drawing.Point(0, 120)
+        Me.ItemFornpwp.Location = New System.Drawing.Point(0, 140)
         Me.ItemFornpwp.Name = "ItemFornpwp"
-        Me.ItemFornpwp.Size = New System.Drawing.Size(780, 24)
+        Me.ItemFornpwp.Size = New System.Drawing.Size(780, 28)
         Me.ItemFornpwp.Text = "npwp"
-        Me.ItemFornpwp.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemFornpwp.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForjabatan_id
         '
         Me.ItemForjabatan_id.Control = Me.jabatan_idTextEdit
-        Me.ItemForjabatan_id.Location = New System.Drawing.Point(0, 144)
+        Me.ItemForjabatan_id.Location = New System.Drawing.Point(0, 168)
         Me.ItemForjabatan_id.Name = "ItemForjabatan_id"
-        Me.ItemForjabatan_id.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForjabatan_id.Size = New System.Drawing.Size(780, 28)
         Me.ItemForjabatan_id.Text = "jabatan_id"
-        Me.ItemForjabatan_id.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForjabatan_id.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForalamat
         '
         Me.ItemForalamat.Control = Me.alamatTextEdit
-        Me.ItemForalamat.Location = New System.Drawing.Point(0, 168)
+        Me.ItemForalamat.Location = New System.Drawing.Point(0, 196)
         Me.ItemForalamat.Name = "ItemForalamat"
-        Me.ItemForalamat.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForalamat.Size = New System.Drawing.Size(780, 28)
         Me.ItemForalamat.Text = "alamat"
-        Me.ItemForalamat.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForalamat.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForkota_id
         '
         Me.ItemForkota_id.Control = Me.kota_idTextEdit
-        Me.ItemForkota_id.Location = New System.Drawing.Point(0, 192)
+        Me.ItemForkota_id.Location = New System.Drawing.Point(0, 224)
         Me.ItemForkota_id.Name = "ItemForkota_id"
-        Me.ItemForkota_id.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForkota_id.Size = New System.Drawing.Size(780, 28)
         Me.ItemForkota_id.Text = "kota_id"
-        Me.ItemForkota_id.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForkota_id.TextSize = New System.Drawing.Size(129, 18)
         '
         'ItemForketerangan
         '
         Me.ItemForketerangan.Control = Me.keteranganTextEdit
-        Me.ItemForketerangan.Location = New System.Drawing.Point(0, 216)
+        Me.ItemForketerangan.Location = New System.Drawing.Point(0, 252)
         Me.ItemForketerangan.Name = "ItemForketerangan"
-        Me.ItemForketerangan.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForketerangan.Size = New System.Drawing.Size(780, 28)
         Me.ItemForketerangan.Text = "keterangan"
-        Me.ItemForketerangan.TextSize = New System.Drawing.Size(96, 13)
+        Me.ItemForketerangan.TextSize = New System.Drawing.Size(129, 18)
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.ComboBoxEdit1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 240)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 280)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 24)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(96, 13)
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.cbJabatan
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 264)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(780, 166)
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 28)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(129, 18)
         '
         'FormPegawai
         '
@@ -354,6 +354,9 @@ Partial Class FormPegawai
         Me.Text = "FormPegawai"
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DataLayoutControl1.ResumeLayout(False)
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.statusComboBoxEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -367,8 +370,6 @@ Partial Class FormPegawai
         CType(Me.keteranganTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.jabatan_idTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PegawaiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForstatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemFornama, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForgender, System.ComponentModel.ISupportInitialize).EndInit()
@@ -380,7 +381,6 @@ Partial Class FormPegawai
         CType(Me.ItemForkota_id, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForketerangan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

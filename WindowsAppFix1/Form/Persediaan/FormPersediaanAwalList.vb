@@ -9,4 +9,9 @@
         Dim listView = Await _persediaanAwalRepo.GetList()
         GridControl1.DataSource = listView
     End Sub
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        Dim frm = New frmAddPersediaanAwal
+        frm.Show()
+    End Sub
 End Class

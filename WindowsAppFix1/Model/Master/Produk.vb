@@ -16,8 +16,8 @@
 	Public Property updated_at As String
 	Public Property deleted_at As String
 
-	Public Property produk_kategori As ProdukKategori
 	Public Property produk_image As ProdukImage
+	Public Property produk_kategori As ProdukKategori
 	Public Property produk_kemasan_beli As ProdukKemasanBeli
 End Class
 

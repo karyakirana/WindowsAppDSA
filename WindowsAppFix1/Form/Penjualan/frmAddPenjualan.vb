@@ -10,262 +10,75 @@ Imports Newtonsoft.Json
 
 Public Class frmAddPenjualan
 
-    'Dim sumJumlah As New GridColumnSummaryItem()
-    'Dim sumSubTotal As New GridColumnSummaryItem()
-    'Dim exp As DateTime
+    Private _penjualanRepo As PenjualanRepository
+    Private _lokasiRepository As New LokasiRepository
+    Private _persediaanRepo As New PersediaanRepo
+    Public dtPenjualan As New DataTable
 
-    'Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
-    '    clearDtPenjualan()
-    '    setColumnDTPenjualan()
-    '    getPenjualan()
-    '    GridControl1.DataSource = Nothing
-    '    GridControl1.DataSource = dtPenjualan
-    '    Me.Close()
-    'End Sub
+    Public Sub New()
 
-    'Private Sub txtCustomer_Click(sender As Object, e As EventArgs) Handles txtCustomer.Click
-    '    Dim frm As New FrmFindCustomer
-    '    Dim i : i = frm.ShowDialog()
-    '    If CType(i, DialogResult) = 2 Then
-    '        Me.txtCustomer.EditValue = nama
-    '        txtSales.EditValue = sales_name
-    '    End If
-    'End Sub
+        ' This call is required by the designer.
+        InitializeComponent()
 
-    'Private Sub txtTempo_LostFocus(sender As Object, e As EventArgs) Handles txtTempo.LostFocus
+        ' Add any initialization after the InitializeComponent() call.
+        LoadData()
 
-    'End Sub
+    End Sub
 
-    'Private Sub txtTempo_Leave(sender As Object, e As EventArgs) Handles txtTempo.Leave
-    '    If txtTempo.EditValue = 0 Then
-    '        MsgBox("Tempo harus lebih dari 0!", MsgBoxStyle.Exclamation, "Informasi")
-    '    Else
-    '        tglTempo.EditValue = Format(DateAdd("d", txtTempo.EditValue, Date.Now), "dd-MM-yyyy")
-    '    End If
-    'End Sub
+    Public Async Sub LoadData()
 
-    'Private Sub setGridviewColumn()
-    '    GridView1.Columns.ColumnByFieldName("id").VisibleIndex = -1
-    '    GridView1.Columns.ColumnByFieldName("nama").VisibleIndex = 0
-    '    GridView1.Columns.ColumnByFieldName("nama").Caption = "Nama Produk"
-    '    'GridView1.Columns.ColumnByFieldName("nama").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("nama").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("nama").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+    End Sub
 
-    '    GridView1.Columns.ColumnByFieldName("harga").VisibleIndex = 1
-    '    GridView1.Columns.ColumnByFieldName("harga").Caption = "Harga"
-    '    'GridView1.Columns.ColumnByFieldName("harga").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("harga").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("harga").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+    Private Sub LoadDatatable()
+        'initate Coloumn
+        dtPenjualan.Columns.Add("persediaan_id", GetType(Long))
+        dtPenjualan.Columns.Add("produk_nama", GetType(String))
+        dtPenjualan.Columns.Add("batch", GetType(String))
+        dtPenjualan.Columns.Add("expired", GetType(String))
+        dtPenjualan.Columns.Add("serial_number", GetType(String))
+        dtPenjualan.Columns.Add("harga", GetType(Integer))
+        dtPenjualan.Columns.Add("diskon", GetType(Integer))
+        dtPenjualan.Columns.Add("jumlah", GetType(Integer))
+        dtPenjualan.Columns.Add("sub_total", GetType(Integer))
+        GridControl1.DataSource = dtPenjualan
 
-    '    GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 2
-    '    GridView1.Columns.ColumnByFieldName("jumlah").Caption = "Jumlah"
-    '    'GridView1.Columns.ColumnByFieldName("jumlah").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("jumlah").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+    End Sub
 
-    '    GridView1.Columns.ColumnByFieldName("exp").VisibleIndex = 3
-    '    GridView1.Columns.ColumnByFieldName("exp").Caption = "Kadaluarsa"
-    '    'GridView1.Columns.ColumnByFieldName("exp").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("exp").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("exp").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+    Public Async Sub SetRow(id As Long)
+        'get data
+        Dim getData As Persediaan = Await _persediaanRepo.edit(id)
+        'set to row
+        If Not getData Is Nothing Then
 
-    '    GridView1.Columns.ColumnByFieldName("batch").VisibleIndex = 4
-    '    GridView1.Columns.ColumnByFieldName("batch").Caption = "Batch"
-    '    'GridView1.Columns.ColumnByFieldName("batch").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("batch").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("batch").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+            Dim persediaan As New Persediaan
+            persediaan = getData
 
-    '    GridView1.Columns.ColumnByFieldName("diskon").VisibleIndex = 5
-    '    GridView1.Columns.ColumnByFieldName("diskon").Caption = "Diskon (%)"
-    '    'GridView1.Columns.ColumnByFieldName("batch").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("diskon").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("diskon").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+            Dim row As DataRow
+            row = dtPenjualan.NewRow
+            row("persediaan_id") = persediaan.id
+            row("produk_nama") = persediaan.produk.nama
+            row("batch") = ""
+            row("expired") = ""
+            row("serial_number") = ""
+            row("harga") = persediaan.produk.harga
+            row("diskon") = 0
+            row("jumlah") = 0
+            row("sub_total") = 0
 
-    '    GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 6
-    '    GridView1.Columns.ColumnByFieldName("sub_total").Caption = "Sub Total"
-    '    'GridView1.Columns.ColumnByFieldName("sub_total").Width = 75
-    '    GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-    '    GridView1.Columns.ColumnByFieldName("sub_total").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+            dtPenjualan.Rows.Add(row)
+            GridControl1.DataSource = dtPenjualan
 
-    '    'GridControl1.RepositoryItems.Add(RepositoryItemDateEdit1)
-    '    'GridView1.Columns("exp").ColumnEdit = RepositoryItemDateEdit1()
+        End If
+    End Sub
 
-    '    GridView1.Columns("jumlah").Summary.Add(sumJumlah)
-    '    GridView1.Columns("sub_total").Summary.Add(sumSubTotal)
-    'End Sub
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
-    'Private Function RepositoryItemDateEdit1() As String
-    '    Throw New NotImplementedException()
-    'End Function
+        Using frm As FrmFindProduk = New FrmFindProduk
+            If frm.ShowDialog = DialogResult.OK Then
+                SetRow(frm.GetValue)
+                Console.WriteLine(frm.GetValue)
+            End If
+        End Using
 
-    'Private Sub frmAddPenjualan_Load(sender As Object, e As EventArgs) Handles Me.Load
-    '    Dim itemValues As Object() = New Object() {1, 2}
-    '    Dim itemDescriptions As String() = New String() {"True", "False"}
-    '    Dim i As Integer = 0
-    '    Do While i < itemValues.Length
-    '        rbgDraft.Properties.Items.Add(New RadioGroupItem(itemValues(i), itemDescriptions(i)))
-    '        i += 1
-    '    Loop
-    '    'Select the Rectangle item.
-    '    rbgDraft.EditValue = 1
-
-    '    tglPenjualan.EditValue = Date.Now
-
-    '    clearDTPerhitunganPenjualan()
-    '    setColumnDTPerhitunganPenjualan()
-    '    GridControl1.DataSource = dtPerhitunganPenjualan
-    '    'setGridviewColumn(GetRepositoryItemDateEdit1())
-
-
-    '    GridView1.Columns.ColumnByFieldName("nama").OptionsColumn.AllowEdit = False
-    '    GridView1.Columns.ColumnByFieldName("sub_total").OptionsColumn.AllowEdit = False
-    '    btnSimpan.Text = "Simpan"
-    'End Sub
-
-    'Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-
-    '    Dim frm As New FrmFindProduk
-    '    Dim i : i = frm.ShowDialog()
-    '    If CType(i, DialogResult) = 2 Then
-
-    '        If id_produk <> 0 Then
-    '            Dim dr As DataRow
-    '            dr = dtPerhitunganPenjualan.NewRow
-    '            dr("id") = id_produk
-    '            dr("nama") = nama_produk
-    '            dr("harga") = harga_produk
-    '            dr("jumlah") = 0
-    '            dr("exp") = Format(Date.Now, "yyyy-MM-dd")
-    '            dr("batch") = ""
-    '            dr("diskon") = 0
-    '            dr("sub_total") = 0
-    '            dtPerhitunganPenjualan.Rows.Add(dr)
-
-    '            GridControl1.DataSource = dtPerhitunganPenjualan
-    '        End If
-
-    '    End If
-
-    '    For i = 0 To dtPerhitunganPenjualan.Rows.Count - 1
-    '        If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "id") = id_produk Then
-    '            dtPerhitunganPenjualan.Rows(i)("batch") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "batch").ToString
-    '            dtPerhitunganPenjualan.Rows(i)("jumlah") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "jumlah").ToString
-    '            dtPerhitunganPenjualan.Rows(i)("sub_total") = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "sub_total").ToString
-    '        End If
-    '    Next
-    'End Sub
-
-    'Private Sub GridView1_FocusedColumnChanged(sender As Object, e As FocusedColumnChangedEventArgs) Handles GridView1.FocusedColumnChanged
-    '    'If GridView1.FocusedColumn.FieldName = "exp" Then
-    '    '    Dim hitung As Integer = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "jumlah")
-    '    '    GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
-
-    '    '    sumJumlah.SummaryType = SummaryItemType.Sum
-    '    '    sumJumlah.FieldName = "jumlah"
-    '    '    sumJumlah.DisplayFormat = "{0:#.#}"
-
-
-    '    '    sumSubTotal.SummaryType = SummaryItemType.Sum
-    '    '    sumSubTotal.FieldName = "sub_total"
-    '    '    sumSubTotal.DisplayFormat = "{0:#.#}"
-    '    'End If
-
-    '    'If GridView1.FocusedColumn.FieldName = "batch" Then
-    '    '    RepositoryItemDateEdit1.Mask.EditMask = "yyyy-MM-dd"
-    '    '    RepositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = True
-
-    '    '    exp = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "exp")
-    '    'End If
-    'End Sub
-
-    'Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-    '    GridView1.DeleteRow(GridView1.FocusedRowHandle)
-    'End Sub
-
-    'Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-
-    '    Dim _penjualan = New PenjualanModel
-    '    _penjualan.penjualan_penawaran_id = vbNull
-    '    _penjualan.draft = draf
-    '    _penjualan.status = status
-    '    _penjualan.tipe_penjualan = "belum bayar"
-    '    _penjualan.tgl_penjualan = tglPenjualan.EditValue
-    '    _penjualan.tempo = txtTempo.EditValue
-    '    _penjualan.tgl_tempo = tglTempo.EditValue
-    '    _penjualan.customer_id = txtCustomer.EditValue
-    '    _penjualan.sales_id = txtSales.EditValue
-    '    _penjualan.total_barang = ""
-    '    _penjualan.ppn = txtPpn.EditValue
-    '    _penjualan.biaya_lain = txtBiayaLain.EditValue
-    '    _penjualan.total_bayar = txtTotalBayar.EditValue
-    '    _penjualan.keterangan = txtKeterangan.EditValue
-
-    '    Dim _penjualanDetail = New List(Of PenjualanDataDetail)
-    '    For row As Integer = 0 To GridView1.DataRowCount - 1
-    '        Dim _detail As New PenjualanDataDetail With {
-    '            .persediaan_id = CInt(GridView1.GetRowCellValue(row, "id")),
-    '            .harga_jual = CStr(GridView1.GetRowCellValue(row, "batch")),
-    '            .jumlah = CStr(GridView1.GetRowCellValue(row, "exp")),
-    '            .satuan_jual = CInt(GridView1.GetRowCellValue(row, "harga")),
-    '            .diskon = CInt(GridView1.GetRowCellValue(row, "jumlah")),
-    '            .sub_total = CInt(GridView1.GetRowCellValue(row, "sub_total"))
-    '        }
-    '        _penjualan.data_detail.Add(_detail)
-    '    Next
-    '    If btnSimpan.Text = "Simpan" Then
-    '        Try
-
-    '            insertDatapenjualan(_penjualan)
-    '            statusInsert = obj.Item("status")
-    '            If statusInsert = True Then
-    '                MsgBox("Data berhasil disimpan!", MsgBoxStyle.Information, "Informasi")
-    '                Dim frm As New frmPenjualan
-    '                frm.GridControl1.DataSource = Nothing
-    '                clearTablePenjualan()
-    '                setColumnTablePenjualan()
-    '                getDataPenjualan()
-    '                frm.GridControl1.DataSource = datatablePenjualan
-    '                Close()
-    '            Else
-    '                MsgBox("Terjadi kesalahan proses simpan data!", MsgBoxStyle.Critical, "Perhatian")
-    '                Exit Sub
-    '            End If
-
-    '        Catch ex As Exception
-
-    '        End Try
-    '    Else
-
-    '    End If
-
-    'End Sub
-
-    'Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
-    '    If GridView1.FocusedColumn.FieldName = "jumlah" Then
-    '        Dim edit As TextEdit = CType(GridView1.ActiveEditor, TextEdit)
-
-    '        If e.Value <= 0 Then
-    '            edit.ErrorText = "Jumlah harus > 0"
-    '        Else
-    '            edit.ErrorText = String.Empty
-    '            GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "jumlah", e.Value)
-    '            Dim hitung As Integer = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value)
-    '            GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
-
-    '            sumJumlah.SummaryType = SummaryItemType.Sum
-    '            sumJumlah.FieldName = "jumlah"
-    '            sumJumlah.DisplayFormat = "{0:#.#}"
-
-
-    '            sumSubTotal.SummaryType = SummaryItemType.Sum
-    '            sumSubTotal.FieldName = "sub_total"
-    '            sumSubTotal.DisplayFormat = "{0:#.#}"
-    '        End If
-    '    End If
-    'End Sub
-
-    'Private Sub rbgDraft_EditValueChanged(sender As Object, e As EventArgs) Handles rbgDraft.EditValueChanged
-    '    MsgBox(rbgDraft.Properties.Items(rbgDraft.SelectedIndex).Description)
-    'End Sub
+    End Sub
 End Class

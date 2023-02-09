@@ -23,21 +23,12 @@ Partial Class FormPenjualanList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPenjualanList))
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
-        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPenjualanList))
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.PenjualanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colpenjualan_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colactive_cash = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -62,94 +53,43 @@ Partial Class FormPenjualanList
         Me.coldeleted_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcustomer = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colsales = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.colid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colpenjualan_id1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colpersediaan_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colharga_jual = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coljumlah = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colsatuan_jual = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coldiskon = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colsub_total = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colcreated_at1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colupdated_at1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colpersediaan = New DevExpress.XtraGrid.Columns.GridColumn()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PenjualanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'RibbonControl1
+        'GridView2
         '
-        Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
-        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 5
-        Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(825, 142)
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "New"
-        Me.BarButtonItem1.Id = 1
-        Me.BarButtonItem1.ImageOptions.Image = CType(resources.GetObject("BarButtonItem1.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem1.Name = "BarButtonItem1"
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "Edit"
-        Me.BarButtonItem2.Id = 2
-        Me.BarButtonItem2.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem2.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'BarButtonItem3
-        '
-        Me.BarButtonItem3.Caption = "Delete"
-        Me.BarButtonItem3.Id = 3
-        Me.BarButtonItem3.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem3.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem3.Name = "BarButtonItem3"
-        '
-        'BarButtonItem4
-        '
-        Me.BarButtonItem4.Caption = "Close"
-        Me.BarButtonItem4.Id = 4
-        Me.BarButtonItem4.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem4.Name = "BarButtonItem4"
-        '
-        'RibbonPage1
-        '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "Home"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "Aksi"
-        '
-        'LayoutControl1
-        '
-        Me.LayoutControl1.Controls.Add(Me.GridControl1)
-        Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
-        Me.LayoutControl1.Name = "LayoutControl1"
-        Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(825, 321)
-        Me.LayoutControl1.TabIndex = 2
-        Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(825, 321)
-        Me.Root.TextVisible = False
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid1, Me.colpenjualan_id1, Me.colpersediaan_id, Me.colharga_jual, Me.coljumlah, Me.colsatuan_jual, Me.coldiskon, Me.colsub_total, Me.colcreated_at1, Me.colupdated_at1, Me.colpersediaan})
+        Me.GridView2.GridControl = Me.GridControl1
+        Me.GridView2.Name = "GridView2"
         '
         'GridControl1
         '
@@ -165,24 +105,15 @@ Partial Class FormPenjualanList
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
         '
+        'PenjualanBindingSource
+        '
+        Me.PenjualanBindingSource.DataSource = GetType(WindowsAppFix1.Penjualan)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colpenjualan_id, Me.colactive_cash, Me.colkode, Me.colpenjualan_penawaran_id, Me.coldraft, Me.colstatus, Me.coltipe_penjualan, Me.coltgl_penjualan, Me.coltempo, Me.coltgl_tempo, Me.colcustomer_id, Me.colsales_id, Me.coluser_id, Me.coltotal_barang, Me.colppn, Me.colbiaya_lain, Me.coltotal_bayar, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colcustomer, Me.colsales})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(805, 301)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'PenjualanBindingSource
-        '
-        Me.PenjualanBindingSource.DataSource = GetType(WindowsAppFix1.Penjualan)
         '
         'colid
         '
@@ -352,10 +283,168 @@ Partial Class FormPenjualanList
         Me.colsales.Visible = True
         Me.colsales.VisibleIndex = 23
         '
-        'GridView2
+        'RibbonControl1
         '
-        Me.GridView2.GridControl = Me.GridControl1
-        Me.GridView2.Name = "GridView2"
+        Me.RibbonControl1.ExpandCollapseItem.Id = 0
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl1.MaxItemId = 5
+        Me.RibbonControl1.Name = "RibbonControl1"
+        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+        Me.RibbonControl1.Size = New System.Drawing.Size(825, 142)
+        '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "New"
+        Me.BarButtonItem1.Id = 1
+        Me.BarButtonItem1.ImageOptions.Image = CType(resources.GetObject("BarButtonItem1.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "Edit"
+        Me.BarButtonItem2.Id = 2
+        Me.BarButtonItem2.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem2.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "Delete"
+        Me.BarButtonItem3.Id = 3
+        Me.BarButtonItem3.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem3.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem3.Name = "BarButtonItem3"
+        '
+        'BarButtonItem4
+        '
+        Me.BarButtonItem4.Caption = "Close"
+        Me.BarButtonItem4.Id = 4
+        Me.BarButtonItem4.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem4.Name = "BarButtonItem4"
+        '
+        'RibbonPage1
+        '
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Name = "RibbonPage1"
+        Me.RibbonPage1.Text = "Home"
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Aksi"
+        '
+        'LayoutControl1
+        '
+        Me.LayoutControl1.Controls.Add(Me.GridControl1)
+        Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Name = "LayoutControl1"
+        Me.LayoutControl1.Root = Me.Root
+        Me.LayoutControl1.Size = New System.Drawing.Size(825, 321)
+        Me.LayoutControl1.TabIndex = 2
+        Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(825, 321)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(805, 301)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'colid1
+        '
+        Me.colid1.FieldName = "id"
+        Me.colid1.Name = "colid1"
+        Me.colid1.Visible = True
+        Me.colid1.VisibleIndex = 0
+        '
+        'colpenjualan_id1
+        '
+        Me.colpenjualan_id1.FieldName = "penjualan_id"
+        Me.colpenjualan_id1.Name = "colpenjualan_id1"
+        Me.colpenjualan_id1.Visible = True
+        Me.colpenjualan_id1.VisibleIndex = 1
+        '
+        'colpersediaan_id
+        '
+        Me.colpersediaan_id.FieldName = "persediaan_id"
+        Me.colpersediaan_id.Name = "colpersediaan_id"
+        Me.colpersediaan_id.Visible = True
+        Me.colpersediaan_id.VisibleIndex = 2
+        '
+        'colharga_jual
+        '
+        Me.colharga_jual.FieldName = "harga_jual"
+        Me.colharga_jual.Name = "colharga_jual"
+        Me.colharga_jual.Visible = True
+        Me.colharga_jual.VisibleIndex = 3
+        '
+        'coljumlah
+        '
+        Me.coljumlah.FieldName = "jumlah"
+        Me.coljumlah.Name = "coljumlah"
+        Me.coljumlah.Visible = True
+        Me.coljumlah.VisibleIndex = 4
+        '
+        'colsatuan_jual
+        '
+        Me.colsatuan_jual.FieldName = "satuan_jual"
+        Me.colsatuan_jual.Name = "colsatuan_jual"
+        Me.colsatuan_jual.Visible = True
+        Me.colsatuan_jual.VisibleIndex = 5
+        '
+        'coldiskon
+        '
+        Me.coldiskon.FieldName = "diskon"
+        Me.coldiskon.Name = "coldiskon"
+        Me.coldiskon.Visible = True
+        Me.coldiskon.VisibleIndex = 6
+        '
+        'colsub_total
+        '
+        Me.colsub_total.FieldName = "sub_total"
+        Me.colsub_total.Name = "colsub_total"
+        Me.colsub_total.Visible = True
+        Me.colsub_total.VisibleIndex = 7
+        '
+        'colcreated_at1
+        '
+        Me.colcreated_at1.FieldName = "created_at"
+        Me.colcreated_at1.Name = "colcreated_at1"
+        Me.colcreated_at1.Visible = True
+        Me.colcreated_at1.VisibleIndex = 8
+        '
+        'colupdated_at1
+        '
+        Me.colupdated_at1.FieldName = "updated_at"
+        Me.colupdated_at1.Name = "colupdated_at1"
+        Me.colupdated_at1.Visible = True
+        Me.colupdated_at1.VisibleIndex = 9
+        '
+        'colpersediaan
+        '
+        Me.colpersediaan.FieldName = "persediaan"
+        Me.colpersediaan.Name = "colpersediaan"
+        Me.colpersediaan.Visible = True
+        Me.colpersediaan.VisibleIndex = 10
         '
         'FormPenjualanList
         '
@@ -366,15 +455,15 @@ Partial Class FormPenjualanList
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "FormPenjualanList"
         Me.Text = "FormPenjualanList"
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PenjualanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -418,4 +507,15 @@ Partial Class FormPenjualanList
     Friend WithEvents colcustomer As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colsales As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents colid1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colpenjualan_id1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colpersediaan_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colharga_jual As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coljumlah As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colsatuan_jual As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coldiskon As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colsub_total As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colcreated_at1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colupdated_at1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colpersediaan As DevExpress.XtraGrid.Columns.GridColumn
 End Class

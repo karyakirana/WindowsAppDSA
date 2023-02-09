@@ -36,7 +36,7 @@ Public Class PersediaanRepo
     End Function
 
     Public Async Function edit(id As Long) As Task(Of Persediaan)
-        _response = Await _client.GetAsync("persediaan/" & id)
+        _response = Await _client.GetAsync("persediaan/" & id & "/edit")
 
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync

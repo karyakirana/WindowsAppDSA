@@ -1,9 +1,13 @@
 ﻿Public Class FrmFindProduk
-    Dim _repositoryProduk As ProdukRepository = New ProdukRepository
+    Dim _repositoryPersediaan As PersediaanRepo = New PersediaanRepo
+
+    Public Function GetValue() As Long
+        Return GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
+    End Function
 
     Private Async Sub LoadData()
         'dataObject
-        Dim listView = Await _repositoryProduk.GetList
+        Dim listView = Await _repositoryPersediaan.GetList
         GridControl1.DataSource = listView
     End Sub
 
@@ -12,8 +16,9 @@
     End Sub
 
     Private Sub GridControl1_DoubleClick(sender As Object, e As EventArgs) Handles GridControl1.DoubleClick
-        Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
-        frmAddPersediaanAwal.setRow(id)
-        Close()
+        'Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
+        'frmAddPersediaanAwal.setRow(id)
+        'Close()
+        DialogResult = DialogResult.OK
     End Sub
 End Class

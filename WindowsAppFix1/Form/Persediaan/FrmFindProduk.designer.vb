@@ -25,7 +25,7 @@ Partial Class FrmFindProduk
         Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.ProdukBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PersediaanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_kategori_id = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -51,7 +51,7 @@ Partial Class FrmFindProduk
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PersediaanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +70,7 @@ Partial Class FrmFindProduk
         '
         'GridControl1
         '
-        Me.GridControl1.DataSource = Me.ProdukBindingSource
+        Me.GridControl1.DataSource = Me.PersediaanBindingSource
         Me.GridControl1.Location = New System.Drawing.Point(12, 12)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
@@ -78,9 +78,9 @@ Partial Class FrmFindProduk
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'ProdukBindingSource
+        'PersediaanBindingSource
         '
-        Me.ProdukBindingSource.DataSource = GetType(WindowsAppFix1.Produk)
+        Me.PersediaanBindingSource.DataSource = GetType(WindowsAppFix1.Persediaan)
         '
         'GridView1
         '
@@ -116,7 +116,7 @@ Partial Class FrmFindProduk
         Me.colnama.AppearanceHeader.Options.UseTextOptions = True
         Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colnama.Caption = "Nama Produk"
-        Me.colnama.FieldName = "nama"
+        Me.colnama.FieldName = "produk.nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
         Me.colnama.VisibleIndex = 0
@@ -133,7 +133,7 @@ Partial Class FrmFindProduk
         Me.colmerk.AppearanceHeader.Options.UseTextOptions = True
         Me.colmerk.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colmerk.Caption = "Merk"
-        Me.colmerk.FieldName = "merk"
+        Me.colmerk.FieldName = "produk.merk"
         Me.colmerk.Name = "colmerk"
         Me.colmerk.Visible = True
         Me.colmerk.VisibleIndex = 1
@@ -190,7 +190,7 @@ Partial Class FrmFindProduk
         Me.colproduk_kategori.AppearanceHeader.Options.UseTextOptions = True
         Me.colproduk_kategori.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colproduk_kategori.Caption = "Kategori"
-        Me.colproduk_kategori.FieldName = "produk_kategori.nama"
+        Me.colproduk_kategori.FieldName = "produk.produk_kategori.nama"
         Me.colproduk_kategori.Name = "colproduk_kategori"
         Me.colproduk_kategori.Visible = True
         Me.colproduk_kategori.VisibleIndex = 2
@@ -235,7 +235,7 @@ Partial Class FrmFindProduk
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PersediaanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -248,7 +248,6 @@ Partial Class FrmFindProduk
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents ProdukBindingSource As BindingSource
     Friend WithEvents colid As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_kategori_id As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colkode As DevExpress.XtraGrid.Columns.GridColumn
@@ -268,4 +267,5 @@ Partial Class FrmFindProduk
     Friend WithEvents colproduk_kategori As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_image As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_kemasan_beli As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PersediaanBindingSource As BindingSource
 End Class

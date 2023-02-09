@@ -67,9 +67,6 @@ Partial Class FormProdukList
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -77,17 +74,20 @@ Partial Class FormProdukList
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridView2
@@ -152,7 +152,7 @@ Partial Class FormProdukList
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(776, 284)
         Me.GridControl1.TabIndex = 4
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView1, Me.GridView2, Me.GridView4})
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView1, Me.GridView4, Me.GridView2})
         '
         'ProdukBindingSource
         '
@@ -388,35 +388,6 @@ Partial Class FormProdukList
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Aksi"
         '
-        'LayoutControl1
-        '
-        Me.LayoutControl1.Controls.Add(Me.GridControl1)
-        Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
-        Me.LayoutControl1.Name = "LayoutControl1"
-        Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 308)
-        Me.LayoutControl1.TabIndex = 2
-        Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 308)
-        Me.Root.TextVisible = False
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 288)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
         'GridView4
         '
         Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6})
@@ -465,6 +436,35 @@ Partial Class FormProdukList
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
         '
+        'LayoutControl1
+        '
+        Me.LayoutControl1.Controls.Add(Me.GridControl1)
+        Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Name = "LayoutControl1"
+        Me.LayoutControl1.Root = Me.Root
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 308)
+        Me.LayoutControl1.TabIndex = 2
+        Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(800, 308)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 288)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
         'FormProdukList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -480,11 +480,11 @@ Partial Class FormProdukList
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

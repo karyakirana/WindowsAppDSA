@@ -1,5 +1,6 @@
 ﻿Public Class Produk
 	Public Property id As Long
+	Public Property produk_id As Long?
 	Public Property produk_kategori_id As Long
 	Public Property kode As String
 	Public Property status As String

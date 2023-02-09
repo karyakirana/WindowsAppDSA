@@ -25,9 +25,10 @@ Public Class frmAddPenjualan
 
     End Sub
 
-    Public Async Sub LoadData()
-
+    Public Sub LoadData()
+        LoadDatatable()
     End Sub
+
 
     Private Sub LoadDatatable()
         'initate Coloumn
@@ -81,4 +82,9 @@ Public Class frmAddPenjualan
         End Using
 
     End Sub
+
+    Public Sub Edit(id As Long)
+
+    End Sub
+
 End Class

@@ -21,14 +21,39 @@
     End Sub
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        Dim frm = New frmAddPegawai
-        frm.Show()
+        'Dim frm = New frmAddPegawai
+        'frm.Show()
+        Using frm As New frmAddPegawai
+            If frm.ShowDialog = DialogResult.OK Then
+                LoadData()
+            End If
+        End Using
     End Sub
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
-        Dim form As New frmAddPegawai
-        'form.edit(id)
-        form.Show()
+
+        Using frm As New frmAddPegawai
+            If frm.ShowDialog = DialogResult.OK Then
+                LoadData()
+            End If
+        End Using
+
+        'Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
+        'Dim form As New frmAddPegawai
+        ''form.edit(id)
+        'form.Show()
+    End Sub
+
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        'delete
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to proceed?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            ' Code to execute if OK is clicked
+            Destroy(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+        End If
+    End Sub
+
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+        Close()
     End Sub
 End Class

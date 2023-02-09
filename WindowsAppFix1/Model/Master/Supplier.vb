@@ -1,5 +1,6 @@
 ﻿Public Class Supplier
 	Public Property id As Long
+	Public Property supplier_id As Long
 	Public Property kode As String
 	Public Property nama As String
 	Public Property telepon As String

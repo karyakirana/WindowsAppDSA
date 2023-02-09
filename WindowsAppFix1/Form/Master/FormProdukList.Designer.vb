@@ -62,9 +62,9 @@ Partial Class FormProdukList
         Me.colproduk_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnEdit = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnDelete = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnClose = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -150,7 +150,7 @@ Partial Class FormProdukList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 284)
+        Me.GridControl1.Size = New System.Drawing.Size(776, 264)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView1, Me.GridView4, Me.GridView2})
         '
@@ -334,12 +334,12 @@ Partial Class FormProdukList
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.btnEdit, Me.btnDelete, Me.btnClose})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
         '
         'BarButtonItem1
         '
@@ -349,29 +349,29 @@ Partial Class FormProdukList
         Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
-        'BarButtonItem2
+        'btnEdit
         '
-        Me.BarButtonItem2.Caption = "Edit"
-        Me.BarButtonItem2.Id = 2
-        Me.BarButtonItem2.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem2.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem2.Name = "BarButtonItem2"
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.Id = 2
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.Name = "btnEdit"
         '
-        'BarButtonItem3
+        'btnDelete
         '
-        Me.BarButtonItem3.Caption = "Delete"
-        Me.BarButtonItem3.Id = 3
-        Me.BarButtonItem3.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem3.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.btnDelete.Caption = "Delete"
+        Me.btnDelete.Id = 3
+        Me.btnDelete.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnDelete.Name = "btnDelete"
         '
-        'BarButtonItem4
+        'btnClose
         '
-        Me.BarButtonItem4.Caption = "Close"
-        Me.BarButtonItem4.Id = 4
-        Me.BarButtonItem4.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem4.Name = "BarButtonItem4"
+        Me.btnClose.Caption = "Close"
+        Me.btnClose.Id = 4
+        Me.btnClose.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnClose.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnClose.Name = "btnClose"
         '
         'RibbonPage1
         '
@@ -382,9 +382,9 @@ Partial Class FormProdukList
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnEdit)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnDelete)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnClose)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Aksi"
         '
@@ -440,10 +440,10 @@ Partial Class FormProdukList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 308)
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 288)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -453,7 +453,7 @@ Partial Class FormProdukList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 308)
+        Me.Root.Size = New System.Drawing.Size(800, 288)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -461,7 +461,7 @@ Partial Class FormProdukList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 288)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 268)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -492,9 +492,9 @@ Partial Class FormProdukList
 
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnEdit As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnDelete As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnClose As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl

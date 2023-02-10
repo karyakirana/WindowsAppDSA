@@ -39,7 +39,7 @@ Public Class SupplierRepository
 
         Dim json = JsonConvert.SerializeObject(supplier)
         Dim content As New StringContent(json, Encoding.UTF8, "application/json")
-        _response = Await _client.PostAsync("master/lokasi", content)
+        _response = Await _client.PostAsync("master/supplier", content)
 
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync

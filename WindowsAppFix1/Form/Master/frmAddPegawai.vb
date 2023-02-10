@@ -1,11 +1,14 @@
 ﻿Public Class frmAddPegawai
 
     Private _pegawaiRepo As New PegawaiRepository
-    Private id As Long?
+    Private jabatanRepo As New JabatanRepository
+    Private kotaRepo As New KotaRepository
+    Private _id As Long?
     Private _update As Boolean = False
 
-    Private Sub _refresh()
-        FormPegawaiList.LoadData()
+    Private Async Sub LoadData()
+        cbJabatan.Properties.DataSource = Await jabatanRepo.GetList()
+        txtKota.Properties.DataSource = Await kotaRepo.GetList()
     End Sub
 
     Private Async Sub Store()
@@ -25,8 +28,7 @@
 
         If hasil Then
             'form close
-            Close()
-            _refresh()
+            DialogResult = DialogResult.OK
         End If
 
     End Sub
@@ -35,7 +37,7 @@
         Dim getData As Pegawai = Await _pegawaiRepo.Edit(id)
 
         If Not getData Is Nothing Then
-            id = getData.id
+            _id = getData.id
             txtNama.EditValue = getData.nama
             cbGender.EditValue = getData.gender
             txtTelepon.EditValue = getData.telepon
@@ -52,7 +54,7 @@
 
     Private Async Sub Put()
         Dim pegawai As New Pegawai With {
-            .pegawai_id = id,
+            .pegawai_id = _id,
             .nama = txtNama.EditValue,
             .gender = cbGender.EditValue,
             .telepon = txtTelepon.EditValue,
@@ -68,14 +70,31 @@
 
         If hasil Then
             'form close
-            Close()
-            _refresh()
+            DialogResult = DialogResult.OK
+        End If
+
+    End Sub
+
+    Private Async Sub StoreJabatan()
+
+        Dim jabatan As New Jabatan With {
+            .nama = txtAddJabatan.EditValue,
+            .keterangan = txtAddKeterangan.EditValue
+        }
+        Dim hasil = Await jabatanRepo.Store(jabatan)
+
+        If hasil Then
+            'reload cb jabatan
+            LoadData()
+            MsgBox("Jabatan Tersimpan")
+            txtAddJabatan.EditValue = ""
+            txtAddKeterangan.EditValue = ""
         End If
 
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
-        Me.Close()
+        DialogResult = DialogResult.Cancel
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
@@ -84,5 +103,13 @@
         Else
             Store()
         End If
+    End Sub
+
+    Private Sub frmAddPegawai_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadData()
+    End Sub
+
+    Private Sub btnSimpanJabatan_Click(sender As Object, e As EventArgs) Handles btnSimpanJabatan.Click
+        StoreJabatan()
     End Sub
 End Class

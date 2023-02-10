@@ -22,6 +22,7 @@ Partial Class frmAddSupplier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
@@ -31,9 +32,10 @@ Partial Class frmAddSupplier
         Me.txtTelepon = New DevExpress.XtraEditors.TextEdit()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.txtEmail = New DevExpress.XtraEditors.TextEdit()
-        Me.txtKota = New DevExpress.XtraEditors.TextEdit()
         Me.txtNpwp = New DevExpress.XtraEditors.TextEdit()
         Me.txtAlamat = New DevExpress.XtraEditors.TextEdit()
+        Me.txtKota = New DevExpress.XtraEditors.LookUpEdit()
+        Me.KotaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -64,9 +66,10 @@ Partial Class frmAddSupplier
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNpwp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +107,7 @@ Partial Class frmAddSupplier
         '
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(981, 261)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(981, 256)
         Me.XtraTabPage2.Text = "Form Add Supplier"
         '
         'LayoutControl2
@@ -115,90 +118,102 @@ Partial Class frmAddSupplier
         Me.LayoutControl2.Controls.Add(Me.txtTelepon)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
         Me.LayoutControl2.Controls.Add(Me.txtEmail)
-        Me.LayoutControl2.Controls.Add(Me.txtKota)
         Me.LayoutControl2.Controls.Add(Me.txtNpwp)
         Me.LayoutControl2.Controls.Add(Me.txtAlamat)
+        Me.LayoutControl2.Controls.Add(Me.txtKota)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
         Me.LayoutControl2.Root = Me.LayoutControlGroup1
-        Me.LayoutControl2.Size = New System.Drawing.Size(981, 261)
+        Me.LayoutControl2.Size = New System.Drawing.Size(981, 256)
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(886, 207)
+        Me.btnBatal.Location = New System.Drawing.Point(878, 218)
         Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(83, 22)
+        Me.btnBatal.Size = New System.Drawing.Size(74, 25)
         Me.btnBatal.StyleController = Me.LayoutControl2
         Me.btnBatal.TabIndex = 14
         Me.btnBatal.Text = "Batal"
         '
         'txtNama
         '
-        Me.txtNama.Location = New System.Drawing.Point(72, 12)
+        Me.txtNama.Location = New System.Drawing.Point(91, 12)
         Me.txtNama.Name = "txtNama"
-        Me.txtNama.Size = New System.Drawing.Size(897, 20)
+        Me.txtNama.Size = New System.Drawing.Size(861, 24)
         Me.txtNama.StyleController = Me.LayoutControl2
         Me.txtNama.TabIndex = 5
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(792, 207)
+        Me.btnSimpan.Location = New System.Drawing.Point(792, 218)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(80, 22)
+        Me.btnSimpan.Size = New System.Drawing.Size(72, 25)
         Me.btnSimpan.StyleController = Me.LayoutControl2
         Me.btnSimpan.TabIndex = 13
         Me.btnSimpan.Text = "Simpan"
         '
         'txtTelepon
         '
-        Me.txtTelepon.Location = New System.Drawing.Point(72, 36)
+        Me.txtTelepon.Location = New System.Drawing.Point(91, 40)
         Me.txtTelepon.Name = "txtTelepon"
-        Me.txtTelepon.Size = New System.Drawing.Size(275, 20)
+        Me.txtTelepon.Size = New System.Drawing.Size(250, 24)
         Me.txtTelepon.StyleController = Me.LayoutControl2
         Me.txtTelepon.TabIndex = 6
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(72, 156)
+        Me.txtKeterangan.Location = New System.Drawing.Point(91, 180)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(897, 20)
+        Me.txtKeterangan.Size = New System.Drawing.Size(861, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
         Me.txtKeterangan.TabIndex = 11
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(72, 60)
+        Me.txtEmail.Location = New System.Drawing.Point(91, 68)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(275, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(250, 24)
         Me.txtEmail.StyleController = Me.LayoutControl2
         Me.txtEmail.TabIndex = 7
         '
-        'txtKota
-        '
-        Me.txtKota.Location = New System.Drawing.Point(72, 132)
-        Me.txtKota.Name = "txtKota"
-        Me.txtKota.Size = New System.Drawing.Size(275, 20)
-        Me.txtKota.StyleController = Me.LayoutControl2
-        Me.txtKota.TabIndex = 10
-        '
         'txtNpwp
         '
-        Me.txtNpwp.Location = New System.Drawing.Point(72, 84)
+        Me.txtNpwp.Location = New System.Drawing.Point(91, 96)
         Me.txtNpwp.Name = "txtNpwp"
-        Me.txtNpwp.Size = New System.Drawing.Size(275, 20)
+        Me.txtNpwp.Size = New System.Drawing.Size(250, 24)
         Me.txtNpwp.StyleController = Me.LayoutControl2
         Me.txtNpwp.TabIndex = 8
         '
         'txtAlamat
         '
-        Me.txtAlamat.Location = New System.Drawing.Point(72, 108)
+        Me.txtAlamat.Location = New System.Drawing.Point(91, 124)
         Me.txtAlamat.Name = "txtAlamat"
-        Me.txtAlamat.Size = New System.Drawing.Size(897, 20)
+        Me.txtAlamat.Size = New System.Drawing.Size(861, 24)
         Me.txtAlamat.StyleController = Me.LayoutControl2
         Me.txtAlamat.TabIndex = 9
+        '
+        'txtKota
+        '
+        Me.txtKota.Location = New System.Drawing.Point(91, 152)
+        Me.txtKota.Name = "txtKota"
+        Me.txtKota.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtKota.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.txtKota.Properties.DataSource = Me.KotaBindingSource
+        Me.txtKota.Properties.DisplayMember = "name"
+        Me.txtKota.Properties.NullText = ""
+        Me.txtKota.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.txtKota.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
+        Me.txtKota.Properties.ValueMember = "id"
+        Me.txtKota.Size = New System.Drawing.Size(250, 24)
+        Me.txtKota.StyleController = Me.LayoutControl2
+        Me.txtKota.TabIndex = 10
+        '
+        'KotaBindingSource
+        '
+        Me.KotaBindingSource.DataSource = GetType(WindowsAppFix1.Kota)
         '
         'LayoutControlGroup1
         '
@@ -206,15 +221,15 @@ Partial Class frmAddSupplier
         Me.LayoutControlGroup1.GroupBordersVisible = False
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem8, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(981, 261)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(964, 265)
         Me.LayoutControlGroup1.TextVisible = False
         '
         'EmptySpaceItem8
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(0, 222)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(0, 235)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(961, 19)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(944, 10)
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem2
@@ -222,141 +237,141 @@ Partial Class frmAddSupplier
         Me.LayoutControlItem2.Control = Me.txtNama
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(961, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(944, 28)
         Me.LayoutControlItem2.Text = "Nama"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.txtTelepon
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(339, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(333, 28)
         Me.LayoutControlItem3.Text = "Telepon"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.txtEmail
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 56)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(339, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(333, 28)
         Me.LayoutControlItem4.Text = "Email"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.txtNpwp
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(339, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(333, 28)
         Me.LayoutControlItem5.Text = "NPWP"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.txtAlamat
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 112)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(961, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(944, 28)
         Me.LayoutControlItem6.Text = "Alamat"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.txtKota
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 140)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(339, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(333, 28)
         Me.LayoutControlItem7.Text = "Kota"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.txtKeterangan
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 144)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 168)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(961, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(944, 28)
         Me.LayoutControlItem8.Text = "Keterangan"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(56, 13)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(75, 18)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.btnSimpan
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(780, 195)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(780, 206)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(84, 27)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(76, 29)
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem9.TextVisible = False
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.btnBatal
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(874, 195)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(866, 206)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(87, 27)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(78, 29)
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 168)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 196)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(961, 27)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(944, 10)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 195)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 206)
         Me.EmptySpaceItem2.MaxSize = New System.Drawing.Size(780, 27)
         Me.EmptySpaceItem2.MinSize = New System.Drawing.Size(780, 27)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(780, 27)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(780, 29)
         Me.EmptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(339, 24)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(333, 28)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(622, 24)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(611, 28)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(339, 48)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(333, 56)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(622, 24)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(611, 28)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(339, 72)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(333, 84)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(622, 24)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(611, 28)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(339, 120)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(333, 140)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(622, 24)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(611, 28)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem7
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(864, 195)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(856, 206)
         Me.EmptySpaceItem7.MaxSize = New System.Drawing.Size(10, 27)
         Me.EmptySpaceItem7.MinSize = New System.Drawing.Size(10, 27)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(10, 27)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(10, 29)
         Me.EmptySpaceItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -408,9 +423,10 @@ Partial Class frmAddSupplier
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNpwp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -446,7 +462,6 @@ Partial Class frmAddSupplier
     Friend WithEvents txtTelepon As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtKeterangan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtEmail As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtKota As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtNpwp As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtAlamat As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
@@ -470,4 +485,6 @@ Partial Class frmAddSupplier
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
+    Friend WithEvents txtKota As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents KotaBindingSource As BindingSource
 End Class

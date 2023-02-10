@@ -94,14 +94,6 @@ Public Class frmAddProduk
     End Sub
 
     Private Async Sub Put()
-        
-        
-        
-        
-        
-        
-        
-        ()
 
         Dim produk As New Produk With {
             .produk_kategori_id = cbKategori.EditValue,

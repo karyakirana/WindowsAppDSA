@@ -33,15 +33,11 @@
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
 
         Using frm As New frmAddPegawai
+            frm.edit(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
             If frm.ShowDialog = DialogResult.OK Then
                 LoadData()
             End If
         End Using
-
-        'Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
-        'Dim form As New frmAddPegawai
-        ''form.edit(id)
-        'form.Show()
     End Sub
 
     Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick

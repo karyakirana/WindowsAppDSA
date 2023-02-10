@@ -1,8 +1,13 @@
 ﻿Public Class frmAddSupplier
 
     Public _supplierRepo As New SupplierRepository
+    Public _kotaRepo As New KotaRepository
     Public _update As Boolean = False
     Public _id As Long?
+
+    Private Async Sub LoadData()
+        txtKota.Properties.DataSource = Await _kotaRepo.GetList
+    End Sub
 
     Private Async Sub store()
         Dim supplier As New Supplier With {
@@ -11,15 +16,15 @@
             .email = txtEmail.EditValue,
             .npwp = txtNpwp.EditValue,
             .alamat = txtAlamat.EditValue,
-            .kota_id = txtAlamat.EditValue,
+            .kota_id = txtKota.EditValue,
             .keterangan = txtKeterangan.EditValue
         }
 
         Dim hasil = Await _supplierRepo.Store(supplier)
         If hasil Then
             'form close
+            MsgBox("data tersimpan")
             DialogResult = DialogResult.OK
-            Close()
         End If
     End Sub
 
@@ -35,6 +40,7 @@
             txtAlamat.EditValue = supplier.alamat
             txtKota.EditValue = supplier.kota_id
             txtKeterangan.EditValue = supplier.keterangan
+            _update = True
         End If
     End Sub
 
@@ -46,19 +52,31 @@
             .email = txtEmail.EditValue,
             .npwp = txtNpwp.EditValue,
             .alamat = txtAlamat.EditValue,
-            .kota_id = txtAlamat.EditValue,
+            .kota_id = txtKota.EditValue,
             .keterangan = txtKeterangan.EditValue
         }
 
         Dim hasil = Await _supplierRepo.Update(supplier)
         If hasil Then
             'form close
-            Close()
+            MsgBox("data tersimpan")
             DialogResult = DialogResult.OK
         End If
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         Me.Close()
+    End Sub
+
+    Private Sub frmAddSupplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadData()
+    End Sub
+
+    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        If _update Then
+            put()
+        Else
+            store()
+        End If
     End Sub
 End Class

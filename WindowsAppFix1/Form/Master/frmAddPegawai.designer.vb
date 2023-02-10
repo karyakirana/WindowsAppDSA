@@ -22,22 +22,25 @@ Partial Class frmAddPegawai
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.btnTambahJabatan = New DevExpress.XtraEditors.SimpleButton()
-        Me.cbJabatan = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
         Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
-        Me.txtKota = New DevExpress.XtraEditors.TextEdit()
         Me.txtAlamat = New DevExpress.XtraEditors.TextEdit()
         Me.txtNpwp = New DevExpress.XtraEditors.TextEdit()
         Me.txtTelepon = New DevExpress.XtraEditors.TextEdit()
         Me.txtEmail = New DevExpress.XtraEditors.TextEdit()
         Me.cbGender = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtNama = New DevExpress.XtraEditors.TextEdit()
+        Me.cbJabatan = New DevExpress.XtraEditors.LookUpEdit()
+        Me.JabatanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtKota = New DevExpress.XtraEditors.LookUpEdit()
+        Me.KotaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -90,15 +93,17 @@ Partial Class frmAddPegawai
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
-        CType(Me.cbJabatan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNpwp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbGender.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbJabatan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,17 +180,17 @@ Partial Class frmAddPegawai
         'LayoutControl2
         '
         Me.LayoutControl2.Controls.Add(Me.btnTambahJabatan)
-        Me.LayoutControl2.Controls.Add(Me.cbJabatan)
         Me.LayoutControl2.Controls.Add(Me.btnBatal)
         Me.LayoutControl2.Controls.Add(Me.btnSimpan)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
-        Me.LayoutControl2.Controls.Add(Me.txtKota)
         Me.LayoutControl2.Controls.Add(Me.txtAlamat)
         Me.LayoutControl2.Controls.Add(Me.txtNpwp)
         Me.LayoutControl2.Controls.Add(Me.txtTelepon)
         Me.LayoutControl2.Controls.Add(Me.txtEmail)
         Me.LayoutControl2.Controls.Add(Me.cbGender)
         Me.LayoutControl2.Controls.Add(Me.txtNama)
+        Me.LayoutControl2.Controls.Add(Me.cbJabatan)
+        Me.LayoutControl2.Controls.Add(Me.txtKota)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
@@ -202,15 +207,6 @@ Partial Class frmAddPegawai
         Me.btnTambahJabatan.StyleController = Me.LayoutControl2
         Me.btnTambahJabatan.TabIndex = 17
         Me.btnTambahJabatan.Text = "Add Jabatan"
-        '
-        'cbJabatan
-        '
-        Me.cbJabatan.Location = New System.Drawing.Point(91, 40)
-        Me.cbJabatan.Name = "cbJabatan"
-        Me.cbJabatan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbJabatan.Size = New System.Drawing.Size(280, 24)
-        Me.cbJabatan.StyleController = Me.LayoutControl2
-        Me.cbJabatan.TabIndex = 16
         '
         'btnBatal
         '
@@ -237,14 +233,6 @@ Partial Class frmAddPegawai
         Me.txtKeterangan.Size = New System.Drawing.Size(1007, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
         Me.txtKeterangan.TabIndex = 12
-        '
-        'txtKota
-        '
-        Me.txtKota.Location = New System.Drawing.Point(91, 181)
-        Me.txtKota.Name = "txtKota"
-        Me.txtKota.Size = New System.Drawing.Size(280, 24)
-        Me.txtKota.StyleController = Me.LayoutControl2
-        Me.txtKota.TabIndex = 11
         '
         'txtAlamat
         '
@@ -295,6 +283,45 @@ Partial Class frmAddPegawai
         Me.txtNama.Size = New System.Drawing.Size(605, 24)
         Me.txtNama.StyleController = Me.LayoutControl2
         Me.txtNama.TabIndex = 4
+        '
+        'cbJabatan
+        '
+        Me.cbJabatan.Location = New System.Drawing.Point(91, 40)
+        Me.cbJabatan.Name = "cbJabatan"
+        Me.cbJabatan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbJabatan.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("kode", "kode", 40, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.cbJabatan.Properties.DataSource = Me.JabatanBindingSource
+        Me.cbJabatan.Properties.DisplayMember = "nama"
+        Me.cbJabatan.Properties.NullText = ""
+        Me.cbJabatan.Properties.PopupSizeable = False
+        Me.cbJabatan.Properties.ValueMember = "id"
+        Me.cbJabatan.Size = New System.Drawing.Size(280, 24)
+        Me.cbJabatan.StyleController = Me.LayoutControl2
+        Me.cbJabatan.TabIndex = 16
+        '
+        'JabatanBindingSource
+        '
+        Me.JabatanBindingSource.DataSource = GetType(WindowsAppFix1.Jabatan)
+        '
+        'txtKota
+        '
+        Me.txtKota.Location = New System.Drawing.Point(91, 181)
+        Me.txtKota.Name = "txtKota"
+        Me.txtKota.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtKota.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.txtKota.Properties.DataSource = Me.KotaBindingSource
+        Me.txtKota.Properties.DisplayMember = "name"
+        Me.txtKota.Properties.NullText = ""
+        Me.txtKota.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.txtKota.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
+        Me.txtKota.Properties.ValueMember = "id"
+        Me.txtKota.Size = New System.Drawing.Size(280, 24)
+        Me.txtKota.StyleController = Me.LayoutControl2
+        Me.txtKota.TabIndex = 11
+        '
+        'KotaBindingSource
+        '
+        Me.KotaBindingSource.DataSource = GetType(WindowsAppFix1.Kota)
         '
         'LayoutControlGroup1
         '
@@ -567,9 +594,9 @@ Partial Class frmAddPegawai
         '
         'btnBatalJabatan
         '
-        Me.btnBatalJabatan.Location = New System.Drawing.Point(402, 68)
+        Me.btnBatalJabatan.Location = New System.Drawing.Point(389, 68)
         Me.btnBatalJabatan.Name = "btnBatalJabatan"
-        Me.btnBatalJabatan.Size = New System.Drawing.Size(91, 25)
+        Me.btnBatalJabatan.Size = New System.Drawing.Size(104, 25)
         Me.btnBatalJabatan.StyleController = Me.LayoutControl3
         Me.btnBatalJabatan.TabIndex = 7
         Me.btnBatalJabatan.Text = "Batal"
@@ -578,7 +605,7 @@ Partial Class frmAddPegawai
         '
         Me.btnSimpanJabatan.Location = New System.Drawing.Point(297, 68)
         Me.btnSimpanJabatan.Name = "btnSimpanJabatan"
-        Me.btnSimpanJabatan.Size = New System.Drawing.Size(91, 25)
+        Me.btnSimpanJabatan.Size = New System.Drawing.Size(88, 25)
         Me.btnSimpanJabatan.StyleController = Me.LayoutControl3
         Me.btnSimpanJabatan.TabIndex = 6
         Me.btnSimpanJabatan.Text = "Simpan"
@@ -620,9 +647,9 @@ Partial Class frmAddPegawai
         'EmptySpaceItem16
         '
         Me.EmptySpaceItem16.AllowHotTrack = False
-        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 85)
+        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 107)
         Me.EmptySpaceItem16.Name = "EmptySpaceItem16"
-        Me.EmptySpaceItem16.Size = New System.Drawing.Size(485, 182)
+        Me.EmptySpaceItem16.Size = New System.Drawing.Size(485, 160)
         Me.EmptySpaceItem16.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem15
@@ -650,16 +677,16 @@ Partial Class frmAddPegawai
         Me.LayoutControlItem16.Control = Me.btnSimpanJabatan
         Me.LayoutControlItem16.Location = New System.Drawing.Point(285, 56)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(95, 29)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(92, 29)
         Me.LayoutControlItem16.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem16.TextVisible = False
         '
         'LayoutControlItem17
         '
         Me.LayoutControlItem17.Control = Me.btnBatalJabatan
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(390, 56)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(377, 56)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(95, 29)
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(108, 29)
         Me.LayoutControlItem17.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem17.TextVisible = False
         '
@@ -676,9 +703,9 @@ Partial Class frmAddPegawai
         'EmptySpaceItem19
         '
         Me.EmptySpaceItem19.AllowHotTrack = False
-        Me.EmptySpaceItem19.Location = New System.Drawing.Point(380, 56)
+        Me.EmptySpaceItem19.Location = New System.Drawing.Point(0, 85)
         Me.EmptySpaceItem19.Name = "EmptySpaceItem19"
-        Me.EmptySpaceItem19.Size = New System.Drawing.Size(10, 29)
+        Me.EmptySpaceItem19.Size = New System.Drawing.Size(485, 22)
         Me.EmptySpaceItem19.TextSize = New System.Drawing.Size(0, 0)
         '
         'Root
@@ -716,15 +743,17 @@ Partial Class frmAddPegawai
         Me.XtraTabPage1.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
-        CType(Me.cbJabatan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNpwp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbGender.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbJabatan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JabatanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -779,7 +808,6 @@ Partial Class frmAddPegawai
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents LayoutControl2 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents txtKeterangan As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtKota As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtAlamat As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtNpwp As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtTelepon As DevExpress.XtraEditors.TextEdit
@@ -814,7 +842,6 @@ Partial Class frmAddPegawai
     Friend WithEvents EmptySpaceItem13 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem14 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem15 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents cbJabatan As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents btnTambahJabatan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
@@ -834,4 +861,8 @@ Partial Class frmAddPegawai
     Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem18 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem19 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents cbJabatan As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents JabatanBindingSource As BindingSource
+    Friend WithEvents txtKota As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents KotaBindingSource As BindingSource
 End Class

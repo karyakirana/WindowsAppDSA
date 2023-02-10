@@ -63,7 +63,7 @@ Partial Class FormPersediaanAwalList
         Me.coldeleted_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnEdit = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -403,7 +403,7 @@ Partial Class FormPersediaanAwalList
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.btnEdit, Me.BarButtonItem3, Me.BarButtonItem4})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -418,13 +418,13 @@ Partial Class FormPersediaanAwalList
         Me.BarButtonItem1.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem1.Name = "BarButtonItem1"
         '
-        'BarButtonItem2
+        'btnEdit
         '
-        Me.BarButtonItem2.Caption = "Edit"
-        Me.BarButtonItem2.Id = 2
-        Me.BarButtonItem2.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem2.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem2.Name = "BarButtonItem2"
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.Id = 2
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.Name = "btnEdit"
         '
         'BarButtonItem3
         '
@@ -451,7 +451,7 @@ Partial Class FormPersediaanAwalList
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnEdit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
@@ -511,7 +511,7 @@ Partial Class FormPersediaanAwalList
 
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnEdit As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage

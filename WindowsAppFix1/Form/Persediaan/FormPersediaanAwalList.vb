@@ -14,4 +14,14 @@
         Dim frm = New frmAddPersediaanAwal
         frm.Show()
     End Sub
+
+    Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
+        Using frm As New frmAddPersediaanAwal
+            'load edit
+            If frm.DialogResult = DialogResult.OK Then
+                MsgBox("data berhasil diupdate")
+                LoadData()
+            End If
+        End Using
+    End Sub
 End Class

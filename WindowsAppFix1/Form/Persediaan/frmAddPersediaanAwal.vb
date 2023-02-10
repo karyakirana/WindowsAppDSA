@@ -15,6 +15,7 @@ Public Class frmAddPersediaanAwal
 
     Private _lokasiRepository As New LokasiRepository
     Private _persediaanRepo As New PersediaanRepo
+    Private _persediaanAwalRepo As New PersediaanAwalRepo
     Public dtPersediaan As New DataTable
     Dim exp As DateTime
     Dim draft, lokasi_id As Integer
@@ -114,6 +115,22 @@ Public Class frmAddPersediaanAwal
         End If
     End Sub
 
+    Public Async Sub Edit(id As Long)
+        'load data
+        Dim persediaan_awal As PersediaanAwal = Await _persediaanAwalRepo.Edit(id)
+
+        'set form
+        cbKondisi.EditValue = persediaan_awal.kondisi
+        cbLokasi.EditValue = persediaan_awal.lokasi_id
+        dtTanggal.EditValue = persediaan_awal.tgl_persediaan_awal
+        cbDraft.EditValue = persediaan_awal.draft
+        txtKeterangan.EditValue = persediaan_awal.keterangan
+
+        'set detail
+        Dim detail_list As List(Of PersediaanAwalDetail)
+
+    End Sub
+
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         Me.Close()
     End Sub
@@ -133,8 +150,6 @@ Public Class frmAddPersediaanAwal
 
     Private Sub frmAddPersediaanAwal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
-        'load datatable
-        'LoadDatatable()
     End Sub
 
     Private Sub GridControl1_KeyUp(sender As Object, e As KeyEventArgs) Handles GridControl1.KeyUp

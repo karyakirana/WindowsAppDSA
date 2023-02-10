@@ -15,6 +15,7 @@ Module MainModule
     Public _client As HttpClient
     Public _response As HttpResponseMessage
     Public _jObject As JObject
+    Public purpose As String
 
     Public Sub TokenCheck()
         If Token Is Nothing Then

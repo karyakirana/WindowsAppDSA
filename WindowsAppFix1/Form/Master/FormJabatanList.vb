@@ -2,7 +2,7 @@
 
     Public _repositoryJabatan As JabatanRepository = New JabatanRepository
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        Dim frm As New FormJabatan
+        Dim frm As New frmAddJabatan
         frm.Show()
     End Sub
 
@@ -30,7 +30,7 @@
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         Dim lokasiId = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
-        Dim form As New FormJabatan
+        Dim form As New frmAddJabatan
         form.edit(lokasiId)
         form.Show()
     End Sub

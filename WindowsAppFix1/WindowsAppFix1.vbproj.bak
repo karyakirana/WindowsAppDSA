@@ -449,6 +449,7 @@
     <None Include="My Project\DataSources\Persediaan.datasource" />
     <None Include="My Project\DataSources\PersediaanAwal.datasource" />
     <None Include="My Project\DataSources\Produk.datasource" />
+    <None Include="My Project\DataSources\Supplier.datasource" />
     <None Include="My Project\DataSources\Users.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -61,7 +61,7 @@ Partial Class FormJabatanList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1023, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1023, 162)
         '
         'BarButtonItem1
         '
@@ -114,10 +114,10 @@ Partial Class FormJabatanList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1023, 475)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1023, 455)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -128,7 +128,7 @@ Partial Class FormJabatanList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(999, 451)
+        Me.GridControl1.Size = New System.Drawing.Size(999, 431)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -141,6 +141,7 @@ Partial Class FormJabatanList
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colkode, Me.colnama, Me.colketerangan, Me.colcreated_at, Me.colupdated_at})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
         '
         'colid
         '
@@ -154,6 +155,11 @@ Partial Class FormJabatanList
         '
         'colnama
         '
+        Me.colnama.AppearanceCell.Options.UseTextOptions = True
+        Me.colnama.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colnama.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
@@ -161,6 +167,11 @@ Partial Class FormJabatanList
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceCell.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
@@ -170,15 +181,11 @@ Partial Class FormJabatanList
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 2
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 3
         '
         'Root
         '
@@ -186,7 +193,7 @@ Partial Class FormJabatanList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1023, 475)
+        Me.Root.Size = New System.Drawing.Size(1023, 455)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -194,7 +201,7 @@ Partial Class FormJabatanList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1003, 455)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1003, 435)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Net
 Imports DevExpress.Data
+Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors.Repository
 Imports DevExpress.XtraGrid
@@ -15,6 +16,9 @@ Public Class frmAddPersediaanAwal
     Private _lokasiRepository As New LokasiRepository
     Private _persediaanRepo As New PersediaanRepo
     Public dtPersediaan As New DataTable
+    Dim exp As DateTime
+    Dim draft, lokasi_id As Integer
+    Dim listlokasi As List(Of Lokasi)
 
     Public Sub New()
 
@@ -27,9 +31,8 @@ Public Class frmAddPersediaanAwal
     End Sub
 
     Private Async Sub LoadData()
-        Dim listLokasi = Await _lokasiRepository.GetList()
-        cbLokasi.Properties.DataSource = listLokasi
-
+        listlokasi = Await _lokasiRepository.GetList()
+        cbLokasi.Properties.DataSource = listlokasi
     End Sub
 
     Private Sub LoadDatatable()
@@ -44,14 +47,41 @@ Public Class frmAddPersediaanAwal
         dtPersediaan.Columns.Add("sub_total", GetType(Integer))
         GridControl1.DataSource = dtPersediaan
 
-        'GridView1.Columns.ColumnByFieldName("persediaan_id").VisibleIndex = 0
-        'GridView1.Columns.ColumnByFieldName("produk_nama").VisibleIndex = 1
-        'GridView1.Columns.ColumnByFieldName("batch").VisibleIndex = 2
-        'GridView1.Columns.ColumnByFieldName("expired").VisibleIndex = 3
-        'GridView1.Columns.ColumnByFieldName("serial_number").VisibleIndex = 4
-        'GridView1.Columns.ColumnByFieldName("harga").VisibleIndex = 5
-        'GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 6
-        'GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 7
+        GridView1.Columns.ColumnByFieldName("persediaan_id").VisibleIndex = -1
+        GridView1.Columns.ColumnByFieldName("produk_nama").VisibleIndex = 0
+        GridView1.Columns.ColumnByFieldName("produk_nama").Caption = "Nama Produk"
+        GridView1.Columns.ColumnByFieldName("produk_nama").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("produk_nama").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        GridView1.Columns.ColumnByFieldName("produk_nama").OptionsColumn.AllowEdit = False
+        GridView1.Columns.ColumnByFieldName("batch").VisibleIndex = 1
+        GridView1.Columns.ColumnByFieldName("batch").Caption = "Batch"
+        GridView1.Columns.ColumnByFieldName("batch").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("batch").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("expired").VisibleIndex = 2
+        GridView1.Columns.ColumnByFieldName("expired").Caption = "Kadaluarsa"
+        GridView1.Columns.ColumnByFieldName("expired").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("expired").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("serial_number").VisibleIndex = 3
+        GridView1.Columns.ColumnByFieldName("serial_number").Caption = "Serial Number"
+        GridView1.Columns.ColumnByFieldName("serial_number").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("serial_number").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("harga").VisibleIndex = 4
+        GridView1.Columns.ColumnByFieldName("harga").Caption = "Harga"
+        GridView1.Columns.ColumnByFieldName("harga").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("harga").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 5
+        GridView1.Columns.ColumnByFieldName("jumlah").Caption = "Jumlah"
+        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 6
+        GridView1.Columns.ColumnByFieldName("sub_total").Caption = "Sub Total"
+        GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("sub_total").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("sub_total").OptionsColumn.AllowEdit = False
+
+        GridControl1.RepositoryItems.Add(RepositoryItemDateEdit1)
+        GridView1.Columns("expired").ColumnEdit = RepositoryItemDateEdit1
+        dtTanggal.EditValue = Date.Now
 
     End Sub
 
@@ -69,14 +99,17 @@ Public Class frmAddPersediaanAwal
             row("persediaan_id") = persediaan.id
             row("produk_nama") = persediaan.produk.nama
             row("batch") = ""
-            row("expired") = ""
+            row("expired") = Format(Date.Now, "yyyy-MM-dd")
             row("serial_number") = ""
-            row("harga") = 0
+            row("harga") = persediaan.harga_beli
             row("jumlah") = 0
             row("sub_total") = 0
 
             dtPersediaan.Rows.Add(row)
             GridControl1.DataSource = dtPersediaan
+
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
             'Console.WriteLine(getData)
         End If
     End Sub
@@ -113,4 +146,70 @@ Public Class frmAddPersediaanAwal
         Return harga * jumlah
     End Function
 
+    Private Sub cbDraft_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDraft.SelectedIndexChanged
+        If cbDraft.EditValue = True Then
+            draft = 1
+        Else
+            draft = 0
+        End If
+    End Sub
+
+    Private Sub GridView1_FocusedColumnChanged(sender As Object, e As FocusedColumnChangedEventArgs) Handles GridView1.FocusedColumnChanged
+        If GridView1.FocusedColumn.FieldName = "serial_number" Then
+            RepositoryItemDateEdit1.Mask.EditMask = "yyyy-MM-dd"
+            RepositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = True
+
+            exp = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
+            GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "expired", Format(exp, "yyyy-MM-dd"))
+        End If
+
+        If GridView1.FocusedColumn.FieldName = "sub_total" Then
+            txtTotal.EditValue = 0
+            For i = 0 To GridView1.DataRowCount - 1
+                txtTotal.EditValue += GridView1.GetRowCellValue(i, "sub_total")
+            Next
+        End If
+    End Sub
+
+    Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
+        If GridView1.FocusedColumn.FieldName = "jumlah" Then
+            Dim edit As TextEdit = CType(GridView1.ActiveEditor, TextEdit)
+
+            If e.Value = "" Then
+                txtTotal.EditValue = ""
+                Exit Sub
+            End If
+
+            If e.Value <= 0 Then
+                edit.ErrorText = "Jumlah harus > 0"
+            Else
+                edit.ErrorText = String.Empty
+                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "jumlah", e.Value)
+                Dim hitung As Integer = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value)
+                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
+                GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+                GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
+
+            End If
+        End If
+    End Sub
+
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        GridView1.DeleteRow(GridView1.FocusedRowHandle)
+        txtTotal.EditValue = 0
+        For i = 0 To GridView1.DataRowCount - 1
+            txtTotal.EditValue += GridView1.GetRowCellValue(i, "sub_total")
+        Next
+    End Sub
+
+    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        If purpose = "NEW" Then
+            Dim _awal As New PersediaanAwal
+            _awal.draft = draft
+            _awal.kondisi = cbKondisi.EditValue
+            _awal.lokasi = cbLokasi.EditValue
+            _awal.tgl_persediaan_awal = dtTanggal.Text
+
+        End If
+    End Sub
 End Class

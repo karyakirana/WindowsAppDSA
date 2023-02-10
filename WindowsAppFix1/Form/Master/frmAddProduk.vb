@@ -100,19 +100,18 @@ Public Class frmAddProduk
 
     Private Async Sub Put()
 
-        Dim produk As New Produk With {
-            .produk_id = _id,
-            .produk_kategori_id = cbKategori.EditValue,
-            .nama = txtNama.EditValue,
-            .tipe = txtTipe.EditValue,
-            .merk = txtMerk.EditValue,
-            .satuan_jual = txtSatuan.EditValue,
-            .harga = txtHarga.EditValue,
-            .max_diskon = txtDiskon.EditValue,
-            .buffer_stock = txtBufferStock.EditValue,
-            .minimum_stock = txtMinStock.EditValue,
-            .keterangan = txtKeterangan.EditValue
-        }
+        Dim produk As New Produk
+        produk.produk_id = _id
+        produk.produk_kategori_id = cbKategori.EditValue
+        produk.nama = txtNama.EditValue
+        produk.tipe = txtTipe.EditValue
+        produk.merk = txtMerk.EditValue
+        produk.satuan_jual = txtSatuan.EditValue
+        produk.harga = txtHarga.EditValue
+        produk.max_diskon = CInt(txtDiskon.EditValue)
+        produk.buffer_stock = CInt(txtBufferStock.EditValue)
+        produk.minimum_stock = CInt(txtMinStock.EditValue)
+        produk.keterangan = txtKeterangan.EditValue
 
         'list image
         Dim produk_image_list As New List(Of ProdukImage)
@@ -168,6 +167,7 @@ Public Class frmAddProduk
             txtKategori.EditValue = ""
             txtKeteranganKategori.EditValue = ""
             MsgBox("Data Kategori Disimpan")
+            LoadData()
         End If
     End Sub
 
@@ -214,5 +214,9 @@ Public Class frmAddProduk
         Else
             Store()
         End If
+    End Sub
+
+    Private Sub btnSimpanKategori_Click(sender As Object, e As EventArgs) Handles btnSimpanKategori.Click
+        storeKategori()
     End Sub
 End Class

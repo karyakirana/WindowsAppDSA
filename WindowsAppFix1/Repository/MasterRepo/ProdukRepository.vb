@@ -155,8 +155,7 @@ Public Class ProdukKategoriRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
+
             Return True
         End If
 
@@ -197,8 +196,6 @@ Public Class ProdukKategoriRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
-            'set token
-            Token = _jObject("token")
             Return True
         End If
 

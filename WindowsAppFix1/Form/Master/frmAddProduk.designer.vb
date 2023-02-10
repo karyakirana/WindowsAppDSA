@@ -54,9 +54,7 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem12 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.btnKategori = New DevExpress.XtraEditors.SimpleButton()
         Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.txtDiskon = New DevExpress.XtraEditors.TextEdit()
@@ -68,6 +66,8 @@ Partial Class frmAddProduk
         Me.txtMerk = New DevExpress.XtraEditors.TextEdit()
         Me.txtNama = New DevExpress.XtraEditors.TextEdit()
         Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
+        Me.cbKategori = New DevExpress.XtraEditors.LookUpEdit()
+        Me.ProdukKategoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -85,8 +85,6 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem25 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem24 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -100,8 +98,6 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem17 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem19 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem20 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.cbKategori = New DevExpress.XtraEditors.LookUpEdit()
-        Me.ProdukKategoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,7 +134,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDiskon.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,6 +144,8 @@ Partial Class frmAddProduk
         CType(Me.txtTipe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMerk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,8 +163,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,8 +176,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -215,7 +208,6 @@ Partial Class frmAddProduk
         'LayoutControl2
         '
         Me.LayoutControl2.Controls.Add(Me.XtraTabControl2)
-        Me.LayoutControl2.Controls.Add(Me.btnKategori)
         Me.LayoutControl2.Controls.Add(Me.btnBatal)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
         Me.LayoutControl2.Controls.Add(Me.txtDiskon)
@@ -376,18 +368,18 @@ Partial Class frmAddProduk
         '
         'btnBatalKategori
         '
-        Me.btnBatalKategori.Location = New System.Drawing.Point(461, 78)
+        Me.btnBatalKategori.Location = New System.Drawing.Point(460, 68)
         Me.btnBatalKategori.Name = "btnBatalKategori"
-        Me.btnBatalKategori.Size = New System.Drawing.Size(91, 25)
+        Me.btnBatalKategori.Size = New System.Drawing.Size(92, 25)
         Me.btnBatalKategori.StyleController = Me.LayoutControl3
         Me.btnBatalKategori.TabIndex = 7
         Me.btnBatalKategori.Text = "Batal"
         '
         'btnSimpanKategori
         '
-        Me.btnSimpanKategori.Location = New System.Drawing.Point(354, 78)
+        Me.btnSimpanKategori.Location = New System.Drawing.Point(354, 68)
         Me.btnSimpanKategori.Name = "btnSimpanKategori"
-        Me.btnSimpanKategori.Size = New System.Drawing.Size(93, 25)
+        Me.btnSimpanKategori.Size = New System.Drawing.Size(90, 25)
         Me.btnSimpanKategori.StyleController = Me.LayoutControl3
         Me.btnSimpanKategori.TabIndex = 6
         Me.btnSimpanKategori.Text = "Simpan"
@@ -412,7 +404,7 @@ Partial Class frmAddProduk
         '
         Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.EmptySpaceItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem12, Me.EmptySpaceItem7, Me.EmptySpaceItem14})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.EmptySpaceItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem12, Me.EmptySpaceItem14})
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(1190, 204)
         Me.LayoutControlGroup2.TextVisible = False
@@ -438,18 +430,18 @@ Partial Class frmAddProduk
         'LayoutControlItem18
         '
         Me.LayoutControlItem18.Control = Me.btnSimpanKategori
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(342, 66)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(342, 56)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(97, 29)
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(94, 29)
         Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem18.TextVisible = False
         '
         'LayoutControlItem19
         '
         Me.LayoutControlItem19.Control = Me.btnBatalKategori
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(449, 66)
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(448, 56)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
-        Me.LayoutControlItem19.Size = New System.Drawing.Size(95, 29)
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(96, 29)
         Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem19.TextVisible = False
         '
@@ -464,43 +456,26 @@ Partial Class frmAddProduk
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 66)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 56)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(342, 29)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(342, 128)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem12
         '
         Me.EmptySpaceItem12.AllowHotTrack = False
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(0, 95)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(436, 56)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(544, 89)
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(12, 29)
         Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem7
-        '
-        Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(439, 66)
-        Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(10, 29)
-        Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem14
         '
         Me.EmptySpaceItem14.AllowHotTrack = False
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 56)
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(342, 85)
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Size = New System.Drawing.Size(544, 10)
+        Me.EmptySpaceItem14.Size = New System.Drawing.Size(202, 99)
         Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'btnKategori
-        '
-        Me.btnKategori.Location = New System.Drawing.Point(483, 124)
-        Me.btnKategori.Name = "btnKategori"
-        Me.btnKategori.Size = New System.Drawing.Size(94, 25)
-        Me.btnKategori.StyleController = Me.LayoutControl2
-        Me.btnKategori.TabIndex = 17
-        Me.btnKategori.Text = "Add Kategori"
         '
         'btnBatal
         '
@@ -592,11 +567,30 @@ Partial Class frmAddProduk
         Me.btnSimpan.TabIndex = 14
         Me.btnSimpan.Text = "Simpan"
         '
+        'cbKategori
+        '
+        Me.cbKategori.Location = New System.Drawing.Point(115, 96)
+        Me.cbKategori.Name = "cbKategori"
+        Me.cbKategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbKategori.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.cbKategori.Properties.DataSource = Me.ProdukKategoriBindingSource
+        Me.cbKategori.Properties.DisplayMember = "nama"
+        Me.cbKategori.Properties.NullText = ""
+        Me.cbKategori.Properties.PopupSizeable = False
+        Me.cbKategori.Properties.ValueMember = "id"
+        Me.cbKategori.Size = New System.Drawing.Size(353, 24)
+        Me.cbKategori.StyleController = Me.LayoutControl2
+        Me.cbKategori.TabIndex = 16
+        '
+        'ProdukKategoriBindingSource
+        '
+        Me.ProdukKategoriBindingSource.DataSource = GetType(WindowsAppFix1.ProdukKategori)
+        '
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem8, Me.EmptySpaceItem10, Me.LayoutControlItem14, Me.EmptySpaceItem13, Me.EmptySpaceItem25, Me.LayoutControlItem10, Me.LayoutControlItem5, Me.EmptySpaceItem24, Me.EmptySpaceItem1, Me.LayoutControlItem20, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.EmptySpaceItem3, Me.EmptySpaceItem23, Me.EmptySpaceItem11, Me.EmptySpaceItem9})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem8, Me.EmptySpaceItem10, Me.LayoutControlItem14, Me.EmptySpaceItem13, Me.EmptySpaceItem25, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.LayoutControlItem20, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.EmptySpaceItem3, Me.EmptySpaceItem23, Me.EmptySpaceItem11, Me.EmptySpaceItem9})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1219, 579)
         Me.LayoutControlGroup1.TextVisible = False
@@ -727,9 +721,9 @@ Partial Class frmAddProduk
         'EmptySpaceItem25
         '
         Me.EmptySpaceItem25.AllowHotTrack = False
-        Me.EmptySpaceItem25.Location = New System.Drawing.Point(569, 112)
+        Me.EmptySpaceItem25.Location = New System.Drawing.Point(460, 112)
         Me.EmptySpaceItem25.Name = "EmptySpaceItem25"
-        Me.EmptySpaceItem25.Size = New System.Drawing.Size(630, 29)
+        Me.EmptySpaceItem25.Size = New System.Drawing.Size(739, 29)
         Me.EmptySpaceItem25.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem10
@@ -740,23 +734,6 @@ Partial Class frmAddProduk
         Me.LayoutControlItem10.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem10.Text = "Diskon"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(99, 18)
-        '
-        'LayoutControlItem5
-        '
-        Me.LayoutControlItem5.Control = Me.btnKategori
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(471, 112)
-        Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(98, 29)
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem5.TextVisible = False
-        '
-        'EmptySpaceItem24
-        '
-        Me.EmptySpaceItem24.AllowHotTrack = False
-        Me.EmptySpaceItem24.Location = New System.Drawing.Point(460, 112)
-        Me.EmptySpaceItem24.Name = "EmptySpaceItem24"
-        Me.EmptySpaceItem24.Size = New System.Drawing.Size(11, 29)
-        Me.EmptySpaceItem24.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem1
         '
@@ -877,25 +854,6 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem20.Size = New System.Drawing.Size(157, 37)
         Me.EmptySpaceItem20.TextSize = New System.Drawing.Size(0, 0)
         '
-        'cbKategori
-        '
-        Me.cbKategori.Location = New System.Drawing.Point(115, 96)
-        Me.cbKategori.Name = "cbKategori"
-        Me.cbKategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbKategori.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
-        Me.cbKategori.Properties.DataSource = Me.ProdukKategoriBindingSource
-        Me.cbKategori.Properties.DisplayMember = "nama"
-        Me.cbKategori.Properties.NullText = ""
-        Me.cbKategori.Properties.PopupSizeable = False
-        Me.cbKategori.Properties.ValueMember = "id"
-        Me.cbKategori.Size = New System.Drawing.Size(353, 24)
-        Me.cbKategori.StyleController = Me.LayoutControl2
-        Me.cbKategori.TabIndex = 16
-        '
-        'ProdukKategoriBindingSource
-        '
-        Me.ProdukKategoriBindingSource.DataSource = GetType(WindowsAppFix1.ProdukKategori)
-        '
         'frmAddProduk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -942,7 +900,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDiskon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -953,6 +910,8 @@ Partial Class frmAddProduk
         CType(Me.txtTipe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMerk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -970,8 +929,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
@@ -985,8 +942,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1025,14 +980,11 @@ Partial Class frmAddProduk
     Friend WithEvents EmptySpaceItem11 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents btnKategori As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem13 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem17 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem19 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem20 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem24 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem25 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents XtraTabControl2 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage3 As DevExpress.XtraTab.XtraTabPage
@@ -1063,7 +1015,6 @@ Partial Class frmAddProduk
     Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem12 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem7 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem14 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents GridImage As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView

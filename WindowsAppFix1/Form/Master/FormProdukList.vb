@@ -28,6 +28,10 @@
     Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
         Using frm As New frmAddProduk
             'edit
+            frm.Edit(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+            If frm.ShowDialog = DialogResult.OK Then
+                LoadData()
+            End If
         End Using
     End Sub
 

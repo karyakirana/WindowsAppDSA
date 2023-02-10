@@ -9,20 +9,23 @@ Public Class frmAddProduk
     Public dtKemasan As New DataTable
     Public dtImage As New DataTable
 
+    Private Async Sub LoadData()
+        cbKategori.Properties.DataSource = Await _produkKategoriRepo.GetList()
+    End Sub
+
     Private Async Sub Store()
 
-        Dim produk As New Produk With {
-            .produk_kategori_id = cbKategori.EditValue,
-            .nama = txtNama.EditValue,
-            .tipe = txtTipe.EditValue,
-            .merk = txtMerk.EditValue,
-            .satuan_jual = txtSatuan.EditValue,
-            .harga = txtHarga.EditValue,
-            .max_diskon = txtDiskon.EditValue,
-            .buffer_stock = txtBufferStock.EditValue,
-            .minimum_stock = txtMinStock.EditValue,
-            .keterangan = txtKeterangan.EditValue
-        }
+        Dim produk As New Produk
+        produk.produk_kategori_id = cbKategori.EditValue
+        produk.nama = txtNama.EditValue
+        produk.tipe = txtTipe.EditValue
+        produk.merk = txtMerk.EditValue
+        produk.satuan_jual = txtSatuan.EditValue
+        produk.harga = txtHarga.EditValue
+        produk.max_diskon = CInt(txtDiskon.EditValue)
+        produk.buffer_stock = CInt(txtBufferStock.EditValue)
+        produk.minimum_stock = CInt(txtMinStock.EditValue)
+        produk.keterangan = txtKeterangan.EditValue
 
         'list image
         Dim produk_image_list As New List(Of ProdukImage)
@@ -73,6 +76,8 @@ Public Class frmAddProduk
 
         If Not produk Is Nothing Then
 
+            _update = True
+
             'load produk
             _id = produk.id
             cbKategori.EditValue = produk.produk_kategori_id
@@ -96,6 +101,7 @@ Public Class frmAddProduk
     Private Async Sub Put()
 
         Dim produk As New Produk With {
+            .produk_id = _id,
             .produk_kategori_id = cbKategori.EditValue,
             .nama = txtNama.EditValue,
             .tipe = txtTipe.EditValue,
@@ -196,5 +202,17 @@ Public Class frmAddProduk
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         DialogResult = DialogResult.Cancel
         Close()
+    End Sub
+
+    Private Sub frmAddProduk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadData()
+    End Sub
+
+    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        If _update Then
+            Put()
+        Else
+            Store()
+        End If
     End Sub
 End Class

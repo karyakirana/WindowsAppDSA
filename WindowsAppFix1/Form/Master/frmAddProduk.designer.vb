@@ -22,6 +22,7 @@ Partial Class frmAddProduk
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
@@ -56,7 +57,6 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.btnKategori = New DevExpress.XtraEditors.SimpleButton()
-        Me.cbKategori = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.txtDiskon = New DevExpress.XtraEditors.TextEdit()
@@ -100,6 +100,8 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem17 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem19 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem20 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.cbKategori = New DevExpress.XtraEditors.LookUpEdit()
+        Me.ProdukKategoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,7 +140,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDiskon.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSatuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,6 +181,8 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -213,7 +216,6 @@ Partial Class frmAddProduk
         '
         Me.LayoutControl2.Controls.Add(Me.XtraTabControl2)
         Me.LayoutControl2.Controls.Add(Me.btnKategori)
-        Me.LayoutControl2.Controls.Add(Me.cbKategori)
         Me.LayoutControl2.Controls.Add(Me.btnBatal)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
         Me.LayoutControl2.Controls.Add(Me.txtDiskon)
@@ -225,6 +227,7 @@ Partial Class frmAddProduk
         Me.LayoutControl2.Controls.Add(Me.txtMerk)
         Me.LayoutControl2.Controls.Add(Me.txtNama)
         Me.LayoutControl2.Controls.Add(Me.btnSimpan)
+        Me.LayoutControl2.Controls.Add(Me.cbKategori)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
@@ -498,15 +501,6 @@ Partial Class frmAddProduk
         Me.btnKategori.StyleController = Me.LayoutControl2
         Me.btnKategori.TabIndex = 17
         Me.btnKategori.Text = "Add Kategori"
-        '
-        'cbKategori
-        '
-        Me.cbKategori.Location = New System.Drawing.Point(115, 96)
-        Me.cbKategori.Name = "cbKategori"
-        Me.cbKategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbKategori.Size = New System.Drawing.Size(353, 24)
-        Me.cbKategori.StyleController = Me.LayoutControl2
-        Me.cbKategori.TabIndex = 16
         '
         'btnBatal
         '
@@ -883,6 +877,25 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem20.Size = New System.Drawing.Size(157, 37)
         Me.EmptySpaceItem20.TextSize = New System.Drawing.Size(0, 0)
         '
+        'cbKategori
+        '
+        Me.cbKategori.Location = New System.Drawing.Point(115, 96)
+        Me.cbKategori.Name = "cbKategori"
+        Me.cbKategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbKategori.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.cbKategori.Properties.DataSource = Me.ProdukKategoriBindingSource
+        Me.cbKategori.Properties.DisplayMember = "nama"
+        Me.cbKategori.Properties.NullText = ""
+        Me.cbKategori.Properties.PopupSizeable = False
+        Me.cbKategori.Properties.ValueMember = "id"
+        Me.cbKategori.Size = New System.Drawing.Size(353, 24)
+        Me.cbKategori.StyleController = Me.LayoutControl2
+        Me.cbKategori.TabIndex = 16
+        '
+        'ProdukKategoriBindingSource
+        '
+        Me.ProdukKategoriBindingSource.DataSource = GetType(WindowsAppFix1.ProdukKategori)
+        '
         'frmAddProduk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -931,7 +944,6 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDiskon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSatuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -973,6 +985,8 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbKategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdukKategoriBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1012,7 +1026,6 @@ Partial Class frmAddProduk
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents btnKategori As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents cbKategori As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem13 As DevExpress.XtraLayout.EmptySpaceItem
@@ -1055,4 +1068,6 @@ Partial Class frmAddProduk
     Friend WithEvents GridImage As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents cbKategori As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents ProdukKategoriBindingSource As BindingSource
 End Class

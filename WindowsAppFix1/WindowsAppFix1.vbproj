@@ -283,6 +283,10 @@
     <Compile Include="Form\Persediaan\FrmFindProduk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Model\Keuangan\Akun.vb" />
+    <Compile Include="Model\Keuangan\CoaConfig.vb" />
+    <Compile Include="Model\Keuangan\HutangPembelian.vb" />
+    <Compile Include="Model\Keuangan\NeracaSaldo.vb" />
     <Compile Include="Model\LoginClass.vb" />
     <Compile Include="Model\Master\Customer.vb" />
     <Compile Include="Model\Master\Kota.vb" />

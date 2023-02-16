@@ -58,4 +58,8 @@ Public Class MainForm
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         LoginForm.Show()
     End Sub
+
+    Private Sub NavBarControl1_Click(sender As Object, e As EventArgs) Handles NavBarControl1.Click
+
+    End Sub
 End Class

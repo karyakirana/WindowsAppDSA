@@ -72,7 +72,7 @@ Partial Class FormPegawaiList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1421, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1421, 162)
         '
         'BarButtonItem1
         '
@@ -125,10 +125,10 @@ Partial Class FormPegawaiList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(1421, 404)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1421, 384)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -139,7 +139,7 @@ Partial Class FormPegawaiList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1397, 380)
+        Me.GridControl1.Size = New System.Drawing.Size(1397, 360)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -161,6 +161,10 @@ Partial Class FormPegawaiList
         '
         'colkode
         '
+        Me.colkode.AppearanceCell.Options.UseTextOptions = True
+        Me.colkode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
@@ -169,6 +173,10 @@ Partial Class FormPegawaiList
         '
         'colstatus
         '
+        Me.colstatus.AppearanceCell.Options.UseTextOptions = True
+        Me.colstatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.AppearanceHeader.Options.UseTextOptions = True
+        Me.colstatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colstatus.Caption = "Status"
         Me.colstatus.FieldName = "status"
         Me.colstatus.Name = "colstatus"
@@ -191,6 +199,8 @@ Partial Class FormPegawaiList
         '
         'coljabatan
         '
+        Me.coljabatan.AppearanceHeader.Options.UseTextOptions = True
+        Me.coljabatan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coljabatan.Caption = "Jabatan"
         Me.coljabatan.FieldName = "jabatan.nama"
         Me.coljabatan.Name = "coljabatan"
@@ -199,6 +209,8 @@ Partial Class FormPegawaiList
         '
         'colgender
         '
+        Me.colgender.AppearanceHeader.Options.UseTextOptions = True
+        Me.colgender.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colgender.Caption = "Gender"
         Me.colgender.FieldName = "gender"
         Me.colgender.Name = "colgender"
@@ -207,6 +219,10 @@ Partial Class FormPegawaiList
         '
         'coltelepon
         '
+        Me.coltelepon.AppearanceCell.Options.UseTextOptions = True
+        Me.coltelepon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltelepon.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltelepon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coltelepon.Caption = "Telepon"
         Me.coltelepon.FieldName = "telepon"
         Me.coltelepon.Name = "coltelepon"
@@ -215,6 +231,8 @@ Partial Class FormPegawaiList
         '
         'colemail
         '
+        Me.colemail.AppearanceHeader.Options.UseTextOptions = True
+        Me.colemail.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colemail.Caption = "Email"
         Me.colemail.FieldName = "email"
         Me.colemail.Name = "colemail"
@@ -223,6 +241,10 @@ Partial Class FormPegawaiList
         '
         'colnpwp
         '
+        Me.colnpwp.AppearanceCell.Options.UseTextOptions = True
+        Me.colnpwp.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colnpwp.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnpwp.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colnpwp.Caption = "NPWP"
         Me.colnpwp.FieldName = "npwp"
         Me.colnpwp.Name = "colnpwp"
@@ -236,6 +258,8 @@ Partial Class FormPegawaiList
         '
         'colalamat
         '
+        Me.colalamat.AppearanceHeader.Options.UseTextOptions = True
+        Me.colalamat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colalamat.Caption = "Alamat"
         Me.colalamat.FieldName = "alamat"
         Me.colalamat.Name = "colalamat"
@@ -244,6 +268,8 @@ Partial Class FormPegawaiList
         '
         'colkota
         '
+        Me.colkota.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkota.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkota.Caption = "Kota"
         Me.colkota.FieldName = "kota.name"
         Me.colkota.Name = "colkota"
@@ -257,6 +283,8 @@ Partial Class FormPegawaiList
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
@@ -284,7 +312,7 @@ Partial Class FormPegawaiList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1421, 404)
+        Me.Root.Size = New System.Drawing.Size(1421, 384)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -292,7 +320,7 @@ Partial Class FormPegawaiList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1401, 384)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1401, 364)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

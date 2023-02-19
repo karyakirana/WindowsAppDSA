@@ -55,7 +55,20 @@ Public Class MainForm
         easyAccess(Me, "P011")
     End Sub
 
+    'KEUANGAN
+    Private Sub NavBarItemAkun_LinkClicked(sender As Object, e As NavBarLinkEventArgs) Handles NavBarItemAkun.LinkClicked
+        easyAccess(Me, "P013")
+    End Sub
+
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         LoginForm.Show()
     End Sub
+
+    Private Sub NavBarControl1_Click(sender As Object, e As EventArgs) Handles NavBarControl1.Click
+
+    End Sub
+
+
+
+
 End Class

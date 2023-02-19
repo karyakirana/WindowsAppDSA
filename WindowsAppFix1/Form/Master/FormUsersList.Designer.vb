@@ -32,11 +32,9 @@ Partial Class FormUsersList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colpegawai_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colusername = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -49,25 +47,27 @@ Partial Class FormUsersList
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colpegawai = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.SearchEditItem, Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 150)
+        Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
         '
         'BarButtonItem1
         '
@@ -120,21 +120,12 @@ Partial Class FormUsersList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 150)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 300)
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 288)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 300)
-        Me.Root.TextVisible = False
         '
         'GridControl1
         '
@@ -143,9 +134,13 @@ Partial Class FormUsersList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 276)
+        Me.GridControl1.Size = New System.Drawing.Size(776, 264)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataSource = GetType(WindowsAppFix1.Users)
         '
         'GridView1
         '
@@ -153,102 +148,113 @@ Partial Class FormUsersList
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 280)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'UsersBindingSource
-        '
-        Me.UsersBindingSource.DataSource = GetType(WindowsAppFix1.Users)
-        '
         'colid
         '
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colpegawai_id
         '
+        Me.colpegawai_id.AppearanceHeader.Options.UseTextOptions = True
+        Me.colpegawai_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colpegawai_id.Caption = "ID"
         Me.colpegawai_id.FieldName = "pegawai_id"
         Me.colpegawai_id.Name = "colpegawai_id"
         Me.colpegawai_id.Visible = True
-        Me.colpegawai_id.VisibleIndex = 1
+        Me.colpegawai_id.VisibleIndex = 0
         '
         'colusername
         '
+        Me.colusername.AppearanceHeader.Options.UseTextOptions = True
+        Me.colusername.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colusername.Caption = "Username"
         Me.colusername.FieldName = "username"
         Me.colusername.Name = "colusername"
         Me.colusername.Visible = True
-        Me.colusername.VisibleIndex = 2
+        Me.colusername.VisibleIndex = 1
         '
         'colrole
         '
+        Me.colrole.AppearanceHeader.Options.UseTextOptions = True
+        Me.colrole.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colrole.Caption = "Role"
         Me.colrole.FieldName = "role"
         Me.colrole.Name = "colrole"
         Me.colrole.Visible = True
-        Me.colrole.VisibleIndex = 3
+        Me.colrole.VisibleIndex = 2
         '
         'colname
         '
+        Me.colname.AppearanceHeader.Options.UseTextOptions = True
+        Me.colname.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colname.Caption = "Nama"
         Me.colname.FieldName = "name"
         Me.colname.Name = "colname"
         Me.colname.Visible = True
-        Me.colname.VisibleIndex = 4
+        Me.colname.VisibleIndex = 3
         '
         'colemail
         '
+        Me.colemail.AppearanceHeader.Options.UseTextOptions = True
+        Me.colemail.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colemail.Caption = "Email"
         Me.colemail.FieldName = "email"
         Me.colemail.Name = "colemail"
         Me.colemail.Visible = True
-        Me.colemail.VisibleIndex = 5
+        Me.colemail.VisibleIndex = 4
         '
         'colemail_verified_at
         '
         Me.colemail_verified_at.FieldName = "email_verified_at"
         Me.colemail_verified_at.Name = "colemail_verified_at"
-        Me.colemail_verified_at.Visible = True
-        Me.colemail_verified_at.VisibleIndex = 6
         '
         'colpassword
         '
+        Me.colpassword.AppearanceHeader.Options.UseTextOptions = True
+        Me.colpassword.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colpassword.Caption = "Password"
         Me.colpassword.FieldName = "password"
         Me.colpassword.Name = "colpassword"
         Me.colpassword.Visible = True
-        Me.colpassword.VisibleIndex = 7
+        Me.colpassword.VisibleIndex = 5
         '
         'colremember_token
         '
         Me.colremember_token.FieldName = "remember_token"
         Me.colremember_token.Name = "colremember_token"
-        Me.colremember_token.Visible = True
-        Me.colremember_token.VisibleIndex = 8
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 9
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 10
         '
         'colpegawai
         '
         Me.colpegawai.FieldName = "pegawai"
         Me.colpegawai.Name = "colpegawai"
-        Me.colpegawai.Visible = True
-        Me.colpegawai.VisibleIndex = 11
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(800, 288)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 268)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'FormUsersList
         '
@@ -262,11 +268,11 @@ Partial Class FormUsersList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

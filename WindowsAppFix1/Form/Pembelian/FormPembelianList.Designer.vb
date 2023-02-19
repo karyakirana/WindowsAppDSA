@@ -87,7 +87,7 @@ Partial Class FormPembelianList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 284)
+        Me.GridControl1.Size = New System.Drawing.Size(776, 264)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
         '
@@ -105,155 +105,205 @@ Partial Class FormPembelianList
         '
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colactive_cash
         '
         Me.colactive_cash.FieldName = "active_cash"
         Me.colactive_cash.Name = "colactive_cash"
-        Me.colactive_cash.Visible = True
-        Me.colactive_cash.VisibleIndex = 1
         '
         'colpembelian_po_id
         '
         Me.colpembelian_po_id.FieldName = "pembelian_po_id"
         Me.colpembelian_po_id.Name = "colpembelian_po_id"
-        Me.colpembelian_po_id.Visible = True
-        Me.colpembelian_po_id.VisibleIndex = 2
         '
         'colkode
         '
+        Me.colkode.AppearanceCell.Options.UseTextOptions = True
+        Me.colkode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 3
+        Me.colkode.VisibleIndex = 0
         '
         'coldraft
         '
+        Me.coldraft.AppearanceCell.Options.UseTextOptions = True
+        Me.coldraft.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldraft.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldraft.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldraft.Caption = "Draft"
         Me.coldraft.FieldName = "draft"
         Me.coldraft.Name = "coldraft"
         Me.coldraft.Visible = True
-        Me.coldraft.VisibleIndex = 4
+        Me.coldraft.VisibleIndex = 3
         '
         'colstatus
         '
+        Me.colstatus.AppearanceCell.Options.UseTextOptions = True
+        Me.colstatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.AppearanceHeader.Options.UseTextOptions = True
+        Me.colstatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.Caption = "Status"
         Me.colstatus.FieldName = "status"
         Me.colstatus.Name = "colstatus"
         Me.colstatus.Visible = True
-        Me.colstatus.VisibleIndex = 5
+        Me.colstatus.VisibleIndex = 4
         '
         'coltipe_pembelian
         '
+        Me.coltipe_pembelian.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltipe_pembelian.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltipe_pembelian.Caption = "Tipe Pembelian"
         Me.coltipe_pembelian.FieldName = "tipe_pembelian"
         Me.coltipe_pembelian.Name = "coltipe_pembelian"
         Me.coltipe_pembelian.Visible = True
-        Me.coltipe_pembelian.VisibleIndex = 6
+        Me.coltipe_pembelian.VisibleIndex = 5
         '
         'coltgl_pembelian
         '
+        Me.coltgl_pembelian.AppearanceCell.Options.UseTextOptions = True
+        Me.coltgl_pembelian.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_pembelian.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltgl_pembelian.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_pembelian.Caption = "Tanggal Pembelian"
         Me.coltgl_pembelian.FieldName = "tgl_pembelian"
         Me.coltgl_pembelian.Name = "coltgl_pembelian"
         Me.coltgl_pembelian.Visible = True
-        Me.coltgl_pembelian.VisibleIndex = 7
+        Me.coltgl_pembelian.VisibleIndex = 6
         '
         'coltempo
         '
+        Me.coltempo.AppearanceCell.Options.UseTextOptions = True
+        Me.coltempo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltempo.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltempo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltempo.Caption = "Tempo"
         Me.coltempo.FieldName = "tempo"
         Me.coltempo.Name = "coltempo"
         Me.coltempo.Visible = True
-        Me.coltempo.VisibleIndex = 8
+        Me.coltempo.VisibleIndex = 7
         '
         'coltgl_tempo
         '
+        Me.coltgl_tempo.AppearanceCell.Options.UseTextOptions = True
+        Me.coltgl_tempo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_tempo.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltgl_tempo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_tempo.Caption = "Tanggal Tempo"
         Me.coltgl_tempo.FieldName = "tgl_tempo"
         Me.coltgl_tempo.Name = "coltgl_tempo"
         Me.coltgl_tempo.Visible = True
-        Me.coltgl_tempo.VisibleIndex = 9
+        Me.coltgl_tempo.VisibleIndex = 8
         '
         'colsupplier_id
         '
         Me.colsupplier_id.FieldName = "supplier_id"
         Me.colsupplier_id.Name = "colsupplier_id"
-        Me.colsupplier_id.Visible = True
-        Me.colsupplier_id.VisibleIndex = 10
         '
         'coluser_id
         '
         Me.coluser_id.FieldName = "user_id"
         Me.coluser_id.Name = "coluser_id"
-        Me.coluser_id.Visible = True
-        Me.coluser_id.VisibleIndex = 11
         '
         'coltotal_barang
         '
+        Me.coltotal_barang.AppearanceCell.Options.UseTextOptions = True
+        Me.coltotal_barang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltotal_barang.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltotal_barang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltotal_barang.Caption = "Total Barang"
         Me.coltotal_barang.FieldName = "total_barang"
         Me.coltotal_barang.Name = "coltotal_barang"
         Me.coltotal_barang.Visible = True
-        Me.coltotal_barang.VisibleIndex = 12
+        Me.coltotal_barang.VisibleIndex = 9
         '
         'colppn
         '
+        Me.colppn.AppearanceCell.Options.UseTextOptions = True
+        Me.colppn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colppn.AppearanceHeader.Options.UseTextOptions = True
+        Me.colppn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colppn.Caption = "PPN"
         Me.colppn.FieldName = "ppn"
         Me.colppn.Name = "colppn"
         Me.colppn.Visible = True
-        Me.colppn.VisibleIndex = 13
+        Me.colppn.VisibleIndex = 10
         '
         'colbiaya_lain
         '
+        Me.colbiaya_lain.AppearanceCell.Options.UseTextOptions = True
+        Me.colbiaya_lain.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colbiaya_lain.AppearanceHeader.Options.UseTextOptions = True
+        Me.colbiaya_lain.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colbiaya_lain.Caption = "Biaya Lain"
+        Me.colbiaya_lain.DisplayFormat.FormatString = "n0"
+        Me.colbiaya_lain.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colbiaya_lain.FieldName = "biaya_lain"
         Me.colbiaya_lain.Name = "colbiaya_lain"
         Me.colbiaya_lain.Visible = True
-        Me.colbiaya_lain.VisibleIndex = 14
+        Me.colbiaya_lain.VisibleIndex = 11
         '
         'coltotal_bayar
         '
+        Me.coltotal_bayar.AppearanceCell.Options.UseTextOptions = True
+        Me.coltotal_bayar.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltotal_bayar.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltotal_bayar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltotal_bayar.Caption = "Total Bayar"
+        Me.coltotal_bayar.DisplayFormat.FormatString = "n0"
+        Me.coltotal_bayar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.coltotal_bayar.FieldName = "total_bayar"
         Me.coltotal_bayar.Name = "coltotal_bayar"
         Me.coltotal_bayar.Visible = True
-        Me.coltotal_bayar.VisibleIndex = 15
+        Me.coltotal_bayar.VisibleIndex = 12
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 16
+        Me.colketerangan.VisibleIndex = 13
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 17
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 18
         '
         'coldeleted_at
         '
         Me.coldeleted_at.FieldName = "deleted_at"
         Me.coldeleted_at.Name = "coldeleted_at"
-        Me.coldeleted_at.Visible = True
-        Me.coldeleted_at.VisibleIndex = 19
         '
         'colsupplier
         '
+        Me.colsupplier.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsupplier.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsupplier.Caption = "Supplier"
         Me.colsupplier.FieldName = "supplier"
         Me.colsupplier.Name = "colsupplier"
         Me.colsupplier.Visible = True
-        Me.colsupplier.VisibleIndex = 20
+        Me.colsupplier.VisibleIndex = 1
         '
         'colusers
         '
+        Me.colusers.AppearanceHeader.Options.UseTextOptions = True
+        Me.colusers.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colusers.Caption = "User"
         Me.colusers.FieldName = "users"
         Me.colusers.Name = "colusers"
         Me.colusers.Visible = True
-        Me.colusers.VisibleIndex = 21
+        Me.colusers.VisibleIndex = 2
         '
         'RibbonControl1
         '
@@ -263,7 +313,7 @@ Partial Class FormPembelianList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
         '
         'BarButtonItem1
         '
@@ -316,10 +366,10 @@ Partial Class FormPembelianList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 308)
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 288)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -329,7 +379,7 @@ Partial Class FormPembelianList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 308)
+        Me.Root.Size = New System.Drawing.Size(800, 288)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -337,7 +387,7 @@ Partial Class FormPembelianList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 288)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 268)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

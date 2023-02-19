@@ -97,6 +97,36 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Keuangan\AkunList.Designer.vb">
+      <DependentUpon>AkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\AkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\KategoriAkunList.Designer.vb">
+      <DependentUpon>KategoriAkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\KategoriAkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaAwalList.Designer.vb">
+      <DependentUpon>NeracaAwalList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaAwalList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaSaldoList.Designer.vb">
+      <DependentUpon>NeracaSaldoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaSaldoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\TipeAkunList.Designer.vb">
+      <DependentUpon>TipeAkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\TipeAkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -119,12 +149,6 @@
       <DependentUpon>FormJabatan.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Master\FormJabatan.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Master\FormCustomer.Designer.vb">
-      <DependentUpon>FormCustomer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Master\FormCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Master\FormJabatanList.Designer.vb">
@@ -338,6 +362,18 @@
     <Compile Include="Repository\StockRepo\StockMasukRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\Keuangan\AkunList.resx">
+      <DependentUpon>AkunList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\KategoriAkunList.resx">
+      <DependentUpon>KategoriAkunList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\NeracaAwalList.resx">
+      <DependentUpon>NeracaAwalList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\NeracaSaldoList.resx">
+      <DependentUpon>NeracaSaldoList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -349,9 +385,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatan.resx">
       <DependentUpon>FormJabatan.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Master\FormCustomer.resx">
-      <DependentUpon>FormCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatanList.resx">
       <DependentUpon>FormJabatanList.vb</DependentUpon>
@@ -441,6 +474,9 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Akun.datasource" />
+    <None Include="My Project\DataSources\AkunKategori.datasource" />
+    <None Include="My Project\DataSources\AkunTipe.datasource" />
     <None Include="My Project\DataSources\Customer.datasource" />
     <None Include="My Project\DataSources\Jabatan.datasource" />
     <None Include="My Project\DataSources\Kota.datasource" />
@@ -514,6 +550,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Jabatan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

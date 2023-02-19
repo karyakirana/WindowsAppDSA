@@ -72,7 +72,7 @@ Partial Class FormCustomerList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
         '
         'BarButtonItem1
         '
@@ -125,10 +125,10 @@ Partial Class FormCustomerList
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 308)
+        Me.LayoutControl1.Size = New System.Drawing.Size(800, 288)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -139,7 +139,7 @@ Partial Class FormCustomerList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 284)
+        Me.GridControl1.Size = New System.Drawing.Size(776, 264)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -160,6 +160,10 @@ Partial Class FormCustomerList
         '
         'colkode
         '
+        Me.colkode.AppearanceCell.Options.UseTextOptions = True
+        Me.colkode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkode.Caption = "ID"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
@@ -168,6 +172,10 @@ Partial Class FormCustomerList
         '
         'coljenis_instansi
         '
+        Me.coljenis_instansi.AppearanceCell.Options.UseTextOptions = True
+        Me.coljenis_instansi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coljenis_instansi.AppearanceHeader.Options.UseTextOptions = True
+        Me.coljenis_instansi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coljenis_instansi.Caption = "Instansi"
         Me.coljenis_instansi.FieldName = "jenis_instansi"
         Me.coljenis_instansi.Name = "coljenis_instansi"
@@ -176,6 +184,8 @@ Partial Class FormCustomerList
         '
         'colnama
         '
+        Me.colnama.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
@@ -184,6 +194,10 @@ Partial Class FormCustomerList
         '
         'coltelepon
         '
+        Me.coltelepon.AppearanceCell.Options.UseTextOptions = True
+        Me.coltelepon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltelepon.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltelepon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coltelepon.Caption = "Telepon"
         Me.coltelepon.FieldName = "telepon"
         Me.coltelepon.Name = "coltelepon"
@@ -192,6 +206,8 @@ Partial Class FormCustomerList
         '
         'colemail
         '
+        Me.colemail.AppearanceHeader.Options.UseTextOptions = True
+        Me.colemail.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colemail.Caption = "Email"
         Me.colemail.FieldName = "email"
         Me.colemail.Name = "colemail"
@@ -200,6 +216,10 @@ Partial Class FormCustomerList
         '
         'colnpwp
         '
+        Me.colnpwp.AppearanceCell.Options.UseTextOptions = True
+        Me.colnpwp.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colnpwp.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnpwp.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colnpwp.Caption = "NPWP"
         Me.colnpwp.FieldName = "npwp"
         Me.colnpwp.Name = "colnpwp"
@@ -208,6 +228,8 @@ Partial Class FormCustomerList
         '
         'colalamat
         '
+        Me.colalamat.AppearanceHeader.Options.UseTextOptions = True
+        Me.colalamat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colalamat.Caption = "Alamat"
         Me.colalamat.FieldName = "alamat"
         Me.colalamat.Name = "colalamat"
@@ -221,6 +243,8 @@ Partial Class FormCustomerList
         '
         'colkota
         '
+        Me.colkota.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkota.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkota.Caption = "Kota"
         Me.colkota.FieldName = "kota.name"
         Me.colkota.Name = "colkota"
@@ -234,6 +258,8 @@ Partial Class FormCustomerList
         '
         'colsales
         '
+        Me.colsales.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsales.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colsales.Caption = "Sales"
         Me.colsales.FieldName = "sales.nama"
         Me.colsales.Name = "colsales"
@@ -242,6 +268,10 @@ Partial Class FormCustomerList
         '
         'coldiskon
         '
+        Me.coldiskon.AppearanceCell.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coldiskon.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.coldiskon.Caption = "Diskon"
         Me.coldiskon.FieldName = "diskon"
         Me.coldiskon.Name = "coldiskon"
@@ -250,6 +280,8 @@ Partial Class FormCustomerList
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
@@ -277,7 +309,7 @@ Partial Class FormCustomerList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 308)
+        Me.Root.Size = New System.Drawing.Size(800, 288)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -285,7 +317,7 @@ Partial Class FormCustomerList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 288)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 268)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '

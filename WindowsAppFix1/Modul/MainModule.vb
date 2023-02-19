@@ -180,6 +180,17 @@ Module MainModule
                     .Text = "Form Pembelian"
                     .Show()
                 End With
+            Case "P013"
+                addDocumentManager()
+                Dim form As New AkunList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Akun"
+                    .Show()
+                End With
 
 
         End Select

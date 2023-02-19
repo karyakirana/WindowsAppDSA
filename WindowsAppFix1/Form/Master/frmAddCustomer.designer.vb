@@ -40,7 +40,6 @@ Partial Class frmAddCustomer
         Me.txtEmail = New DevExpress.XtraEditors.TextEdit()
         Me.txtTelepon = New DevExpress.XtraEditors.TextEdit()
         Me.txtKota = New DevExpress.XtraEditors.LookUpEdit()
-        Me.KotaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -70,9 +69,9 @@ Partial Class frmAddCustomer
         Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.KotaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.DxErrorProvider1 = New DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(Me.components)
+        Me.KotaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +90,6 @@ Partial Class frmAddCustomer
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KotaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,9 +119,9 @@ Partial Class frmAddCustomer
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DxErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -285,7 +283,7 @@ Partial Class frmAddCustomer
         Me.txtKota.Name = "txtKota"
         Me.txtKota.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtKota.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 35, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
-        Me.txtKota.Properties.DataSource = Me.KotaBindingSource1
+        Me.txtKota.Properties.DataSource = Me.KotaBindingSource
         Me.txtKota.Properties.DisplayMember = "name"
         Me.txtKota.Properties.NullText = ""
         Me.txtKota.Properties.PopupSizeable = False
@@ -294,10 +292,6 @@ Partial Class frmAddCustomer
         Me.txtKota.Size = New System.Drawing.Size(352, 24)
         Me.txtKota.StyleController = Me.LayoutControl3
         Me.txtKota.TabIndex = 8
-        '
-        'KotaBindingSource1
-        '
-        Me.KotaBindingSource1.DataSource = GetType(WindowsAppFix1.Kota)
         '
         'LayoutControlGroup2
         '
@@ -583,10 +577,6 @@ Partial Class frmAddCustomer
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem14.TextVisible = False
         '
-        'KotaBindingSource
-        '
-        Me.KotaBindingSource.DataSource = GetType(WindowsAppFix1.Kota)
-        '
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -599,6 +589,10 @@ Partial Class frmAddCustomer
         'DxErrorProvider1
         '
         Me.DxErrorProvider1.ContainerControl = Me
+        '
+        'KotaBindingSource
+        '
+        Me.KotaBindingSource.DataSource = GetType(WindowsAppFix1.Kota)
         '
         'frmAddCustomer
         '
@@ -629,7 +623,6 @@ Partial Class frmAddCustomer
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTelepon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KotaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -659,9 +652,9 @@ Partial Class frmAddCustomer
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DxErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KotaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -715,5 +708,4 @@ Partial Class frmAddCustomer
     Friend WithEvents PegawaiBindingSource As BindingSource
     Friend WithEvents txtKota As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents KotaBindingSource As BindingSource
-    Friend WithEvents KotaBindingSource1 As BindingSource
 End Class

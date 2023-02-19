@@ -149,6 +149,9 @@ Partial Class FormLokasiList
         '
         'colkode
         '
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
@@ -156,6 +159,9 @@ Partial Class FormLokasiList
         '
         'colnama
         '
+        Me.colnama.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
@@ -163,6 +169,9 @@ Partial Class FormLokasiList
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True

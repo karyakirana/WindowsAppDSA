@@ -100,43 +100,48 @@ Partial Class FormProdukList
         '
         Me.colid1.FieldName = "id"
         Me.colid1.Name = "colid1"
-        Me.colid1.Visible = True
-        Me.colid1.VisibleIndex = 0
         '
         'colproduk_id
         '
+        Me.colproduk_id.AppearanceCell.Options.UseTextOptions = True
+        Me.colproduk_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_id.AppearanceHeader.Options.UseTextOptions = True
+        Me.colproduk_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_id.Caption = "ID"
         Me.colproduk_id.FieldName = "produk_id"
         Me.colproduk_id.Name = "colproduk_id"
         Me.colproduk_id.Visible = True
-        Me.colproduk_id.VisibleIndex = 1
+        Me.colproduk_id.VisibleIndex = 0
         '
         'coldeskripsi
         '
+        Me.coldeskripsi.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldeskripsi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldeskripsi.Caption = "Deskripsi"
         Me.coldeskripsi.FieldName = "deskripsi"
         Me.coldeskripsi.Name = "coldeskripsi"
         Me.coldeskripsi.Visible = True
-        Me.coldeskripsi.VisibleIndex = 2
+        Me.coldeskripsi.VisibleIndex = 1
         '
         'colurl
         '
+        Me.colurl.AppearanceHeader.Options.UseTextOptions = True
+        Me.colurl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colurl.Caption = "Url"
         Me.colurl.FieldName = "url"
         Me.colurl.Name = "colurl"
         Me.colurl.Visible = True
-        Me.colurl.VisibleIndex = 3
+        Me.colurl.VisibleIndex = 2
         '
         'colcreated_at1
         '
         Me.colcreated_at1.FieldName = "created_at"
         Me.colcreated_at1.Name = "colcreated_at1"
-        Me.colcreated_at1.Visible = True
-        Me.colcreated_at1.VisibleIndex = 4
         '
         'colupdated_at1
         '
         Me.colupdated_at1.FieldName = "updated_at"
         Me.colupdated_at1.Name = "colupdated_at1"
-        Me.colupdated_at1.Visible = True
-        Me.colupdated_at1.VisibleIndex = 5
         '
         'GridControl1
         '
@@ -168,47 +173,56 @@ Partial Class FormProdukList
         '
         Me.colid2.FieldName = "id"
         Me.colid2.Name = "colid2"
-        Me.colid2.Visible = True
-        Me.colid2.VisibleIndex = 0
         '
         'colproduk_id1
         '
+        Me.colproduk_id1.AppearanceCell.Options.UseTextOptions = True
+        Me.colproduk_id1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_id1.AppearanceHeader.Options.UseTextOptions = True
+        Me.colproduk_id1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_id1.Caption = "ID"
         Me.colproduk_id1.FieldName = "produk_id"
         Me.colproduk_id1.Name = "colproduk_id1"
         Me.colproduk_id1.Visible = True
-        Me.colproduk_id1.VisibleIndex = 1
+        Me.colproduk_id1.VisibleIndex = 0
         '
         'colsatuan_beli
         '
+        Me.colsatuan_beli.AppearanceCell.Options.UseTextOptions = True
+        Me.colsatuan_beli.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colsatuan_beli.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsatuan_beli.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsatuan_beli.Caption = "Satuan Beli"
         Me.colsatuan_beli.FieldName = "satuan_beli"
         Me.colsatuan_beli.Name = "colsatuan_beli"
         Me.colsatuan_beli.Visible = True
-        Me.colsatuan_beli.VisibleIndex = 2
+        Me.colsatuan_beli.VisibleIndex = 1
         '
         'colisi
         '
+        Me.colisi.AppearanceCell.Options.UseTextOptions = True
+        Me.colisi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colisi.AppearanceHeader.Options.UseTextOptions = True
+        Me.colisi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colisi.Caption = "Isi"
         Me.colisi.FieldName = "isi"
         Me.colisi.Name = "colisi"
         Me.colisi.Visible = True
-        Me.colisi.VisibleIndex = 3
+        Me.colisi.VisibleIndex = 2
         '
         'colcreated_at2
         '
         Me.colcreated_at2.FieldName = "created_at"
         Me.colcreated_at2.Name = "colcreated_at2"
-        Me.colcreated_at2.Visible = True
-        Me.colcreated_at2.VisibleIndex = 4
         '
         'colupdated_at2
         '
         Me.colupdated_at2.FieldName = "updated_at"
         Me.colupdated_at2.Name = "colupdated_at2"
-        Me.colupdated_at2.Visible = True
-        Me.colupdated_at2.VisibleIndex = 5
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colproduk_kategori_id, Me.colkode, Me.colstatus, Me.colnama, Me.coltipe, Me.colmerk, Me.colsatuan_jual, Me.colharga, Me.colmax_diskon, Me.colbuffer_stock, Me.colminimum_stock, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colproduk_kategori})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colproduk_kategori_id, Me.colkode, Me.colstatus, Me.colnama, Me.colproduk_kategori, Me.coltipe, Me.colmerk, Me.colsatuan_jual, Me.colharga, Me.colmax_diskon, Me.colbuffer_stock, Me.colminimum_stock, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
@@ -216,120 +230,146 @@ Partial Class FormProdukList
         '
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
-        Me.colid.Visible = True
-        Me.colid.VisibleIndex = 0
         '
         'colproduk_kategori_id
         '
         Me.colproduk_kategori_id.FieldName = "produk_kategori_id"
         Me.colproduk_kategori_id.Name = "colproduk_kategori_id"
-        Me.colproduk_kategori_id.Visible = True
-        Me.colproduk_kategori_id.VisibleIndex = 1
         '
         'colkode
         '
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
-        Me.colkode.VisibleIndex = 2
+        Me.colkode.VisibleIndex = 0
         '
         'colstatus
         '
+        Me.colstatus.AppearanceHeader.Options.UseTextOptions = True
+        Me.colstatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.Caption = "Status"
         Me.colstatus.FieldName = "status"
         Me.colstatus.Name = "colstatus"
         Me.colstatus.Visible = True
-        Me.colstatus.VisibleIndex = 3
+        Me.colstatus.VisibleIndex = 1
         '
         'colnama
         '
+        Me.colnama.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colnama.Caption = "Nama"
         Me.colnama.FieldName = "nama"
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
-        Me.colnama.VisibleIndex = 4
+        Me.colnama.VisibleIndex = 2
         '
         'coltipe
         '
+        Me.coltipe.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltipe.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltipe.Caption = "Tipe"
         Me.coltipe.FieldName = "tipe"
         Me.coltipe.Name = "coltipe"
         Me.coltipe.Visible = True
-        Me.coltipe.VisibleIndex = 5
+        Me.coltipe.VisibleIndex = 3
         '
         'colmerk
         '
+        Me.colmerk.AppearanceHeader.Options.UseTextOptions = True
+        Me.colmerk.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colmerk.Caption = "Merk"
         Me.colmerk.FieldName = "merk"
         Me.colmerk.Name = "colmerk"
         Me.colmerk.Visible = True
-        Me.colmerk.VisibleIndex = 6
+        Me.colmerk.VisibleIndex = 4
         '
         'colsatuan_jual
         '
+        Me.colsatuan_jual.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsatuan_jual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsatuan_jual.Caption = "Satuan Jual"
         Me.colsatuan_jual.FieldName = "satuan_jual"
         Me.colsatuan_jual.Name = "colsatuan_jual"
         Me.colsatuan_jual.Visible = True
-        Me.colsatuan_jual.VisibleIndex = 7
+        Me.colsatuan_jual.VisibleIndex = 5
         '
         'colharga
         '
+        Me.colharga.AppearanceHeader.Options.UseTextOptions = True
+        Me.colharga.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colharga.Caption = "Harga"
         Me.colharga.FieldName = "harga"
         Me.colharga.Name = "colharga"
         Me.colharga.Visible = True
-        Me.colharga.VisibleIndex = 8
+        Me.colharga.VisibleIndex = 6
         '
         'colmax_diskon
         '
+        Me.colmax_diskon.AppearanceHeader.Options.UseTextOptions = True
+        Me.colmax_diskon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colmax_diskon.Caption = "Maks. Diskon"
         Me.colmax_diskon.FieldName = "max_diskon"
         Me.colmax_diskon.Name = "colmax_diskon"
         Me.colmax_diskon.Visible = True
-        Me.colmax_diskon.VisibleIndex = 9
+        Me.colmax_diskon.VisibleIndex = 7
         '
         'colbuffer_stock
         '
+        Me.colbuffer_stock.AppearanceHeader.Options.UseTextOptions = True
+        Me.colbuffer_stock.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colbuffer_stock.Caption = "Buffer Stock"
         Me.colbuffer_stock.FieldName = "buffer_stock"
         Me.colbuffer_stock.Name = "colbuffer_stock"
         Me.colbuffer_stock.Visible = True
-        Me.colbuffer_stock.VisibleIndex = 10
+        Me.colbuffer_stock.VisibleIndex = 8
         '
         'colminimum_stock
         '
+        Me.colminimum_stock.AppearanceHeader.Options.UseTextOptions = True
+        Me.colminimum_stock.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colminimum_stock.Caption = "Min. Stock"
         Me.colminimum_stock.FieldName = "minimum_stock"
         Me.colminimum_stock.Name = "colminimum_stock"
         Me.colminimum_stock.Visible = True
-        Me.colminimum_stock.VisibleIndex = 11
+        Me.colminimum_stock.VisibleIndex = 9
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 12
+        Me.colketerangan.VisibleIndex = 10
         '
         'colcreated_at
         '
         Me.colcreated_at.FieldName = "created_at"
         Me.colcreated_at.Name = "colcreated_at"
-        Me.colcreated_at.Visible = True
-        Me.colcreated_at.VisibleIndex = 13
         '
         'colupdated_at
         '
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
-        Me.colupdated_at.Visible = True
-        Me.colupdated_at.VisibleIndex = 14
         '
         'coldeleted_at
         '
         Me.coldeleted_at.FieldName = "deleted_at"
         Me.coldeleted_at.Name = "coldeleted_at"
-        Me.coldeleted_at.Visible = True
-        Me.coldeleted_at.VisibleIndex = 15
         '
         'colproduk_kategori
         '
+        Me.colproduk_kategori.AppearanceHeader.Options.UseTextOptions = True
+        Me.colproduk_kategori.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_kategori.Caption = "Kategori"
         Me.colproduk_kategori.FieldName = "produk_kategori"
         Me.colproduk_kategori.Name = "colproduk_kategori"
         Me.colproduk_kategori.Visible = True
-        Me.colproduk_kategori.VisibleIndex = 16
+        Me.colproduk_kategori.VisibleIndex = 11
         '
         'RibbonControl1
         '
@@ -353,24 +393,24 @@ Partial Class FormProdukList
         '
         Me.btnEdit.Caption = "Edit"
         Me.btnEdit.Id = 2
-        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("btnEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("btnEdit.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnEdit.Name = "btnEdit"
         '
         'btnDelete
         '
         Me.btnDelete.Caption = "Delete"
         Me.btnDelete.Id = 3
-        Me.btnDelete.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnDelete.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnDelete.ImageOptions.Image = CType(resources.GetObject("btnDelete.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageOptions.LargeImage = CType(resources.GetObject("btnDelete.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnDelete.Name = "btnDelete"
         '
         'btnClose
         '
         Me.btnClose.Caption = "Close"
         Me.btnClose.Id = 4
-        Me.btnClose.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClose.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnClose.ImageOptions.Image = CType(resources.GetObject("btnClose.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnClose.ImageOptions.LargeImage = CType(resources.GetObject("btnClose.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnClose.Name = "btnClose"
         '
         'RibbonPage1

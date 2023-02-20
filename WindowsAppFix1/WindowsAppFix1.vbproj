@@ -103,6 +103,12 @@
     <Compile Include="Form\Keuangan\AkunList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Keuangan\frmAddAkun.Designer.vb">
+      <DependentUpon>frmAddAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddAkun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Keuangan\KategoriAkunList.Designer.vb">
       <DependentUpon>KategoriAkunList.vb</DependentUpon>
     </Compile>
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="Form\Keuangan\AkunList.resx">
       <DependentUpon>AkunList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\frmAddAkun.resx">
+      <DependentUpon>frmAddAkun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Keuangan\KategoriAkunList.resx">
       <DependentUpon>KategoriAkunList.vb</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Keuangan\NeracaSaldoList.resx">
       <DependentUpon>NeracaSaldoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\TipeAkunList.resx">
+      <DependentUpon>TipeAkunList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -482,6 +494,9 @@
     <None Include="My Project\DataSources\Kota.datasource" />
     <None Include="My Project\DataSources\LoginClass.datasource" />
     <None Include="My Project\DataSources\Lokasi.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldo.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldoAwal.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldoList.datasource" />
     <None Include="My Project\DataSources\Pegawai.datasource" />
     <None Include="My Project\DataSources\Pembelian.datasource" />
     <None Include="My Project\DataSources\Penjualan.datasource" />

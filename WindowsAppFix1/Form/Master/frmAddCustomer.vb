@@ -29,7 +29,7 @@ Public Class frmAddCustomer
             .email = txtEmail.EditValue,
             .npwp = txtNPWP.EditValue,
             .alamat = txtAlamat.EditValue,
-            .kota_id = CChar(txtKota.EditValue),
+            .kota_id = txtKota.EditValue,
             .sales_id = CLng(txtSales.EditValue),
             .diskon = CLng(txtDiskon.EditValue),
             .keterangan = txtKeterangan.EditValue
@@ -54,7 +54,7 @@ Public Class frmAddCustomer
             .email = txtEmail.EditValue,
             .npwp = txtNPWP.EditValue,
             .alamat = txtAlamat.EditValue,
-            .kota_id = CChar(txtKota.EditValue),
+            .kota_id = txtKota.EditValue,
             .sales_id = CLng(txtSales.EditValue),
             .diskon = CLng(txtDiskon.EditValue),
             .keterangan = txtKeterangan.EditValue

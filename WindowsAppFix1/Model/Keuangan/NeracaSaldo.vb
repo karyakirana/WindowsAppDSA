@@ -17,8 +17,8 @@ Public Class NeracaSaldoAwal
 	Public Property akun_id As Long
 	Public Property debet As Long?
 	Public Property kredit As Long?
-	Public Property created_at As TimeSpan
-	Public Property updated_at As TimeSpan
+	Public Property created_at As String
+	Public Property updated_at As String
 
 	Public Property akun As Akun
 End Class

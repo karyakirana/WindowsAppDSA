@@ -127,7 +127,7 @@ Public Class frmAddPersediaanAwal
         txtKeterangan.EditValue = persediaan_awal.keterangan
 
         'set detail
-        Dim detail_list As List(Of PersediaanAwalDetail)
+        'Dim detail_list As List(Of PersediaanAwalDetail)
 
     End Sub
 

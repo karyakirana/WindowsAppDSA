@@ -15,6 +15,7 @@ Public Class AkunList
         'dataObject
         Dim listView = Await _repositoryAkun.GetList()
         AkunGridControl.DataSource = listView
+
     End Sub
 
     Public Async Sub destroy(ByVal id As Long)

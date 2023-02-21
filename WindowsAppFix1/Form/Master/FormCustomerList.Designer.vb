@@ -72,7 +72,7 @@ Partial Class FormCustomerList
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1003, 162)
         '
         'BarButtonItem1
         '
@@ -128,7 +128,7 @@ Partial Class FormCustomerList
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(800, 288)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1003, 370)
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -139,7 +139,7 @@ Partial Class FormCustomerList
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(776, 264)
+        Me.GridControl1.Size = New System.Drawing.Size(979, 346)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -309,7 +309,7 @@ Partial Class FormCustomerList
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 288)
+        Me.Root.Size = New System.Drawing.Size(1003, 370)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -317,7 +317,7 @@ Partial Class FormCustomerList
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 268)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(983, 350)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -325,7 +325,7 @@ Partial Class FormCustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1003, 532)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "FormCustomerList"

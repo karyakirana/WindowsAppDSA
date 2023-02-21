@@ -49,19 +49,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.BonusSkins.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -97,6 +97,48 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Keuangan\AkunList.Designer.vb">
+      <DependentUpon>AkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\AkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddAkun.Designer.vb">
+      <DependentUpon>frmAddAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddAkun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddKategoriAkun.Designer.vb">
+      <DependentUpon>frmAddKategoriAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddKategoriAkun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\KategoriAkunList.Designer.vb">
+      <DependentUpon>KategoriAkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\KategoriAkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaAwalList.Designer.vb">
+      <DependentUpon>NeracaAwalList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaAwalList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaSaldoList.Designer.vb">
+      <DependentUpon>NeracaSaldoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\NeracaSaldoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Keuangan\TipeAkunList.Designer.vb">
+      <DependentUpon>TipeAkunList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\TipeAkunList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -119,12 +161,6 @@
       <DependentUpon>FormJabatan.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Master\FormJabatan.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Master\FormCustomer.Designer.vb">
-      <DependentUpon>FormCustomer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Master\FormCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Master\FormJabatanList.Designer.vb">
@@ -320,6 +356,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Repository\ConnectionApiHelper.vb" />
+    <Compile Include="Repository\KeuanganRepo\AkunRepository.vb" />
     <Compile Include="Repository\LoginRepository.vb" />
     <Compile Include="Repository\MasterRepo\CustomerRepository.vb" />
     <Compile Include="Repository\MasterRepo\JabatanRepository.vb" />
@@ -338,6 +375,27 @@
     <Compile Include="Repository\StockRepo\StockMasukRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\Keuangan\AkunList.resx">
+      <DependentUpon>AkunList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\frmAddAkun.resx">
+      <DependentUpon>frmAddAkun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\frmAddKategoriAkun.resx">
+      <DependentUpon>frmAddKategoriAkun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\KategoriAkunList.resx">
+      <DependentUpon>KategoriAkunList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\NeracaAwalList.resx">
+      <DependentUpon>NeracaAwalList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\NeracaSaldoList.resx">
+      <DependentUpon>NeracaSaldoList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\TipeAkunList.resx">
+      <DependentUpon>TipeAkunList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -349,9 +407,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatan.resx">
       <DependentUpon>FormJabatan.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Master\FormCustomer.resx">
-      <DependentUpon>FormCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Master\FormJabatanList.resx">
       <DependentUpon>FormJabatanList.vb</DependentUpon>
@@ -441,11 +496,17 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Akun.datasource" />
+    <None Include="My Project\DataSources\AkunKategori.datasource" />
+    <None Include="My Project\DataSources\AkunTipe.datasource" />
     <None Include="My Project\DataSources\Customer.datasource" />
     <None Include="My Project\DataSources\Jabatan.datasource" />
     <None Include="My Project\DataSources\Kota.datasource" />
     <None Include="My Project\DataSources\LoginClass.datasource" />
     <None Include="My Project\DataSources\Lokasi.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldo.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldoAwal.datasource" />
+    <None Include="My Project\DataSources\NeracaSaldoList.datasource" />
     <None Include="My Project\DataSources\Pegawai.datasource" />
     <None Include="My Project\DataSources\Pembelian.datasource" />
     <None Include="My Project\DataSources\Penjualan.datasource" />
@@ -481,6 +542,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-login-icon-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tipe Akun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kategori Akun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Neraca Saldo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Neraca Awal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hutang Pembelian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saldo hutang pembelian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jurnal transaksi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pegawai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jabatan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

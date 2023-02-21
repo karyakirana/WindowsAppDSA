@@ -109,6 +109,12 @@
     <Compile Include="Form\Keuangan\frmAddAkun.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Keuangan\frmAddKategoriAkun.Designer.vb">
+      <DependentUpon>frmAddKategoriAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Keuangan\frmAddKategoriAkun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Keuangan\KategoriAkunList.Designer.vb">
       <DependentUpon>KategoriAkunList.vb</DependentUpon>
     </Compile>
@@ -350,6 +356,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Repository\ConnectionApiHelper.vb" />
+    <Compile Include="Repository\KeuanganRepo\AkunRepository.vb" />
     <Compile Include="Repository\LoginRepository.vb" />
     <Compile Include="Repository\MasterRepo\CustomerRepository.vb" />
     <Compile Include="Repository\MasterRepo\JabatanRepository.vb" />
@@ -373,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Keuangan\frmAddAkun.resx">
       <DependentUpon>frmAddAkun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Keuangan\frmAddKategoriAkun.resx">
+      <DependentUpon>frmAddKategoriAkun.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Keuangan\KategoriAkunList.resx">
       <DependentUpon>KategoriAkunList.vb</DependentUpon>

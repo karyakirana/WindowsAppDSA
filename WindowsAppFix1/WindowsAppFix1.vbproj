@@ -97,6 +97,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Form Pop Up\FrmFindCustomer.Designer.vb">
+      <DependentUpon>FrmFindCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form Pop Up\FrmFindCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Keuangan\AkunList.Designer.vb">
       <DependentUpon>AkunList.vb</DependentUpon>
     </Compile>
@@ -376,6 +382,9 @@
     <Compile Include="Repository\StockRepo\StockMasukRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\Form Pop Up\FrmFindCustomer.resx">
+      <DependentUpon>FrmFindCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Keuangan\AkunList.resx">
       <DependentUpon>AkunList.vb</DependentUpon>
     </EmbeddedResource>
@@ -579,5 +588,6 @@
   <ItemGroup>
     <None Include="Resources\supplier.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

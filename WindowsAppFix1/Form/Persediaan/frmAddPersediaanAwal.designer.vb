@@ -91,8 +91,8 @@ Partial Class frmAddPersediaanAwal
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbDraft.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTanggal.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtTanggal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTanggal.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbKondisi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbLokasi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LokasiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,9 +175,14 @@ Partial Class frmAddPersediaanAwal
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(923, 451)
+        Me.txtTotal.Location = New System.Drawing.Point(1021, 451)
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(328, 24)
+        Me.txtTotal.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txtTotal.Properties.DisplayFormat.FormatString = "n0"
+        Me.txtTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtTotal.Properties.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(230, 24)
         Me.txtTotal.StyleController = Me.LayoutControl2
         Me.txtTotal.TabIndex = 17
         '
@@ -532,16 +537,19 @@ Partial Class frmAddPersediaanAwal
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
         Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 439)
+        Me.EmptySpaceItem10.MaxSize = New System.Drawing.Size(930, 28)
+        Me.EmptySpaceItem10.MinSize = New System.Drawing.Size(930, 28)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Size = New System.Drawing.Size(832, 28)
+        Me.EmptySpaceItem10.Size = New System.Drawing.Size(930, 28)
+        Me.EmptySpaceItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem13
         '
         Me.LayoutControlItem13.Control = Me.txtTotal
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(832, 439)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(930, 439)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(411, 28)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(313, 28)
         Me.LayoutControlItem13.Text = "Total"
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(75, 18)
         '

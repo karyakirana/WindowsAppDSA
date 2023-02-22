@@ -95,78 +95,68 @@ Partial Class FormPenjualanList
         '
         Me.colid1.FieldName = "id"
         Me.colid1.Name = "colid1"
-        Me.colid1.Visible = True
-        Me.colid1.VisibleIndex = 0
         '
         'colpenjualan_id1
         '
         Me.colpenjualan_id1.FieldName = "penjualan_id"
         Me.colpenjualan_id1.Name = "colpenjualan_id1"
-        Me.colpenjualan_id1.Visible = True
-        Me.colpenjualan_id1.VisibleIndex = 1
         '
         'colpersediaan_id
         '
         Me.colpersediaan_id.FieldName = "persediaan_id"
         Me.colpersediaan_id.Name = "colpersediaan_id"
-        Me.colpersediaan_id.Visible = True
-        Me.colpersediaan_id.VisibleIndex = 2
         '
         'colharga_jual
         '
         Me.colharga_jual.FieldName = "harga_jual"
         Me.colharga_jual.Name = "colharga_jual"
         Me.colharga_jual.Visible = True
-        Me.colharga_jual.VisibleIndex = 3
+        Me.colharga_jual.VisibleIndex = 0
         '
         'coljumlah
         '
         Me.coljumlah.FieldName = "jumlah"
         Me.coljumlah.Name = "coljumlah"
         Me.coljumlah.Visible = True
-        Me.coljumlah.VisibleIndex = 4
+        Me.coljumlah.VisibleIndex = 1
         '
         'colsatuan_jual
         '
         Me.colsatuan_jual.FieldName = "satuan_jual"
         Me.colsatuan_jual.Name = "colsatuan_jual"
         Me.colsatuan_jual.Visible = True
-        Me.colsatuan_jual.VisibleIndex = 5
+        Me.colsatuan_jual.VisibleIndex = 2
         '
         'coldiskon
         '
         Me.coldiskon.FieldName = "diskon"
         Me.coldiskon.Name = "coldiskon"
         Me.coldiskon.Visible = True
-        Me.coldiskon.VisibleIndex = 6
+        Me.coldiskon.VisibleIndex = 3
         '
         'colsub_total
         '
         Me.colsub_total.FieldName = "sub_total"
         Me.colsub_total.Name = "colsub_total"
         Me.colsub_total.Visible = True
-        Me.colsub_total.VisibleIndex = 7
+        Me.colsub_total.VisibleIndex = 4
         '
         'colcreated_at1
         '
         Me.colcreated_at1.FieldName = "created_at"
         Me.colcreated_at1.Name = "colcreated_at1"
-        Me.colcreated_at1.Visible = True
-        Me.colcreated_at1.VisibleIndex = 8
         '
         'colupdated_at1
         '
         Me.colupdated_at1.FieldName = "updated_at"
         Me.colupdated_at1.Name = "colupdated_at1"
-        Me.colupdated_at1.Visible = True
-        Me.colupdated_at1.VisibleIndex = 9
         '
         'colpersediaan
         '
         Me.colpersediaan.FieldName = "persediaan"
         Me.colpersediaan.Name = "colpersediaan"
         Me.colpersediaan.Visible = True
-        Me.colpersediaan.VisibleIndex = 10
+        Me.colpersediaan.VisibleIndex = 5
         '
         'GridControl1
         '
@@ -209,6 +199,11 @@ Partial Class FormPenjualanList
         '
         'colkode
         '
+        Me.colkode.AppearanceCell.Options.UseTextOptions = True
+        Me.colkode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colkode.Caption = "Kode"
         Me.colkode.FieldName = "kode"
         Me.colkode.Name = "colkode"
         Me.colkode.Visible = True
@@ -221,6 +216,11 @@ Partial Class FormPenjualanList
         '
         'coldraft
         '
+        Me.coldraft.AppearanceCell.Options.UseTextOptions = True
+        Me.coldraft.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldraft.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldraft.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldraft.Caption = "Draft"
         Me.coldraft.FieldName = "draft"
         Me.coldraft.Name = "coldraft"
         Me.coldraft.Visible = True
@@ -228,6 +228,11 @@ Partial Class FormPenjualanList
         '
         'colstatus
         '
+        Me.colstatus.AppearanceCell.Options.UseTextOptions = True
+        Me.colstatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.AppearanceHeader.Options.UseTextOptions = True
+        Me.colstatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colstatus.Caption = "Status"
         Me.colstatus.FieldName = "status"
         Me.colstatus.Name = "colstatus"
         Me.colstatus.Visible = True
@@ -235,6 +240,11 @@ Partial Class FormPenjualanList
         '
         'coltipe_penjualan
         '
+        Me.coltipe_penjualan.AppearanceCell.Options.UseTextOptions = True
+        Me.coltipe_penjualan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.coltipe_penjualan.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltipe_penjualan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltipe_penjualan.Caption = "Tipe Penjualan"
         Me.coltipe_penjualan.FieldName = "tipe_penjualan"
         Me.coltipe_penjualan.Name = "coltipe_penjualan"
         Me.coltipe_penjualan.Visible = True
@@ -242,6 +252,11 @@ Partial Class FormPenjualanList
         '
         'coltgl_penjualan
         '
+        Me.coltgl_penjualan.AppearanceCell.Options.UseTextOptions = True
+        Me.coltgl_penjualan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_penjualan.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltgl_penjualan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_penjualan.Caption = "Tgl. Penjualan"
         Me.coltgl_penjualan.FieldName = "tgl_penjualan"
         Me.coltgl_penjualan.Name = "coltgl_penjualan"
         Me.coltgl_penjualan.Visible = True
@@ -249,6 +264,11 @@ Partial Class FormPenjualanList
         '
         'coltempo
         '
+        Me.coltempo.AppearanceCell.Options.UseTextOptions = True
+        Me.coltempo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltempo.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltempo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltempo.Caption = "Tempo"
         Me.coltempo.FieldName = "tempo"
         Me.coltempo.Name = "coltempo"
         Me.coltempo.Visible = True
@@ -256,6 +276,11 @@ Partial Class FormPenjualanList
         '
         'coltgl_tempo
         '
+        Me.coltgl_tempo.AppearanceCell.Options.UseTextOptions = True
+        Me.coltgl_tempo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_tempo.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltgl_tempo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltgl_tempo.Caption = "Tgl. Tempo"
         Me.coltgl_tempo.FieldName = "tgl_tempo"
         Me.coltgl_tempo.Name = "coltgl_tempo"
         Me.coltgl_tempo.Visible = True
@@ -278,6 +303,11 @@ Partial Class FormPenjualanList
         '
         'coltotal_barang
         '
+        Me.coltotal_barang.AppearanceCell.Options.UseTextOptions = True
+        Me.coltotal_barang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltotal_barang.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltotal_barang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltotal_barang.Caption = "Jumlah"
         Me.coltotal_barang.FieldName = "total_barang"
         Me.coltotal_barang.Name = "coltotal_barang"
         Me.coltotal_barang.Visible = True
@@ -285,6 +315,11 @@ Partial Class FormPenjualanList
         '
         'colppn
         '
+        Me.colppn.AppearanceCell.Options.UseTextOptions = True
+        Me.colppn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colppn.AppearanceHeader.Options.UseTextOptions = True
+        Me.colppn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colppn.Caption = "PPN"
         Me.colppn.FieldName = "ppn"
         Me.colppn.Name = "colppn"
         Me.colppn.Visible = True
@@ -292,6 +327,11 @@ Partial Class FormPenjualanList
         '
         'colbiaya_lain
         '
+        Me.colbiaya_lain.AppearanceCell.Options.UseTextOptions = True
+        Me.colbiaya_lain.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colbiaya_lain.AppearanceHeader.Options.UseTextOptions = True
+        Me.colbiaya_lain.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colbiaya_lain.Caption = "Biaya Lain"
         Me.colbiaya_lain.FieldName = "biaya_lain"
         Me.colbiaya_lain.Name = "colbiaya_lain"
         Me.colbiaya_lain.Visible = True
@@ -299,6 +339,11 @@ Partial Class FormPenjualanList
         '
         'coltotal_bayar
         '
+        Me.coltotal_bayar.AppearanceCell.Options.UseTextOptions = True
+        Me.coltotal_bayar.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coltotal_bayar.AppearanceHeader.Options.UseTextOptions = True
+        Me.coltotal_bayar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coltotal_bayar.Caption = "Total Barang"
         Me.coltotal_bayar.FieldName = "total_bayar"
         Me.coltotal_bayar.Name = "coltotal_bayar"
         Me.coltotal_bayar.Visible = True
@@ -306,6 +351,11 @@ Partial Class FormPenjualanList
         '
         'colketerangan
         '
+        Me.colketerangan.AppearanceCell.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colketerangan.AppearanceHeader.Options.UseTextOptions = True
+        Me.colketerangan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colketerangan.Caption = "Keterangan"
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
@@ -328,14 +378,24 @@ Partial Class FormPenjualanList
         '
         'colcustomer
         '
-        Me.colcustomer.FieldName = "customer"
+        Me.colcustomer.AppearanceCell.Options.UseTextOptions = True
+        Me.colcustomer.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colcustomer.AppearanceHeader.Options.UseTextOptions = True
+        Me.colcustomer.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colcustomer.Caption = "Customer"
+        Me.colcustomer.FieldName = "customer.nama"
         Me.colcustomer.Name = "colcustomer"
         Me.colcustomer.Visible = True
         Me.colcustomer.VisibleIndex = 1
         '
         'colsales
         '
-        Me.colsales.FieldName = "sales"
+        Me.colsales.AppearanceCell.Options.UseTextOptions = True
+        Me.colsales.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colsales.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsales.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsales.Caption = "Sales"
+        Me.colsales.FieldName = "sales.nama"
         Me.colsales.Name = "colsales"
         Me.colsales.Visible = True
         Me.colsales.VisibleIndex = 2

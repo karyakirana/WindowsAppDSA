@@ -75,18 +75,18 @@ Partial Class FormJabatan
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(722, 84)
+        Me.btnBatal.Location = New System.Drawing.Point(722, 92)
         Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(66, 22)
+        Me.btnBatal.Size = New System.Drawing.Size(66, 25)
         Me.btnBatal.StyleController = Me.DataLayoutControl1
         Me.btnBatal.TabIndex = 7
         Me.btnBatal.Text = "Batal"
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(645, 84)
+        Me.btnSimpan.Location = New System.Drawing.Point(645, 92)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(63, 22)
+        Me.btnSimpan.Size = New System.Drawing.Size(63, 25)
         Me.btnSimpan.StyleController = Me.DataLayoutControl1
         Me.btnSimpan.TabIndex = 6
         Me.btnSimpan.Text = "Simpan"
@@ -94,18 +94,18 @@ Partial Class FormJabatan
         'namaTextEdit
         '
         Me.namaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.JabatanBindingSource, "nama", True))
-        Me.namaTextEdit.Location = New System.Drawing.Point(71, 12)
+        Me.namaTextEdit.Location = New System.Drawing.Point(89, 12)
         Me.namaTextEdit.Name = "namaTextEdit"
-        Me.namaTextEdit.Size = New System.Drawing.Size(717, 20)
+        Me.namaTextEdit.Size = New System.Drawing.Size(699, 24)
         Me.namaTextEdit.StyleController = Me.DataLayoutControl1
         Me.namaTextEdit.TabIndex = 4
         '
         'keteranganTextEdit
         '
         Me.keteranganTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.JabatanBindingSource, "keterangan", True))
-        Me.keteranganTextEdit.Location = New System.Drawing.Point(71, 36)
+        Me.keteranganTextEdit.Location = New System.Drawing.Point(89, 40)
         Me.keteranganTextEdit.Name = "keteranganTextEdit"
-        Me.keteranganTextEdit.Size = New System.Drawing.Size(717, 20)
+        Me.keteranganTextEdit.Size = New System.Drawing.Size(699, 24)
         Me.keteranganTextEdit.StyleController = Me.DataLayoutControl1
         Me.keteranganTextEdit.TabIndex = 5
         '
@@ -132,49 +132,49 @@ Partial Class FormJabatan
         Me.ItemFornama.Control = Me.namaTextEdit
         Me.ItemFornama.Location = New System.Drawing.Point(0, 0)
         Me.ItemFornama.Name = "ItemFornama"
-        Me.ItemFornama.Size = New System.Drawing.Size(780, 24)
+        Me.ItemFornama.Size = New System.Drawing.Size(780, 28)
         Me.ItemFornama.Text = "nama"
-        Me.ItemFornama.TextSize = New System.Drawing.Size(55, 13)
+        Me.ItemFornama.TextSize = New System.Drawing.Size(73, 18)
         '
         'ItemForketerangan
         '
         Me.ItemForketerangan.Control = Me.keteranganTextEdit
-        Me.ItemForketerangan.Location = New System.Drawing.Point(0, 24)
+        Me.ItemForketerangan.Location = New System.Drawing.Point(0, 28)
         Me.ItemForketerangan.Name = "ItemForketerangan"
-        Me.ItemForketerangan.Size = New System.Drawing.Size(780, 24)
+        Me.ItemForketerangan.Size = New System.Drawing.Size(780, 28)
         Me.ItemForketerangan.Text = "keterangan"
-        Me.ItemForketerangan.TextSize = New System.Drawing.Size(55, 13)
+        Me.ItemForketerangan.TextSize = New System.Drawing.Size(73, 18)
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.btnSimpan
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(633, 72)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(633, 80)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(67, 26)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(67, 29)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.btnBatal
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(710, 72)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(710, 80)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(70, 26)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(70, 29)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 72)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 80)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(633, 26)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(633, 29)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 48)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 56)
         Me.EmptySpaceItem2.MinSize = New System.Drawing.Size(104, 24)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(780, 24)
@@ -184,22 +184,18 @@ Partial Class FormJabatan
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 98)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 109)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(780, 277)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(780, 266)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(700, 72)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(700, 80)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 26)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 29)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'JabatanBindingSource
-        '
-        Me.JabatanBindingSource.DataSource = GetType(WindowsAppFix1.Jabatan)
         '
         'FormJabatan
         '

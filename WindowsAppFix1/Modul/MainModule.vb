@@ -16,6 +16,7 @@ Module MainModule
     Public _response As HttpResponseMessage
     Public _jObject As JObject
     Public purpose As String
+    Public _Customer As New Customer
 
     Public Sub TokenCheck()
         If Token Is Nothing Then

@@ -11,6 +11,71 @@ Imports Newtonsoft.Json
 
 Public Class frmAddPembelian
 
+    Private _supplierRepo As New SupplierRepository
+    Private _persediaanRepo As New PersediaanRepo
+    Public dtPembelian As New DataTable
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        LoadData()
+        tglPembelian.EditValue = Date.Now
+    End Sub
+
+    Public Async Sub LoadData()
+        LoadDataTable()
+        Dim _listsupplier = Await _supplierRepo.GetList()
+    End Sub
+
+    Private Sub LoadDataTable()
+
+    End Sub
+
+    Public Async Sub SetRow()
+        'get data
+        Dim getData As Persediaan = Await _persediaanRepo.edit(id)
+        'set to row
+        If Not getData Is Nothing Then
+
+            Dim persediaan As New Persediaan
+            persediaan = getData
+
+            Dim row As DataRow
+            row = dtPembelian.NewRow
+            row("persediaan_id") = persediaan.id
+            row("produk_nama") = persediaan.produk.nama
+            row("batch") = ""
+            row("expired") = Format(Date.Now, "yyyy-MM-dd")
+            row("serial_number") = ""
+            row("harga") = persediaan.produk.harga
+            row("diskon") = 0
+            row("jumlah") = 0
+            row("sub_total") = 0
+
+            dtPembelian.Rows.Add(row)
+            GridControl1.DataSource = dtPembelian
+
+        End If
+    End Sub
+
+    Private Sub txtSupplier_Click(sender As Object, e As EventArgs) Handles txtSupplier.Click
+        Dim frm As New FrmFindSupplier
+        Dim i : i = frm.ShowDialog()
+        txtSupplier.EditValue = _Supplier.nama
+    End Sub
+
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        Using frm As FrmFindProduk = New FrmFindProduk
+            If frm.ShowDialog = DialogResult.OK Then
+                SetRow(frm.GetValue)
+                Console.WriteLine(frm.GetValue)
+            End If
+        End Using
+    End Sub
+
     'Dim sumJumlah As New GridColumnSummaryItem()
     'Dim sumSubTotal As New GridColumnSummaryItem()
     'Dim exp As DateTime

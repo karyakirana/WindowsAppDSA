@@ -22,6 +22,7 @@ Partial Class frmAddPembelian
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddPembelian))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
@@ -53,13 +54,14 @@ Partial Class frmAddPembelian
         Me.EmptySpaceItem17 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem18 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
-        Me.txtSupplier = New DevExpress.XtraEditors.TextEdit()
         Me.cbTipe = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.tglPembelian = New DevExpress.XtraEditors.DateEdit()
         Me.txtTempo = New DevExpress.XtraEditors.SpinEdit()
         Me.tglTempo = New DevExpress.XtraEditors.DateEdit()
         Me.rbgDraft = New DevExpress.XtraEditors.RadioGroup()
         Me.txtPOPembelian = New DevExpress.XtraEditors.TextEdit()
+        Me.txtSupplier = New DevExpress.XtraEditors.LookUpEdit()
+        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -116,7 +118,6 @@ Partial Class frmAddPembelian
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbTipe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglPembelian.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglPembelian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +126,8 @@ Partial Class frmAddPembelian
         CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPOPembelian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,7 +179,7 @@ Partial Class frmAddPembelian
         '
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl2)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(1260, 685)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(1260, 683)
         Me.XtraTabPage1.Text = "Form Add Pembelian"
         '
         'LayoutControl2
@@ -185,27 +188,27 @@ Partial Class frmAddPembelian
         Me.LayoutControl2.Controls.Add(Me.btnTambah)
         Me.LayoutControl2.Controls.Add(Me.LayoutControl3)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
-        Me.LayoutControl2.Controls.Add(Me.txtSupplier)
         Me.LayoutControl2.Controls.Add(Me.cbTipe)
         Me.LayoutControl2.Controls.Add(Me.tglPembelian)
         Me.LayoutControl2.Controls.Add(Me.txtTempo)
         Me.LayoutControl2.Controls.Add(Me.tglTempo)
         Me.LayoutControl2.Controls.Add(Me.rbgDraft)
         Me.LayoutControl2.Controls.Add(Me.txtPOPembelian)
+        Me.LayoutControl2.Controls.Add(Me.txtSupplier)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
         Me.LayoutControl2.Root = Me.LayoutControlGroup1
-        Me.LayoutControl2.Size = New System.Drawing.Size(1260, 685)
+        Me.LayoutControl2.Size = New System.Drawing.Size(1260, 683)
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
         'btnHapus
         '
         Me.btnHapus.ImageOptions.SvgImage = CType(resources.GetObject("btnHapus.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnHapus.Location = New System.Drawing.Point(186, 236)
+        Me.btnHapus.Location = New System.Drawing.Point(189, 240)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(146, 38)
+        Me.btnHapus.Size = New System.Drawing.Size(143, 38)
         Me.btnHapus.StyleController = Me.LayoutControl2
         Me.btnHapus.TabIndex = 18
         Me.btnHapus.Text = "Hapus Produk"
@@ -213,9 +216,9 @@ Partial Class frmAddPembelian
         'btnTambah
         '
         Me.btnTambah.ImageOptions.SvgImage = CType(resources.GetObject("btnTambah.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnTambah.Location = New System.Drawing.Point(26, 236)
+        Me.btnTambah.Location = New System.Drawing.Point(26, 240)
         Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(146, 38)
+        Me.btnTambah.Size = New System.Drawing.Size(149, 38)
         Me.btnTambah.StyleController = Me.LayoutControl2
         Me.btnTambah.TabIndex = 17
         Me.btnTambah.Text = "Tambah Produk"
@@ -228,16 +231,16 @@ Partial Class frmAddPembelian
         Me.LayoutControl3.Controls.Add(Me.btnBatal)
         Me.LayoutControl3.Controls.Add(Me.btnSimpan)
         Me.LayoutControl3.Controls.Add(Me.GridControl1)
-        Me.LayoutControl3.Location = New System.Drawing.Point(12, 278)
+        Me.LayoutControl3.Location = New System.Drawing.Point(12, 282)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(1236, 395)
+        Me.LayoutControl3.Size = New System.Drawing.Size(1236, 389)
         Me.LayoutControl3.TabIndex = 11
         Me.LayoutControl3.Text = "LayoutControl3"
         '
         'txtTotalbayar
         '
-        Me.txtTotalbayar.Location = New System.Drawing.Point(893, 314)
+        Me.txtTotalbayar.Location = New System.Drawing.Point(904, 304)
         Me.txtTotalbayar.Name = "txtTotalbayar"
         Me.txtTotalbayar.Properties.Appearance.Options.UseTextOptions = True
         Me.txtTotalbayar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
@@ -245,13 +248,13 @@ Partial Class frmAddPembelian
         Me.txtTotalbayar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtTotalbayar.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtTotalbayar.Properties.MaskSettings.Set("mask", "n")
-        Me.txtTotalbayar.Size = New System.Drawing.Size(331, 22)
+        Me.txtTotalbayar.Size = New System.Drawing.Size(320, 24)
         Me.txtTotalbayar.StyleController = Me.LayoutControl3
         Me.txtTotalbayar.TabIndex = 9
         '
         'txtBiayalain
         '
-        Me.txtBiayalain.Location = New System.Drawing.Point(893, 288)
+        Me.txtBiayalain.Location = New System.Drawing.Point(904, 276)
         Me.txtBiayalain.Name = "txtBiayalain"
         Me.txtBiayalain.Properties.Appearance.Options.UseTextOptions = True
         Me.txtBiayalain.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
@@ -259,13 +262,13 @@ Partial Class frmAddPembelian
         Me.txtBiayalain.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtBiayalain.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtBiayalain.Properties.MaskSettings.Set("mask", "n")
-        Me.txtBiayalain.Size = New System.Drawing.Size(331, 22)
+        Me.txtBiayalain.Size = New System.Drawing.Size(320, 24)
         Me.txtBiayalain.StyleController = Me.LayoutControl3
         Me.txtBiayalain.TabIndex = 8
         '
         'txtPpn
         '
-        Me.txtPpn.Location = New System.Drawing.Point(893, 262)
+        Me.txtPpn.Location = New System.Drawing.Point(904, 248)
         Me.txtPpn.Name = "txtPpn"
         Me.txtPpn.Properties.Appearance.Options.UseTextOptions = True
         Me.txtPpn.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
@@ -273,24 +276,24 @@ Partial Class frmAddPembelian
         Me.txtPpn.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtPpn.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtPpn.Properties.MaskSettings.Set("mask", "n")
-        Me.txtPpn.Size = New System.Drawing.Size(331, 22)
+        Me.txtPpn.Size = New System.Drawing.Size(320, 24)
         Me.txtPpn.StyleController = Me.LayoutControl3
         Me.txtPpn.TabIndex = 7
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(1133, 360)
+        Me.btnBatal.Location = New System.Drawing.Point(1133, 352)
         Me.btnBatal.Name = "btnBatal"
-        Me.btnBatal.Size = New System.Drawing.Size(91, 23)
+        Me.btnBatal.Size = New System.Drawing.Size(91, 25)
         Me.btnBatal.StyleController = Me.LayoutControl3
         Me.btnBatal.TabIndex = 6
         Me.btnBatal.Text = "Batal"
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(1028, 360)
+        Me.btnSimpan.Location = New System.Drawing.Point(1028, 352)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(91, 23)
+        Me.btnSimpan.Size = New System.Drawing.Size(91, 25)
         Me.btnSimpan.StyleController = Me.LayoutControl3
         Me.btnSimpan.TabIndex = 5
         Me.btnSimpan.Text = "Simpan"
@@ -301,7 +304,7 @@ Partial Class frmAddPembelian
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(1212, 236)
+        Me.GridControl1.Size = New System.Drawing.Size(1212, 222)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -327,7 +330,7 @@ Partial Class frmAddPembelian
         Me.LayoutControlGroup2.GroupBordersVisible = False
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem10, Me.LayoutControlItem13, Me.LayoutControlItem14, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem14, Me.LayoutControlItem16, Me.EmptySpaceItem15, Me.EmptySpaceItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.EmptySpaceItem17, Me.EmptySpaceItem18})
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1236, 395)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1236, 389)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem10
@@ -335,54 +338,54 @@ Partial Class frmAddPembelian
         Me.LayoutControlItem10.Control = Me.GridControl1
         Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(1216, 240)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(1216, 226)
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextVisible = False
         '
         'LayoutControlItem13
         '
         Me.LayoutControlItem13.Control = Me.btnSimpan
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(1016, 348)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(1016, 340)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(95, 27)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(95, 29)
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem13.TextVisible = False
         '
         'LayoutControlItem14
         '
         Me.LayoutControlItem14.Control = Me.btnBatal
-        Me.LayoutControlItem14.Location = New System.Drawing.Point(1121, 348)
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(1121, 340)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(95, 27)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(95, 29)
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem14.TextVisible = False
         '
         'EmptySpaceItem11
         '
         Me.EmptySpaceItem11.AllowHotTrack = False
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(0, 348)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(0, 340)
         Me.EmptySpaceItem11.MaxSize = New System.Drawing.Size(1016, 27)
         Me.EmptySpaceItem11.MinSize = New System.Drawing.Size(1016, 27)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Size = New System.Drawing.Size(1016, 27)
+        Me.EmptySpaceItem11.Size = New System.Drawing.Size(1016, 29)
         Me.EmptySpaceItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem11.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem12
         '
         Me.EmptySpaceItem12.AllowHotTrack = False
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1111, 348)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1111, 340)
         Me.EmptySpaceItem12.MaxSize = New System.Drawing.Size(10, 27)
         Me.EmptySpaceItem12.MinSize = New System.Drawing.Size(10, 27)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 27)
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 29)
         Me.EmptySpaceItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem14
         '
         Me.EmptySpaceItem14.AllowHotTrack = False
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 240)
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 226)
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
         Me.EmptySpaceItem14.Size = New System.Drawing.Size(1216, 10)
         Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
@@ -390,16 +393,16 @@ Partial Class frmAddPembelian
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.txtPpn
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(812, 250)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(812, 236)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(404, 26)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(404, 28)
         Me.LayoutControlItem16.Text = "PPN"
-        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(65, 16)
+        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(76, 18)
         '
         'EmptySpaceItem15
         '
         Me.EmptySpaceItem15.AllowHotTrack = False
-        Me.EmptySpaceItem15.Location = New System.Drawing.Point(0, 328)
+        Me.EmptySpaceItem15.Location = New System.Drawing.Point(0, 320)
         Me.EmptySpaceItem15.MaxSize = New System.Drawing.Size(1216, 20)
         Me.EmptySpaceItem15.MinSize = New System.Drawing.Size(1216, 20)
         Me.EmptySpaceItem15.Name = "EmptySpaceItem15"
@@ -410,81 +413,73 @@ Partial Class frmAddPembelian
         'EmptySpaceItem16
         '
         Me.EmptySpaceItem16.AllowHotTrack = False
-        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 250)
+        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 236)
         Me.EmptySpaceItem16.MaxSize = New System.Drawing.Size(812, 26)
         Me.EmptySpaceItem16.MinSize = New System.Drawing.Size(812, 26)
         Me.EmptySpaceItem16.Name = "EmptySpaceItem16"
-        Me.EmptySpaceItem16.Size = New System.Drawing.Size(812, 26)
+        Me.EmptySpaceItem16.Size = New System.Drawing.Size(812, 28)
         Me.EmptySpaceItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem16.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem17
         '
         Me.LayoutControlItem17.Control = Me.txtBiayalain
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(812, 276)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(812, 264)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(404, 26)
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(404, 28)
         Me.LayoutControlItem17.Text = "Biaya Lain"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(65, 16)
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(76, 18)
         '
         'LayoutControlItem18
         '
         Me.LayoutControlItem18.Control = Me.txtTotalbayar
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(812, 302)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(812, 292)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(404, 26)
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(404, 28)
         Me.LayoutControlItem18.Text = "Total Bayar"
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(65, 16)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(76, 18)
         '
         'EmptySpaceItem17
         '
         Me.EmptySpaceItem17.AllowHotTrack = False
-        Me.EmptySpaceItem17.Location = New System.Drawing.Point(0, 276)
+        Me.EmptySpaceItem17.Location = New System.Drawing.Point(0, 264)
         Me.EmptySpaceItem17.MaxSize = New System.Drawing.Size(812, 26)
         Me.EmptySpaceItem17.MinSize = New System.Drawing.Size(812, 26)
         Me.EmptySpaceItem17.Name = "EmptySpaceItem17"
-        Me.EmptySpaceItem17.Size = New System.Drawing.Size(812, 26)
+        Me.EmptySpaceItem17.Size = New System.Drawing.Size(812, 28)
         Me.EmptySpaceItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem17.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem18
         '
         Me.EmptySpaceItem18.AllowHotTrack = False
-        Me.EmptySpaceItem18.Location = New System.Drawing.Point(0, 302)
+        Me.EmptySpaceItem18.Location = New System.Drawing.Point(0, 292)
         Me.EmptySpaceItem18.Name = "EmptySpaceItem18"
-        Me.EmptySpaceItem18.Size = New System.Drawing.Size(812, 26)
+        Me.EmptySpaceItem18.Size = New System.Drawing.Size(812, 28)
         Me.EmptySpaceItem18.TextSize = New System.Drawing.Size(0, 0)
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(118, 200)
+        Me.txtKeterangan.Location = New System.Drawing.Point(133, 202)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(1130, 22)
+        Me.txtKeterangan.Size = New System.Drawing.Size(1115, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
         Me.txtKeterangan.TabIndex = 10
         '
-        'txtSupplier
-        '
-        Me.txtSupplier.Location = New System.Drawing.Point(118, 174)
-        Me.txtSupplier.Name = "txtSupplier"
-        Me.txtSupplier.Size = New System.Drawing.Size(373, 22)
-        Me.txtSupplier.StyleController = Me.LayoutControl2
-        Me.txtSupplier.TabIndex = 9
-        '
         'cbTipe
         '
-        Me.cbTipe.Location = New System.Drawing.Point(118, 116)
+        Me.cbTipe.Location = New System.Drawing.Point(133, 124)
         Me.cbTipe.Name = "cbTipe"
         Me.cbTipe.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbTipe.Properties.Items.AddRange(New Object() {"KSO", "Non KSO", "Jasa", "Non Surat Jalan"})
-        Me.cbTipe.Size = New System.Drawing.Size(373, 22)
+        Me.cbTipe.Size = New System.Drawing.Size(358, 24)
         Me.cbTipe.StyleController = Me.LayoutControl2
         Me.cbTipe.TabIndex = 7
         '
         'tglPembelian
         '
         Me.tglPembelian.EditValue = Nothing
-        Me.tglPembelian.Location = New System.Drawing.Point(118, 38)
+        Me.tglPembelian.Location = New System.Drawing.Point(133, 40)
         Me.tglPembelian.Name = "tglPembelian"
         Me.tglPembelian.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglPembelian.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -493,51 +488,70 @@ Partial Class frmAddPembelian
         Me.tglPembelian.Properties.EditFormat.FormatString = "dd-MM-yyyy"
         Me.tglPembelian.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.tglPembelian.Properties.MaskSettings.Set("mask", "dd-MM-yyyy")
-        Me.tglPembelian.Size = New System.Drawing.Size(373, 22)
+        Me.tglPembelian.Size = New System.Drawing.Size(358, 24)
         Me.tglPembelian.StyleController = Me.LayoutControl2
         Me.tglPembelian.TabIndex = 4
         '
         'txtTempo
         '
         Me.txtTempo.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txtTempo.Location = New System.Drawing.Point(118, 64)
+        Me.txtTempo.Location = New System.Drawing.Point(133, 68)
         Me.txtTempo.Name = "txtTempo"
         Me.txtTempo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtTempo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.[Default]
         Me.txtTempo.Properties.MaskSettings.Set("mask", "d")
         Me.txtTempo.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.txtTempo.Size = New System.Drawing.Size(180, 22)
+        Me.txtTempo.Size = New System.Drawing.Size(165, 24)
         Me.txtTempo.StyleController = Me.LayoutControl2
         Me.txtTempo.TabIndex = 5
         '
         'tglTempo
         '
         Me.tglTempo.EditValue = Nothing
-        Me.tglTempo.Location = New System.Drawing.Point(118, 90)
+        Me.tglTempo.Location = New System.Drawing.Point(133, 96)
         Me.tglTempo.Name = "tglTempo"
         Me.tglTempo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglTempo.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglTempo.Properties.MaskSettings.Set("mask", "dd-MM-yyyy")
         Me.tglTempo.Properties.ReadOnly = True
-        Me.tglTempo.Size = New System.Drawing.Size(373, 22)
+        Me.tglTempo.Size = New System.Drawing.Size(358, 24)
         Me.tglTempo.StyleController = Me.LayoutControl2
         Me.tglTempo.TabIndex = 6
         '
         'rbgDraft
         '
-        Me.rbgDraft.Location = New System.Drawing.Point(118, 142)
+        Me.rbgDraft.Location = New System.Drawing.Point(133, 152)
         Me.rbgDraft.Name = "rbgDraft"
-        Me.rbgDraft.Size = New System.Drawing.Size(373, 28)
+        Me.rbgDraft.Size = New System.Drawing.Size(358, 18)
         Me.rbgDraft.StyleController = Me.LayoutControl2
         Me.rbgDraft.TabIndex = 8
         '
         'txtPOPembelian
         '
-        Me.txtPOPembelian.Location = New System.Drawing.Point(118, 12)
+        Me.txtPOPembelian.Location = New System.Drawing.Point(133, 12)
         Me.txtPOPembelian.Name = "txtPOPembelian"
-        Me.txtPOPembelian.Size = New System.Drawing.Size(373, 22)
+        Me.txtPOPembelian.Size = New System.Drawing.Size(358, 24)
         Me.txtPOPembelian.StyleController = Me.LayoutControl2
         Me.txtPOPembelian.TabIndex = 19
+        '
+        'txtSupplier
+        '
+        Me.txtSupplier.Location = New System.Drawing.Point(133, 174)
+        Me.txtSupplier.Name = "txtSupplier"
+        Me.txtSupplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtSupplier.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "Supplier", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.txtSupplier.Properties.DataSource = Me.SupplierBindingSource
+        Me.txtSupplier.Properties.DisplayMember = "nama"
+        Me.txtSupplier.Properties.NullText = ""
+        Me.txtSupplier.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
+        Me.txtSupplier.Properties.ValueMember = "id"
+        Me.txtSupplier.Size = New System.Drawing.Size(358, 24)
+        Me.txtSupplier.StyleController = Me.LayoutControl2
+        Me.txtSupplier.TabIndex = 9
+        '
+        'SupplierBindingSource
+        '
+        Me.SupplierBindingSource.DataSource = GetType(WindowsAppFix1.Supplier)
         '
         'LayoutControlGroup1
         '
@@ -545,78 +559,78 @@ Partial Class frmAddPembelian
         Me.LayoutControlGroup1.GroupBordersVisible = False
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.LayoutControlItem9, Me.EmptySpaceItem1, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.LayoutControlItem15, Me.EmptySpaceItem13})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1260, 685)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1260, 683)
         Me.LayoutControlGroup1.TextVisible = False
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.tglPembelian
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 26)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(483, 26)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(483, 28)
         Me.LayoutControlItem2.Text = "Tanggal Invoice"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.txtTempo
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 52)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 56)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(290, 26)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(290, 28)
         Me.LayoutControlItem3.Text = "Tempo"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.tglTempo
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 78)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(483, 26)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(483, 28)
         Me.LayoutControlItem4.Text = "Tanggal Tempo"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.cbTipe
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 104)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 112)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(483, 26)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(483, 28)
         Me.LayoutControlItem5.Text = "Tipe"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.rbgDraft
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 130)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 140)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(483, 32)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(483, 22)
         Me.LayoutControlItem6.Text = "Draft"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.txtSupplier
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(483, 26)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(483, 28)
         Me.LayoutControlItem7.Text = "Supplier"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(117, 18)
         '
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.txtKeterangan
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 188)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 190)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(1240, 26)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(1240, 28)
         Me.LayoutControlItem8.Text = "Keterangan"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(117, 18)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(483, 26)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(483, 28)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(757, 26)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(757, 28)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem3
@@ -624,35 +638,35 @@ Partial Class frmAddPembelian
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Blue
         Me.EmptySpaceItem3.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(290, 52)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(290, 56)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(950, 26)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(950, 28)
         Me.EmptySpaceItem3.Text = " ( Hari )"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(102, 0)
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(117, 0)
         Me.EmptySpaceItem3.TextVisible = True
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(483, 78)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(483, 84)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(757, 26)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(757, 28)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(483, 104)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(483, 112)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(757, 26)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(757, 28)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(483, 130)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(483, 140)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(757, 32)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(757, 22)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem7
@@ -660,22 +674,22 @@ Partial Class frmAddPembelian
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.Location = New System.Drawing.Point(483, 162)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(757, 26)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(757, 28)
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.LayoutControl3
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 266)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 270)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(1240, 399)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(1240, 393)
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem9.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 214)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 218)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
         Me.EmptySpaceItem1.Size = New System.Drawing.Size(1240, 10)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
@@ -683,25 +697,25 @@ Partial Class frmAddPembelian
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.btnTambah
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(14, 224)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(14, 228)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(150, 42)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(153, 42)
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextVisible = False
         '
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.btnHapus
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(174, 224)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(177, 228)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(150, 42)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(147, 42)
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextVisible = False
         '
         'EmptySpaceItem8
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(324, 224)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(324, 228)
         Me.EmptySpaceItem8.MaxSize = New System.Drawing.Size(916, 42)
         Me.EmptySpaceItem8.MinSize = New System.Drawing.Size(916, 42)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
@@ -712,7 +726,7 @@ Partial Class frmAddPembelian
         'EmptySpaceItem9
         '
         Me.EmptySpaceItem9.AllowHotTrack = False
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(0, 224)
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(0, 228)
         Me.EmptySpaceItem9.MaxSize = New System.Drawing.Size(14, 42)
         Me.EmptySpaceItem9.MinSize = New System.Drawing.Size(14, 42)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
@@ -723,7 +737,7 @@ Partial Class frmAddPembelian
         'EmptySpaceItem10
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(164, 224)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(167, 228)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
         Me.EmptySpaceItem10.Size = New System.Drawing.Size(10, 42)
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
@@ -733,16 +747,16 @@ Partial Class frmAddPembelian
         Me.LayoutControlItem15.Control = Me.txtPOPembelian
         Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(483, 26)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(483, 28)
         Me.LayoutControlItem15.Text = "No. PO Pembelian"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(102, 16)
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(117, 18)
         '
         'EmptySpaceItem13
         '
         Me.EmptySpaceItem13.AllowHotTrack = False
         Me.EmptySpaceItem13.Location = New System.Drawing.Point(483, 0)
         Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Size = New System.Drawing.Size(757, 26)
+        Me.EmptySpaceItem13.Size = New System.Drawing.Size(757, 28)
         Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
         '
         'Root
@@ -804,7 +818,6 @@ Partial Class frmAddPembelian
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbTipe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tglPembelian.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tglPembelian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -813,6 +826,8 @@ Partial Class frmAddPembelian
         CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPOPembelian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -856,7 +871,6 @@ Partial Class frmAddPembelian
     Friend WithEvents cbTipe As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents txtSupplier As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControl3 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
@@ -904,4 +918,6 @@ Partial Class frmAddPembelian
     Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem17 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem18 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents txtSupplier As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents SupplierBindingSource As BindingSource
 End Class

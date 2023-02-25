@@ -37,8 +37,8 @@ Partial Class MainForm
         Me.NavBarControl1 = New DevExpress.XtraNavBar.NavBarControl()
         Me.NavBarGroup3 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItemAkun = New DevExpress.XtraNavBar.NavBarItem()
-        Me.NavBarItem2 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.NavBarItem3 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarTipeAkun = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarKategoriAkun = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarSeparatorItem1 = New DevExpress.XtraNavBar.NavBarSeparatorItem()
         Me.NavBarItem5 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem6 = New DevExpress.XtraNavBar.NavBarItem()
@@ -187,7 +187,7 @@ Partial Class MainForm
         Me.NavBarControl1.ActiveGroup = Me.NavBarGroup3
         Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.BarGroupMaster, Me.BarGroupPersediaan, Me.NavBarGroup1, Me.NavBarGroup2, Me.NavBarGroup3})
-        Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.BarItemJabatan, Me.BarItemLokasi, Me.BarItemPegawai, Me.BarItemProduk, Me.BarItemCustomer, Me.BarItemSupplier, Me.NavBarPersediaan, Me.NavBarPersediaanAwal, Me.NavBarPOPenjualan, Me.NavBarPenjualan, Me.NavBarPOPembelian, Me.NavBarPembelian, Me.NavBarJabatan, Me.NavBarPegawai, Me.NavBarLokasi, Me.NavBarProduk, Me.NavBarCustomer, Me.NavBarSupplier, Me.NavBarItemAkun, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem4, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarSeparatorItem1, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarSeparatorItem2, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarSeparatorItem3, Me.NavBarItem12, Me.NavBarSeparatorItem4, Me.NavBarItem13})
+        Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.BarItemJabatan, Me.BarItemLokasi, Me.BarItemPegawai, Me.BarItemProduk, Me.BarItemCustomer, Me.BarItemSupplier, Me.NavBarPersediaan, Me.NavBarPersediaanAwal, Me.NavBarPOPenjualan, Me.NavBarPenjualan, Me.NavBarPOPembelian, Me.NavBarPembelian, Me.NavBarJabatan, Me.NavBarPegawai, Me.NavBarLokasi, Me.NavBarProduk, Me.NavBarCustomer, Me.NavBarSupplier, Me.NavBarItemAkun, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem4, Me.NavBarTipeAkun, Me.NavBarKategoriAkun, Me.NavBarSeparatorItem1, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarSeparatorItem2, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarSeparatorItem3, Me.NavBarItem12, Me.NavBarSeparatorItem4, Me.NavBarItem13})
         Me.NavBarControl1.Location = New System.Drawing.Point(0, 0)
         Me.NavBarControl1.Name = "NavBarControl1"
         Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 193
@@ -200,7 +200,7 @@ Partial Class MainForm
         '
         Me.NavBarGroup3.Caption = "Keuangan"
         Me.NavBarGroup3.Expanded = True
-        Me.NavBarGroup3.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItemAkun), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem5), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem10), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem11), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem12), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem4), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem13)})
+        Me.NavBarGroup3.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItemAkun), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarTipeAkun), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarKategoriAkun), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem5), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem10), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem11), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem12), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem4), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem13)})
         Me.NavBarGroup3.Name = "NavBarGroup3"
         '
         'NavBarItemAkun
@@ -211,20 +211,20 @@ Partial Class MainForm
         Me.NavBarItemAkun.ImageOptions.SmallImageSize = New System.Drawing.Size(18, 18)
         Me.NavBarItemAkun.Name = "NavBarItemAkun"
         '
-        'NavBarItem2
+        'NavBarTipeAkun
         '
-        Me.NavBarItem2.Caption = "Tipe Akun"
-        Me.NavBarItem2.ImageOptions.LargeImageSize = New System.Drawing.Size(18, 18)
-        Me.NavBarItem2.ImageOptions.SmallImage = Global.WindowsAppFix1.My.Resources.Resources.Tipe_Akun
-        Me.NavBarItem2.ImageOptions.SmallImageSize = New System.Drawing.Size(18, 18)
-        Me.NavBarItem2.Name = "NavBarItem2"
+        Me.NavBarTipeAkun.Caption = "Tipe Akun"
+        Me.NavBarTipeAkun.ImageOptions.LargeImageSize = New System.Drawing.Size(18, 18)
+        Me.NavBarTipeAkun.ImageOptions.SmallImage = Global.WindowsAppFix1.My.Resources.Resources.Tipe_Akun
+        Me.NavBarTipeAkun.ImageOptions.SmallImageSize = New System.Drawing.Size(18, 18)
+        Me.NavBarTipeAkun.Name = "NavBarTipeAkun"
         '
-        'NavBarItem3
+        'NavBarKategoriAkun
         '
-        Me.NavBarItem3.Caption = "Kategori Akun"
-        Me.NavBarItem3.ImageOptions.SmallImage = Global.WindowsAppFix1.My.Resources.Resources.Kategori_Akun
-        Me.NavBarItem3.ImageOptions.SmallImageSize = New System.Drawing.Size(18, 18)
-        Me.NavBarItem3.Name = "NavBarItem3"
+        Me.NavBarKategoriAkun.Caption = "Kategori Akun"
+        Me.NavBarKategoriAkun.ImageOptions.SmallImage = Global.WindowsAppFix1.My.Resources.Resources.Kategori_Akun
+        Me.NavBarKategoriAkun.ImageOptions.SmallImageSize = New System.Drawing.Size(18, 18)
+        Me.NavBarKategoriAkun.Name = "NavBarKategoriAkun"
         '
         'NavBarSeparatorItem1
         '
@@ -549,8 +549,8 @@ Partial Class MainForm
     Friend WithEvents NavBarItem8 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem9 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem4 As DevExpress.XtraNavBar.NavBarItem
-    Friend WithEvents NavBarItem2 As DevExpress.XtraNavBar.NavBarItem
-    Friend WithEvents NavBarItem3 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarTipeAkun As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarKategoriAkun As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarSeparatorItem1 As DevExpress.XtraNavBar.NavBarSeparatorItem
     Friend WithEvents NavBarItem5 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem6 As DevExpress.XtraNavBar.NavBarItem

@@ -32,29 +32,29 @@ Partial Class NeracaAwalList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.AkunTipeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.NeracaSaldoAwalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NeracaSaldoAwalGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.NeracaSaldoAwalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colactive_cash = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colakun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldebet = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkredit = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colakun = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.AkunTipeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NeracaSaldoAwalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeracaSaldoAwalGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NeracaSaldoAwalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -125,23 +125,6 @@ Partial Class NeracaAwalList
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'AkunTipeBindingSource
-        '
-        Me.AkunTipeBindingSource.DataSource = GetType(WindowsAppFix1.AkunTipe)
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1323, 563)
-        Me.Root.TextVisible = False
-        '
-        'NeracaSaldoAwalBindingSource
-        '
-        Me.NeracaSaldoAwalBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldoAwal)
-        '
         'NeracaSaldoAwalGridControl
         '
         Me.NeracaSaldoAwalGridControl.DataSource = Me.NeracaSaldoAwalBindingSource
@@ -153,20 +136,15 @@ Partial Class NeracaAwalList
         Me.NeracaSaldoAwalGridControl.TabIndex = 4
         Me.NeracaSaldoAwalGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'NeracaSaldoAwalBindingSource
+        '
+        Me.NeracaSaldoAwalBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldoAwal)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colactive_cash, Me.colakun_id, Me.colakun, Me.coldebet, Me.colkredit, Me.colcreated_at, Me.colupdated_at})
         Me.GridView1.GridControl = Me.NeracaSaldoAwalGridControl
         Me.GridView1.Name = "GridView1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.NeracaSaldoAwalGridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1303, 543)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'colid
         '
@@ -182,6 +160,16 @@ Partial Class NeracaAwalList
         '
         Me.colakun_id.FieldName = "akun_id"
         Me.colakun_id.Name = "colakun_id"
+        '
+        'colakun
+        '
+        Me.colakun.AppearanceHeader.Options.UseTextOptions = True
+        Me.colakun.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colakun.Caption = "Akun"
+        Me.colakun.FieldName = "akun"
+        Me.colakun.Name = "colakun"
+        Me.colakun.Visible = True
+        Me.colakun.VisibleIndex = 0
         '
         'coldebet
         '
@@ -213,15 +201,27 @@ Partial Class NeracaAwalList
         Me.colupdated_at.FieldName = "updated_at"
         Me.colupdated_at.Name = "colupdated_at"
         '
-        'colakun
+        'Root
         '
-        Me.colakun.AppearanceHeader.Options.UseTextOptions = True
-        Me.colakun.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.colakun.Caption = "Akun"
-        Me.colakun.FieldName = "akun"
-        Me.colakun.Name = "colakun"
-        Me.colakun.Visible = True
-        Me.colakun.VisibleIndex = 0
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(1323, 563)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.NeracaSaldoAwalGridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1303, 543)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'AkunTipeBindingSource
+        '
+        Me.AkunTipeBindingSource.DataSource = GetType(WindowsAppFix1.AkunTipe)
         '
         'NeracaAwalList
         '
@@ -235,12 +235,12 @@ Partial Class NeracaAwalList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NeracaSaldoAwalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeracaSaldoAwalGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NeracaSaldoAwalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

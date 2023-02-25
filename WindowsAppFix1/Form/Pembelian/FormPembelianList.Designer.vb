@@ -228,6 +228,8 @@ Partial Class FormPembelianList
         Me.colppn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colppn.Caption = "PPN"
         Me.colppn.FieldName = "ppn"
+        Me.colppn.GroupFormat.FormatString = "n0"
+        Me.colppn.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colppn.Name = "colppn"
         Me.colppn.Visible = True
         Me.colppn.VisibleIndex = 10

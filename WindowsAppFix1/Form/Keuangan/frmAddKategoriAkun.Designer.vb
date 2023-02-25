@@ -23,39 +23,37 @@ Partial Class frmAddKategoriAkun
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.btnBatal = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.txtKategoriAkun = New DevExpress.XtraEditors.TextEdit()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.txtKeterangan = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKategoriAkun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +61,8 @@ Partial Class frmAddKategoriAkun
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -76,15 +76,6 @@ Partial Class frmAddKategoriAkun
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(714, 205)
-        Me.Root.TextVisible = False
-        '
         'XtraTabControl1
         '
         Me.XtraTabControl1.Location = New System.Drawing.Point(12, 12)
@@ -93,15 +84,6 @@ Partial Class frmAddKategoriAkun
         Me.XtraTabControl1.Size = New System.Drawing.Size(690, 181)
         Me.XtraTabControl1.TabIndex = 4
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1})
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.XtraTabControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(694, 185)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'XtraTabPage1
         '
@@ -112,8 +94,8 @@ Partial Class frmAddKategoriAkun
         '
         'LayoutControl2
         '
-        Me.LayoutControl2.Controls.Add(Me.SimpleButton2)
-        Me.LayoutControl2.Controls.Add(Me.SimpleButton1)
+        Me.LayoutControl2.Controls.Add(Me.btnBatal)
+        Me.LayoutControl2.Controls.Add(Me.btnSimpan)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
         Me.LayoutControl2.Controls.Add(Me.txtKategoriAkun)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -124,6 +106,40 @@ Partial Class frmAddKategoriAkun
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
+        'btnBatal
+        '
+        Me.btnBatal.Location = New System.Drawing.Point(562, 90)
+        Me.btnBatal.Name = "btnBatal"
+        Me.btnBatal.Size = New System.Drawing.Size(101, 25)
+        Me.btnBatal.StyleController = Me.LayoutControl2
+        Me.btnBatal.TabIndex = 7
+        Me.btnBatal.Text = "Batal"
+        '
+        'btnSimpan
+        '
+        Me.btnSimpan.Location = New System.Drawing.Point(447, 90)
+        Me.btnSimpan.Name = "btnSimpan"
+        Me.btnSimpan.Size = New System.Drawing.Size(101, 25)
+        Me.btnSimpan.StyleController = Me.LayoutControl2
+        Me.btnSimpan.TabIndex = 6
+        Me.btnSimpan.Text = "Simpan"
+        '
+        'txtKeterangan
+        '
+        Me.txtKeterangan.Location = New System.Drawing.Point(91, 40)
+        Me.txtKeterangan.Name = "txtKeterangan"
+        Me.txtKeterangan.Size = New System.Drawing.Size(582, 24)
+        Me.txtKeterangan.StyleController = Me.LayoutControl2
+        Me.txtKeterangan.TabIndex = 5
+        '
+        'txtKategoriAkun
+        '
+        Me.txtKategoriAkun.Location = New System.Drawing.Point(91, 12)
+        Me.txtKategoriAkun.Name = "txtKategoriAkun"
+        Me.txtKategoriAkun.Size = New System.Drawing.Size(582, 24)
+        Me.txtKategoriAkun.StyleController = Me.LayoutControl2
+        Me.txtKategoriAkun.TabIndex = 4
+        '
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -133,22 +149,14 @@ Partial Class frmAddKategoriAkun
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(685, 150)
         Me.LayoutControlGroup1.TextVisible = False
         '
-        'txtKategoriAkun
-        '
-        Me.txtKategoriAkun.Location = New System.Drawing.Point(106, 12)
-        Me.txtKategoriAkun.Name = "txtKategoriAkun"
-        Me.txtKategoriAkun.Size = New System.Drawing.Size(567, 24)
-        Me.txtKategoriAkun.StyleController = Me.LayoutControl2
-        Me.txtKategoriAkun.TabIndex = 4
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.txtKategoriAkun
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(665, 28)
-        Me.LayoutControlItem2.Text = "Kategori Akun"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(90, 18)
+        Me.LayoutControlItem2.Text = "Deskripsi"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(75, 18)
         '
         'EmptySpaceItem1
         '
@@ -161,14 +169,6 @@ Partial Class frmAddKategoriAkun
         Me.EmptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'txtKeterangan
-        '
-        Me.txtKeterangan.Location = New System.Drawing.Point(106, 40)
-        Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(567, 24)
-        Me.txtKeterangan.StyleController = Me.LayoutControl2
-        Me.txtKeterangan.TabIndex = 5
-        '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.txtKeterangan
@@ -176,7 +176,7 @@ Partial Class frmAddKategoriAkun
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(665, 28)
         Me.LayoutControlItem3.Text = "Keterangan"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(90, 18)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(75, 18)
         '
         'EmptySpaceItem2
         '
@@ -189,36 +189,18 @@ Partial Class frmAddKategoriAkun
         Me.EmptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Location = New System.Drawing.Point(447, 90)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(101, 25)
-        Me.SimpleButton1.StyleController = Me.LayoutControl2
-        Me.SimpleButton1.TabIndex = 6
-        Me.SimpleButton1.Text = "Simpan"
-        '
         'LayoutControlItem4
         '
-        Me.LayoutControlItem4.Control = Me.SimpleButton1
+        Me.LayoutControlItem4.Control = Me.btnSimpan
         Me.LayoutControlItem4.Location = New System.Drawing.Point(435, 78)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(105, 29)
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextVisible = False
         '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Location = New System.Drawing.Point(562, 90)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(101, 25)
-        Me.SimpleButton2.StyleController = Me.LayoutControl2
-        Me.SimpleButton2.TabIndex = 7
-        Me.SimpleButton2.Text = "Batal"
-        '
         'LayoutControlItem5
         '
-        Me.LayoutControlItem5.Control = Me.SimpleButton2
+        Me.LayoutControlItem5.Control = Me.btnBatal
         Me.LayoutControlItem5.Location = New System.Drawing.Point(550, 78)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(105, 29)
@@ -252,6 +234,24 @@ Partial Class frmAddKategoriAkun
         Me.EmptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(714, 205)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.XtraTabControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(694, 185)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
         'frmAddKategoriAkun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,18 +264,16 @@ Partial Class frmAddKategoriAkun
         Me.Text = "frmAddKategoriAkun"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage1.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKategoriAkun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -283,6 +281,8 @@ Partial Class frmAddKategoriAkun
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -297,8 +297,8 @@ Partial Class frmAddKategoriAkun
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnBatal As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnSimpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents txtKeterangan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem

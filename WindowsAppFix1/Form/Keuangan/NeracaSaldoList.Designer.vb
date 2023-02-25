@@ -32,12 +32,9 @@ Partial Class NeracaSaldoList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.NeracaSaldoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.NeracaSaldoListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NeracaSaldoGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.NeracaSaldoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colactive_cash = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun_id = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -46,15 +43,18 @@ Partial Class NeracaSaldoList
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.NeracaSaldoListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.NeracaSaldoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NeracaSaldoListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NeracaSaldoGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NeracaSaldoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NeracaSaldoListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -125,23 +125,6 @@ Partial Class NeracaSaldoList
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'NeracaSaldoBindingSource
-        '
-        Me.NeracaSaldoBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldo)
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1398, 690)
-        Me.Root.TextVisible = False
-        '
-        'NeracaSaldoListBindingSource
-        '
-        Me.NeracaSaldoListBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldoList)
-        '
         'NeracaSaldoGridControl
         '
         Me.NeracaSaldoGridControl.DataSource = Me.NeracaSaldoBindingSource
@@ -153,20 +136,15 @@ Partial Class NeracaSaldoList
         Me.NeracaSaldoGridControl.TabIndex = 4
         Me.NeracaSaldoGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'NeracaSaldoBindingSource
+        '
+        Me.NeracaSaldoBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldo)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colactive_cash, Me.colakun_id, Me.coldebet, Me.colkredit, Me.colcreated_at, Me.colupdated_at, Me.colakun})
         Me.GridView1.GridControl = Me.NeracaSaldoGridControl
         Me.GridView1.Name = "GridView1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.NeracaSaldoGridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1378, 670)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'colid
         '
@@ -224,6 +202,28 @@ Partial Class NeracaSaldoList
         Me.colakun.Visible = True
         Me.colakun.VisibleIndex = 7
         '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(1398, 690)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.NeracaSaldoGridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1378, 670)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'NeracaSaldoListBindingSource
+        '
+        Me.NeracaSaldoListBindingSource.DataSource = GetType(WindowsAppFix1.NeracaSaldoList)
+        '
         'NeracaSaldoList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -236,12 +236,12 @@ Partial Class NeracaSaldoList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.NeracaSaldoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NeracaSaldoListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NeracaSaldoGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NeracaSaldoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NeracaSaldoListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

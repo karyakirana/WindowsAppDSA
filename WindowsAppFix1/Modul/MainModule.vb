@@ -198,6 +198,28 @@ Module MainModule
                     .Text = "Form Akun"
                     .Show()
                 End With
+            Case "P014"
+                addDocumentManager()
+                Dim form As New TipeAkunList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Tipe Akun"
+                    .Show()
+                End With
+            Case "P015"
+                addDocumentManager()
+                Dim form As New KategoriAkunList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Kategori Akun"
+                    .Show()
+                End With
 
 
         End Select

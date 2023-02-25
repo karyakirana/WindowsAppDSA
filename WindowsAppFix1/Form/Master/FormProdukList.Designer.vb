@@ -48,6 +48,7 @@ Partial Class FormProdukList
         Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colstatus = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnama = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltipe = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colmerk = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colsatuan_jual = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -59,7 +60,6 @@ Partial Class FormProdukList
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldeleted_at = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colproduk_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.btnEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -238,6 +238,8 @@ Partial Class FormProdukList
         '
         'colkode
         '
+        Me.colkode.AppearanceCell.Options.UseTextOptions = True
+        Me.colkode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkode.AppearanceHeader.Options.UseTextOptions = True
         Me.colkode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkode.Caption = "Kode"
@@ -248,6 +250,8 @@ Partial Class FormProdukList
         '
         'colstatus
         '
+        Me.colstatus.AppearanceCell.Options.UseTextOptions = True
+        Me.colstatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colstatus.AppearanceHeader.Options.UseTextOptions = True
         Me.colstatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colstatus.Caption = "Status"
@@ -265,6 +269,16 @@ Partial Class FormProdukList
         Me.colnama.Name = "colnama"
         Me.colnama.Visible = True
         Me.colnama.VisibleIndex = 2
+        '
+        'colproduk_kategori
+        '
+        Me.colproduk_kategori.AppearanceHeader.Options.UseTextOptions = True
+        Me.colproduk_kategori.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk_kategori.Caption = "Kategori"
+        Me.colproduk_kategori.FieldName = "produk_kategori.nama"
+        Me.colproduk_kategori.Name = "colproduk_kategori"
+        Me.colproduk_kategori.Visible = True
+        Me.colproduk_kategori.VisibleIndex = 5
         '
         'coltipe
         '
@@ -288,23 +302,27 @@ Partial Class FormProdukList
         '
         'colsatuan_jual
         '
+        Me.colsatuan_jual.AppearanceCell.Options.UseTextOptions = True
+        Me.colsatuan_jual.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colsatuan_jual.AppearanceHeader.Options.UseTextOptions = True
         Me.colsatuan_jual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colsatuan_jual.Caption = "Satuan Jual"
         Me.colsatuan_jual.FieldName = "satuan_jual"
         Me.colsatuan_jual.Name = "colsatuan_jual"
         Me.colsatuan_jual.Visible = True
-        Me.colsatuan_jual.VisibleIndex = 5
+        Me.colsatuan_jual.VisibleIndex = 6
         '
         'colharga
         '
         Me.colharga.AppearanceHeader.Options.UseTextOptions = True
         Me.colharga.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colharga.Caption = "Harga"
+        Me.colharga.DisplayFormat.FormatString = "n0"
+        Me.colharga.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colharga.FieldName = "harga"
         Me.colharga.Name = "colharga"
         Me.colharga.Visible = True
-        Me.colharga.VisibleIndex = 6
+        Me.colharga.VisibleIndex = 7
         '
         'colmax_diskon
         '
@@ -314,7 +332,7 @@ Partial Class FormProdukList
         Me.colmax_diskon.FieldName = "max_diskon"
         Me.colmax_diskon.Name = "colmax_diskon"
         Me.colmax_diskon.Visible = True
-        Me.colmax_diskon.VisibleIndex = 7
+        Me.colmax_diskon.VisibleIndex = 8
         '
         'colbuffer_stock
         '
@@ -324,7 +342,7 @@ Partial Class FormProdukList
         Me.colbuffer_stock.FieldName = "buffer_stock"
         Me.colbuffer_stock.Name = "colbuffer_stock"
         Me.colbuffer_stock.Visible = True
-        Me.colbuffer_stock.VisibleIndex = 8
+        Me.colbuffer_stock.VisibleIndex = 9
         '
         'colminimum_stock
         '
@@ -334,7 +352,7 @@ Partial Class FormProdukList
         Me.colminimum_stock.FieldName = "minimum_stock"
         Me.colminimum_stock.Name = "colminimum_stock"
         Me.colminimum_stock.Visible = True
-        Me.colminimum_stock.VisibleIndex = 9
+        Me.colminimum_stock.VisibleIndex = 10
         '
         'colketerangan
         '
@@ -344,7 +362,7 @@ Partial Class FormProdukList
         Me.colketerangan.FieldName = "keterangan"
         Me.colketerangan.Name = "colketerangan"
         Me.colketerangan.Visible = True
-        Me.colketerangan.VisibleIndex = 10
+        Me.colketerangan.VisibleIndex = 11
         '
         'colcreated_at
         '
@@ -360,16 +378,6 @@ Partial Class FormProdukList
         '
         Me.coldeleted_at.FieldName = "deleted_at"
         Me.coldeleted_at.Name = "coldeleted_at"
-        '
-        'colproduk_kategori
-        '
-        Me.colproduk_kategori.AppearanceHeader.Options.UseTextOptions = True
-        Me.colproduk_kategori.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.colproduk_kategori.Caption = "Kategori"
-        Me.colproduk_kategori.FieldName = "produk_kategori"
-        Me.colproduk_kategori.Name = "colproduk_kategori"
-        Me.colproduk_kategori.Visible = True
-        Me.colproduk_kategori.VisibleIndex = 11
         '
         'RibbonControl1
         '

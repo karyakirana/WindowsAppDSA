@@ -60,8 +60,7 @@ Partial Class frmAddPembelian
         Me.tglTempo = New DevExpress.XtraEditors.DateEdit()
         Me.rbgDraft = New DevExpress.XtraEditors.RadioGroup()
         Me.txtPOPembelian = New DevExpress.XtraEditors.TextEdit()
-        Me.txtSupplier = New DevExpress.XtraEditors.LookUpEdit()
-        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtSupplier = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -87,6 +86,7 @@ Partial Class frmAddPembelian
         Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,15 +119,14 @@ Partial Class frmAddPembelian
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbTipe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglPembelian.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglPembelian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglPembelian.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglTempo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglTempo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPOPembelian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +152,7 @@ Partial Class frmAddPembelian
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -483,11 +483,11 @@ Partial Class frmAddPembelian
         Me.tglPembelian.Name = "tglPembelian"
         Me.tglPembelian.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglPembelian.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.tglPembelian.Properties.DisplayFormat.FormatString = "dd-MM-yyyy"
+        Me.tglPembelian.Properties.DisplayFormat.FormatString = "yyyy-MM-dd"
         Me.tglPembelian.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.tglPembelian.Properties.EditFormat.FormatString = "dd-MM-yyyy"
+        Me.tglPembelian.Properties.EditFormat.FormatString = "yyyy-MM-dd"
         Me.tglPembelian.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.tglPembelian.Properties.MaskSettings.Set("mask", "dd-MM-yyyy")
+        Me.tglPembelian.Properties.MaskSettings.Set("mask", "yyyy-MM-dd")
         Me.tglPembelian.Size = New System.Drawing.Size(358, 24)
         Me.tglPembelian.StyleController = Me.LayoutControl2
         Me.tglPembelian.TabIndex = 4
@@ -512,7 +512,11 @@ Partial Class frmAddPembelian
         Me.tglTempo.Name = "tglTempo"
         Me.tglTempo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglTempo.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.tglTempo.Properties.MaskSettings.Set("mask", "dd-MM-yyyy")
+        Me.tglTempo.Properties.DisplayFormat.FormatString = "yyyy-MM-dd"
+        Me.tglTempo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.tglTempo.Properties.EditFormat.FormatString = "yyyy-MM-dd"
+        Me.tglTempo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.tglTempo.Properties.MaskSettings.Set("mask", "yyyy-MM-dd")
         Me.tglTempo.Properties.ReadOnly = True
         Me.tglTempo.Size = New System.Drawing.Size(358, 24)
         Me.tglTempo.StyleController = Me.LayoutControl2
@@ -522,6 +526,7 @@ Partial Class frmAddPembelian
         '
         Me.rbgDraft.Location = New System.Drawing.Point(133, 152)
         Me.rbgDraft.Name = "rbgDraft"
+        Me.rbgDraft.Properties.Columns = 2
         Me.rbgDraft.Size = New System.Drawing.Size(358, 18)
         Me.rbgDraft.StyleController = Me.LayoutControl2
         Me.rbgDraft.TabIndex = 8
@@ -538,20 +543,9 @@ Partial Class frmAddPembelian
         '
         Me.txtSupplier.Location = New System.Drawing.Point(133, 174)
         Me.txtSupplier.Name = "txtSupplier"
-        Me.txtSupplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtSupplier.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "Supplier", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
-        Me.txtSupplier.Properties.DataSource = Me.SupplierBindingSource
-        Me.txtSupplier.Properties.DisplayMember = "nama"
-        Me.txtSupplier.Properties.NullText = ""
-        Me.txtSupplier.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch
-        Me.txtSupplier.Properties.ValueMember = "id"
         Me.txtSupplier.Size = New System.Drawing.Size(358, 24)
         Me.txtSupplier.StyleController = Me.LayoutControl2
         Me.txtSupplier.TabIndex = 9
-        '
-        'SupplierBindingSource
-        '
-        Me.SupplierBindingSource.DataSource = GetType(WindowsAppFix1.Supplier)
         '
         'LayoutControlGroup1
         '
@@ -777,6 +771,10 @@ Partial Class frmAddPembelian
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
+        'SupplierBindingSource
+        '
+        Me.SupplierBindingSource.DataSource = GetType(WindowsAppFix1.Supplier)
+        '
         'frmAddPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -827,7 +825,6 @@ Partial Class frmAddPembelian
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPOPembelian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -853,6 +850,7 @@ Partial Class frmAddPembelian
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -918,6 +916,6 @@ Partial Class frmAddPembelian
     Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem17 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem18 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents txtSupplier As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents SupplierBindingSource As BindingSource
+    Friend WithEvents txtSupplier As DevExpress.XtraEditors.TextEdit
 End Class

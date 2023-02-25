@@ -32,11 +32,9 @@ Partial Class TipeAkunList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.AkunTipeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AkunTipeGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.AkunTipeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun_tipe_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun_kategori_id = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -46,20 +44,22 @@ Partial Class TipeAkunList
         Me.colcreated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colakun_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AkunTipeGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.SearchEditItem, Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
@@ -124,19 +124,6 @@ Partial Class TipeAkunList
         Me.LayoutControl1.TabIndex = 2
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1275, 513)
-        Me.Root.TextVisible = False
-        '
-        'AkunTipeBindingSource
-        '
-        Me.AkunTipeBindingSource.DataSource = GetType(WindowsAppFix1.AkunTipe)
-        '
         'AkunTipeGridControl
         '
         Me.AkunTipeGridControl.DataSource = Me.AkunTipeBindingSource
@@ -148,20 +135,15 @@ Partial Class TipeAkunList
         Me.AkunTipeGridControl.TabIndex = 4
         Me.AkunTipeGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'AkunTipeBindingSource
+        '
+        Me.AkunTipeBindingSource.DataSource = GetType(WindowsAppFix1.AkunTipe)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colakun_tipe_id, Me.colakun_kategori_id, Me.colkode, Me.colnama, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.colakun_kategori})
         Me.GridView1.GridControl = Me.AkunTipeGridControl
         Me.GridView1.Name = "GridView1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.AkunTipeGridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1255, 493)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
         '
         'colid
         '
@@ -226,6 +208,24 @@ Partial Class TipeAkunList
         Me.colakun_kategori.Visible = True
         Me.colakun_kategori.VisibleIndex = 8
         '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(1275, 513)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.AkunTipeGridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1255, 493)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
         'TipeAkunList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,10 +238,10 @@ Partial Class TipeAkunList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AkunTipeGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AkunTipeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

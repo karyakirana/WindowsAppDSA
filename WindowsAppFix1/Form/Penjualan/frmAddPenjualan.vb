@@ -10,7 +10,7 @@ Imports Newtonsoft.Json
 
 Public Class frmAddPenjualan
 
-    Private _penjualanRepo As PenjualanRepository
+    Private _penjualanRepo As PenjualanRepository = New PenjualanRepository()
     Private _lokasiRepository As New LokasiRepository
     Private _persediaanRepo As New PersediaanRepo
     Private _customerRepo As New CustomerRepository
@@ -194,6 +194,10 @@ Public Class frmAddPenjualan
             ppn = (GridView1.GetRowCellValue(i, "sub_total") * 0.11)
             txtPpn.EditValue += ppn
         Next
+    End Sub
+
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        Me.Close()
     End Sub
 
     Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging

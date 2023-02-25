@@ -422,8 +422,8 @@ Partial Class FormPersediaanAwalList
         '
         Me.btnEdit.Caption = "Edit"
         Me.btnEdit.Id = 2
-        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.Image = CType(resources.GetObject("btnEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageOptions.LargeImage = CType(resources.GetObject("btnEdit.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnEdit.Name = "btnEdit"
         '
         'BarButtonItem3

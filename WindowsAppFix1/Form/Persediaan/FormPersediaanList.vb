@@ -10,4 +10,8 @@
         Dim listData = Await _persediaanRepo.GetList()
         GridControl1.DataSource = listData
     End Sub
+
+    Private Sub btnClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnClose.ItemClick
+        Close()
+    End Sub
 End Class

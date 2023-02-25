@@ -27,6 +27,7 @@ Partial Class frmAddPenjualan
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtPOPenjualan = New DevExpress.XtraEditors.TextEdit()
         Me.txtTotalBayar = New DevExpress.XtraEditors.TextEdit()
         Me.txtBiayaLain = New DevExpress.XtraEditors.TextEdit()
         Me.txtPpn = New DevExpress.XtraEditors.TextEdit()
@@ -85,10 +86,12 @@ Partial Class frmAddPenjualan
         Me.EmptySpaceItem16 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem22 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem18 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem19 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem23 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +99,7 @@ Partial Class frmAddPenjualan
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
+        CType(Me.txtPOPenjualan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTotalBayar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBiayaLain.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPpn.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,10 +158,12 @@ Partial Class frmAddPenjualan
         CType(Me.EmptySpaceItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -189,6 +195,7 @@ Partial Class frmAddPenjualan
         '
         'LayoutControl2
         '
+        Me.LayoutControl2.Controls.Add(Me.txtPOPenjualan)
         Me.LayoutControl2.Controls.Add(Me.txtTotalBayar)
         Me.LayoutControl2.Controls.Add(Me.txtBiayaLain)
         Me.LayoutControl2.Controls.Add(Me.txtPpn)
@@ -213,27 +220,53 @@ Partial Class frmAddPenjualan
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
+        'txtPOPenjualan
+        '
+        Me.txtPOPenjualan.Location = New System.Drawing.Point(130, 12)
+        Me.txtPOPenjualan.Name = "txtPOPenjualan"
+        Me.txtPOPenjualan.Size = New System.Drawing.Size(423, 24)
+        Me.txtPOPenjualan.StyleController = Me.LayoutControl2
+        Me.txtPOPenjualan.TabIndex = 26
+        '
         'txtTotalBayar
         '
-        Me.txtTotalBayar.Location = New System.Drawing.Point(1083, 615)
+        Me.txtTotalBayar.Location = New System.Drawing.Point(1093, 615)
         Me.txtTotalBayar.Name = "txtTotalBayar"
-        Me.txtTotalBayar.Size = New System.Drawing.Size(338, 24)
+        Me.txtTotalBayar.Properties.DisplayFormat.FormatString = "n0"
+        Me.txtTotalBayar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtTotalBayar.Properties.EditFormat.FormatString = "n0"
+        Me.txtTotalBayar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtTotalBayar.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
+        Me.txtTotalBayar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtTotalBayar.Size = New System.Drawing.Size(328, 24)
         Me.txtTotalBayar.StyleController = Me.LayoutControl2
         Me.txtTotalBayar.TabIndex = 24
         '
         'txtBiayaLain
         '
-        Me.txtBiayaLain.Location = New System.Drawing.Point(1083, 587)
+        Me.txtBiayaLain.Location = New System.Drawing.Point(1093, 587)
         Me.txtBiayaLain.Name = "txtBiayaLain"
-        Me.txtBiayaLain.Size = New System.Drawing.Size(338, 24)
+        Me.txtBiayaLain.Properties.DisplayFormat.FormatString = "n0"
+        Me.txtBiayaLain.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtBiayaLain.Properties.EditFormat.FormatString = "n0"
+        Me.txtBiayaLain.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtBiayaLain.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
+        Me.txtBiayaLain.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtBiayaLain.Size = New System.Drawing.Size(328, 24)
         Me.txtBiayaLain.StyleController = Me.LayoutControl2
         Me.txtBiayaLain.TabIndex = 23
         '
         'txtPpn
         '
-        Me.txtPpn.Location = New System.Drawing.Point(1083, 559)
+        Me.txtPpn.Location = New System.Drawing.Point(1093, 559)
         Me.txtPpn.Name = "txtPpn"
-        Me.txtPpn.Size = New System.Drawing.Size(338, 24)
+        Me.txtPpn.Properties.DisplayFormat.FormatString = "n0"
+        Me.txtPpn.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtPpn.Properties.EditFormat.FormatString = "n0"
+        Me.txtPpn.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtPpn.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
+        Me.txtPpn.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtPpn.Size = New System.Drawing.Size(328, 24)
         Me.txtPpn.StyleController = Me.LayoutControl2
         Me.txtPpn.TabIndex = 22
         '
@@ -258,10 +291,10 @@ Partial Class frmAddPenjualan
         'LayoutControl3
         '
         Me.LayoutControl3.Controls.Add(Me.GridControl1)
-        Me.LayoutControl3.Location = New System.Drawing.Point(12, 288)
+        Me.LayoutControl3.Location = New System.Drawing.Point(12, 316)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(1421, 267)
+        Me.LayoutControl3.Size = New System.Drawing.Size(1421, 239)
         Me.LayoutControl3.TabIndex = 18
         Me.LayoutControl3.Text = "LayoutControl3"
         '
@@ -271,7 +304,7 @@ Partial Class frmAddPenjualan
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(1397, 243)
+        Me.GridControl1.Size = New System.Drawing.Size(1397, 215)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -295,7 +328,7 @@ Partial Class frmAddPenjualan
         Me.LayoutControlGroup2.GroupBordersVisible = False
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem13})
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1421, 267)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1421, 239)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem13
@@ -303,14 +336,14 @@ Partial Class frmAddPenjualan
         Me.LayoutControlItem13.Control = Me.GridControl1
         Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(1401, 247)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(1401, 219)
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem13.TextVisible = False
         '
         'btnHapus
         '
         Me.btnHapus.ImageOptions.SvgImage = CType(resources.GetObject("btnHapus.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnHapus.Location = New System.Drawing.Point(190, 246)
+        Me.btnHapus.Location = New System.Drawing.Point(190, 274)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(165, 38)
         Me.btnHapus.StyleController = Me.LayoutControl2
@@ -320,7 +353,7 @@ Partial Class frmAddPenjualan
         'btnTambah
         '
         Me.btnTambah.ImageOptions.SvgImage = CType(resources.GetObject("btnTambah.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnTambah.Location = New System.Drawing.Point(27, 246)
+        Me.btnTambah.Location = New System.Drawing.Point(27, 274)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(149, 38)
         Me.btnTambah.StyleController = Me.LayoutControl2
@@ -329,34 +362,34 @@ Partial Class frmAddPenjualan
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(120, 208)
+        Me.txtKeterangan.Location = New System.Drawing.Point(130, 236)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(1313, 24)
+        Me.txtKeterangan.Size = New System.Drawing.Size(1303, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
         Me.txtKeterangan.TabIndex = 11
         '
         'txtCustomer
         '
-        Me.txtCustomer.Location = New System.Drawing.Point(120, 152)
+        Me.txtCustomer.Location = New System.Drawing.Point(130, 180)
         Me.txtCustomer.Name = "txtCustomer"
-        Me.txtCustomer.Size = New System.Drawing.Size(433, 24)
+        Me.txtCustomer.Size = New System.Drawing.Size(423, 24)
         Me.txtCustomer.StyleController = Me.LayoutControl2
         Me.txtCustomer.TabIndex = 9
         '
         'cbTipe
         '
-        Me.cbTipe.Location = New System.Drawing.Point(120, 96)
+        Me.cbTipe.Location = New System.Drawing.Point(130, 124)
         Me.cbTipe.Name = "cbTipe"
         Me.cbTipe.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbTipe.Properties.Items.AddRange(New Object() {"KSO", "Non KSO", "Jasa", "Non Surat Jalan"})
-        Me.cbTipe.Size = New System.Drawing.Size(433, 24)
+        Me.cbTipe.Size = New System.Drawing.Size(423, 24)
         Me.cbTipe.StyleController = Me.LayoutControl2
         Me.cbTipe.TabIndex = 7
         '
         'tglTempo
         '
         Me.tglTempo.EditValue = Nothing
-        Me.tglTempo.Location = New System.Drawing.Point(120, 68)
+        Me.tglTempo.Location = New System.Drawing.Point(130, 96)
         Me.tglTempo.Name = "tglTempo"
         Me.tglTempo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglTempo.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -366,14 +399,14 @@ Partial Class frmAddPenjualan
         Me.tglTempo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom
         Me.tglTempo.Properties.MaskSettings.Set("mask", "yyyy-MM-dd")
         Me.tglTempo.Properties.ReadOnly = True
-        Me.tglTempo.Size = New System.Drawing.Size(433, 24)
+        Me.tglTempo.Size = New System.Drawing.Size(423, 24)
         Me.tglTempo.StyleController = Me.LayoutControl2
         Me.tglTempo.TabIndex = 5
         '
         'tglPenjualan
         '
         Me.tglPenjualan.EditValue = Nothing
-        Me.tglPenjualan.Location = New System.Drawing.Point(120, 12)
+        Me.tglPenjualan.Location = New System.Drawing.Point(130, 40)
         Me.tglPenjualan.Name = "tglPenjualan"
         Me.tglPenjualan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tglPenjualan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -382,37 +415,37 @@ Partial Class frmAddPenjualan
         Me.tglPenjualan.Properties.EditFormat.FormatString = "yyyy-MM-dd"
         Me.tglPenjualan.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom
         Me.tglPenjualan.Properties.MaskSettings.Set("mask", "yyyy-MM-dd")
-        Me.tglPenjualan.Size = New System.Drawing.Size(433, 24)
+        Me.tglPenjualan.Size = New System.Drawing.Size(423, 24)
         Me.tglPenjualan.StyleController = Me.LayoutControl2
         Me.tglPenjualan.TabIndex = 4
         '
         'txtSales
         '
-        Me.txtSales.Location = New System.Drawing.Point(120, 180)
+        Me.txtSales.Location = New System.Drawing.Point(130, 208)
         Me.txtSales.Name = "txtSales"
         Me.txtSales.Properties.ReadOnly = True
-        Me.txtSales.Size = New System.Drawing.Size(433, 24)
+        Me.txtSales.Size = New System.Drawing.Size(423, 24)
         Me.txtSales.StyleController = Me.LayoutControl2
         Me.txtSales.TabIndex = 21
         '
         'txtTempo
         '
         Me.txtTempo.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txtTempo.Location = New System.Drawing.Point(120, 40)
+        Me.txtTempo.Location = New System.Drawing.Point(130, 68)
         Me.txtTempo.Name = "txtTempo"
         Me.txtTempo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtTempo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.[Default]
         Me.txtTempo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
-        Me.txtTempo.Size = New System.Drawing.Size(205, 24)
+        Me.txtTempo.Size = New System.Drawing.Size(195, 24)
         Me.txtTempo.StyleController = Me.LayoutControl2
         Me.txtTempo.TabIndex = 6
         '
         'rbgDraft
         '
-        Me.rbgDraft.Location = New System.Drawing.Point(120, 124)
+        Me.rbgDraft.Location = New System.Drawing.Point(130, 152)
         Me.rbgDraft.Name = "rbgDraft"
         Me.rbgDraft.Properties.Columns = 2
-        Me.rbgDraft.Size = New System.Drawing.Size(433, 24)
+        Me.rbgDraft.Size = New System.Drawing.Size(423, 24)
         Me.rbgDraft.StyleController = Me.LayoutControl2
         Me.rbgDraft.TabIndex = 25
         '
@@ -420,7 +453,7 @@ Partial Class frmAddPenjualan
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem2, Me.LayoutControlItem5, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.EmptySpaceItem5, Me.EmptySpaceItem9, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.EmptySpaceItem10, Me.LayoutControlItem12, Me.EmptySpaceItem1, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.LayoutControlItem16, Me.EmptySpaceItem12, Me.EmptySpaceItem6, Me.LayoutControlItem8, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.EmptySpaceItem17, Me.EmptySpaceItem20, Me.EmptySpaceItem21, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem11, Me.EmptySpaceItem16, Me.EmptySpaceItem22, Me.LayoutControlItem6})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem2, Me.LayoutControlItem5, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.EmptySpaceItem5, Me.EmptySpaceItem9, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.EmptySpaceItem10, Me.LayoutControlItem12, Me.EmptySpaceItem1, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.LayoutControlItem16, Me.EmptySpaceItem12, Me.EmptySpaceItem6, Me.LayoutControlItem8, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.EmptySpaceItem17, Me.EmptySpaceItem20, Me.EmptySpaceItem21, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem11, Me.EmptySpaceItem16, Me.EmptySpaceItem22, Me.LayoutControlItem6, Me.LayoutControlItem19, Me.EmptySpaceItem23})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1445, 695)
         Me.LayoutControlGroup1.TextVisible = False
@@ -428,55 +461,55 @@ Partial Class frmAddPenjualan
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.tglPenjualan
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem2.Text = "Tanggal Invoice"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(114, 18)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.tglTempo
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 56)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem3.Text = "Tanggal Tempo"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(114, 18)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.txtTempo
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 28)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 56)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(317, 28)
         Me.LayoutControlItem4.Text = "Tempo"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(114, 18)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Blue
         Me.EmptySpaceItem2.AppearanceItemCaption.Options.UseForeColor = True
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(317, 28)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(317, 56)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(1108, 28)
         Me.EmptySpaceItem2.Text = "  ( Hari )"
-        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(104, 0)
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(114, 0)
         Me.EmptySpaceItem2.TextVisible = True
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.cbTipe
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 84)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 112)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem5.Text = "Tipe"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(114, 18)
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(545, 84)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(545, 112)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
@@ -484,7 +517,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(545, 112)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(545, 140)
         Me.EmptySpaceItem4.MaxSize = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem4.MinSize = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
@@ -495,25 +528,25 @@ Partial Class frmAddPenjualan
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.txtCustomer
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 140)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 168)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem7.Text = "Customer"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(114, 18)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.txtKeterangan
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 196)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 224)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.Size = New System.Drawing.Size(1425, 28)
         Me.LayoutControlItem9.Text = "Keterangan"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(114, 18)
         '
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(545, 140)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(545, 168)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
         Me.EmptySpaceItem5.Size = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
@@ -521,7 +554,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem9
         '
         Me.EmptySpaceItem9.AllowHotTrack = False
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(0, 224)
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(0, 252)
         Me.EmptySpaceItem9.MaxSize = New System.Drawing.Size(1173, 10)
         Me.EmptySpaceItem9.MinSize = New System.Drawing.Size(1173, 10)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
@@ -532,7 +565,7 @@ Partial Class frmAddPenjualan
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.btnTambah
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(15, 234)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(15, 262)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(153, 42)
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
@@ -541,7 +574,7 @@ Partial Class frmAddPenjualan
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.btnHapus
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(178, 234)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(178, 262)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(169, 42)
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
@@ -550,7 +583,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem10
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(347, 234)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(347, 262)
         Me.EmptySpaceItem10.MaxSize = New System.Drawing.Size(1078, 42)
         Me.EmptySpaceItem10.MinSize = New System.Drawing.Size(1078, 42)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
@@ -561,16 +594,16 @@ Partial Class frmAddPenjualan
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.LayoutControl3
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 276)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 304)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(1425, 271)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(1425, 243)
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 234)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 262)
         Me.EmptySpaceItem1.MaxSize = New System.Drawing.Size(15, 42)
         Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(15, 42)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
@@ -632,16 +665,16 @@ Partial Class frmAddPenjualan
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.txtSales
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 168)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 196)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem16.Text = "Sales"
-        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(114, 18)
         '
         'EmptySpaceItem12
         '
         Me.EmptySpaceItem12.AllowHotTrack = False
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(545, 168)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(545, 196)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
         Me.EmptySpaceItem12.Size = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
@@ -649,7 +682,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(168, 234)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(168, 262)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
         Me.EmptySpaceItem6.Size = New System.Drawing.Size(10, 42)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
@@ -661,7 +694,7 @@ Partial Class frmAddPenjualan
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Size = New System.Drawing.Size(450, 28)
         Me.LayoutControlItem8.Text = "PPN"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(114, 18)
         '
         'LayoutControlItem17
         '
@@ -670,7 +703,7 @@ Partial Class frmAddPenjualan
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Size = New System.Drawing.Size(450, 28)
         Me.LayoutControlItem17.Text = "Biaya Lain"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(114, 18)
         '
         'LayoutControlItem18
         '
@@ -679,7 +712,7 @@ Partial Class frmAddPenjualan
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.Size = New System.Drawing.Size(450, 28)
         Me.LayoutControlItem18.Text = "Total Bayar"
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(114, 18)
         '
         'EmptySpaceItem17
         '
@@ -717,7 +750,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem7
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(545, 56)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(545, 84)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
         Me.EmptySpaceItem7.Size = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
@@ -758,7 +791,7 @@ Partial Class frmAddPenjualan
         'EmptySpaceItem22
         '
         Me.EmptySpaceItem22.AllowHotTrack = False
-        Me.EmptySpaceItem22.Location = New System.Drawing.Point(545, 0)
+        Me.EmptySpaceItem22.Location = New System.Drawing.Point(545, 28)
         Me.EmptySpaceItem22.Name = "EmptySpaceItem22"
         Me.EmptySpaceItem22.Size = New System.Drawing.Size(880, 28)
         Me.EmptySpaceItem22.TextSize = New System.Drawing.Size(0, 0)
@@ -766,11 +799,20 @@ Partial Class frmAddPenjualan
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.rbgDraft
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 112)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 140)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(545, 28)
         Me.LayoutControlItem6.Text = "Draft"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(104, 18)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(114, 18)
+        '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.txtPOPenjualan
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem19.Name = "LayoutControlItem19"
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(545, 28)
+        Me.LayoutControlItem19.Text = "No. PO Penjualan"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(114, 18)
         '
         'Root
         '
@@ -806,6 +848,17 @@ Partial Class frmAddPenjualan
         Me.EmptySpaceItem19.Size = New System.Drawing.Size(22, 400)
         Me.EmptySpaceItem19.TextSize = New System.Drawing.Size(0, 0)
         '
+        'EmptySpaceItem23
+        '
+        Me.EmptySpaceItem23.AllowHotTrack = False
+        Me.EmptySpaceItem23.Location = New System.Drawing.Point(545, 0)
+        Me.EmptySpaceItem23.MaxSize = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.MinSize = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.Name = "EmptySpaceItem23"
+        Me.EmptySpaceItem23.Size = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.EmptySpaceItem23.TextSize = New System.Drawing.Size(0, 0)
+        '
         'frmAddPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -823,6 +876,7 @@ Partial Class frmAddPenjualan
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
+        CType(Me.txtPOPenjualan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTotalBayar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBiayaLain.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPpn.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -881,10 +935,12 @@ Partial Class frmAddPenjualan
         CType(Me.EmptySpaceItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -955,4 +1011,7 @@ Partial Class frmAddPenjualan
     Friend WithEvents rbgDraft As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents txtPOPenjualan As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem23 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

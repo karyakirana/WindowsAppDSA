@@ -25,7 +25,7 @@ Public Class AkunTipe
 	Public Property id As Long
 	Public Property akun_tipe_id As Long
 	Public Property akun_kategori_id As Long
-	Public Property kode As String
+	Public Property default_field As String
 	Public Property nama As String
 	Public Property keterangan As String
 	Public Property created_at As String

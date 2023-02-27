@@ -146,8 +146,6 @@ Public Class frmAddPersediaanAwal
 
     End Sub
 
-
-
     Private Sub frmAddPersediaanAwal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
     End Sub

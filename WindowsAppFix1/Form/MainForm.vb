@@ -68,6 +68,14 @@ Public Class MainForm
         easyAccess(Me, "P015")
     End Sub
 
+    'STOCK
+
+    Private Sub NavBarStockMasuk_LinkClicked(sender As Object, e As NavBarLinkEventArgs) Handles NavBarStockMasuk.LinkClicked
+        easyAccess(Me, "P016")
+    End Sub
+
+
+
 
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         LoginForm.Show()

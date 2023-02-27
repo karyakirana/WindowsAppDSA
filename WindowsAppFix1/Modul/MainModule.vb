@@ -221,6 +221,19 @@ Module MainModule
                     .Show()
                 End With
 
+            'STOCK
+            Case "P016"
+                addDocumentManager()
+                Dim form As New StockMasukList
+                With parent
+
+                End With
+                With form
+                    .MdiParent = parent
+                    .Text = "Form Add Stock Masuk"
+                    .Show()
+                End With
+
 
         End Select
 

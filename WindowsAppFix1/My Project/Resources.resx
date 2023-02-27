@@ -157,6 +157,12 @@
   <data name="Neraca Saldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Neraca Saldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stock Masuk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stock Masuk1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-login-icon-29" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-login-icon-29.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,10 +172,13 @@
   <data name="Tipe Akun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tipe Akun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Stock Masuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stock Masuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Kategori Akun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kategori Akun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stock Keluar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stock Keluar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

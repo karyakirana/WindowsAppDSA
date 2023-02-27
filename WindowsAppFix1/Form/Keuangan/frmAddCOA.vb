@@ -1,3 +1,3 @@
-﻿Public Class frmAddCOA
+﻿Public Class frmAddCoa
 
 End Class

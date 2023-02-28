@@ -13,6 +13,7 @@
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         Dim frm = New frmAddPersediaanAwal
         frm.Show()
+        purpose = "NEW"
     End Sub
 
     Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick

@@ -17,6 +17,7 @@
 	Public Property lokasi As Lokasi
 	Public Property users As Users
 	Public Property persediaan_awal_detail As List(Of PersediaanAwalDetail)
+	Public Property persediaan_awal_detail_store As List(Of PersediaanAwalDetailStore)
 End Class
 
 Public Class PersediaanAwalDetail
@@ -36,4 +37,14 @@ Public Class PersediaanAwalDetail
 	Public Property serial_number As String
 
 	Public Property persediaan As Persediaan
+End Class
+
+Public Class PersediaanAwalDetailStore
+	Public Property produk_id As Long
+	Public Property jumlah As Long
+	Public Property batch As String
+	Public Property expired As String
+	Public Property serial_number As String
+	Public Property harga As Long
+	Public Property sub_total As Long
 End Class

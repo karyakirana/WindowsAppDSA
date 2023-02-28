@@ -87,11 +87,11 @@ Partial Class frmAddPenjualan
         Me.EmptySpaceItem22 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem23 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem18 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem19 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem23 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,11 +159,11 @@ Partial Class frmAddPenjualan
         CType(Me.EmptySpaceItem22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -814,6 +814,17 @@ Partial Class frmAddPenjualan
         Me.LayoutControlItem19.Text = "No. PO Penjualan"
         Me.LayoutControlItem19.TextSize = New System.Drawing.Size(114, 18)
         '
+        'EmptySpaceItem23
+        '
+        Me.EmptySpaceItem23.AllowHotTrack = False
+        Me.EmptySpaceItem23.Location = New System.Drawing.Point(545, 0)
+        Me.EmptySpaceItem23.MaxSize = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.MinSize = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.Name = "EmptySpaceItem23"
+        Me.EmptySpaceItem23.Size = New System.Drawing.Size(880, 28)
+        Me.EmptySpaceItem23.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.EmptySpaceItem23.TextSize = New System.Drawing.Size(0, 0)
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -847,17 +858,6 @@ Partial Class frmAddPenjualan
         Me.EmptySpaceItem19.Name = "EmptySpaceItem19"
         Me.EmptySpaceItem19.Size = New System.Drawing.Size(22, 400)
         Me.EmptySpaceItem19.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem23
-        '
-        Me.EmptySpaceItem23.AllowHotTrack = False
-        Me.EmptySpaceItem23.Location = New System.Drawing.Point(545, 0)
-        Me.EmptySpaceItem23.MaxSize = New System.Drawing.Size(880, 28)
-        Me.EmptySpaceItem23.MinSize = New System.Drawing.Size(880, 28)
-        Me.EmptySpaceItem23.Name = "EmptySpaceItem23"
-        Me.EmptySpaceItem23.Size = New System.Drawing.Size(880, 28)
-        Me.EmptySpaceItem23.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.EmptySpaceItem23.TextSize = New System.Drawing.Size(0, 0)
         '
         'frmAddPenjualan
         '
@@ -936,11 +936,11 @@ Partial Class frmAddPenjualan
         CType(Me.EmptySpaceItem22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

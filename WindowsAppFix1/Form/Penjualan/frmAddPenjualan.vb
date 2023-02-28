@@ -200,6 +200,10 @@ Public Class frmAddPenjualan
         Me.Close()
     End Sub
 
+    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        'tombol penjualan
+    End Sub
+
     Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
         If GridView1.FocusedColumn.FieldName = "jumlah" Then
             Dim edit As TextEdit = CType(GridView1.ActiveEditor, TextEdit)

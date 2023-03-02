@@ -18,7 +18,7 @@ Module MainModule
 
 
     Public Token As String
-    Public BaseURl As String = "http://192.168.18.65/erpbsa/public/api/"
+    Public BaseURl As String = "http://103.157.97.253/api/"
     Public _client As HttpClient
     Public _response As HttpResponseMessage
     Public _jObject As JObject

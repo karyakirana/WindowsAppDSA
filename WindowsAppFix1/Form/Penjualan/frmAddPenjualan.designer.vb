@@ -114,10 +114,10 @@ Partial Class frmAddPenjualan
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCustomer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbTipe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglTempo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglPenjualan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglPenjualan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglPenjualan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSales.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -320,6 +320,9 @@ Partial Class frmAddPenjualan
         Me.RepositoryItemDateEdit1.AutoHeight = False
         Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.DisplayFormat.FormatString = "yyyy-MM-dd"
+        Me.RepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.RepositoryItemDateEdit1.MaskSettings.Set("mask", "yyyy-MM-dd")
         Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
         '
         'LayoutControlGroup2

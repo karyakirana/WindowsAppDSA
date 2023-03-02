@@ -1,6 +1,11 @@
-﻿Public Class FormPersediaanAwalList
+﻿Imports DevExpress.LookAndFeel
+Imports DevExpress.XtraReports.UI
+
+Public Class FormPersediaanAwalList
 
     Private _persediaanAwalRepo As PersediaanAwalRepo = New PersediaanAwalRepo()
+    Dim rpt As New rptPersediaan_Awal
+
     Private Sub FormPersediaanAwalList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
     End Sub
@@ -8,6 +13,7 @@
     Private Async Sub LoadData()
         Dim listView = Await _persediaanAwalRepo.GetList()
         GridControl1.DataSource = listView
+        rpt.DataSource = listView
     End Sub
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
@@ -28,5 +34,16 @@
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
         Close()
+    End Sub
+
+    Private Sub barBtnPrint_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles barBtnPrint.ItemClick
+
+        If ckGlobal.Checked Then
+        Else
+            Dim printTool As New ReportPrintTool(rpt)
+
+            printTool.ShowPreview()
+        End If
+
     End Sub
 End Class

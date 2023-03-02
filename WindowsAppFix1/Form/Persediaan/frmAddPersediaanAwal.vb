@@ -19,7 +19,7 @@ Public Class frmAddPersediaanAwal
     Private _produkRepo As New ProdukRepository
     Private _persediaanAwalRepo As New PersediaanAwalRepo
     Public dtProduk As New DataTable
-    Dim exp
+    Dim exp As DateTime
     Dim draft, lokasi_id As Integer
     Dim listlokasi As List(Of Lokasi)
 
@@ -197,7 +197,7 @@ Public Class frmAddPersediaanAwal
 
             'exp = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
             Dim expired = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
-            exp = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            exp = IIf(expired Is DBNull.Value, String.Empty, CStr(expired))
             If expired Is DBNull.Value Then
                 GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "expired", "")
             Else
@@ -240,6 +240,7 @@ Public Class frmAddPersediaanAwal
             'list detail
             Dim persediaan_awal_list As New List(Of PersediaanAwalDetailStore)
             For i As Integer = 0 To GridView1.RowCount - 1
+                _awal.total_barang += GridView1.GetRowCellValue(i, "jumlah")
                 Dim detail As New PersediaanAwalDetailStore
                 Dim expired = GridView1.GetRowCellValue(i, "expired")
                 detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")

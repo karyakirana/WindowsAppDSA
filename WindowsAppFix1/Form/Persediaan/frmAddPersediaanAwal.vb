@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Net
 Imports DevExpress.Data
+Imports DevExpress.Data.ChartDataSources
 Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors.Repository
@@ -15,9 +16,10 @@ Public Class frmAddPersediaanAwal
 
     Private _lokasiRepository As New LokasiRepository
     Private _persediaanRepo As New PersediaanRepo
+    Private _produkRepo As New ProdukRepository
     Private _persediaanAwalRepo As New PersediaanAwalRepo
-    Public dtPersediaan As New DataTable
-    Dim exp As DateTime
+    Public dtProduk As New DataTable
+    Dim exp
     Dim draft, lokasi_id As Integer
     Dim listlokasi As List(Of Lokasi)
 
@@ -34,20 +36,21 @@ Public Class frmAddPersediaanAwal
     Private Async Sub LoadData()
         listlokasi = Await _lokasiRepository.GetList()
         cbLokasi.Properties.DataSource = listlokasi
+        'txtTotal.EditValue = 0
     End Sub
 
     Private Sub LoadDatatable()
         'initiate column
-        dtPersediaan.Columns.Add("persediaan_id", GetType(Int64))
-        dtPersediaan.Columns.Add("produk_id", GetType(Int64))
-        dtPersediaan.Columns.Add("produk_nama", GetType(String))
-        dtPersediaan.Columns.Add("batch", GetType(String))
-        dtPersediaan.Columns.Add("expired", GetType(String))
-        dtPersediaan.Columns.Add("serial_number", GetType(String))
-        dtPersediaan.Columns.Add("harga", GetType(Integer))
-        dtPersediaan.Columns.Add("jumlah", GetType(Integer))
-        dtPersediaan.Columns.Add("sub_total", GetType(Integer))
-        GridControl1.DataSource = dtPersediaan
+        dtProduk.Columns.Add("persediaan_id", GetType(Int64))
+        dtProduk.Columns.Add("produk_id", GetType(Int64))
+        dtProduk.Columns.Add("produk_nama", GetType(String))
+        dtProduk.Columns.Add("batch", GetType(String))
+        dtProduk.Columns.Add("expired", GetType(String))
+        dtProduk.Columns.Add("serial_number", GetType(String))
+        dtProduk.Columns.Add("harga", GetType(Integer))
+        dtProduk.Columns.Add("jumlah", GetType(Integer))
+        dtProduk.Columns.Add("sub_total", GetType(Integer))
+        GridControl1.DataSource = dtProduk
 
         GridView1.Columns.ColumnByFieldName("persediaan_id").VisibleIndex = -1
         GridView1.Columns.ColumnByFieldName("produk_id").VisibleIndex = -1
@@ -75,7 +78,7 @@ Public Class frmAddPersediaanAwal
         GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 5
         GridView1.Columns.ColumnByFieldName("jumlah").Caption = "Jumlah"
         GridView1.Columns.ColumnByFieldName("jumlah").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
         GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 6
         GridView1.Columns.ColumnByFieldName("sub_total").Caption = "Sub Total"
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -90,27 +93,27 @@ Public Class frmAddPersediaanAwal
 
     Public Async Sub setRow(ByVal id As Long)
         'get data
-        Dim getData As Persediaan = Await _persediaanRepo.edit(id)
+        Dim getData As Produk = Await _produkRepo.Edit(id)
         'set to row
         If Not getData Is Nothing Then
 
-            Dim persediaan As New Persediaan
-            persediaan = getData
+            Dim produk As New Produk
+            produk = getData
 
             Dim row As DataRow
-            row = dtPersediaan.NewRow()
-            row("persediaan_id") = persediaan.id
-            row("produk_id") = persediaan.id
-            row("produk_nama") = persediaan.produk.nama
+            row = dtProduk.NewRow()
+            row("persediaan_id") = 0
+            row("produk_id") = produk.id
+            row("produk_nama") = produk.nama
             row("batch") = ""
             row("expired") = Format(Date.Now, "yyyy-MM-dd")
             row("serial_number") = ""
-            row("harga") = persediaan.harga_beli
+            row("harga") = produk.harga
             row("jumlah") = 0
             row("sub_total") = 0
 
-            dtPersediaan.Rows.Add(row)
-            GridControl1.DataSource = dtPersediaan
+            dtProduk.Rows.Add(row)
+            GridControl1.DataSource = dtProduk
 
             GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
             GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
@@ -155,6 +158,23 @@ Public Class frmAddPersediaanAwal
 
     Private Sub GridControl1_KeyUp(sender As Object, e As KeyEventArgs) Handles GridControl1.KeyUp
 
+        Dim edit As TextEdit = CType(GridView1.ActiveEditor, TextEdit)
+        Dim colHarga = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga")
+        Dim colJumlah = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "jumlah")
+        Dim hitung
+        ' handle jika yang ditekan bukan angka
+        If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
+            hitung = colHarga * colJumlah
+            GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
+            If GridView1.FocusedColumn.FieldName = "sub_total" Then
+                txtTotal.EditValue = 0
+                For i = 0 To GridView1.DataRowCount - 1
+                    txtTotal.EditValue += GridView1.GetRowCellValue(i, "sub_total")
+                Next
+            End If
+        End If
+
+        'End If
     End Sub
 
     'helper
@@ -175,39 +195,28 @@ Public Class frmAddPersediaanAwal
             RepositoryItemDateEdit1.Mask.EditMask = "yyyy-MM-dd"
             RepositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = True
 
-            exp = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
-            GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "expired", Format(exp, "yyyy-MM-dd"))
+            'exp = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
+            Dim expired = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "expired")
+            exp = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            If expired Is DBNull.Value Then
+                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "expired", "")
+            Else
+                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "expired", Format(exp, "yyyy-MM-dd"))
+            End If
         End If
 
-        If GridView1.FocusedColumn.FieldName = "sub_total" Then
-            txtTotal.EditValue = 0
-            For i = 0 To GridView1.DataRowCount - 1
-                txtTotal.EditValue += GridView1.GetRowCellValue(i, "sub_total")
-            Next
-        End If
+        'If GridView1.FocusedColumn.FieldName = "sub_total" Then
+        '    txtTotal.EditValue = 0
+        '    For i = 0 To GridView1.DataRowCount - 1
+        '        txtTotal.EditValue += GridView1.GetRowCellValue(i, "sub_total")
+        '    Next
+        'End If
     End Sub
 
     Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
-        If GridView1.FocusedColumn.FieldName = "jumlah" Then
-            Dim edit As TextEdit = CType(GridView1.ActiveEditor, TextEdit)
+        'If GridView1.FocusedColumn.FieldName = "jumlah" Then
 
-            If e.Value = "" Then
-                txtTotal.EditValue = ""
-                Exit Sub
-            End If
-
-            If e.Value <= 0 Then
-                edit.ErrorText = "Jumlah harus > 0"
-            Else
-                edit.ErrorText = String.Empty
-                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "jumlah", e.Value)
-                Dim hitung As Integer = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value)
-                GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
-                GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-                GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
-
-            End If
-        End If
+        'End If
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
@@ -232,10 +241,11 @@ Public Class frmAddPersediaanAwal
             Dim persediaan_awal_list As New List(Of PersediaanAwalDetailStore)
             For i As Integer = 0 To GridView1.RowCount - 1
                 Dim detail As New PersediaanAwalDetailStore
+                Dim expired = GridView1.GetRowCellValue(i, "expired")
                 detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
                 detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
                 detail.batch = GridView1.GetRowCellValue(i, "batch")
-                detail.expired = GridView1.GetRowCellValue(i, "expired")
+                detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
                 detail.batch = GridView1.GetRowCellValue(i, "batch")
                 detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
                 detail.harga = GridView1.GetRowCellValue(i, "harga")

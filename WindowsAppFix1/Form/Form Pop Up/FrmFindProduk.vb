@@ -1,5 +1,5 @@
 ﻿Public Class FrmFindProduk
-    Dim _repositoryPersediaan As PersediaanRepo = New PersediaanRepo
+    Dim _repositoryProduk As New ProdukRepository
 
     Public Function GetValue() As Long
         Return GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
@@ -7,7 +7,7 @@
 
     Private Async Sub LoadData()
         'dataObject
-        Dim listView = Await _repositoryPersediaan.GetList
+        Dim listView = Await _repositoryProduk.GetList
         GridControl1.DataSource = listView
     End Sub
 

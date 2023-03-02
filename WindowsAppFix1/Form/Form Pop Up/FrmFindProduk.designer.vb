@@ -25,8 +25,18 @@ Partial Class FrmFindProduk
         Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.PersediaanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProdukBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk_kategori_id1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk_kategori1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colkode1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colnama1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colmerk1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colharga1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_kategori_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -46,12 +56,10 @@ Partial Class FrmFindProduk
         Me.colproduk_kategori = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_image = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colproduk_kemasan_beli = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PersediaanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,24 +78,98 @@ Partial Class FrmFindProduk
         '
         'GridControl1
         '
-        Me.GridControl1.DataSource = Me.PersediaanBindingSource
+        Me.GridControl1.DataSource = Me.ProdukBindingSource
         Me.GridControl1.Location = New System.Drawing.Point(12, 12)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(776, 426)
-        Me.GridControl1.TabIndex = 4
+        Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
-        'PersediaanBindingSource
+        'ProdukBindingSource
         '
-        Me.PersediaanBindingSource.DataSource = GetType(WindowsAppFix1.Persediaan)
+        Me.ProdukBindingSource.DataSource = GetType(WindowsAppFix1.Produk)
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colproduk_kategori_id, Me.colkode, Me.colstatus, Me.colnama, Me.coltipe, Me.colmerk, Me.colsatuan_jual, Me.colharga, Me.colmax_diskon, Me.colbuffer_stock, Me.colminimum_stock, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colproduk_kategori, Me.colproduk_image, Me.colproduk_kemasan_beli})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid1, Me.colproduk_id, Me.colproduk_kategori_id1, Me.colproduk_kategori1, Me.colkode1, Me.colnama1, Me.colmerk1, Me.colharga1})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsView.ShowDetailButtons = False
+        '
+        'colid1
+        '
+        Me.colid1.FieldName = "id"
+        Me.colid1.Name = "colid1"
+        '
+        'colproduk_id
+        '
+        Me.colproduk_id.FieldName = "produk_id"
+        Me.colproduk_id.Name = "colproduk_id"
+        '
+        'colproduk_kategori_id1
+        '
+        Me.colproduk_kategori_id1.FieldName = "produk_kategori_id"
+        Me.colproduk_kategori_id1.Name = "colproduk_kategori_id1"
+        '
+        'colproduk_kategori1
+        '
+        Me.colproduk_kategori1.Caption = "Kategori"
+        Me.colproduk_kategori1.FieldName = "produk_kategori.nama"
+        Me.colproduk_kategori1.Name = "colproduk_kategori1"
+        Me.colproduk_kategori1.Visible = True
+        Me.colproduk_kategori1.VisibleIndex = 4
+        '
+        'colkode1
+        '
+        Me.colkode1.Caption = "Kode"
+        Me.colkode1.FieldName = "kode"
+        Me.colkode1.Name = "colkode1"
+        Me.colkode1.Visible = True
+        Me.colkode1.VisibleIndex = 0
+        '
+        'colnama1
+        '
+        Me.colnama1.Caption = "Produk"
+        Me.colnama1.FieldName = "nama"
+        Me.colnama1.Name = "colnama1"
+        Me.colnama1.Visible = True
+        Me.colnama1.VisibleIndex = 1
+        '
+        'colmerk1
+        '
+        Me.colmerk1.Caption = "Merk"
+        Me.colmerk1.FieldName = "merk"
+        Me.colmerk1.Name = "colmerk1"
+        Me.colmerk1.Visible = True
+        Me.colmerk1.VisibleIndex = 2
+        '
+        'colharga1
+        '
+        Me.colharga1.Caption = "Harga Jual"
+        Me.colharga1.FieldName = "harga"
+        Me.colharga1.Name = "colharga1"
+        Me.colharga1.Visible = True
+        Me.colharga1.VisibleIndex = 3
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(800, 450)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.GridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'colid
         '
@@ -205,24 +287,6 @@ Partial Class FrmFindProduk
         Me.colproduk_kemasan_beli.FieldName = "produk_kemasan_beli"
         Me.colproduk_kemasan_beli.Name = "colproduk_kemasan_beli"
         '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 450)
-        Me.Root.TextVisible = False
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
         'FrmFindProduk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -235,7 +299,7 @@ Partial Class FrmFindProduk
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PersediaanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdukBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -246,7 +310,16 @@ Partial Class FrmFindProduk
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents ProdukBindingSource As BindingSource
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents colid1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colproduk_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colproduk_kategori_id1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colkode1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colnama1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colmerk1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colharga1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colproduk_kategori1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents colid As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_kategori_id As DevExpress.XtraGrid.Columns.GridColumn
@@ -267,5 +340,4 @@ Partial Class FrmFindProduk
     Friend WithEvents colproduk_kategori As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_image As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk_kemasan_beli As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents PersediaanBindingSource As BindingSource
 End Class

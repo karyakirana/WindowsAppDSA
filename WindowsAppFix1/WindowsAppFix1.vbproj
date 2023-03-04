@@ -423,6 +423,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Report\Penjualan\rptInvoicePenjualan.Designer.vb">
+      <DependentUpon>rptInvoicePenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Penjualan\rptInvoicePenjualan.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Persediaan Awal\rptPersediaan_Awal.Designer.vb">
       <DependentUpon>rptPersediaan_Awal.vb</DependentUpon>
     </Compile>
@@ -593,6 +599,9 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Penjualan\rptInvoicePenjualan.resx">
+      <DependentUpon>rptInvoicePenjualan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Persediaan Awal\rptPersediaan_Awal.resx">
       <DependentUpon>rptPersediaan_Awal.vb</DependentUpon>

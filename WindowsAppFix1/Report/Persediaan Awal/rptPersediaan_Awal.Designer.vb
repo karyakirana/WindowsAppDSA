@@ -24,14 +24,14 @@ Partial Public Class rptPersediaan_Awal
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
@@ -54,9 +54,9 @@ Partial Public Class rptPersediaan_Awal
         Me.DetailReport = New DevExpress.XtraReports.UI.DetailReportBand()
         Me.Detail1 = New DevExpress.XtraReports.UI.DetailBand()
         Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.XrLine4 = New DevExpress.XtraReports.UI.XRLine()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLine4 = New DevExpress.XtraReports.UI.XRLine()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +68,7 @@ Partial Public Class rptPersediaan_Awal
         '
         'BottomMargin
         '
-        Me.BottomMargin.HeightF = 23.08337!
+        Me.BottomMargin.HeightF = 270.4761!
         Me.BottomMargin.Name = "BottomMargin"
         '
         'Detail
@@ -76,6 +76,25 @@ Partial Public Class rptPersediaan_Awal
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel7, Me.XrLabel6})
         Me.Detail.HeightF = 23.0!
         Me.Detail.Name = "Detail"
+        '
+        'XrLabel7
+        '
+        Me.XrLabel7.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[kode]")})
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(108.9584!, 0!)
+        Me.XrLabel7.Multiline = True
+        Me.XrLabel7.Name = "XrLabel7"
+        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel7.SizeF = New System.Drawing.SizeF(212.4999!, 23.0!)
+        Me.XrLabel7.Text = "XrLabel7"
+        '
+        'XrLabel6
+        '
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0!)
+        Me.XrLabel6.Multiline = True
+        Me.XrLabel6.Name = "XrLabel6"
+        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(98.95834!, 23.0!)
+        Me.XrLabel6.Text = "Kode" & Global.Microsoft.VisualBasic.ChrW(9) & ":"
         '
         'PageHeader
         '
@@ -134,25 +153,6 @@ Partial Public Class rptPersediaan_Awal
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(212.5!, 23.0!)
         Me.XrLabel5.Text = "XrLabel5"
-        '
-        'XrLabel6
-        '
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0!)
-        Me.XrLabel6.Multiline = True
-        Me.XrLabel6.Name = "XrLabel6"
-        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(98.95834!, 23.0!)
-        Me.XrLabel6.Text = "Kode" & Global.Microsoft.VisualBasic.ChrW(9) & ":"
-        '
-        'XrLabel7
-        '
-        Me.XrLabel7.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[kode]")})
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(108.9584!, 0!)
-        Me.XrLabel7.Multiline = True
-        Me.XrLabel7.Name = "XrLabel7"
-        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(212.4999!, 23.0!)
-        Me.XrLabel7.Text = "XrLabel7"
         '
         'XrLabel8
         '
@@ -352,6 +352,12 @@ Partial Public Class rptPersediaan_Awal
         Me.GroupHeader1.HeightF = 102.0833!
         Me.GroupHeader1.Name = "GroupHeader1"
         '
+        'XrLine4
+        '
+        Me.XrLine4.LocationFloat = New DevExpress.Utils.PointFloat(10.00005!, 0!)
+        Me.XrLine4.Name = "XrLine4"
+        Me.XrLine4.SizeF = New System.Drawing.SizeF(742.0001!, 2.083336!)
+        '
         'GroupFooter1
         '
         Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel24})
@@ -372,12 +378,6 @@ Partial Public Class rptPersediaan_Awal
         Me.XrLabel24.Text = "XrLabel24"
         Me.XrLabel24.TextFormatString = "Total Produk : {0}"
         '
-        'XrLine4
-        '
-        Me.XrLine4.LocationFloat = New DevExpress.Utils.PointFloat(10.00005!, 0!)
-        Me.XrLine4.Name = "XrLine4"
-        Me.XrLine4.SizeF = New System.Drawing.SizeF(742.0001!, 2.083336!)
-        '
         'BindingSource1
         '
         Me.BindingSource1.DataSource = GetType(WindowsAppFix1.PersediaanAwal)
@@ -388,7 +388,7 @@ Partial Public Class rptPersediaan_Awal
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.BindingSource1})
         Me.DataSource = Me.BindingSource1
         Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(30, 35, 23, 23)
+        Me.Margins = New System.Drawing.Printing.Margins(30, 35, 23, 270)
         Me.PageHeight = 1169
         Me.PageWidth = 827
         Me.PaperKind = System.Drawing.Printing.PaperKind.A4

@@ -8,7 +8,7 @@
             End If
         End Using
     End Sub
-    Private Async Sub LoadData()
+    Public Async Sub LoadData()
         Dim listView = Await _repositoryProduk.GetList()
         GridControl1.DataSource = listView
     End Sub

@@ -28,12 +28,8 @@ Partial Class FrmFindSupplier
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colsupplier_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkode = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,6 +44,10 @@ Partial Class FrmFindSupplier
         Me.colupdated_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldeleted_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colkota = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,12 +56,12 @@ Partial Class FrmFindSupplier
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -113,6 +113,10 @@ Partial Class FrmFindSupplier
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'SupplierBindingSource
+        '
+        Me.SupplierBindingSource.DataSource = GetType(WindowsAppFix1.Supplier)
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colsupplier_id, Me.colkode, Me.colnama, Me.coltelepon, Me.colemail, Me.colnpwp, Me.colalamat, Me.colkota_id, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colkota})
@@ -121,46 +125,6 @@ Partial Class FrmFindSupplier
         Me.GridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[False]
         Me.GridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[False]
         Me.GridView1.OptionsBehavior.Editable = False
-        '
-        'LayoutControlGroup1
-        '
-        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2})
-        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(771, 395)
-        Me.LayoutControlGroup1.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.GridControl1
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(751, 375)
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextVisible = False
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(800, 450)
-        Me.Root.TextVisible = False
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.XtraTabControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'SupplierBindingSource
-        '
-        Me.SupplierBindingSource.DataSource = GetType(WindowsAppFix1.Supplier)
         '
         'colid
         '
@@ -244,6 +208,42 @@ Partial Class FrmFindSupplier
         Me.colkota.Visible = True
         Me.colkota.VisibleIndex = 1
         '
+        'LayoutControlGroup1
+        '
+        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup1.GroupBordersVisible = False
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2})
+        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(771, 395)
+        Me.LayoutControlGroup1.TextVisible = False
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.GridControl1
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(751, 375)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextVisible = False
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(800, 450)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.XtraTabControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(780, 430)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
         'FrmFindSupplier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,12 +261,12 @@ Partial Class FrmFindSupplier
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

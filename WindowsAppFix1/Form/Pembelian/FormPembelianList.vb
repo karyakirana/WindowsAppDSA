@@ -1,15 +1,18 @@
-﻿Public Class FormPembelianList
+﻿Imports DevExpress.XtraReports.UI
 
-    Public _repositoryPembelian = New PembelianRepository
+Public Class FormPembelianList
+
+    Public _repositoryPembelian As PembelianRepository = New PembelianRepository()
+    Dim rpt As New rptInvoicePembelian
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         Dim frm = New frmAddPembelian
         frm.Show()
     End Sub
-    Private Async Sub LoadData()
+    Public Async Sub LoadData()
         'dataObject
-
         Dim listView = Await _repositoryPembelian.GetList()
         GridControl1.DataSource = listView
+        rpt.DataSource = listView
     End Sub
 
     Private Async Sub destroy(id As Long)
@@ -41,5 +44,11 @@
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
         Close()
+    End Sub
+
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
+        Dim printTool As New ReportPrintTool(rpt)
+
+        printTool.ShowPreview()
     End Sub
 End Class

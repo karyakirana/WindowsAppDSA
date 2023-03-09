@@ -123,6 +123,8 @@ Partial Class FrmFindProduk
         '
         'colkode1
         '
+        Me.colkode1.AppearanceHeader.Options.UseTextOptions = True
+        Me.colkode1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colkode1.Caption = "Kode"
         Me.colkode1.FieldName = "kode"
         Me.colkode1.Name = "colkode1"
@@ -131,6 +133,8 @@ Partial Class FrmFindProduk
         '
         'colnama1
         '
+        Me.colnama1.AppearanceHeader.Options.UseTextOptions = True
+        Me.colnama1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colnama1.Caption = "Produk"
         Me.colnama1.FieldName = "nama"
         Me.colnama1.Name = "colnama1"
@@ -139,6 +143,8 @@ Partial Class FrmFindProduk
         '
         'colmerk1
         '
+        Me.colmerk1.AppearanceHeader.Options.UseTextOptions = True
+        Me.colmerk1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colmerk1.Caption = "Merk"
         Me.colmerk1.FieldName = "merk"
         Me.colmerk1.Name = "colmerk1"
@@ -147,8 +153,14 @@ Partial Class FrmFindProduk
         '
         'colharga1
         '
+        Me.colharga1.AppearanceHeader.Options.UseTextOptions = True
+        Me.colharga1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colharga1.Caption = "Harga Jual"
+        Me.colharga1.DisplayFormat.FormatString = "n0"
+        Me.colharga1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colharga1.FieldName = "harga"
+        Me.colharga1.GroupFormat.FormatString = "n0"
+        Me.colharga1.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colharga1.Name = "colharga1"
         Me.colharga1.Visible = True
         Me.colharga1.VisibleIndex = 3

@@ -42,6 +42,15 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
+        Me.XrTable12 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow12 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrTable13 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow13 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell28 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrTable9 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow9 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -60,9 +69,9 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTable3 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
@@ -97,18 +106,11 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLine3 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLine4 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLine5 = New DevExpress.XtraReports.UI.XRLine()
-        Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrTableCell28 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow13 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTable13 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow12 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTable12 = New DevExpress.XtraReports.UI.XRTable()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
         CType(Me.XrTable6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrTable12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrTable13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,8 +121,6 @@ Partial Public Class rptInvoicePenjualan
         CType(Me.XrTable8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'TopMargin
@@ -319,6 +319,108 @@ Partial Public Class rptInvoicePenjualan
         Me.PageHeader.HeightF = 198.9775!
         Me.PageHeader.Name = "PageHeader"
         '
+        'XrTable12
+        '
+        Me.XrTable12.LocationFloat = New DevExpress.Utils.PointFloat(493.8297!, 96.93263!)
+        Me.XrTable12.Name = "XrTable12"
+        Me.XrTable12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrTable12.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow12})
+        Me.XrTable12.SizeF = New System.Drawing.SizeF(131.8561!, 48.18181!)
+        '
+        'XrTableRow12
+        '
+        Me.XrTableRow12.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell24})
+        Me.XrTableRow12.Name = "XrTableRow12"
+        Me.XrTableRow12.Weight = 1.0R
+        '
+        'XrTableCell24
+        '
+        Me.XrTableCell24.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash
+        Me.XrTableCell24.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell24.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel26, Me.XrLabel24})
+        Me.XrTableCell24.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.XrTableCell24.Multiline = True
+        Me.XrTableCell24.Name = "XrTableCell24"
+        Me.XrTableCell24.StylePriority.UseBorderDashStyle = False
+        Me.XrTableCell24.StylePriority.UseBorders = False
+        Me.XrTableCell24.StylePriority.UseFont = False
+        Me.XrTableCell24.Text = "  Invoice Date"
+        Me.XrTableCell24.Weight = 1.0R
+        '
+        'XrLabel26
+        '
+        Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrLabel26.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[kode]")})
+        Me.XrLabel26.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(4.24202!, 25.18686!)
+        Me.XrLabel26.Multiline = True
+        Me.XrLabel26.Name = "XrLabel26"
+        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(117.235!, 19.21637!)
+        Me.XrLabel26.StylePriority.UseBorders = False
+        Me.XrLabel26.StylePriority.UseFont = False
+        Me.XrLabel26.StylePriority.UseTextAlignment = False
+        Me.XrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrLabel24.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(2.121012!, 2.186871!)
+        Me.XrLabel24.Multiline = True
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel24.SizeF = New System.Drawing.SizeF(119.356!, 23.0!)
+        Me.XrLabel24.StylePriority.UseBorders = False
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.StylePriority.UseTextAlignment = False
+        Me.XrLabel24.Text = "Invoice No."
+        Me.XrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrTable13
+        '
+        Me.XrTable13.LocationFloat = New DevExpress.Utils.PointFloat(493.8297!, 145.1143!)
+        Me.XrTable13.Name = "XrTable13"
+        Me.XrTable13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrTable13.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow13})
+        Me.XrTable13.SizeF = New System.Drawing.SizeF(131.8561!, 48.18179!)
+        '
+        'XrTableRow13
+        '
+        Me.XrTableRow13.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell28})
+        Me.XrTableRow13.Name = "XrTableRow13"
+        Me.XrTableRow13.Weight = 1.0R
+        '
+        'XrTableCell28
+        '
+        Me.XrTableCell28.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash
+        Me.XrTableCell28.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell28.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel28})
+        Me.XrTableCell28.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.XrTableCell28.Multiline = True
+        Me.XrTableCell28.Name = "XrTableCell28"
+        Me.XrTableCell28.StylePriority.UseBorderDashStyle = False
+        Me.XrTableCell28.StylePriority.UseBorders = False
+        Me.XrTableCell28.StylePriority.UseFont = False
+        Me.XrTableCell28.Text = "  Invoice Date"
+        Me.XrTableCell28.Weight = 1.0R
+        '
+        'XrLabel28
+        '
+        Me.XrLabel28.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrLabel28.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
+        Me.XrLabel28.LocationFloat = New DevExpress.Utils.PointFloat(2.121012!, 2.186871!)
+        Me.XrLabel28.Multiline = True
+        Me.XrLabel28.Name = "XrLabel28"
+        Me.XrLabel28.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel28.SizeF = New System.Drawing.SizeF(119.356!, 23.0!)
+        Me.XrLabel28.StylePriority.UseBorders = False
+        Me.XrLabel28.StylePriority.UseFont = False
+        Me.XrLabel28.StylePriority.UseTextAlignment = False
+        Me.XrLabel28.Text = "Ship Date"
+        Me.XrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
         'XrTable9
         '
         Me.XrTable9.LocationFloat = New DevExpress.Utils.PointFloat(361.9734!, 145.1143!)
@@ -516,6 +618,14 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrTableCell5.Weight = 1.0R
         '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.WindowsAppFix1.My.Resources.Resources.logo, True)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(13.71529!, 20.23076!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(99.8842!, 77.66425!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
+        '
         'XrLine1
         '
         Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(374.4733!, 82.06721!)
@@ -534,14 +644,6 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLabel1.StylePriority.UseTextAlignment = False
         Me.XrLabel1.Text = "Sales Invoice"
         Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        '
-        'XrPictureBox1
-        '
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.WindowsAppFix1.My.Resources.Resources.logo, True)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(13.71529!, 20.23076!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(99.8842!, 77.66425!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
         '
         'BindingSource1
         '
@@ -916,108 +1018,6 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLine5.Name = "XrLine5"
         Me.XrLine5.SizeF = New System.Drawing.SizeF(73.72093!, 22.99998!)
         '
-        'XrLabel28
-        '
-        Me.XrLabel28.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel28.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
-        Me.XrLabel28.LocationFloat = New DevExpress.Utils.PointFloat(2.121012!, 2.186871!)
-        Me.XrLabel28.Multiline = True
-        Me.XrLabel28.Name = "XrLabel28"
-        Me.XrLabel28.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel28.SizeF = New System.Drawing.SizeF(119.356!, 23.0!)
-        Me.XrLabel28.StylePriority.UseBorders = False
-        Me.XrLabel28.StylePriority.UseFont = False
-        Me.XrLabel28.StylePriority.UseTextAlignment = False
-        Me.XrLabel28.Text = "Ship Date"
-        Me.XrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrTableCell28
-        '
-        Me.XrTableCell28.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash
-        Me.XrTableCell28.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableCell28.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel28})
-        Me.XrTableCell28.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
-        Me.XrTableCell28.Multiline = True
-        Me.XrTableCell28.Name = "XrTableCell28"
-        Me.XrTableCell28.StylePriority.UseBorderDashStyle = False
-        Me.XrTableCell28.StylePriority.UseBorders = False
-        Me.XrTableCell28.StylePriority.UseFont = False
-        Me.XrTableCell28.Text = "  Invoice Date"
-        Me.XrTableCell28.Weight = 1.0R
-        '
-        'XrTableRow13
-        '
-        Me.XrTableRow13.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell28})
-        Me.XrTableRow13.Name = "XrTableRow13"
-        Me.XrTableRow13.Weight = 1.0R
-        '
-        'XrTable13
-        '
-        Me.XrTable13.LocationFloat = New DevExpress.Utils.PointFloat(493.8297!, 145.1143!)
-        Me.XrTable13.Name = "XrTable13"
-        Me.XrTable13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable13.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow13})
-        Me.XrTable13.SizeF = New System.Drawing.SizeF(131.8561!, 48.18179!)
-        '
-        'XrLabel24
-        '
-        Me.XrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel24.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(2.121012!, 2.186871!)
-        Me.XrLabel24.Multiline = True
-        Me.XrLabel24.Name = "XrLabel24"
-        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel24.SizeF = New System.Drawing.SizeF(119.356!, 23.0!)
-        Me.XrLabel24.StylePriority.UseBorders = False
-        Me.XrLabel24.StylePriority.UseFont = False
-        Me.XrLabel24.StylePriority.UseTextAlignment = False
-        Me.XrLabel24.Text = "Invoice No."
-        Me.XrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrLabel26
-        '
-        Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel26.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[kode]")})
-        Me.XrLabel26.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(4.24202!, 25.18686!)
-        Me.XrLabel26.Multiline = True
-        Me.XrLabel26.Name = "XrLabel26"
-        Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel26.SizeF = New System.Drawing.SizeF(117.235!, 19.21637!)
-        Me.XrLabel26.StylePriority.UseBorders = False
-        Me.XrLabel26.StylePriority.UseFont = False
-        Me.XrLabel26.StylePriority.UseTextAlignment = False
-        Me.XrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        '
-        'XrTableCell24
-        '
-        Me.XrTableCell24.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash
-        Me.XrTableCell24.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableCell24.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel26, Me.XrLabel24})
-        Me.XrTableCell24.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
-        Me.XrTableCell24.Multiline = True
-        Me.XrTableCell24.Name = "XrTableCell24"
-        Me.XrTableCell24.StylePriority.UseBorderDashStyle = False
-        Me.XrTableCell24.StylePriority.UseBorders = False
-        Me.XrTableCell24.StylePriority.UseFont = False
-        Me.XrTableCell24.Text = "  Invoice Date"
-        Me.XrTableCell24.Weight = 1.0R
-        '
-        'XrTableRow12
-        '
-        Me.XrTableRow12.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell24})
-        Me.XrTableRow12.Name = "XrTableRow12"
-        Me.XrTableRow12.Weight = 1.0R
-        '
-        'XrTable12
-        '
-        Me.XrTable12.LocationFloat = New DevExpress.Utils.PointFloat(493.8297!, 96.93263!)
-        Me.XrTable12.Name = "XrTable12"
-        Me.XrTable12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable12.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow12})
-        Me.XrTable12.SizeF = New System.Drawing.SizeF(131.8561!, 48.18181!)
-        '
         'GroupFooter1
         '
         Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine5, Me.XrLine4, Me.XrLine3, Me.XrLabel22, Me.XrLabel21, Me.XrLabel19, Me.XrTable10, Me.XrTable11, Me.XrTable8, Me.XrTable1, Me.XrTable2, Me.XrPanel1, Me.XrLabel4, Me.XrLabel5})
@@ -1034,6 +1034,8 @@ Partial Public Class rptInvoicePenjualan
         Me.Version = "22.2"
         CType(Me.XrTable6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrTable12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrTable13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1044,8 +1046,6 @@ Partial Public Class rptInvoicePenjualan
         CType(Me.XrTable8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

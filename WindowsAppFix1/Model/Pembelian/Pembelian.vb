@@ -1,5 +1,6 @@
 ﻿Public Class Pembelian
 	Public Property id As Long
+	Public Property pembelian_id As Long
 	Public Property active_cash As String
 	Public Property pembelian_po_id As Long
 	Public Property kode As String
@@ -21,6 +22,7 @@
 	Public Property deleted_at As String
 
 	Public Property pembelian_detail As List(Of PembelianDetail)
+	Public Property pembelian_detail_store As List(Of PembelianDetailStore)
 	Public Property supplier As SupplierRepository
 	Public Property users As Users
 End Class
@@ -40,4 +42,15 @@ Public Class PembelianDetail
 	Public Property updated_at As String
 
 	Public Property produk As Produk
+End Class
+
+Public Class PembelianDetailStore
+	Public Property produk_id As Long
+	Public Property jumlah As Long
+	Public Property diskon As Integer
+	Public Property batch As String
+	Public Property expired As String
+	Public Property serial_number As String
+	Public Property harga As Long
+	Public Property sub_total As Long
 End Class

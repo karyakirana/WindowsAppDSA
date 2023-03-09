@@ -27,6 +27,7 @@ Partial Class frmAddProduk
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
+        Me.btnAddKategori = New DevExpress.XtraEditors.SimpleButton()
         Me.XtraTabControl2 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
@@ -93,6 +94,8 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem23 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem11 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem17 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -171,6 +174,8 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,6 +212,7 @@ Partial Class frmAddProduk
         '
         'LayoutControl2
         '
+        Me.LayoutControl2.Controls.Add(Me.btnAddKategori)
         Me.LayoutControl2.Controls.Add(Me.XtraTabControl2)
         Me.LayoutControl2.Controls.Add(Me.btnBatal)
         Me.LayoutControl2.Controls.Add(Me.txtKeterangan)
@@ -228,12 +234,21 @@ Partial Class frmAddProduk
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
+        'btnAddKategori
+        '
+        Me.btnAddKategori.Location = New System.Drawing.Point(482, 96)
+        Me.btnAddKategori.Name = "btnAddKategori"
+        Me.btnAddKategori.Size = New System.Drawing.Size(101, 25)
+        Me.btnAddKategori.StyleController = Me.LayoutControl2
+        Me.btnAddKategori.TabIndex = 20
+        Me.btnAddKategori.Text = "Add Kategori"
+        '
         'XtraTabControl2
         '
-        Me.XtraTabControl2.Location = New System.Drawing.Point(12, 303)
+        Me.XtraTabControl2.Location = New System.Drawing.Point(12, 304)
         Me.XtraTabControl2.Name = "XtraTabControl2"
         Me.XtraTabControl2.SelectedTabPage = Me.XtraTabPage3
-        Me.XtraTabControl2.Size = New System.Drawing.Size(1195, 235)
+        Me.XtraTabControl2.Size = New System.Drawing.Size(1195, 234)
         Me.XtraTabControl2.TabIndex = 19
         Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage3, Me.XtraTabPage1, Me.XtraTabPage4})
         '
@@ -241,7 +256,7 @@ Partial Class frmAddProduk
         '
         Me.XtraTabPage3.Controls.Add(Me.LayoutControl4)
         Me.XtraTabPage3.Name = "XtraTabPage3"
-        Me.XtraTabPage3.Size = New System.Drawing.Size(1190, 204)
+        Me.XtraTabPage3.Size = New System.Drawing.Size(1190, 203)
         Me.XtraTabPage3.Text = "Data Kemasan Produk"
         '
         'LayoutControl4
@@ -251,7 +266,7 @@ Partial Class frmAddProduk
         Me.LayoutControl4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl4.Name = "LayoutControl4"
         Me.LayoutControl4.Root = Me.LayoutControlGroup3
-        Me.LayoutControl4.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControl4.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControl4.TabIndex = 0
         Me.LayoutControl4.Text = "LayoutControl4"
         '
@@ -260,7 +275,7 @@ Partial Class frmAddProduk
         Me.GridKemasan.Location = New System.Drawing.Point(12, 12)
         Me.GridKemasan.MainView = Me.GridView2
         Me.GridKemasan.Name = "GridKemasan"
-        Me.GridKemasan.Size = New System.Drawing.Size(1166, 180)
+        Me.GridKemasan.Size = New System.Drawing.Size(1166, 179)
         Me.GridKemasan.TabIndex = 4
         Me.GridKemasan.UseEmbeddedNavigator = True
         Me.GridKemasan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -279,7 +294,7 @@ Partial Class frmAddProduk
         Me.LayoutControlGroup3.GroupBordersVisible = False
         Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem15})
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControlGroup3.TextVisible = False
         '
         'LayoutControlItem15
@@ -287,7 +302,7 @@ Partial Class frmAddProduk
         Me.LayoutControlItem15.Control = Me.GridKemasan
         Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(1170, 184)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(1170, 183)
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem15.TextVisible = False
         '
@@ -295,7 +310,7 @@ Partial Class frmAddProduk
         '
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl5)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(1190, 204)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(1190, 203)
         Me.XtraTabPage1.Text = "Data Gambar Produk"
         '
         'LayoutControl5
@@ -305,7 +320,7 @@ Partial Class frmAddProduk
         Me.LayoutControl5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl5.Name = "LayoutControl5"
         Me.LayoutControl5.Root = Me.LayoutControlGroup4
-        Me.LayoutControl5.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControl5.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControl5.TabIndex = 0
         Me.LayoutControl5.Text = "LayoutControl5"
         '
@@ -314,7 +329,7 @@ Partial Class frmAddProduk
         Me.GridImage.Location = New System.Drawing.Point(12, 12)
         Me.GridImage.MainView = Me.GridView1
         Me.GridImage.Name = "GridImage"
-        Me.GridImage.Size = New System.Drawing.Size(1166, 180)
+        Me.GridImage.Size = New System.Drawing.Size(1166, 179)
         Me.GridImage.TabIndex = 4
         Me.GridImage.UseEmbeddedNavigator = True
         Me.GridImage.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -333,7 +348,7 @@ Partial Class frmAddProduk
         Me.LayoutControlGroup4.GroupBordersVisible = False
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem21})
         Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControlGroup4.TextVisible = False
         '
         'LayoutControlItem21
@@ -341,7 +356,7 @@ Partial Class frmAddProduk
         Me.LayoutControlItem21.Control = Me.GridImage
         Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(1170, 184)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(1170, 183)
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem21.TextVisible = False
         '
@@ -349,7 +364,7 @@ Partial Class frmAddProduk
         '
         Me.XtraTabPage4.Controls.Add(Me.LayoutControl3)
         Me.XtraTabPage4.Name = "XtraTabPage4"
-        Me.XtraTabPage4.Size = New System.Drawing.Size(1190, 204)
+        Me.XtraTabPage4.Size = New System.Drawing.Size(1190, 203)
         Me.XtraTabPage4.Text = "Add Data Kategori"
         '
         'LayoutControl3
@@ -362,7 +377,7 @@ Partial Class frmAddProduk
         Me.LayoutControl3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControl3.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
         '
@@ -406,7 +421,7 @@ Partial Class frmAddProduk
         Me.LayoutControlGroup2.GroupBordersVisible = False
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.EmptySpaceItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem12, Me.EmptySpaceItem14})
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1190, 204)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1190, 203)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem16
@@ -450,7 +465,7 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem6.AllowHotTrack = False
         Me.EmptySpaceItem6.Location = New System.Drawing.Point(544, 0)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(626, 184)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(626, 183)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
@@ -458,7 +473,7 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 56)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(342, 128)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(342, 127)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem12
@@ -474,7 +489,7 @@ Partial Class frmAddProduk
         Me.EmptySpaceItem14.AllowHotTrack = False
         Me.EmptySpaceItem14.Location = New System.Drawing.Point(342, 85)
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Size = New System.Drawing.Size(202, 99)
+        Me.EmptySpaceItem14.Size = New System.Drawing.Size(202, 98)
         Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
         '
         'btnBatal
@@ -488,7 +503,7 @@ Partial Class frmAddProduk
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(115, 264)
+        Me.txtKeterangan.Location = New System.Drawing.Point(115, 265)
         Me.txtKeterangan.Name = "txtKeterangan"
         Me.txtKeterangan.Size = New System.Drawing.Size(1092, 24)
         Me.txtKeterangan.StyleController = Me.LayoutControl2
@@ -496,7 +511,7 @@ Partial Class frmAddProduk
         '
         'txtDiskon
         '
-        Me.txtDiskon.Location = New System.Drawing.Point(115, 236)
+        Me.txtDiskon.Location = New System.Drawing.Point(115, 237)
         Me.txtDiskon.Name = "txtDiskon"
         Me.txtDiskon.Size = New System.Drawing.Size(353, 24)
         Me.txtDiskon.StyleController = Me.LayoutControl2
@@ -504,7 +519,7 @@ Partial Class frmAddProduk
         '
         'txtSatuan
         '
-        Me.txtSatuan.Location = New System.Drawing.Point(115, 208)
+        Me.txtSatuan.Location = New System.Drawing.Point(115, 209)
         Me.txtSatuan.Name = "txtSatuan"
         Me.txtSatuan.Size = New System.Drawing.Size(353, 24)
         Me.txtSatuan.StyleController = Me.LayoutControl2
@@ -512,7 +527,7 @@ Partial Class frmAddProduk
         '
         'txtHarga
         '
-        Me.txtHarga.Location = New System.Drawing.Point(115, 180)
+        Me.txtHarga.Location = New System.Drawing.Point(115, 181)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.Size = New System.Drawing.Size(353, 24)
         Me.txtHarga.StyleController = Me.LayoutControl2
@@ -520,7 +535,7 @@ Partial Class frmAddProduk
         '
         'txtMinStock
         '
-        Me.txtMinStock.Location = New System.Drawing.Point(115, 152)
+        Me.txtMinStock.Location = New System.Drawing.Point(115, 153)
         Me.txtMinStock.Name = "txtMinStock"
         Me.txtMinStock.Size = New System.Drawing.Size(353, 24)
         Me.txtMinStock.StyleController = Me.LayoutControl2
@@ -528,7 +543,7 @@ Partial Class frmAddProduk
         '
         'txtBufferStock
         '
-        Me.txtBufferStock.Location = New System.Drawing.Point(115, 124)
+        Me.txtBufferStock.Location = New System.Drawing.Point(115, 125)
         Me.txtBufferStock.Name = "txtBufferStock"
         Me.txtBufferStock.Size = New System.Drawing.Size(353, 24)
         Me.txtBufferStock.StyleController = Me.LayoutControl2
@@ -572,7 +587,7 @@ Partial Class frmAddProduk
         Me.cbKategori.Location = New System.Drawing.Point(115, 96)
         Me.cbKategori.Name = "cbKategori"
         Me.cbKategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbKategori.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "nama", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.cbKategori.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("nama", "Kategori", 46, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.cbKategori.Properties.DataSource = Me.ProdukKategoriBindingSource
         Me.cbKategori.Properties.DisplayMember = "nama"
         Me.cbKategori.Properties.NullText = ""
@@ -590,7 +605,7 @@ Partial Class frmAddProduk
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem8, Me.EmptySpaceItem10, Me.LayoutControlItem14, Me.EmptySpaceItem13, Me.EmptySpaceItem25, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.LayoutControlItem20, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.EmptySpaceItem3, Me.EmptySpaceItem23, Me.EmptySpaceItem11, Me.EmptySpaceItem9})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem8, Me.EmptySpaceItem10, Me.LayoutControlItem14, Me.EmptySpaceItem13, Me.EmptySpaceItem25, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.LayoutControlItem20, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.EmptySpaceItem3, Me.EmptySpaceItem23, Me.EmptySpaceItem11, Me.EmptySpaceItem9, Me.LayoutControlItem5, Me.EmptySpaceItem7})
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1219, 579)
         Me.LayoutControlGroup1.TextVisible = False
@@ -625,7 +640,7 @@ Partial Class frmAddProduk
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.txtBufferStock
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 112)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 113)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem6.Text = "Buffer Stock"
@@ -634,7 +649,7 @@ Partial Class frmAddProduk
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.txtMinStock
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 140)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 141)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem7.Text = "Minimum Stock"
@@ -643,7 +658,7 @@ Partial Class frmAddProduk
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.txtHarga
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 168)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 169)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem8.Text = "Harga"
@@ -652,7 +667,7 @@ Partial Class frmAddProduk
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.txtSatuan
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 196)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 197)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem9.Text = "Satuan Jual"
@@ -661,7 +676,7 @@ Partial Class frmAddProduk
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.txtKeterangan
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 252)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 253)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(1199, 28)
         Me.LayoutControlItem11.Text = "Keterangan"
@@ -686,15 +701,15 @@ Partial Class frmAddProduk
         'EmptySpaceItem8
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(460, 141)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(460, 137)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(739, 27)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(739, 32)
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem10
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(460, 168)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(460, 169)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
         Me.EmptySpaceItem10.Size = New System.Drawing.Size(739, 28)
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
@@ -704,32 +719,33 @@ Partial Class frmAddProduk
         Me.LayoutControlItem14.Control = Me.cbKategori
         Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(460, 28)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(460, 29)
         Me.LayoutControlItem14.Text = "Kategori"
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(99, 18)
         '
         'EmptySpaceItem13
         '
         Me.EmptySpaceItem13.AllowHotTrack = False
-        Me.EmptySpaceItem13.Location = New System.Drawing.Point(460, 84)
-        Me.EmptySpaceItem13.MinSize = New System.Drawing.Size(104, 24)
+        Me.EmptySpaceItem13.Location = New System.Drawing.Point(575, 84)
+        Me.EmptySpaceItem13.MaxSize = New System.Drawing.Size(624, 29)
+        Me.EmptySpaceItem13.MinSize = New System.Drawing.Size(624, 29)
         Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Size = New System.Drawing.Size(739, 28)
+        Me.EmptySpaceItem13.Size = New System.Drawing.Size(624, 29)
         Me.EmptySpaceItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem25
         '
         Me.EmptySpaceItem25.AllowHotTrack = False
-        Me.EmptySpaceItem25.Location = New System.Drawing.Point(460, 112)
+        Me.EmptySpaceItem25.Location = New System.Drawing.Point(460, 113)
         Me.EmptySpaceItem25.Name = "EmptySpaceItem25"
-        Me.EmptySpaceItem25.Size = New System.Drawing.Size(739, 29)
+        Me.EmptySpaceItem25.Size = New System.Drawing.Size(739, 24)
         Me.EmptySpaceItem25.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.txtDiskon
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 224)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 225)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(460, 28)
         Me.LayoutControlItem10.Text = "Diskon"
@@ -738,7 +754,7 @@ Partial Class frmAddProduk
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 280)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 281)
         Me.EmptySpaceItem1.MaxSize = New System.Drawing.Size(1199, 11)
         Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(1199, 11)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
@@ -749,10 +765,10 @@ Partial Class frmAddProduk
         'LayoutControlItem20
         '
         Me.LayoutControlItem20.Control = Me.XtraTabControl2
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 291)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 292)
         Me.LayoutControlItem20.MinSize = New System.Drawing.Size(104, 24)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(1199, 239)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(1199, 238)
         Me.LayoutControlItem20.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem20.TextVisible = False
@@ -797,7 +813,7 @@ Partial Class frmAddProduk
         '
         Me.EmptySpaceItem11.AllowHide = False
         Me.EmptySpaceItem11.AllowHotTrack = False
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(460, 224)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(460, 225)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
         Me.EmptySpaceItem11.Size = New System.Drawing.Size(739, 28)
         Me.EmptySpaceItem11.Text = "%"
@@ -807,10 +823,30 @@ Partial Class frmAddProduk
         'EmptySpaceItem9
         '
         Me.EmptySpaceItem9.AllowHotTrack = False
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(460, 196)
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(460, 197)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
         Me.EmptySpaceItem9.Size = New System.Drawing.Size(739, 28)
         Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem5
+        '
+        Me.LayoutControlItem5.Control = Me.btnAddKategori
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(470, 84)
+        Me.LayoutControlItem5.Name = "LayoutControlItem5"
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(105, 29)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem5.TextVisible = False
+        '
+        'EmptySpaceItem7
+        '
+        Me.EmptySpaceItem7.AllowHotTrack = False
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(460, 84)
+        Me.EmptySpaceItem7.MaxSize = New System.Drawing.Size(10, 29)
+        Me.EmptySpaceItem7.MinSize = New System.Drawing.Size(10, 29)
+        Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(10, 29)
+        Me.EmptySpaceItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
         'Root
         '
@@ -937,6 +973,8 @@ Partial Class frmAddProduk
         CType(Me.EmptySpaceItem23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1021,4 +1059,7 @@ Partial Class frmAddProduk
     Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents cbKategori As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents ProdukKategoriBindingSource As BindingSource
+    Friend WithEvents btnAddKategori As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem7 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

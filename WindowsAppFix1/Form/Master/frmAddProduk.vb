@@ -13,6 +13,12 @@ Public Class frmAddProduk
         cbKategori.Properties.DataSource = Await _produkKategoriRepo.GetList()
     End Sub
 
+    Private Sub refreshProdukList()
+        'form jabatan list reload
+        Dim form As FormProdukList = CType(Application.OpenForms("FormProdukList"), FormProdukList)
+        form.LoadData()
+    End Sub
+
     Private Async Sub Store()
 
         Dim produk As New Produk
@@ -147,11 +153,12 @@ Public Class frmAddProduk
             produk.produk_kemasan_beli = produk_kemasan_list
         End If
 
-        Dim hasil = Await _produkRepo.Store(produk)
+        Dim hasil = Await _produkRepo.Update(produk)
         If hasil Then
             'form close
             DialogResult = DialogResult.OK
             Close()
+            refreshProdukList()
         End If
 
     End Sub
@@ -218,5 +225,15 @@ Public Class frmAddProduk
 
     Private Sub btnSimpanKategori_Click(sender As Object, e As EventArgs) Handles btnSimpanKategori.Click
         storeKategori()
+    End Sub
+
+    Private Sub btnAddKategori_Click(sender As Object, e As EventArgs) Handles btnAddKategori.Click
+        XtraTabPage4.PageVisible = True
+        XtraTabControl2.SelectedTabPage = XtraTabPage4
+    End Sub
+
+    Private Sub btnBatalKategori_Click(sender As Object, e As EventArgs) Handles btnBatalKategori.Click
+        XtraTabPage4.PageVisible = False
+        XtraTabControl2.SelectedTabPage = XtraTabPage3
     End Sub
 End Class

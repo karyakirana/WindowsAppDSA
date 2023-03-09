@@ -18,9 +18,10 @@ Public Class frmAddPersediaanAwal
     Private _persediaanRepo As New PersediaanRepo
     Private _produkRepo As New ProdukRepository
     Private _persediaanAwalRepo As New PersediaanAwalRepo
+    Private _update As Boolean = False
     Public dtProduk As New DataTable
     Dim exp As DateTime
-    Dim draft, lokasi_id As Integer
+    Dim draft, awal_id As Integer
     Dim listlokasi As List(Of Lokasi)
 
     Public Sub New()
@@ -33,16 +34,19 @@ Public Class frmAddPersediaanAwal
 
     End Sub
 
-    Private Async Sub LoadData()
+    Public Async Sub LoadData()
         listlokasi = Await _lokasiRepository.GetList()
         cbLokasi.Properties.DataSource = listlokasi
+        If purpose = "EDIT" Then
+            _update = True
+        End If
         'txtTotal.EditValue = 0
     End Sub
 
     Private Sub LoadDatatable()
         'initiate column
-        dtProduk.Columns.Add("persediaan_id", GetType(Int64))
-        dtProduk.Columns.Add("produk_id", GetType(Int64))
+        dtProduk.Columns.Add("persediaan_id", GetType(String))
+        dtProduk.Columns.Add("produk_id", GetType(Integer))
         dtProduk.Columns.Add("produk_nama", GetType(String))
         dtProduk.Columns.Add("batch", GetType(String))
         dtProduk.Columns.Add("expired", GetType(String))
@@ -110,31 +114,61 @@ Public Class frmAddPersediaanAwal
             row("serial_number") = ""
             row("harga") = produk.harga
             row("jumlah") = 0
-            row("sub_total") = 0
+            row("sub_total") = 0 
 
             dtProduk.Rows.Add(row)
             GridControl1.DataSource = dtProduk
 
             GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
             GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
+
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
             'Console.WriteLine(getData)
         End If
     End Sub
 
     Public Async Sub Edit(id As Long)
         'load data
+        Dim total As Integer = 0
         Dim persediaan_awal As PersediaanAwal = Await _persediaanAwalRepo.Edit(id)
 
         'set form
         cbKondisi.EditValue = persediaan_awal.kondisi
-        cbLokasi.EditValue = persediaan_awal.lokasi_id
+
+        For lok = 0 To listlokasi.Count - 1
+            If listlokasi(lok).id = persediaan_awal.lokasi_id Then
+                cbLokasi.EditValue = listlokasi(lok).id
+            End If
+        Next
+
         dtTanggal.EditValue = persediaan_awal.tgl_persediaan_awal
-        cbDraft.EditValue = persediaan_awal.draft
+        If persediaan_awal.draft = 0 Then
+            cbDraft.EditValue = "False"
+        Else
+            cbDraft.EditValue = "True"
+        End If
         txtKeterangan.EditValue = persediaan_awal.keterangan
 
-        'set detail
-        'Dim detail_list As List(Of PersediaanAwalDetail)
 
+        'set detail
+        For i = 0 To persediaan_awal.persediaan_awal_detail.Count - 1
+            awal_id = persediaan_awal.persediaan_awal_detail(i).persediaan_awal_id
+            Dim dr = dtProduk.NewRow
+            dr("persediaan_id") = persediaan_awal.persediaan_awal_detail(i).persediaan_id
+            dr("produk_id") = persediaan_awal.persediaan_awal_detail(i).persediaan.produk.id
+            dr("produk_nama") = persediaan_awal.persediaan_awal_detail(i).persediaan.produk.nama
+            dr("batch") = persediaan_awal.persediaan_awal_detail(i).persediaan.batch
+            dr("expired") = persediaan_awal.persediaan_awal_detail(i).persediaan.expired
+            dr("serial_number") = persediaan_awal.persediaan_awal_detail(i).persediaan.serial_number
+            dr("harga") = persediaan_awal.persediaan_awal_detail(i).harga_beli
+            dr("jumlah") = persediaan_awal.persediaan_awal_detail(i).jumlah
+            dr("sub_total") = persediaan_awal.persediaan_awal_detail(i).sub_total
+            total += persediaan_awal.persediaan_awal_detail(i).sub_total
+            dtProduk.Rows.Add(dr)
+        Next
+        GridControl1.DataSource = dtProduk
+        txtTotal.EditValue = total
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
@@ -227,42 +261,92 @@ Public Class frmAddPersediaanAwal
         Next
     End Sub
 
+    Private Sub refreshPersediaanAwalList()
+        'form jabatan list reload
+        Dim form As FormPersediaanAwalList = CType(Application.OpenForms("FormPersediaanAwalList"), FormPersediaanAwalList)
+        form.LoadData()
+    End Sub
+
+    Private Async Sub store()
+        Dim _awal As New PersediaanAwal
+        _awal.draft = draft
+        _awal.kondisi = cbKondisi.EditValue
+        _awal.lokasi_id = CType(cbLokasi.EditValue, Int64)
+        _awal.tgl_persediaan_awal = dtTanggal.Text
+        _awal.total_nominal = txtTotal.EditValue
+        _awal.keterangan = txtKeterangan.EditValue
+
+        'list detail
+        Dim persediaan_awal_list As New List(Of PersediaanAwalDetailStore)
+        For i As Integer = 0 To GridView1.RowCount - 1
+            _awal.total_barang += GridView1.GetRowCellValue(i, "jumlah")
+            Dim detail As New PersediaanAwalDetailStore
+            Dim expired = GridView1.GetRowCellValue(i, "expired")
+            detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
+            detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
+            detail.harga = GridView1.GetRowCellValue(i, "harga")
+            detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
+            persediaan_awal_list.Add(detail)
+        Next
+
+        _awal.persediaan_awal_detail_store = persediaan_awal_list
+
+        Dim hasil = Await _persediaanAwalRepo.Store(_awal)
+        If hasil Then
+            DialogResult = DialogResult.OK
+            purpose = Nothing
+            Close()
+            refreshPersediaanAwalList()
+        End If
+    End Sub
+
+    Public Async Sub put()
+        Dim _awal As New PersediaanAwal
+        _awal.persediaan_awal_id = awal_id
+        _awal.draft = draft
+        _awal.kondisi = cbKondisi.EditValue
+        _awal.lokasi_id = CType(cbLokasi.EditValue, Int64)
+        _awal.tgl_persediaan_awal = dtTanggal.Text
+        _awal.total_nominal = txtTotal.EditValue
+        _awal.keterangan = txtKeterangan.EditValue
+
+        'list detail
+        Dim persediaan_awal_list As New List(Of PersediaanAwalDetailStore)
+        For i As Integer = 0 To GridView1.RowCount - 1
+            _awal.total_barang += GridView1.GetRowCellValue(i, "jumlah")
+            Dim detail As New PersediaanAwalDetailStore
+            Dim expired = GridView1.GetRowCellValue(i, "expired")
+            detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
+            detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
+            detail.harga = GridView1.GetRowCellValue(i, "harga")
+            detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
+            persediaan_awal_list.Add(detail)
+        Next
+
+        _awal.persediaan_awal_detail_store = persediaan_awal_list
+
+        Dim hasil = Await _persediaanAwalRepo.Update(_awal)
+        If hasil Then
+            DialogResult = DialogResult.OK
+            purpose = Nothing
+            Close()
+            refreshPersediaanAwalList()
+        End If
+    End Sub
+
     Private Async Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        If purpose = "NEW" Then
-            Dim _awal As New PersediaanAwal
-            _awal.draft = draft
-            _awal.kondisi = cbKondisi.EditValue
-            _awal.lokasi_id = CType(cbLokasi.EditValue, Int64)
-            _awal.tgl_persediaan_awal = dtTanggal.Text
-            _awal.total_nominal = txtTotal.EditValue
-            _awal.keterangan = txtKeterangan.EditValue
-
-            'list detail
-            Dim persediaan_awal_list As New List(Of PersediaanAwalDetailStore)
-            For i As Integer = 0 To GridView1.RowCount - 1
-                _awal.total_barang += GridView1.GetRowCellValue(i, "jumlah")
-                Dim detail As New PersediaanAwalDetailStore
-                Dim expired = GridView1.GetRowCellValue(i, "expired")
-                detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
-                detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
-                detail.batch = GridView1.GetRowCellValue(i, "batch")
-                detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
-                detail.batch = GridView1.GetRowCellValue(i, "batch")
-                detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
-                detail.harga = GridView1.GetRowCellValue(i, "harga")
-                detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
-                persediaan_awal_list.Add(detail)
-            Next
-
-            _awal.persediaan_awal_detail_store = persediaan_awal_list
-
-            Dim hasil = Await _persediaanAwalRepo.Store(_awal)
-            If hasil Then
-                DialogResult = DialogResult.OK
-                purpose = Nothing
-                Close()
-            End If
-
+        If _update Then
+            put()
+        Else
+            store()
         End If
     End Sub
 End Class

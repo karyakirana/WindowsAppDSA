@@ -247,7 +247,7 @@ Partial Class frmAddPembelian
         Me.txtTotalbayar.Properties.DisplayFormat.FormatString = "n0"
         Me.txtTotalbayar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtTotalbayar.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
-        Me.txtTotalbayar.Properties.MaskSettings.Set("mask", "n")
+        Me.txtTotalbayar.Properties.MaskSettings.Set("mask", "n0")
         Me.txtTotalbayar.Size = New System.Drawing.Size(320, 24)
         Me.txtTotalbayar.StyleController = Me.LayoutControl3
         Me.txtTotalbayar.TabIndex = 9
@@ -261,7 +261,7 @@ Partial Class frmAddPembelian
         Me.txtBiayalain.Properties.DisplayFormat.FormatString = "n0"
         Me.txtBiayalain.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtBiayalain.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
-        Me.txtBiayalain.Properties.MaskSettings.Set("mask", "n")
+        Me.txtBiayalain.Properties.MaskSettings.Set("mask", "n0")
         Me.txtBiayalain.Size = New System.Drawing.Size(320, 24)
         Me.txtBiayalain.StyleController = Me.LayoutControl3
         Me.txtBiayalain.TabIndex = 8
@@ -275,7 +275,8 @@ Partial Class frmAddPembelian
         Me.txtPpn.Properties.DisplayFormat.FormatString = "n0"
         Me.txtPpn.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtPpn.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
-        Me.txtPpn.Properties.MaskSettings.Set("mask", "n")
+        Me.txtPpn.Properties.MaskSettings.Set("mask", "n0")
+        Me.txtPpn.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
         Me.txtPpn.Size = New System.Drawing.Size(320, 24)
         Me.txtPpn.StyleController = Me.LayoutControl3
         Me.txtPpn.TabIndex = 7

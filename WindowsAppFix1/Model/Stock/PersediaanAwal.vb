@@ -1,5 +1,6 @@
 ﻿Public Class PersediaanAwal
 	Public Property id As Long
+	Public Property persediaan_awal_id As Long
 	Public Property active_cash As String
 	Public Property kode As String
 	Public Property draft As Byte

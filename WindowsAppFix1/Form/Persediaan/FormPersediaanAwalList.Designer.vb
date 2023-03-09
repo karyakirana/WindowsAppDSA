@@ -70,18 +70,18 @@ Partial Class FormPersediaanAwalList
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
+        Me.ckDetail = New DevExpress.XtraEditors.CheckEdit()
+        Me.ckGlobal = New DevExpress.XtraEditors.CheckEdit()
+        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.TabbedControlGroup1 = New DevExpress.XtraLayout.TabbedControlGroup()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.ckGlobal = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.ckDetail = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PersediaanAwalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,19 +89,19 @@ Partial Class FormPersediaanAwalList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl2.SuspendLayout()
+        CType(Me.ckDetail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ckGlobal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl2.SuspendLayout()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ckGlobal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ckDetail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridView2
@@ -500,6 +500,72 @@ Partial Class FormPersediaanAwalList
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'LayoutControl2
+        '
+        Me.LayoutControl2.Controls.Add(Me.ckDetail)
+        Me.LayoutControl2.Controls.Add(Me.ckGlobal)
+        Me.LayoutControl2.Location = New System.Drawing.Point(999, 50)
+        Me.LayoutControl2.Name = "LayoutControl2"
+        Me.LayoutControl2.Root = Me.LayoutControlGroup2
+        Me.LayoutControl2.Size = New System.Drawing.Size(133, 317)
+        Me.LayoutControl2.TabIndex = 5
+        Me.LayoutControl2.Text = "LayoutControl2"
+        '
+        'ckDetail
+        '
+        Me.ckDetail.Location = New System.Drawing.Point(12, 38)
+        Me.ckDetail.MenuManager = Me.RibbonControl1
+        Me.ckDetail.Name = "ckDetail"
+        Me.ckDetail.Properties.Caption = "Detail"
+        Me.ckDetail.Size = New System.Drawing.Size(109, 22)
+        Me.ckDetail.StyleController = Me.LayoutControl2
+        Me.ckDetail.TabIndex = 5
+        '
+        'ckGlobal
+        '
+        Me.ckGlobal.Location = New System.Drawing.Point(12, 12)
+        Me.ckGlobal.MenuManager = Me.RibbonControl1
+        Me.ckGlobal.Name = "ckGlobal"
+        Me.ckGlobal.Properties.Caption = "Global"
+        Me.ckGlobal.Size = New System.Drawing.Size(109, 22)
+        Me.ckGlobal.StyleController = Me.LayoutControl2
+        Me.ckGlobal.TabIndex = 4
+        '
+        'LayoutControlGroup2
+        '
+        Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup2.GroupBordersVisible = False
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem1, Me.LayoutControlItem4})
+        Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(133, 317)
+        Me.LayoutControlGroup2.TextVisible = False
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.ckGlobal
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(113, 26)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.TextVisible = False
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 52)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(113, 245)
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.ckDetail
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 26)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(113, 26)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem4.TextVisible = False
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -534,17 +600,6 @@ Partial Class FormPersediaanAwalList
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(137, 321)
         Me.LayoutControlGroup1.Text = "Tipe Report"
         '
-        'LayoutControl2
-        '
-        Me.LayoutControl2.Controls.Add(Me.ckDetail)
-        Me.LayoutControl2.Controls.Add(Me.ckGlobal)
-        Me.LayoutControl2.Location = New System.Drawing.Point(999, 50)
-        Me.LayoutControl2.Name = "LayoutControl2"
-        Me.LayoutControl2.Root = Me.LayoutControlGroup2
-        Me.LayoutControl2.Size = New System.Drawing.Size(133, 317)
-        Me.LayoutControl2.TabIndex = 5
-        Me.LayoutControl2.Text = "LayoutControl2"
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.LayoutControl2
@@ -553,61 +608,6 @@ Partial Class FormPersediaanAwalList
         Me.LayoutControlItem2.Size = New System.Drawing.Size(137, 321)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
-        '
-        'LayoutControlGroup2
-        '
-        Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem1, Me.LayoutControlItem4})
-        Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(133, 317)
-        Me.LayoutControlGroup2.TextVisible = False
-        '
-        'ckGlobal
-        '
-        Me.ckGlobal.Location = New System.Drawing.Point(12, 12)
-        Me.ckGlobal.MenuManager = Me.RibbonControl1
-        Me.ckGlobal.Name = "ckGlobal"
-        Me.ckGlobal.Properties.Caption = "Global"
-        Me.ckGlobal.Size = New System.Drawing.Size(109, 22)
-        Me.ckGlobal.StyleController = Me.LayoutControl2
-        Me.ckGlobal.TabIndex = 4
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.ckGlobal
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(113, 26)
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem3.TextVisible = False
-        '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 52)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(113, 245)
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'ckDetail
-        '
-        Me.ckDetail.Location = New System.Drawing.Point(12, 38)
-        Me.ckDetail.MenuManager = Me.RibbonControl1
-        Me.ckDetail.Name = "ckDetail"
-        Me.ckDetail.Properties.Caption = "Detail"
-        Me.ckDetail.Size = New System.Drawing.Size(109, 22)
-        Me.ckDetail.StyleController = Me.LayoutControl2
-        Me.ckDetail.TabIndex = 5
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.ckDetail
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 26)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(113, 26)
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem4.TextVisible = False
         '
         'FormPersediaanAwalList
         '
@@ -625,19 +625,19 @@ Partial Class FormPersediaanAwalList
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl2.ResumeLayout(False)
+        CType(Me.ckDetail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ckGlobal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl2.ResumeLayout(False)
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ckGlobal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ckDetail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

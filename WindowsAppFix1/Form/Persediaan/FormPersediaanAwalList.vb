@@ -10,7 +10,7 @@ Public Class FormPersediaanAwalList
         LoadData()
     End Sub
 
-    Private Async Sub LoadData()
+    Public Async Sub LoadData()
         Dim listView = Await _persediaanAwalRepo.GetList()
         GridControl1.DataSource = listView
         rpt.DataSource = listView
@@ -23,13 +23,20 @@ Public Class FormPersediaanAwalList
     End Sub
 
     Private Sub btnEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnEdit.ItemClick
-        Using frm As New frmAddPersediaanAwal
-            'load edit
-            If frm.DialogResult = DialogResult.OK Then
-                MsgBox("data berhasil diupdate")
-                LoadData()
-            End If
-        End Using
+        'Using frm As New frmAddPersediaanAwal
+        '    'load edit
+        '    If frm.DialogResult = DialogResult.OK Then
+        '        MsgBox("data berhasil diupdate")
+        '        LoadData()
+        '    End If
+        'End Using
+        purpose = "EDIT"
+        Dim frm As New frmAddPersediaanAwal
+        'edit
+        frm.Show()
+        frm.Edit(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+        frm.XtraTabPage2.Text = "Form Edit Data Persediaan Awal"
+
     End Sub
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
@@ -45,5 +52,20 @@ Public Class FormPersediaanAwalList
             printTool.ShowPreview()
         End If
 
+    End Sub
+
+    Public Async Sub destroy(ByVal id As Long)
+        Dim hasil = Await _persediaanAwalRepo.delete(id)
+        If hasil Then
+            LoadData()
+        End If
+    End Sub
+
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to proceed?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            ' Code to execute if OK is clicked
+            destroy(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+        End If
     End Sub
 End Class

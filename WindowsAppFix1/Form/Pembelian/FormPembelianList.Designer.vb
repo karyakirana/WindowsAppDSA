@@ -26,6 +26,19 @@ Partial Class FormPembelianList
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPembelianList))
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colid1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colpembelian_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colbatch = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colserial_number = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colexpired = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colharga_beli = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coljumlah = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coldiskon = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colsub_total = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colcreated_at1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colupdated_at1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colproduk = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.PembelianBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -56,6 +69,7 @@ Partial Class FormPembelianList
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -74,8 +88,141 @@ Partial Class FormPembelianList
         '
         'GridView2
         '
+        Me.GridView2.ChildGridLevelName = "tes"
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid1, Me.colpembelian_id, Me.colproduk_id, Me.colbatch, Me.colserial_number, Me.colexpired, Me.colharga_beli, Me.coljumlah, Me.coldiskon, Me.colsub_total, Me.colcreated_at1, Me.colupdated_at1, Me.colproduk})
         Me.GridView2.GridControl = Me.GridControl1
         Me.GridView2.Name = "GridView2"
+        '
+        'colid1
+        '
+        Me.colid1.FieldName = "id"
+        Me.colid1.Name = "colid1"
+        '
+        'colpembelian_id
+        '
+        Me.colpembelian_id.FieldName = "pembelian_id"
+        Me.colpembelian_id.Name = "colpembelian_id"
+        '
+        'colproduk_id
+        '
+        Me.colproduk_id.FieldName = "produk_id"
+        Me.colproduk_id.Name = "colproduk_id"
+        '
+        'colbatch
+        '
+        Me.colbatch.AppearanceCell.Options.UseTextOptions = True
+        Me.colbatch.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colbatch.AppearanceHeader.Options.UseTextOptions = True
+        Me.colbatch.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colbatch.Caption = "Batch"
+        Me.colbatch.FieldName = "batch"
+        Me.colbatch.Name = "colbatch"
+        Me.colbatch.Visible = True
+        Me.colbatch.VisibleIndex = 1
+        '
+        'colserial_number
+        '
+        Me.colserial_number.AppearanceCell.Options.UseTextOptions = True
+        Me.colserial_number.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colserial_number.AppearanceHeader.Options.UseTextOptions = True
+        Me.colserial_number.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colserial_number.Caption = "Serial Number"
+        Me.colserial_number.FieldName = "serial_number"
+        Me.colserial_number.Name = "colserial_number"
+        Me.colserial_number.Visible = True
+        Me.colserial_number.VisibleIndex = 2
+        '
+        'colexpired
+        '
+        Me.colexpired.AppearanceCell.Options.UseTextOptions = True
+        Me.colexpired.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colexpired.AppearanceHeader.Options.UseTextOptions = True
+        Me.colexpired.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colexpired.Caption = "Expired"
+        Me.colexpired.DisplayFormat.FormatString = "yyyy-MM-dd"
+        Me.colexpired.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.colexpired.FieldName = "expired"
+        Me.colexpired.GroupFormat.FormatString = "yyyy-MM-dd"
+        Me.colexpired.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.colexpired.Name = "colexpired"
+        Me.colexpired.Visible = True
+        Me.colexpired.VisibleIndex = 3
+        '
+        'colharga_beli
+        '
+        Me.colharga_beli.AppearanceCell.Options.UseTextOptions = True
+        Me.colharga_beli.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colharga_beli.AppearanceHeader.Options.UseTextOptions = True
+        Me.colharga_beli.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colharga_beli.Caption = "Harga Beli"
+        Me.colharga_beli.DisplayFormat.FormatString = "n0"
+        Me.colharga_beli.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colharga_beli.FieldName = "harga_beli"
+        Me.colharga_beli.GroupFormat.FormatString = "n0"
+        Me.colharga_beli.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colharga_beli.Name = "colharga_beli"
+        Me.colharga_beli.Visible = True
+        Me.colharga_beli.VisibleIndex = 4
+        '
+        'coljumlah
+        '
+        Me.coljumlah.AppearanceCell.Options.UseTextOptions = True
+        Me.coljumlah.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coljumlah.AppearanceHeader.Options.UseTextOptions = True
+        Me.coljumlah.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coljumlah.Caption = "Jumlah"
+        Me.coljumlah.FieldName = "jumlah"
+        Me.coljumlah.Name = "coljumlah"
+        Me.coljumlah.Visible = True
+        Me.coljumlah.VisibleIndex = 5
+        '
+        'coldiskon
+        '
+        Me.coldiskon.AppearanceCell.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coldiskon.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldiskon.Caption = "Diskon"
+        Me.coldiskon.FieldName = "diskon"
+        Me.coldiskon.Name = "coldiskon"
+        Me.coldiskon.Visible = True
+        Me.coldiskon.VisibleIndex = 6
+        '
+        'colsub_total
+        '
+        Me.colsub_total.AppearanceCell.Options.UseTextOptions = True
+        Me.colsub_total.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colsub_total.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsub_total.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsub_total.Caption = "Sub Total"
+        Me.colsub_total.DisplayFormat.FormatString = "n0"
+        Me.colsub_total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colsub_total.FieldName = "sub_total"
+        Me.colsub_total.GroupFormat.FormatString = "n0"
+        Me.colsub_total.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colsub_total.Name = "colsub_total"
+        Me.colsub_total.Visible = True
+        Me.colsub_total.VisibleIndex = 7
+        '
+        'colcreated_at1
+        '
+        Me.colcreated_at1.FieldName = "created_at"
+        Me.colcreated_at1.Name = "colcreated_at1"
+        '
+        'colupdated_at1
+        '
+        Me.colupdated_at1.FieldName = "updated_at"
+        Me.colupdated_at1.Name = "colupdated_at1"
+        '
+        'colproduk
+        '
+        Me.colproduk.AppearanceHeader.Options.UseTextOptions = True
+        Me.colproduk.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colproduk.Caption = "Produk"
+        Me.colproduk.FieldName = "produk"
+        Me.colproduk.Name = "colproduk"
+        Me.colproduk.Visible = True
+        Me.colproduk.VisibleIndex = 0
         '
         'GridControl1
         '
@@ -310,9 +457,9 @@ Partial Class FormPembelianList
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 5
+        Me.RibbonControl1.MaxItemId = 6
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.Size = New System.Drawing.Size(800, 162)
@@ -349,6 +496,14 @@ Partial Class FormPembelianList
         Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem4.Name = "BarButtonItem4"
         '
+        'BarButtonItem5
+        '
+        Me.BarButtonItem5.Caption = "Print"
+        Me.BarButtonItem5.Id = 5
+        Me.BarButtonItem5.ImageOptions.Image = CType(resources.GetObject("BarButtonItem5.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem5.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem5.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem5.Name = "BarButtonItem5"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
@@ -361,6 +516,7 @@ Partial Class FormPembelianList
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem5)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Aksi"
         '
@@ -452,4 +608,18 @@ Partial Class FormPembelianList
     Friend WithEvents coldeleted_at As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colsupplier As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colusers As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents colid1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colpembelian_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colproduk_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colbatch As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colserial_number As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colexpired As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colharga_beli As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coljumlah As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coldiskon As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colsub_total As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colcreated_at1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colupdated_at1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colproduk As DevExpress.XtraGrid.Columns.GridColumn
 End Class

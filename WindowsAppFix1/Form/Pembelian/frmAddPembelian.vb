@@ -14,10 +14,14 @@ Public Class frmAddPembelian
     Private _pembelianRepo As PembelianRepository
     Private _supplierRepo As New SupplierRepository
     Private _persediaanRepo As New PersediaanRepo
+    Private _produkRepo As New ProdukRepository
+    Private _update As Boolean = False
     Public dtPembelian As New DataTable
-    Private exp As DateTime
-    Private hitung, diskon, subtotal As Integer
-    Private ppn As Integer
+    Dim exp As DateTime
+    Dim hitung, diskon, subtotal As Integer
+    Dim ppn As Integer
+    Dim draft, supplier As Integer
+    Dim listsupplier As List(Of Supplier)
 
     Public Sub New()
 
@@ -41,12 +45,13 @@ Public Class frmAddPembelian
 
     Public Async Sub LoadData()
         LoadDataTable()
-        Dim _listsupplier = Await _supplierRepo.GetList()
+        listsupplier = Await _supplierRepo.GetList()
     End Sub
 
     Private Sub LoadDataTable()
         'initate Coloumn
-        dtPembelian.Columns.Add("persediaan_id", GetType(Long))
+        dtPembelian.Columns.Add("pembelian_id", GetType(Long))
+        dtPembelian.Columns.Add("produk_id", GetType(String))
         dtPembelian.Columns.Add("produk_nama", GetType(String))
         dtPembelian.Columns.Add("batch", GetType(String))
         dtPembelian.Columns.Add("expired", GetType(String))
@@ -59,7 +64,8 @@ Public Class frmAddPembelian
         GridControl1.RepositoryItems.Add(RepositoryItemDateEdit1)
         GridView1.Columns("expired").ColumnEdit = RepositoryItemDateEdit1
 
-        GridView1.Columns.ColumnByFieldName("persediaan_id").VisibleIndex = -1
+        GridView1.Columns.ColumnByFieldName("pembelian_id").VisibleIndex = -1
+        GridView1.Columns.ColumnByFieldName("produk_id").VisibleIndex = -1
         GridView1.Columns.ColumnByFieldName("produk_nama").VisibleIndex = 0
         GridView1.Columns.ColumnByFieldName("produk_nama").Caption = "Nama Produk"
         GridView1.Columns.ColumnByFieldName("produk_nama").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -87,6 +93,8 @@ Public Class frmAddPembelian
         GridView1.Columns.ColumnByFieldName("diskon").Caption = "Diskon"
         GridView1.Columns.ColumnByFieldName("diskon").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("diskon").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("diskon").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        GridView1.Columns.ColumnByFieldName("diskon").DisplayFormat.FormatString = "n0"
         GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 6
         GridView1.Columns.ColumnByFieldName("jumlah").Caption = "Jumlah"
         GridView1.Columns.ColumnByFieldName("jumlah").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -95,26 +103,29 @@ Public Class frmAddPembelian
         GridView1.Columns.ColumnByFieldName("sub_total").Caption = "Sub Total"
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
         GridView1.Columns.ColumnByFieldName("sub_total").OptionsColumn.AllowEdit = False
     End Sub
 
     Public Async Sub SetRow(id As Long)
         'get data
-        Dim getData As Persediaan = Await _persediaanRepo.edit(id)
+        Dim getData As Produk = Await _produkRepo.Edit(id)
         'set to row
         If Not getData Is Nothing Then
 
-            Dim persediaan As New Persediaan
-            persediaan = getData
+            Dim produk As New Produk
+            produk = getData
 
             Dim row As DataRow
-            row = dtPembelian.NewRow
-            row("persediaan_id") = persediaan.id
-            row("produk_nama") = persediaan.produk.nama
+            row = dtPembelian.NewRow()
+            row("pembelian_id") = 0
+            row("produk_id") = produk.id
+            row("produk_nama") = produk.nama
             row("batch") = ""
             row("expired") = Format(Date.Now, "yyyy-MM-dd")
             row("serial_number") = ""
-            row("harga") = persediaan.produk.harga
+            row("harga") = produk.harga
             row("diskon") = 0
             row("jumlah") = 0
             row("sub_total") = 0
@@ -122,12 +133,18 @@ Public Class frmAddPembelian
             dtPembelian.Rows.Add(row)
             GridControl1.DataSource = dtPembelian
 
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
+
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
+            'Console.WriteLine(getData)
         End If
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
-        Using frm As FrmFindProduk = New FrmFindProduk
+        Using frm As FrmFindProduk = New FrmFindProduk()
             If frm.ShowDialog = DialogResult.OK Then
                 SetRow(frm.GetValue)
                 Console.WriteLine(frm.GetValue)
@@ -195,7 +212,7 @@ Public Class frmAddPembelian
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-
+        store()
     End Sub
 
     Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
@@ -229,6 +246,53 @@ Public Class frmAddPembelian
             txtTotalbayar.EditValue = txtPpn.EditValue + txtBiayalain.EditValue + subtotal
         Next
     End Sub
+
+    Private Sub refreshPembelianList()
+        'form jabatan list reload
+        Dim form As FormPembelianList = CType(Application.OpenForms("FormPembelianList"), FormPembelianList)
+        form.LoadData()
+    End Sub
+
+    Private Async Sub store()
+        Dim _pembelian As New Pembelian
+        _pembelian.pembelian_po_id = txtPOPembelian.EditValue
+        _pembelian.tgl_pembelian = tglPembelian.Text
+        _pembelian.tempo = CType(txtTempo.EditValue, Int64)
+        _pembelian.tgl_tempo = tglTempo.Text
+        _pembelian.tipe_pembelian = cbTipe.EditValue
+        _pembelian.draft = draft
+        _pembelian.supplier_id = txtSupplier.EditValue
+        _pembelian.keterangan = txtKeterangan.EditValue
+
+        'list detail
+        Dim pembelian_list As New List(Of PembelianDetailStore)
+        For i As Integer = 0 To GridView1.RowCount - 1
+            _pembelian.total_barang += GridView1.GetRowCellValue(i, "jumlah")
+            Dim detail As New PembelianDetailStore
+            Dim expired = GridView1.GetRowCellValue(i, "expired")
+            detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
+            detail.diskon = GridView1.GetRowCellValue(i, "diskon")
+            detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
+            detail.harga = GridView1.GetRowCellValue(i, "harga")
+            detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
+            pembelian_list.Add(detail)
+        Next
+        _pembelian.pembelian_detail_store = pembelian_list
+
+        Dim hasil = Await _pembelianRepo.store(_pembelian)
+        If hasil Then
+            DialogResult = DialogResult.OK
+            purpose = Nothing
+            Close()
+            refreshPembelianList()
+        End If
+    End Sub
+
+
     'Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
     '    Using frm As FrmFindProduk = New FrmFindProduk
     '        If frm.ShowDialog = DialogResult.OK Then

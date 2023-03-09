@@ -13,10 +13,10 @@
 
     Private Sub GridView1_DoubleClick(sender As Object, e As EventArgs) Handles GridView1.DoubleClick
 
-
         For i = 0 To _listsupplier.Count - 1
             If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "id") = _listsupplier(i).id Then
                 _Supplier.nama = _listsupplier(i).nama
+                _Supplier.id = _listsupplier(i).id
             End If
         Next
         Me.Close()

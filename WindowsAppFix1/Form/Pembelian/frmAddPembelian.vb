@@ -18,7 +18,7 @@ Public Class frmAddPembelian
     Private _update As Boolean = False
     Public dtPembelian As New DataTable
     Dim exp As DateTime
-    Dim hitung, diskon, subtotal As Integer
+    Dim hitung, diskon, subtotal, totalbayar As Integer
     Dim ppn As Integer
     Dim draft, supplier As Integer
     Dim listsupplier As List(Of Supplier)
@@ -90,7 +90,7 @@ Public Class frmAddPembelian
         GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
         GridView1.Columns.ColumnByFieldName("diskon").VisibleIndex = 5
-        GridView1.Columns.ColumnByFieldName("diskon").Caption = "Diskon"
+        GridView1.Columns.ColumnByFieldName("diskon").Caption = "Diskon (%)"
         GridView1.Columns.ColumnByFieldName("diskon").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("diskon").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         GridView1.Columns.ColumnByFieldName("diskon").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -187,24 +187,35 @@ Public Class frmAddPembelian
         End If
 
         If GridView1.FocusedColumn.FieldName = "sub_total" Then
-            txtTotalbayar.EditValue = 0
-            For i = 0 To GridView1.DataRowCount - 1
-                'txtTotalBayar.EditValue += GridView1.GetRowCellValue(i, "sub_total")
-                ppn = (GridView1.GetRowCellValue(i, "sub_total") * 0.11)
-                txtPpn.EditValue += ppn
+            ppn = 0
+            totalbayar = 0
+            For dgv = 0 To GridView1.DataRowCount - 1
+                'ppn += (GridView1.GetRowCellValue(dgv, "sub_total") * 0.11)
+                totalbayar += GridView1.GetRowCellValue(dgv, "sub_total")
             Next
+            ppn = totalbayar * 0.11
         End If
+        txtPpn.EditValue = ppn
+        txtTotalbayar.EditValue = totalbayar + ppn
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
         GridView1.DeleteRow(GridView1.FocusedRowHandle)
-        txtTotalbayar.EditValue = 0
+
+        Dim hapusPPN = 0
+        Dim hapusTotal = 0
         txtPpn.EditValue = 0
-        For i = 0 To GridView1.DataRowCount - 1
-            'txtTotalBayar.EditValue += GridView1.GetRowCellValue(i, "sub_total")
-            ppn = (GridView1.GetRowCellValue(i, "sub_total") * 0.11)
-            txtPpn.EditValue += ppn
+        txtTotalbayar.EditValue = 0
+
+        For dgv = 0 To GridView1.DataRowCount - 1
+            'ppn += (GridView1.GetRowCellValue(dgv, "sub_total") * 0.11)
+            hapusTotal += GridView1.GetRowCellValue(dgv, "sub_total")
         Next
+
+        hapusPPN = hapusTotal * 0.11
+        txtPpn.EditValue += hapusPPN
+        txtTotalbayar.EditValue += hapusTotal + hapusPPN
+
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
@@ -230,21 +241,26 @@ Public Class frmAddPembelian
             Else
                 edit.ErrorText = String.Empty
                 GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "jumlah", e.Value)
-                diskon = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "diskon")) / 100
-                hitung = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value) - diskon
+                subtotal = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value
+                diskon = (subtotal * GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "diskon")) / 100
+                hitung = subtotal - diskon
                 GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
                 GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
                 GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
-
             End If
         End If
     End Sub
 
+    'Private Sub GridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles GridView1.KeyDown
+    '    If GridView1.FocusedColumn.FieldName = "sub_total" Then
+    '        If e.KeyCode = Keys.Enter Then
+
+    '        End If
+    '    End If
+    'End Sub
+
     Private Sub txtBiayaLain_Leave(sender As Object, e As EventArgs) Handles txtBiayalain.Leave
-        For i = 0 To GridView1.DataRowCount - 1
-            subtotal += GridView1.GetRowCellValue(i, "sub_total")
-            txtTotalbayar.EditValue = txtPpn.EditValue + txtBiayalain.EditValue + subtotal
-        Next
+
     End Sub
 
     Private Sub refreshPembelianList()
@@ -261,8 +277,11 @@ Public Class frmAddPembelian
         _pembelian.tgl_tempo = tglTempo.Text
         _pembelian.tipe_pembelian = cbTipe.EditValue
         _pembelian.draft = draft
-        _pembelian.supplier_id = txtSupplier.EditValue
+        _pembelian.supplier_id = _Supplier.id
         _pembelian.keterangan = txtKeterangan.EditValue
+        _pembelian.total_bayar = txtTotalbayar.EditValue
+        _pembelian.ppn = txtPpn.EditValue
+        _pembelian.biaya_lain = txtBiayalain.EditValue
 
         'list detail
         Dim pembelian_list As New List(Of PembelianDetailStore)
@@ -282,7 +301,7 @@ Public Class frmAddPembelian
             pembelian_list.Add(detail)
         Next
         _pembelian.pembelian_detail_store = pembelian_list
-
+        Dim json = JsonConvert.SerializeObject(_pembelian)
         Dim hasil = Await _pembelianRepo.store(_pembelian)
         If hasil Then
             DialogResult = DialogResult.OK
@@ -290,6 +309,14 @@ Public Class frmAddPembelian
             Close()
             refreshPembelianList()
         End If
+    End Sub
+
+    Private Sub txtBiayalain_TextChanged(sender As Object, e As EventArgs) Handles txtBiayalain.TextChanged
+        Dim newTotal = 0
+        For dgv = 0 To GridView1.DataRowCount - 1
+            newTotal += GridView1.GetRowCellValue(dgv, "sub_total")
+        Next
+        txtTotalbayar.EditValue = txtPpn.EditValue + newTotal + txtBiayalain.EditValue
     End Sub
 
 

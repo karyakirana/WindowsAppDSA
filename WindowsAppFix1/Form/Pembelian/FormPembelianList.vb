@@ -27,10 +27,12 @@ Public Class FormPembelianList
     End Sub
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        Using frm As New frmAddPembelian()
-            Dim id = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid)
-            'frm.Edit(id)
-        End Using
+        purpose = "EDIT"
+        Dim frm As New frmAddPembelian
+        'edit
+        frm.Show()
+        frm.Edit(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colid))
+        frm.XtraTabPage1.Text = "Form Edit Data Pembelian"
     End Sub
 
     Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick

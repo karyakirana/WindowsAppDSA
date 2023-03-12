@@ -14,4 +14,5 @@
     Private Sub btnClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnClose.ItemClick
         Close()
     End Sub
+
 End Class

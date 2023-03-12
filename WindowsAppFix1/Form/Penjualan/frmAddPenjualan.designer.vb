@@ -114,10 +114,10 @@ Partial Class frmAddPenjualan
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCustomer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbTipe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglTempo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tglPenjualan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglTempo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tglPenjualan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tglPenjualan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSales.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rbgDraft.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,12 +232,16 @@ Partial Class frmAddPenjualan
         '
         Me.txtTotalBayar.Location = New System.Drawing.Point(1093, 615)
         Me.txtTotalBayar.Name = "txtTotalBayar"
+        Me.txtTotalBayar.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtTotalBayar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txtTotalBayar.Properties.DisplayFormat.FormatString = "n0"
         Me.txtTotalBayar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtTotalBayar.Properties.EditFormat.FormatString = "n0"
         Me.txtTotalBayar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtTotalBayar.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtTotalBayar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtTotalBayar.Properties.MaskSettings.Set("mask", "n0")
+        Me.txtTotalBayar.Properties.ReadOnly = True
         Me.txtTotalBayar.Size = New System.Drawing.Size(328, 24)
         Me.txtTotalBayar.StyleController = Me.LayoutControl2
         Me.txtTotalBayar.TabIndex = 24
@@ -246,12 +250,15 @@ Partial Class frmAddPenjualan
         '
         Me.txtBiayaLain.Location = New System.Drawing.Point(1093, 587)
         Me.txtBiayaLain.Name = "txtBiayaLain"
+        Me.txtBiayaLain.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtBiayaLain.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txtBiayaLain.Properties.DisplayFormat.FormatString = "n0"
         Me.txtBiayaLain.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtBiayaLain.Properties.EditFormat.FormatString = "n0"
         Me.txtBiayaLain.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtBiayaLain.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtBiayaLain.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtBiayaLain.Properties.MaskSettings.Set("mask", "n0")
         Me.txtBiayaLain.Size = New System.Drawing.Size(328, 24)
         Me.txtBiayaLain.StyleController = Me.LayoutControl2
         Me.txtBiayaLain.TabIndex = 23
@@ -260,12 +267,16 @@ Partial Class frmAddPenjualan
         '
         Me.txtPpn.Location = New System.Drawing.Point(1093, 559)
         Me.txtPpn.Name = "txtPpn"
+        Me.txtPpn.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtPpn.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txtPpn.Properties.DisplayFormat.FormatString = "n0"
         Me.txtPpn.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtPpn.Properties.EditFormat.FormatString = "n0"
         Me.txtPpn.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtPpn.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
         Me.txtPpn.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False")
+        Me.txtPpn.Properties.MaskSettings.Set("mask", "n0")
+        Me.txtPpn.Properties.ReadOnly = True
         Me.txtPpn.Size = New System.Drawing.Size(328, 24)
         Me.txtPpn.StyleController = Me.LayoutControl2
         Me.txtPpn.TabIndex = 22

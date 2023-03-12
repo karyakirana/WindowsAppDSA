@@ -51,6 +51,6 @@ Public Class PembelianDetailStore
 	Public Property batch As String
 	Public Property expired As String
 	Public Property serial_number As String
-	Public Property harga As Long
+	Public Property harga_beli As Long
 	Public Property sub_total As Long
 End Class

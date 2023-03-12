@@ -15,9 +15,11 @@ Public Class frmAddPenjualan
     Private _persediaanRepo As New PersediaanRepo
     Private _customerRepo As New CustomerRepository
     Public dtPenjualan As New DataTable
-    Private exp As DateTime
-    Private hitung, diskon, subtotal As Integer
-    Private ppn As Integer
+    Dim exp As DateTime
+    Dim hitung, diskon, subtotal, totalbayar As Integer
+    Dim ppn As Integer
+    Dim draft, customer As Integer
+    Dim listcustomer As List(Of Customer)
 
     Public Sub New()
 
@@ -98,6 +100,8 @@ Public Class frmAddPenjualan
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         GridView1.Columns.ColumnByFieldName("sub_total").OptionsColumn.AllowEdit = False
+        GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
 
 
     End Sub
@@ -126,6 +130,12 @@ Public Class frmAddPenjualan
 
             dtPenjualan.Rows.Add(row)
             GridControl1.DataSource = dtPenjualan
+
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
+
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
 
         End If
     End Sub
@@ -176,24 +186,43 @@ Public Class frmAddPenjualan
         End If
 
         If GridView1.FocusedColumn.FieldName = "sub_total" Then
-            txtTotalBayar.EditValue = 0
-            For i = 0 To GridView1.DataRowCount - 1
-                'txtTotalBayar.EditValue += GridView1.GetRowCellValue(i, "sub_total")
-                ppn = (GridView1.GetRowCellValue(i, "sub_total") * 0.11)
-                txtPpn.EditValue += ppn
+            ppn = 0
+            totalbayar = 0
+            For dgv = 0 To GridView1.DataRowCount - 1
+                'ppn += (GridView1.GetRowCellValue(dgv, "sub_total") * 0.11)
+                totalbayar += GridView1.GetRowCellValue(dgv, "sub_total")
             Next
+            ppn = totalbayar * 0.11
         End If
+        txtPpn.EditValue = ppn
+        txtTotalBayar.EditValue = totalbayar + ppn
+    End Sub
+
+    Private Sub txtBiayaLain_TextChanged(sender As Object, e As EventArgs) Handles txtBiayaLain.TextChanged
+        Dim newTotal = 0
+        For dgv = 0 To GridView1.DataRowCount - 1
+            newTotal += GridView1.GetRowCellValue(dgv, "sub_total")
+        Next
+        txtTotalBayar.EditValue = txtPpn.EditValue + newTotal + txtBiayaLain.EditValue
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
         GridView1.DeleteRow(GridView1.FocusedRowHandle)
-        txtTotalBayar.EditValue = 0
+
+        Dim hapusPPN = 0
+        Dim hapusTotal = 0
         txtPpn.EditValue = 0
-        For i = 0 To GridView1.DataRowCount - 1
-            'txtTotalBayar.EditValue += GridView1.GetRowCellValue(i, "sub_total")
-            ppn = (GridView1.GetRowCellValue(i, "sub_total") * 0.11)
-            txtPpn.EditValue += ppn
+        txtTotalBayar.EditValue = 0
+
+        For dgv = 0 To GridView1.DataRowCount - 1
+            'ppn += (GridView1.GetRowCellValue(dgv, "sub_total") * 0.11)
+            hapusTotal += GridView1.GetRowCellValue(dgv, "sub_total")
         Next
+
+        hapusPPN = hapusTotal * 0.11
+        txtPpn.EditValue += hapusPPN
+        txtTotalBayar.EditValue += hapusTotal + hapusPPN
+
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
@@ -219,8 +248,9 @@ Public Class frmAddPenjualan
             Else
                 edit.ErrorText = String.Empty
                 GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "jumlah", e.Value)
-                diskon = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "diskon")) / 100
-                hitung = (GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value) - diskon
+                subtotal = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "harga") * e.Value
+                diskon = (subtotal * GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "diskon")) / 100
+                hitung = subtotal - diskon
                 GridView1.SetRowCellValue(GridView1.FocusedRowHandle, "sub_total", hitung)
                 GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
                 GridView1.Columns.ColumnByFieldName("sub_total").DisplayFormat.FormatString = "n0"
@@ -229,10 +259,51 @@ Public Class frmAddPenjualan
         End If
     End Sub
 
-    Private Sub txtBiayaLain_Leave(sender As Object, e As EventArgs) Handles txtBiayaLain.Leave
-        For i = 0 To GridView1.DataRowCount - 1
-            subtotal += GridView1.GetRowCellValue(i, "sub_total")
-            txtTotalBayar.EditValue = txtPpn.EditValue + txtBiayaLain.EditValue + subtotal
-        Next
-    End Sub
+    'Private Sub txtBiayaLain_Leave(sender As Object, e As EventArgs) Handles txtBiayaLain.Leave
+    '    For i = 0 To GridView1.DataRowCount - 1
+    '        subtotal += GridView1.GetRowCellValue(i, "sub_total")
+    '        txtTotalBayar.EditValue = txtPpn.EditValue + txtBiayaLain.EditValue + subtotal
+    '    Next
+    'End Sub
+    'Private Async Sub store()
+    '    Dim _penjualan As New Penjualan
+    '    _penjualan.penjualan_penawaran_id = txtPOPenjualan.EditValue
+    '    _penjualan.tgl_penjualan = tglPenjualan.Text
+    '    _penjualan.tempo = CType(txtTempo.EditValue, Int64)
+    '    _penjualan.tgl_tempo = tglTempo.Text
+    '    _penjualan.tipe_penjualan = cbTipe.EditValue
+    '    _penjualan.draft = draft
+    '    _penjualan.customer = _Customer.id
+    '    _penjualan.keterangan = txtKeterangan.EditValue
+    '    _penjualan.total_bayar = txtTotalBayar.EditValue
+    '    _penjualan.ppn = txtPpn.EditValue
+    '    _penjualan.biaya_lain = txtBiayaLain.EditValue
+
+    '    'list detail
+    '    Dim pembelian_list As New List(Of PembelianDetailStore)
+    '    For i As Integer = 0 To GridView1.RowCount - 1
+    '        _penjualan.total_barang += GridView1.GetRowCellValue(i, "jumlah")
+    '        Dim detail As New PembelianDetailStore
+    '        Dim expired = GridView1.GetRowCellValue(i, "expired")
+    '        detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
+    '        detail.diskon = GridView1.GetRowCellValue(i, "diskon")
+    '        detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
+    '        detail.batch = GridView1.GetRowCellValue(i, "batch")
+    '        detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+    '        detail.batch = GridView1.GetRowCellValue(i, "batch")
+    '        detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
+    '        detail.harga_beli = GridView1.GetRowCellValue(i, "harga")
+    '        detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
+    '        pembelian_list.Add(detail)
+    '    Next
+    '    _penjualan.pembelian_detail_store = pembelian_list
+    '    'Dim json = JsonConvert.SerializeObject(_penjualan)
+    '    Dim hasil = Await _penjualanRepo.store(_penjualan)
+    '    If hasil Then
+    '        DialogResult = DialogResult.OK
+    '        purpose = Nothing
+    '        Close()
+    '        refreshPembelianList()
+    '    End If
+    'End Sub
 End Class

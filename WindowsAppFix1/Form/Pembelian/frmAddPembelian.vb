@@ -11,7 +11,8 @@ Imports Newtonsoft.Json
 
 Public Class frmAddPembelian
 
-    Private _pembelianRepo As PembelianRepository
+    ' inisiasi sebagai new class
+    Private _pembelianRepo As New PembelianRepository
     Private _supplierRepo As New SupplierRepository
     Private _persediaanRepo As New PersediaanRepo
     Private _produkRepo As New ProdukRepository
@@ -271,6 +272,7 @@ Public Class frmAddPembelian
 
     Private Async Sub store()
         Dim _pembelian As New Pembelian
+        Dim hasil As Boolean = False
         _pembelian.pembelian_po_id = txtPOPembelian.EditValue
         _pembelian.tgl_pembelian = tglPembelian.Text
         _pembelian.tempo = CType(txtTempo.EditValue, Int64)
@@ -296,13 +298,13 @@ Public Class frmAddPembelian
             detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
             detail.batch = GridView1.GetRowCellValue(i, "batch")
             detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
-            detail.harga = GridView1.GetRowCellValue(i, "harga")
+            detail.harga_beli = GridView1.GetRowCellValue(i, "harga")
             detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
             pembelian_list.Add(detail)
         Next
         _pembelian.pembelian_detail_store = pembelian_list
-        Dim json = JsonConvert.SerializeObject(_pembelian)
-        Dim hasil = Await _pembelianRepo.store(_pembelian)
+        'Dim json = JsonConvert.SerializeObject(_pembelian)
+        hasil = Await _pembelianRepo.store(_pembelian)
         If hasil Then
             DialogResult = DialogResult.OK
             purpose = Nothing

@@ -69,6 +69,7 @@ Partial Class FormPenjualanList
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -108,6 +109,13 @@ Partial Class FormPenjualanList
         '
         'colharga_jual
         '
+        Me.colharga_jual.AppearanceCell.Options.UseTextOptions = True
+        Me.colharga_jual.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colharga_jual.AppearanceHeader.Options.UseTextOptions = True
+        Me.colharga_jual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colharga_jual.Caption = "Harga Jual"
+        Me.colharga_jual.DisplayFormat.FormatString = "n0"
+        Me.colharga_jual.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colharga_jual.FieldName = "harga_jual"
         Me.colharga_jual.Name = "colharga_jual"
         Me.colharga_jual.Visible = True
@@ -115,6 +123,11 @@ Partial Class FormPenjualanList
         '
         'coljumlah
         '
+        Me.coljumlah.AppearanceCell.Options.UseTextOptions = True
+        Me.coljumlah.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coljumlah.AppearanceHeader.Options.UseTextOptions = True
+        Me.coljumlah.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coljumlah.Caption = "Jumlah"
         Me.coljumlah.FieldName = "jumlah"
         Me.coljumlah.Name = "coljumlah"
         Me.coljumlah.Visible = True
@@ -122,6 +135,11 @@ Partial Class FormPenjualanList
         '
         'colsatuan_jual
         '
+        Me.colsatuan_jual.AppearanceCell.Options.UseTextOptions = True
+        Me.colsatuan_jual.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        Me.colsatuan_jual.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsatuan_jual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsatuan_jual.Caption = "Satuan Jual"
         Me.colsatuan_jual.FieldName = "satuan_jual"
         Me.colsatuan_jual.Name = "colsatuan_jual"
         Me.colsatuan_jual.Visible = True
@@ -129,6 +147,13 @@ Partial Class FormPenjualanList
         '
         'coldiskon
         '
+        Me.coldiskon.AppearanceCell.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.coldiskon.AppearanceHeader.Options.UseTextOptions = True
+        Me.coldiskon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.coldiskon.Caption = "Diskon"
+        Me.coldiskon.DisplayFormat.FormatString = "n0"
+        Me.coldiskon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.coldiskon.FieldName = "diskon"
         Me.coldiskon.Name = "coldiskon"
         Me.coldiskon.Visible = True
@@ -136,6 +161,13 @@ Partial Class FormPenjualanList
         '
         'colsub_total
         '
+        Me.colsub_total.AppearanceCell.Options.UseTextOptions = True
+        Me.colsub_total.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.colsub_total.AppearanceHeader.Options.UseTextOptions = True
+        Me.colsub_total.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.colsub_total.Caption = "Sub Total"
+        Me.colsub_total.DisplayFormat.FormatString = "n0"
+        Me.colsub_total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colsub_total.FieldName = "sub_total"
         Me.colsub_total.Name = "colsub_total"
         Me.colsub_total.Visible = True
@@ -155,8 +187,6 @@ Partial Class FormPenjualanList
         '
         Me.colpersediaan.FieldName = "persediaan"
         Me.colpersediaan.Name = "colpersediaan"
-        Me.colpersediaan.Visible = True
-        Me.colpersediaan.VisibleIndex = 5
         '
         'GridControl1
         '
@@ -320,7 +350,11 @@ Partial Class FormPenjualanList
         Me.colppn.AppearanceHeader.Options.UseTextOptions = True
         Me.colppn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colppn.Caption = "PPN"
+        Me.colppn.DisplayFormat.FormatString = "n0"
+        Me.colppn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colppn.FieldName = "ppn"
+        Me.colppn.GroupFormat.FormatString = "n0"
+        Me.colppn.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colppn.Name = "colppn"
         Me.colppn.Visible = True
         Me.colppn.VisibleIndex = 10
@@ -332,7 +366,11 @@ Partial Class FormPenjualanList
         Me.colbiaya_lain.AppearanceHeader.Options.UseTextOptions = True
         Me.colbiaya_lain.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colbiaya_lain.Caption = "Biaya Lain"
+        Me.colbiaya_lain.DisplayFormat.FormatString = "n0"
+        Me.colbiaya_lain.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colbiaya_lain.FieldName = "biaya_lain"
+        Me.colbiaya_lain.GroupFormat.FormatString = "n0"
+        Me.colbiaya_lain.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colbiaya_lain.Name = "colbiaya_lain"
         Me.colbiaya_lain.Visible = True
         Me.colbiaya_lain.VisibleIndex = 11
@@ -343,8 +381,12 @@ Partial Class FormPenjualanList
         Me.coltotal_bayar.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.coltotal_bayar.AppearanceHeader.Options.UseTextOptions = True
         Me.coltotal_bayar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.coltotal_bayar.Caption = "Total Barang"
+        Me.coltotal_bayar.Caption = "Total Bayar"
+        Me.coltotal_bayar.DisplayFormat.FormatString = "n0"
+        Me.coltotal_bayar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.coltotal_bayar.FieldName = "total_bayar"
+        Me.coltotal_bayar.GroupFormat.FormatString = "n0"
+        Me.coltotal_bayar.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.coltotal_bayar.Name = "coltotal_bayar"
         Me.coltotal_bayar.Visible = True
         Me.coltotal_bayar.VisibleIndex = 12
@@ -403,9 +445,9 @@ Partial Class FormPenjualanList
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 5
+        Me.RibbonControl1.MaxItemId = 6
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.Size = New System.Drawing.Size(825, 162)
@@ -442,6 +484,14 @@ Partial Class FormPenjualanList
         Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem4.Name = "BarButtonItem4"
         '
+        'BarButtonItem5
+        '
+        Me.BarButtonItem5.Caption = "Print"
+        Me.BarButtonItem5.Id = 5
+        Me.BarButtonItem5.ImageOptions.Image = CType(resources.GetObject("BarButtonItem5.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem5.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem5.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem5.Name = "BarButtonItem5"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
@@ -454,6 +504,7 @@ Partial Class FormPenjualanList
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem5)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Aksi"
         '
@@ -558,4 +609,5 @@ Partial Class FormPenjualanList
     Friend WithEvents colcreated_at1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colupdated_at1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colpersediaan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
 End Class

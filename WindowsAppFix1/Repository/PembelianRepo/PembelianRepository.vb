@@ -44,6 +44,8 @@ Public Class PembelianRepository
         If _response.IsSuccessStatusCode Then
             Dim jsonString As String = Await _response.Content.ReadAsStringAsync
             _jObject = JsonConvert.DeserializeObject(Of JObject)(jsonString)
+            printID = _jObject("data")("id")
+            totalBayar = _jObject("data")("total_bayar")
             Return True
         End If
 

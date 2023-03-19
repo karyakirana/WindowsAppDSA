@@ -1,7 +1,7 @@
 ﻿Public Class Pegawai
 	Public Property id As Long
 
-	Public Property pegawai_id As Long?
+	Public Property pegawai_id As Long
 	Public Property kode As String
 	Public Property status As String
 	Public Property nama As String

@@ -195,7 +195,7 @@ Partial Class frmAddCustomer
         Me.cbJenisInstansi.Location = New System.Drawing.Point(812, 12)
         Me.cbJenisInstansi.Name = "cbJenisInstansi"
         Me.cbJenisInstansi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbJenisInstansi.Properties.Items.AddRange(New Object() {"Pemerintah", "Non Pemerintah"})
+        Me.cbJenisInstansi.Properties.Items.AddRange(New Object() {"Pemerintah", "Swasta", "Non PPN"})
         Me.cbJenisInstansi.Size = New System.Drawing.Size(393, 24)
         Me.cbJenisInstansi.StyleController = Me.LayoutControl3
         Me.cbJenisInstansi.TabIndex = 6

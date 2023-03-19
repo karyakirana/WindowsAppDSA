@@ -22,7 +22,7 @@ Public Class frmAddPersediaanAwal
     Public dtProduk As New DataTable
     Dim exp As DateTime
     Dim draft, awal_id As Integer
-    Dim listlokasi As List(Of Lokasi)
+    Public listlokasi As New List(Of Lokasi)
 
     Public Sub New()
 
@@ -188,6 +188,7 @@ Public Class frmAddPersediaanAwal
 
     Private Sub frmAddPersediaanAwal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
+        refreshPersediaanAwalList()
     End Sub
 
     Private Sub GridControl1_KeyUp(sender As Object, e As KeyEventArgs) Handles GridControl1.KeyUp

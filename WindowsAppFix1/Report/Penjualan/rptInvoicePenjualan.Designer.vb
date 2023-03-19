@@ -72,7 +72,6 @@ Partial Public Class rptInvoicePenjualan
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
@@ -107,6 +106,8 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLine4 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrLine5 = New DevExpress.XtraReports.UI.XRLine()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.XrTable6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,12 +116,13 @@ Partial Public Class rptInvoicePenjualan
         CType(Me.XrTable7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'TopMargin
@@ -175,6 +177,7 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTableCell15.StylePriority.UseFont = False
         Me.XrTableCell15.StylePriority.UseTextAlignment = False
         Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell15.TextFormatString = "{0:n0}"
         Me.XrTableCell15.Weight = 0.67455245971679689R
         '
         'XrTableCell16
@@ -186,6 +189,7 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTableCell16.StylePriority.UseFont = False
         Me.XrTableCell16.StylePriority.UseTextAlignment = False
         Me.XrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell16.TextFormatString = "{0:n0}"
         Me.XrTableCell16.Weight = 0.8282687377929685R
         '
         'XrTableCell17
@@ -230,6 +234,7 @@ Partial Public Class rptInvoicePenjualan
         Me.XrTableCell20.StylePriority.UseFont = False
         Me.XrTableCell20.StylePriority.UseTextAlignment = False
         Me.XrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell20.TextFormatString = "{0:n0}"
         Me.XrTableCell20.Weight = 0.67599670410156287R
         '
         'XrTable5
@@ -532,7 +537,7 @@ Partial Public Class rptInvoicePenjualan
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel3.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[customer].[nama]")})
-        Me.XrLabel3.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
+        Me.XrLabel3.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!, DevExpress.Drawing.DXFontStyle.Bold)
         Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(65.81721!, 107.0916!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(284.6892!, 86.20451!)
@@ -645,10 +650,6 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLabel1.Text = "Sales Invoice"
         Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
-        'BindingSource1
-        '
-        Me.BindingSource1.DataSource = GetType(WindowsAppFix1.Penjualan)
-        '
         'XrLabel5
         '
         Me.XrLabel5.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
@@ -656,6 +657,7 @@ Partial Public Class rptInvoicePenjualan
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel5.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!, DevExpress.Drawing.DXFontStyle.Italic)
         Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(50.35498!, 10.0!)
+        Me.XrLabel5.Multiline = True
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(314.6996!, 41.38764!)
         Me.XrLabel5.StylePriority.UseBorders = False
@@ -727,6 +729,7 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLabel7.StylePriority.UseTextAlignment = False
         Me.XrLabel7.Text = "XrLabel7"
         Me.XrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrLabel7.TextFormatString = "{0:n0}"
         '
         'XrTableCell3
         '
@@ -892,6 +895,7 @@ Partial Public Class rptInvoicePenjualan
         Me.XrLabel10.StylePriority.UseTextAlignment = False
         Me.XrLabel10.Text = "XrLabel10"
         Me.XrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrLabel10.TextFormatString = "{0:n0}"
         '
         'XrTableCell23
         '
@@ -1024,10 +1028,19 @@ Partial Public Class rptInvoicePenjualan
         Me.GroupFooter1.HeightF = 249.4544!
         Me.GroupFooter1.Name = "GroupFooter1"
         '
+        'BindingSource1
+        '
+        Me.BindingSource1.DataSource = GetType(WindowsAppFix1.Penjualan)
+        '
+        'BindingSource2
+        '
+        Me.BindingSource2.DataSource = GetType(WindowsAppFix1.Customer)
+        '
         'rptInvoicePenjualan
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.PageHeader, Me.GroupFooter1})
-        Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.BindingSource1})
+        Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.BindingSource1, Me.BindingSource2})
+        Me.DataMember = "penjualan_detail"
         Me.DataSource = Me.BindingSource1
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
         Me.Margins = New DevExpress.Drawing.DXMargins(100.0!, 100.0!, 27.08333!, 100.0!)
@@ -1040,12 +1053,13 @@ Partial Public Class rptInvoicePenjualan
         CType(Me.XrTable7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -1137,4 +1151,5 @@ Partial Public Class rptInvoicePenjualan
     Friend WithEvents XrLine4 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents XrLine5 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents GroupFooter1 As DevExpress.XtraReports.UI.GroupFooterBand
+    Friend WithEvents BindingSource2 As BindingSource
 End Class

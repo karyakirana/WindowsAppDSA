@@ -72,6 +72,7 @@ Partial Class FormPembelianList
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.PembeliandetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -80,6 +81,7 @@ Partial Class FormPembelianList
         CType(Me.PembelianBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PembeliandetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,7 +221,7 @@ Partial Class FormPembelianList
         Me.colproduk.AppearanceHeader.Options.UseTextOptions = True
         Me.colproduk.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colproduk.Caption = "Produk"
-        Me.colproduk.FieldName = "produk"
+        Me.colproduk.FieldName = "produk.nama"
         Me.colproduk.Name = "colproduk"
         Me.colproduk.Visible = True
         Me.colproduk.VisibleIndex = 0
@@ -247,6 +249,7 @@ Partial Class FormPembelianList
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colactive_cash, Me.colpembelian_po_id, Me.colkode, Me.coldraft, Me.colstatus, Me.coltipe_pembelian, Me.coltgl_pembelian, Me.coltempo, Me.coltgl_tempo, Me.colsupplier_id, Me.coluser_id, Me.coltotal_barang, Me.colppn, Me.colbiaya_lain, Me.coltotal_bayar, Me.colketerangan, Me.colcreated_at, Me.colupdated_at, Me.coldeleted_at, Me.colsupplier, Me.colusers})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
         '
         'colid
         '
@@ -439,7 +442,7 @@ Partial Class FormPembelianList
         Me.colsupplier.AppearanceHeader.Options.UseTextOptions = True
         Me.colsupplier.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colsupplier.Caption = "Supplier"
-        Me.colsupplier.FieldName = "supplier"
+        Me.colsupplier.FieldName = "supplier.nama"
         Me.colsupplier.Name = "colsupplier"
         Me.colsupplier.Visible = True
         Me.colsupplier.VisibleIndex = 1
@@ -449,7 +452,7 @@ Partial Class FormPembelianList
         Me.colusers.AppearanceHeader.Options.UseTextOptions = True
         Me.colusers.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.colusers.Caption = "User"
-        Me.colusers.FieldName = "users"
+        Me.colusers.FieldName = "users.name"
         Me.colusers.Name = "colusers"
         Me.colusers.Visible = True
         Me.colusers.VisibleIndex = 2
@@ -520,6 +523,11 @@ Partial Class FormPembelianList
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Aksi"
         '
+        'PembeliandetailBindingSource
+        '
+        Me.PembeliandetailBindingSource.DataMember = "pembelian_detail"
+        Me.PembeliandetailBindingSource.DataSource = Me.PembelianBindingSource
+        '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
@@ -563,6 +571,7 @@ Partial Class FormPembelianList
         CType(Me.PembelianBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PembeliandetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
@@ -622,4 +631,5 @@ Partial Class FormPembelianList
     Friend WithEvents colcreated_at1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colupdated_at1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colproduk As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PembeliandetailBindingSource As BindingSource
 End Class

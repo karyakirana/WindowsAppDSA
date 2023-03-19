@@ -24,7 +24,10 @@ Module MainModule
     Public _jObject As JObject
     Public purpose As String
     Public _Customer As New Customer
+    Public _Pegawai As New Pegawai
     Public _Supplier As New Supplier
+    Public totalBayar As Integer
+    Public printID As Integer
 
     Public Sub TokenCheck()
         If Token Is Nothing Then

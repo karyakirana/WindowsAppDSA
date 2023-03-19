@@ -7,6 +7,7 @@ Imports DevExpress.XtraGrid
 Imports DevExpress.XtraGrid.Views.Base
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraPrinting.Export.Pdf
+Imports DevExpress.XtraReports.UI
 Imports Newtonsoft.Json
 
 Public Class frmAddPembelian
@@ -23,6 +24,8 @@ Public Class frmAddPembelian
     Dim ppn As Integer
     Dim draft, supplier As Integer
     Dim listsupplier As List(Of Supplier)
+    Public _repositoryPembelian As PembelianRepository = New PembelianRepository()
+    Dim rpt As New rptInvoicePembelian
 
     Public Sub New()
 
@@ -270,6 +273,14 @@ Public Class frmAddPembelian
         form.LoadData()
     End Sub
 
+    Public Async Sub LoadDataByID()
+        'dataObject
+        totalbayar = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "total_bayar")
+        Dim listview1 = Await _repositoryPembelian.Edit(printID)
+        rpt.DataSource = listview1
+        rpt.CreateDocument()
+    End Sub
+
     Private Async Sub store()
         Dim _pembelian As New Pembelian
         Dim hasil As Boolean = False
@@ -309,6 +320,9 @@ Public Class frmAddPembelian
             DialogResult = DialogResult.OK
             purpose = Nothing
             Close()
+            LoadDataByID()
+            Dim printTool As New ReportPrintTool(rpt)
+            printTool.ShowPreview()
             refreshPembelianList()
         End If
     End Sub

@@ -15,7 +15,9 @@
         For i = 0 To _listcustomer.Count - 1
             If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "id") = _listcustomer(i).id Then
                 _Customer.nama = _listcustomer(i).nama
+                _Customer.id = _listcustomer(i).id
                 _Customer.sales() = _listcustomer(i).sales()
+                _Customer.sales_id() = _listcustomer(i).sales_id()
             End If
         Next
         Me.Close()

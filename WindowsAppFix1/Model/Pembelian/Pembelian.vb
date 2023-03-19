@@ -23,7 +23,7 @@
 
 	Public Property pembelian_detail As List(Of PembelianDetail)
 	Public Property pembelian_detail_store As List(Of PembelianDetailStore)
-	Public Property supplier As SupplierRepository
+	Public Property supplier As Supplier
 	Public Property users As Users
 End Class
 

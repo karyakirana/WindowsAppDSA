@@ -4,6 +4,7 @@ Public Class FormPembelianList
 
     Public _repositoryPembelian As PembelianRepository = New PembelianRepository()
     Dim rpt As New rptInvoicePembelian
+
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         Dim frm = New frmAddPembelian
         frm.Show()
@@ -12,7 +13,7 @@ Public Class FormPembelianList
         'dataObject
         Dim listView = Await _repositoryPembelian.GetList()
         GridControl1.DataSource = listView
-        rpt.DataSource = listView
+        'rpt.DataSource = listView
     End Sub
 
     Private Async Sub destroy(id As Long)
@@ -48,9 +49,18 @@ Public Class FormPembelianList
         Close()
     End Sub
 
-    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        Dim printTool As New ReportPrintTool(rpt)
+    Public Async Sub LoadDataByID()
+        'dataObject
+        totalBayar = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "total_bayar")
+        Dim listview1 = Await _repositoryPembelian.Edit(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "id"))
+        rpt.DataSource = listview1
+        rpt.CreateDocument()
+    End Sub
 
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
+        'rpt.DataSource = Nothing
+        LoadDataByID()
+        Dim printTool As New ReportPrintTool(rpt)
         printTool.ShowPreview()
     End Sub
 End Class

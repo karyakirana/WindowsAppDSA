@@ -2,24 +2,25 @@
 Imports DevExpress.Data
 Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
-Imports DevExpress.XtraEditors.Repository
-Imports DevExpress.XtraGrid
 Imports DevExpress.XtraGrid.Views.Base
-Imports DevExpress.XtraPrinting.Export.Pdf
-Imports Newtonsoft.Json
+Imports DevExpress.XtraReports.UI
 
 Public Class frmAddPenjualan
 
-    Private _penjualanRepo As PenjualanRepository = New PenjualanRepository()
-    Private _lokasiRepository As New LokasiRepository
+    'Private _penjualanRepo As PenjualanRepository = New PenjualanRepository()
+    Private _penjualanRepo As New PenjualanRepository
     Private _persediaanRepo As New PersediaanRepo
     Private _customerRepo As New CustomerRepository
+    Private _pegawaiRepo As New PegawaiRepository
     Public dtPenjualan As New DataTable
+    Private _update As Boolean = False
     Dim exp As DateTime
     Dim hitung, diskon, subtotal, totalbayar As Integer
     Dim ppn As Integer
-    Dim draft, customer As Integer
+    Dim draft, customer, pegawai As Integer
     Dim listcustomer As List(Of Customer)
+    Public _repositoryPenjualan As PenjualanRepository = New PenjualanRepository()
+    Dim rpt As New rptInvoicePenjualan
 
     Public Sub New()
 
@@ -44,6 +45,7 @@ Public Class frmAddPenjualan
     Public Async Sub LoadData()
         LoadDatatable()
         Dim _listcustomer = Await _customerRepo.GetList()
+        Dim _listpegawai = Await _pegawaiRepo.GetList()
     End Sub
 
 
@@ -54,6 +56,7 @@ Public Class frmAddPenjualan
         dtPenjualan.Columns.Add("batch", GetType(String))
         dtPenjualan.Columns.Add("expired", GetType(String))
         dtPenjualan.Columns.Add("serial_number", GetType(String))
+        dtPenjualan.Columns.Add("satuan_jual", GetType(String))
         dtPenjualan.Columns.Add("harga", GetType(Integer))
         dtPenjualan.Columns.Add("diskon", GetType(Integer))
         dtPenjualan.Columns.Add("jumlah", GetType(Integer))
@@ -69,33 +72,38 @@ Public Class frmAddPenjualan
         GridView1.Columns.ColumnByFieldName("produk_nama").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("produk_nama").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
         GridView1.Columns.ColumnByFieldName("produk_nama").OptionsColumn.AllowEdit = False
-        GridView1.Columns.ColumnByFieldName("batch").VisibleIndex = 1
+        GridView1.Columns.ColumnByFieldName("satuan_jual").VisibleIndex = 1
+        GridView1.Columns.ColumnByFieldName("satuan_jual").Caption = "Satuan Jual"
+        GridView1.Columns.ColumnByFieldName("satuan_jual").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        GridView1.Columns.ColumnByFieldName("satuan_jual").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        GridView1.Columns.ColumnByFieldName("satuan_jual").OptionsColumn.AllowEdit = False
+        GridView1.Columns.ColumnByFieldName("batch").VisibleIndex = 2
         GridView1.Columns.ColumnByFieldName("batch").Caption = "Batch"
         GridView1.Columns.ColumnByFieldName("batch").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("batch").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("expired").VisibleIndex = 2
+        GridView1.Columns.ColumnByFieldName("expired").VisibleIndex = 3
         GridView1.Columns.ColumnByFieldName("expired").Caption = "Kadaluarsa"
         GridView1.Columns.ColumnByFieldName("expired").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("expired").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("serial_number").VisibleIndex = 3
+        GridView1.Columns.ColumnByFieldName("serial_number").VisibleIndex = 4
         GridView1.Columns.ColumnByFieldName("serial_number").Caption = "Serial Number"
         GridView1.Columns.ColumnByFieldName("serial_number").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("serial_number").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("harga").VisibleIndex = 4
+        GridView1.Columns.ColumnByFieldName("harga").VisibleIndex = 5
         GridView1.Columns.ColumnByFieldName("harga").Caption = "Harga"
         GridView1.Columns.ColumnByFieldName("harga").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("harga").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         GridView1.Columns.ColumnByFieldName("harga").DisplayFormat.FormatString = "n0"
-        GridView1.Columns.ColumnByFieldName("diskon").VisibleIndex = 5
+        GridView1.Columns.ColumnByFieldName("diskon").VisibleIndex = 6
         GridView1.Columns.ColumnByFieldName("diskon").Caption = "Diskon"
         GridView1.Columns.ColumnByFieldName("diskon").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("diskon").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 6
+        GridView1.Columns.ColumnByFieldName("diskon").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        GridView1.Columns.ColumnByFieldName("jumlah").VisibleIndex = 7
         GridView1.Columns.ColumnByFieldName("jumlah").Caption = "Jumlah"
         GridView1.Columns.ColumnByFieldName("jumlah").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 7
+        GridView1.Columns.ColumnByFieldName("jumlah").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near
+        GridView1.Columns.ColumnByFieldName("sub_total").VisibleIndex = 8
         GridView1.Columns.ColumnByFieldName("sub_total").Caption = "Sub Total"
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         GridView1.Columns.ColumnByFieldName("sub_total").AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
@@ -118,11 +126,12 @@ Public Class frmAddPenjualan
 
             Dim row As DataRow
             row = dtPenjualan.NewRow
-            row("persediaan_id") = persediaan.id
+            row("persediaan_id") = persediaan.produk.id
             row("produk_nama") = persediaan.produk.nama
-            row("batch") = ""
+            row("satuan_jual") = persediaan.produk.satuan_jual
+            row("batch") = persediaan.batch
             row("expired") = Format(Date.Now, "yyyy-MM-dd")
-            row("serial_number") = ""
+            row("serial_number") = persediaan.serial_number
             row("harga") = persediaan.produk.harga
             row("diskon") = 0
             row("jumlah") = 0
@@ -142,7 +151,7 @@ Public Class frmAddPenjualan
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
 
-        Using frm As FrmFindProduk = New FrmFindProduk
+        Using frm As FrmFindPersediaan = New FrmFindPersediaan
             If frm.ShowDialog = DialogResult.OK Then
                 SetRow(frm.GetValue)
                 Console.WriteLine(frm.GetValue)
@@ -230,7 +239,7 @@ Public Class frmAddPenjualan
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        'tombol penjualan
+        Store()
     End Sub
 
     Private Sub GridView1_CellValueChanging(sender As Object, e As CellValueChangedEventArgs) Handles GridView1.CellValueChanging
@@ -259,51 +268,71 @@ Public Class frmAddPenjualan
         End If
     End Sub
 
+    Private Sub refreshPenjualanList()
+        'form jabatan list reload
+        Dim form As FormPenjualanList = CType(Application.OpenForms("FormPenjualanList"), FormPenjualanList)
+        form.LoadData()
+    End Sub
+
+    Public Async Sub LoadDataByID()
+        'dataObject
+        totalbayar = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "total_bayar")
+        Dim listview1 = Await _repositoryPenjualan.Edit(printID)
+        rpt.DataSource = listview1
+        rpt.CreateDocument()
+    End Sub
+
     'Private Sub txtBiayaLain_Leave(sender As Object, e As EventArgs) Handles txtBiayaLain.Leave
     '    For i = 0 To GridView1.DataRowCount - 1
     '        subtotal += GridView1.GetRowCellValue(i, "sub_total")
     '        txtTotalBayar.EditValue = txtPpn.EditValue + txtBiayaLain.EditValue + subtotal
     '    Next
     'End Sub
-    'Private Async Sub store()
-    '    Dim _penjualan As New Penjualan
-    '    _penjualan.penjualan_penawaran_id = txtPOPenjualan.EditValue
-    '    _penjualan.tgl_penjualan = tglPenjualan.Text
-    '    _penjualan.tempo = CType(txtTempo.EditValue, Int64)
-    '    _penjualan.tgl_tempo = tglTempo.Text
-    '    _penjualan.tipe_penjualan = cbTipe.EditValue
-    '    _penjualan.draft = draft
-    '    _penjualan.customer = _Customer.id
-    '    _penjualan.keterangan = txtKeterangan.EditValue
-    '    _penjualan.total_bayar = txtTotalBayar.EditValue
-    '    _penjualan.ppn = txtPpn.EditValue
-    '    _penjualan.biaya_lain = txtBiayaLain.EditValue
+    Private Async Sub store()
+        Dim _penjualan As New Penjualan
+        Dim hasil As Boolean = False
+        _penjualan.penjualan_penawaran_id = txtPOPenjualan.EditValue
+        _penjualan.tgl_penjualan = tglPenjualan.Text
+        _penjualan.tempo = CType(txtTempo.EditValue, Int64)
+        _penjualan.tgl_tempo = tglTempo.Text
+        _penjualan.tipe_penjualan = cbTipe.EditValue
+        _penjualan.draft = draft
+        _penjualan.customer_id = _Customer.id
+        _penjualan.sales_id = _Customer.sales_id
+        _penjualan.keterangan = txtKeterangan.EditValue
+        _penjualan.total_bayar = txtTotalBayar.EditValue
+        _penjualan.ppn = txtPpn.EditValue
+        _penjualan.biaya_lain = txtBiayaLain.EditValue
 
-    '    'list detail
-    '    Dim pembelian_list As New List(Of PembelianDetailStore)
-    '    For i As Integer = 0 To GridView1.RowCount - 1
-    '        _penjualan.total_barang += GridView1.GetRowCellValue(i, "jumlah")
-    '        Dim detail As New PembelianDetailStore
-    '        Dim expired = GridView1.GetRowCellValue(i, "expired")
-    '        detail.produk_id = GridView1.GetRowCellValue(i, "produk_id")
-    '        detail.diskon = GridView1.GetRowCellValue(i, "diskon")
-    '        detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
-    '        detail.batch = GridView1.GetRowCellValue(i, "batch")
-    '        detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
-    '        detail.batch = GridView1.GetRowCellValue(i, "batch")
-    '        detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
-    '        detail.harga_beli = GridView1.GetRowCellValue(i, "harga")
-    '        detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
-    '        pembelian_list.Add(detail)
-    '    Next
-    '    _penjualan.pembelian_detail_store = pembelian_list
-    '    'Dim json = JsonConvert.SerializeObject(_penjualan)
-    '    Dim hasil = Await _penjualanRepo.store(_penjualan)
-    '    If hasil Then
-    '        DialogResult = DialogResult.OK
-    '        purpose = Nothing
-    '        Close()
-    '        refreshPembelianList()
-    '    End If
-    'End Sub
+        'list detail
+        Dim penjualan_list As New List(Of PenjualanDetailStore)
+        For i As Integer = 0 To GridView1.RowCount - 1
+            _penjualan.total_barang += GridView1.GetRowCellValue(i, "jumlah")
+            Dim detail As New PenjualanDetailStore
+            Dim expired = GridView1.GetRowCellValue(i, "expired")
+            detail.persediaan_id = GridView1.GetRowCellValue(i, "persediaan_id")
+            detail.diskon = GridView1.GetRowCellValue(i, "diskon")
+            detail.jumlah = GridView1.GetRowCellValue(i, "jumlah")
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.expired = If(expired Is DBNull.Value, String.Empty, CStr(expired))
+            detail.batch = GridView1.GetRowCellValue(i, "batch")
+            detail.serial_number = GridView1.GetRowCellValue(i, "serial_number")
+            detail.satuan_jual = GridView1.GetRowCellValue(i, "satuan_jual")
+            detail.harga_jual = GridView1.GetRowCellValue(i, "harga")
+            detail.sub_total = GridView1.GetRowCellValue(i, "sub_total")
+            penjualan_list.Add(detail)
+        Next
+        _penjualan.penjualan_detail_store = penjualan_list
+        'Dim json = JsonConvert.SerializeObject(_penjualan)
+        hasil = Await _penjualanRepo.store(_penjualan)
+        If hasil Then
+            DialogResult = DialogResult.OK
+            purpose = Nothing
+            Close()
+            LoadDataByID()
+            Dim printTool As New ReportPrintTool(rpt)
+            printTool.ShowPreview()
+            refreshPenjualanList()
+        End If
+    End Sub
 End Class
